@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Itqan Solutions — Contact</title>
+  <meta name="description" content="Contact Itqan Solutions" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link><span class="dot"></span><span>Itqan Solutions</span></a>
+      <div class="links" role="menubar">
+        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
+        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
+        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </div>
+      <div class="cta">
+        <button class="lang" id="langToggle">AR</button>
+        <a class="btn btn-neo" href="#form" data-i18n="cta.quote" data-link>Request a Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="intro reveal" style="padding-top:120px">
+    <div class="container">
+      <h2 data-i18n="contact.title">Get in Touch</h2>
+      <p style="color:#ccc" data-i18n="contact.lead">Tell us about your project. We reply within 24 hours.</p>
+    </div>
+  </header>
+
+  <section class="services contact-section" id="form">
+
+    <div class="container">
+      <div class="grid">
+        <div class="card reveal-left contact-card">
+  <h3 data-i18n="contact.info">Contact Info</h3>
+  <ul class="contact-list">
+    <li><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></li>
+    <li>📞 +201126522373</li>
+    <li>📞 +201155253886</li>
+  </ul>
+  <div class="social">
+    <a href="https://facebook.com/itqansolutions" target="_blank"><img src="media/icon-facebook.svg" alt="Facebook"></a>
+    <a href="https://instagram.com/itqansolutions" target="_blank"><img src="media/icon-instagram.svg" alt="Instagram"></a>
+    <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="media/icon-linkedin.svg" alt="LinkedIn"></a>
+  </div>
+</div>
+
+
+       <div class="card reveal-right" style="text-align:start">
+  <h3 data-i18n="contact.form.title">Send a Message</h3>
+
+  <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form" novalidate>
+    <!-- صف مزدوج: الاسم + الإيميل -->
+    <div class="row-2">
+      <div class="field">
+        <label for="cf-name" data-i18n="contact.form.name">Name</label>
+        <input id="cf-name" name="name" type="text" required placeholder="" />
+      </div>
+      <div class="field">
+        <label for="cf-email" data-i18n="contact.form.email">Email</label>
+        <input id="cf-email" name="_replyto" type="email" required placeholder="" />
+      </div>
+    </div>
+
+    <!-- تليفون -->
+    <div class="field">
+      <label for="cf-phone" data-i18n="contact.form.phone">Phone</label>
+      <input id="cf-phone" name="phone" type="tel" placeholder="" />
+    </div>
+
+    <!-- رسالة -->
+    <div class="field">
+      <label for="cf-msg" data-i18n="contact.form.msg">Message</label>
+      <textarea id="cf-msg" name="message" rows="6" required></textarea>
+    </div>
+
+    <!-- زر الإرسال -->
+    <div class="form-actions">
+      <button class="btn btn-neo btn-xl" type="submit" data-i18n="contact.form.send">Send</button>
+    </div>
+
+    <!-- رسائل بسيطة -->
+    <p class="form-note" aria-live="polite"></p>
+  </form>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="f-grid">
+        <div class="f-col">
+          <h3>Itqan Solutions</h3>
+          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
+          <p>📞 01126522373</p><p>📞 +20 11 55253886</p>
+        </div>
+        <div class="f-col">
+          <h3 data-i18n="footer.follow">Follow Us</h3>
+          <div class="social">
+            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png" alt="Facebook"></a>
+            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png" alt="Instagram"></a>
+            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png" alt="LinkedIn"></a>
+          </div>
+        </div>
+        <div class="f-col"><p data-i18n="footer.copy"></p></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

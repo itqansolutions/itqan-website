@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Itqan Solutions — We Do Everything the Itqan Way</title>
+  <meta name="description" content="Software • POS • Websites • Marketing — Itqan Solutions" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+<a class="brand" href="index.html" data-link>
+  <img class="brand-logo" src="favicon.png" alt="Itqan Solutions">
+  <span class="brand-text">Itqan Solutions</span>
+</a>
+      <div class="links" role="menubar">
+        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
+        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
+        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </div>
+      <div class="cta">
+        <button class="lang" id="langToggle" aria-label="Toggle language">AR</button>
+        <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO VIDEO ===== -->
+  <main class="stage" role="banner">
+    <div class="video-wrap" aria-hidden="true">
+      <video id="bgVideo" autoplay muted playsinline loop preload="auto" poster="hero-poster.jpg">
+        <source src="hero-mobile.mp4" type="video/mp4" media="(max-width: 600px)">
+        <source src="hero-desktop.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="actions">
+      <a href="services.html" class="btn btn-neo btn-xl" data-i18n="hero.discover" data-link>Discover Services</a>
+      <a href="contact.html" class="btn btn-ghost btn-xl" data-i18n="hero.contact" data-link>Get in Touch</a>
+    </div>
+  </main>
+
+  <!-- ===== CONTENT (CENTER BLOCK) ===== -->
+  <section class="intro">
+    <div class="container">
+      <h2 data-i18n="intro.title">Built for results, not just deliverables.</h2>
+      <p data-i18n="intro.text">
+        End-to-end delivery from development, POS systems, and websites to digital marketing and growth strategies.
+      </p>
+      <div class="chips">
+        <span>5+ Years Experience</span>
+        <span>POS Online/Offline</span>
+        <span>Bilingual (EN/AR)</span>
+        <span>Digital Marketing</span>
+      </div>
+    </div>
+  </section>
+  <!-- ===== SERVICES TEASER ===== -->
+<section class="services">
+  <div class="container">
+    <h2 data-i18n="services.title">Our Services</h2>
+
+    <div class="grid"><!-- ✅ الغلاف المفقود -->
+      <div class="card">
+        <h3 data-i18n="services.dev.title">Software Development</h3>
+        <p data-i18n="services.dev.desc">Custom systems tailored to your business needs.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="services.pos.title">POS Systems</h3>
+        <p data-i18n="services.pos.desc">Offline/online, bilingual, secure POS for retail & restaurants.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="services.web.title">Websites & eCommerce</h3>
+        <p data-i18n="services.web.desc">Modern, responsive, SEO-friendly websites.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="services.mobile.title">Mobile Apps</h3>
+        <p data-i18n="services.mobile.desc">iOS & Android apps with smooth user experience.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="services.marketing.title">Digital Marketing</h3>
+        <p data-i18n="services.marketing.desc">Social media, campaigns, and online growth strategies.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="services.branding.title">Branding & Design</h3>
+        <p data-i18n="services.branding.desc">Logos, identity, and professional visuals.</p>
+      </div>
+    </div><!-- /grid -->
+  </div>
+</section>
+
+  <!-- ===== POS SPOTLIGHT ===== -->
+<section class="pos-spotlight">
+  <div class="container">
+    <div class="spotlight">
+      <div class="text">
+        <h2 data-i18n="pos.title">POS Spotlight</h2>
+        <ul>
+          <li data-i18n="pos.li1">Bilingual (EN/AR) + RTL</li>
+          <li data-i18n="pos.li2">Reports, Returns, Discounts, COGS</li>
+          <li data-i18n="pos.li3">Offline-first, secure licensing</li>
+        </ul>
+        <a href="services.html" class="btn btn-neo btn-xl" data-i18n="pos.cta">See POS Demo</a>
+      </div><!-- ✅ اقفال div.text هنا -->
+
+      <div class="visual">
+        <img src="pos-mockup.jpg" alt="POS Demo Mockup">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="container">
+    <h2 data-i18n="testimonials.title">What Our Clients Say</h2>
+
+    <div class="grid"><!-- ✅ الغلاف المفقود -->
+      <div class="t-card">
+        <p data-i18n="testimonials.t1.text">“Itqan’s POS transformed our sales process, easy to use and reliable.”</p>
+        <span data-i18n="testimonials.t1.author">— Ahmed, Retail Owner</span>
+      </div>
+      <div class="t-card">
+        <p data-i18n="testimonials.t2.text">“The website and marketing boosted our leads by 40% in 3 months.”</p>
+        <span data-i18n="testimonials.t2.author">— Sara, Marketing Manager</span>
+      </div>
+      <div class="t-card">
+        <p data-i18n="testimonials.t3.text">“Professional, bilingual support made all the difference for our business.”</p>
+        <span data-i18n="testimonials.t3.author">— Omar, Restaurant Owner</span>
+      </div>
+    </div><!-- /grid -->
+  </div>
+</section>
+<!-- ===== BLOG HIGHLIGHTS ===== -->
+<section class="blog-highlights">
+  <div class="container">
+    <h2 data-i18n="blog.latest">Latest Blog Posts</h2>
+
+    <div class="grid"><!-- ✅ الغلاف المفقود -->
+      <div class="post">
+        <img src="blog1.jpg" alt="Blog 1">
+        <h3 data-i18n="blog.p1.title">How POS Systems Transform Retail</h3>
+        <p data-i18n="blog.p1.desc">Discover how modern POS systems improve efficiency, reporting, and customer experience.</p>
+        <a href="blog.html#pos-retail" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
+      </div>
+      <div class="post">
+        <img src="blog2.jpg" alt="Blog 2">
+        <h3 data-i18n="blog.p2.title">Why Every Business Needs a Website</h3>
+        <p data-i18n="blog.p2.desc">Your website is your business card. Learn how to make it effective and engaging.</p>
+        <a href="blog.html#business-website" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
+      </div>
+      <div class="post">
+        <img src="blog3.jpg" alt="Blog 3">
+        <h3 data-i18n="blog.p3.title">Digital Marketing Trends 2025</h3>
+        <p data-i18n="blog.p3.desc">Stay ahead with the latest strategies in social media and digital advertising.</p>
+        <a href="blog.html#digital-trends" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
+      </div>
+    </div><!-- /grid -->
+  </div>
+</section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="f-grid">
+        <div class="f-col">
+          <h3>Itqan Solutions</h3>
+          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
+          <p>📞 01126522373</p>
+          <p>📞 +20 11 55253886</p>
+        </div>
+        <div class="f-col">
+          <h3 data-i18n="footer.follow">Follow Us</h3>
+
+          <div class="social">
+            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png" alt="Facebook"></a>
+            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png" alt="Instagram"></a>
+            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png" alt="LinkedIn"></a>
+          </div>
+        </div>
+        <div class="f-col">
+<p data-i18n="footer.copy">© <span id="year"></span> Itqan Solutions. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

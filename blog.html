@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Itqan Solutions — Blog</title>
+  <meta name="description" content="Insights and updates from Itqan Solutions" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===== NAVBAR (نفس بتاع الهوم) ===== -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <span class="dot" aria-hidden="true">
+  <img src="favicon.png" alt="Logo" class="dot-logo">
+</span>
+        <span>Itqan Solutions</span>
+      </a>
+      <div class="links" role="menubar">
+        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
+        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
+        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </div>
+      <div class="cta">
+        <button class="lang" id="langToggle" aria-label="Toggle language">AR</button>
+        <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== BLOG HERO بسيط ===== -->
+  <header class="intro reveal" style="padding-top:120px;">
+    <div class="container">
+      <h2 data-i18n="blog.latest">Latest Blog Posts</h2>
+      <p style="color:#ccc;max-width:720px;margin:10px auto 0;">
+        Insights, trends, and updates from Itqan Solutions
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== POSTS GRID (يتوافق مع JS: .blog-highlights .grid/.post) ===== -->
+  <section class="blog-highlights">
+    <div class="container">
+      <div class="grid">
+        <article class="post">
+          <img src="blog1.jpg" alt="POS Retail" loading="lazy">
+          <h3 data-i18n="blog.p1.title">How POS Systems Transform Retail</h3>
+          <p data-i18n="blog.p1.desc">
+            Discover how modern POS systems improve efficiency, reporting, and customer experience.
+          </p>
+          <a href="#" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
+        </article>
+
+        <article class="post">
+          <img src="blog2.jpg" alt="Business Website" loading="lazy">
+          <h3 data-i18n="blog.p2.title">Why Every Business Needs a Website</h3>
+          <p data-i18n="blog.p2.desc">
+            Your website is your business card. Learn how to make it effective and engaging.
+          </p>
+          <a href="#" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
+        </article>
+
+        <article class="post">
+          <img src="blog3.jpg" alt="Digital Marketing Trends" loading="lazy">
+          <h3 data-i18n="blog.p3.title">Digital Marketing Trends 2025</h3>
+          <p data-i18n="blog.p3.desc">
+            Stay ahead with the latest strategies in social media and digital advertising.
+          </p>
+          <a href="#" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER (نفس بتاعنا) ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="f-grid">
+        <div class="f-col">
+          <h3>Itqan Solutions</h3>
+          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
+          <p>📞 01126522373</p>
+          <p>📞 +20 11 55253886</p>
+        </div>
+        <div class="f-col">
+          <h3 data-i18n="footer.follow">Follow Us</h3>
+          <div class="social">
+            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png" alt="Facebook"></a>
+            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png" alt="Instagram"></a>
+            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png" alt="LinkedIn"></a>
+          </div>
+        </div>
+        <div class="f-col">
+          <p data-i18n="footer.copy">© 2025 Itqan Solutions. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- نفس السكربت المشترك -->
+  <script src="app.js"></script>
+</body>
+</html>
