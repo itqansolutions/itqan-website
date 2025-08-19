@@ -116,7 +116,25 @@ body{
   z-index:-1;
   background:none; /* مفيش غطاء فوق الفيديو */
 }
+@media (max-width: 600px){
+  .hero-content{
+    padding-top: 18vh;
+    padding-inline: 16px;
+  }
+}
 
+/* على الديسكتوب: لا نسمح للمحتوى يتجاوز خط أمان */
+@media (min-width: 1024px){
+  .hero-content{
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+}
+
+/* احترام تفضيل تقليل الحركة */
+@media (prefers-reduced-motion: reduce){
+  .video-wrap video{ animation: none; }
+}
 .actions{position:absolute;left:4vw;bottom:6vh;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .btn-xl{padding:14px 22px;font-size:15px}
 
@@ -396,3 +414,4 @@ html[dir="rtl"] .form-actions{ justify-content:flex-start; }
   .actions{left:50%;transform:translateX(-50%);bottom:calc(4vh + env(safe-area-inset-bottom));justify-content:center}
   .btn-xl{padding:13px 18px}
 }
+
