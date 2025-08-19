@@ -106,16 +106,28 @@ body{
 /* =========================
    Hero
    ========================= */
-.stage{position:relative;min-height:100svh;overflow:hidden}
-.video-wrap{position:absolute;inset:0;z-index:-2}
-.video-wrap video{width:100%;height:100%;object-fit:cover;object-position:center}
-.stage::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:none; /* مفيش غطاء فوق الفيديو */
+.stage {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;   /* ارتفاع الشاشة الفعلي */
+  min-height: 100svh;   /* fallback */
+  overflow: hidden;
 }
+
+.video-wrap {
+  position: absolute;
+  inset: 0;        /* top:0; right:0; bottom:0; left:0; */
+  z-index: -2;
+}
+
+.video-wrap video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;        /* يملأ كامل العرض والارتفاع */
+  object-position: center;  /* يركّز الفيديو في النص */
+}
+
 @media (max-width: 600px){
   .hero-content{
     padding-top: 18vh;
@@ -414,4 +426,5 @@ html[dir="rtl"] .form-actions{ justify-content:flex-start; }
   .actions{left:50%;transform:translateX(-50%);bottom:calc(4vh + env(safe-area-inset-bottom));justify-content:center}
   .btn-xl{padding:13px 18px}
 }
+
 
