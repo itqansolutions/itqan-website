@@ -55,7 +55,7 @@ body{
 .nav .row{max-width:1200px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:14px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px;color:#fff;position:relative;overflow:hidden}
 .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--neo);box-shadow:0 0 18px var(--neo)}
-.links{margin-inline:auto;display:none;gap:18px}
+.links{margin-inline:auto;gap:18px}
 .links a{opacity:.95;color:#fff;position:relative;padding:6px 8px;overflow:hidden}
 .links a:hover{opacity:1;text-shadow:0 0 12px rgba(255,255,255,.35)}
 .links a::after{content:"";position:absolute;inset:0;transform:translateX(-120%);background:var(--shine);mix-blend-mode:screen}
@@ -66,6 +66,69 @@ body{
   border-radius: 50%; /* يخلي اللوجو دائري */
   object-fit: contain;
 }
+
+/* الوضع الافتراضي: سايدبار مخفي على الموبايل */
+.links{
+  position: fixed;
+  top: 64px;                /* ارتفاع الناف */
+  bottom: 0;
+  inset-inline-end: 0;      /* من الجنب (يمين في LTR، يسار في RTL) */
+  width: min(78vw, 320px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(10,15,24,.96);
+  border-inline-start: 1px solid rgba(255,255,255,.06);
+  transform: translateX(100%);       /* مخفي خارج الشاشة */
+  transition: transform .28s ease;
+  z-index: 45;
+}
+
+/* إظهار السايدبار */
+.links.open{ transform: translateX(0); }
+
+/* شكل الروابط في السايدبار */
+.links a{ padding: 10px 6px; font-size: 15px; }
+
+/* زر المنيو يظهر على الموبايل */
+.menu{
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 999px;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  font-size: 20px; font-weight: 700; color: #fff;
+}
+
+/* طبقة عتمة للخلفية */
+.nav-overlay{
+  position: fixed; inset: 0; 
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(1px);
+  z-index: 44;
+}
+.nav-overlay.show{ display:block; }
+.nav-overlay[hidden]{ display: none; }
+
+/* منع تمرير الصفحة عند فتح السايدبار */
+html.no-scroll, body.no-scroll{ overflow: hidden; }
+
+/* ديسكتوب: ترجع الروابط صف أفقي وتختفي المنيو والطبقة */
+@media (min-width: 900px){
+  .links{
+    position: static;
+    transform: none;
+    background: transparent;
+    border: 0;
+    width: auto; height: auto;
+    flex-direction: row;
+    gap: 18px;
+    padding: 0;
+  }
+  .menu, .nav-overlay{ display: none !important; }
+}
+
 /* أوقف ستايل النقطة القديمة تمامًا */
 .brand .dot{ display:none !important; }
 
@@ -106,47 +169,17 @@ body{
 /* =========================
    Hero
    ========================= */
-.stage {
-  position: relative;
-  width: 100%;
-  min-height: 100dvh;   /* ارتفاع الشاشة الفعلي */
-  min-height: 100svh;   /* fallback */
-  overflow: hidden;
+.stage{position:relative;min-height:100svh;overflow:hidden}
+.video-wrap{position:absolute;inset:0;z-index:-2}
+.video-wrap video{width:100%;height:100%;object-fit:cover;object-position:center}
+.stage::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:none; /* مفيش غطاء فوق الفيديو */
 }
 
-.video-wrap {
-  position: absolute;
-  inset: 0;        /* top:0; right:0; bottom:0; left:0; */
-  z-index: -2;
-}
-
-.video-wrap video {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;        /* يملأ كامل العرض والارتفاع */
-  object-position: center;  /* يركّز الفيديو في النص */
-}
-
-@media (max-width: 600px){
-  .hero-content{
-    padding-top: 18vh;
-    padding-inline: 16px;
-  }
-}
-
-/* على الديسكتوب: لا نسمح للمحتوى يتجاوز خط أمان */
-@media (min-width: 1024px){
-  .hero-content{
-    max-width: 1200px;
-    margin-inline: auto;
-  }
-}
-
-/* احترام تفضيل تقليل الحركة */
-@media (prefers-reduced-motion: reduce){
-  .video-wrap video{ animation: none; }
-}
 .actions{position:absolute;left:4vw;bottom:6vh;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .btn-xl{padding:14px 22px;font-size:15px}
 
@@ -426,5 +459,3 @@ html[dir="rtl"] .form-actions{ justify-content:flex-start; }
   .actions{left:50%;transform:translateX(-50%);bottom:calc(4vh + env(safe-area-inset-bottom));justify-content:center}
   .btn-xl{padding:13px 18px}
 }
-
-
