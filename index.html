@@ -12,31 +12,40 @@
   <div class="overlay" id="overlay"></div>
 
   <!-- ===== NAVBAR ===== -->
-  <nav class="nav" aria-label="Primary">
-    <div class="row">
-<a class="brand" href="index.html" data-link>
-<button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-  ☰
-</button>
+<nav class="nav" aria-label="Primary">
+  <div class="row">
 
-<div class="nav-overlay" id="navOverlay" hidden></div>
-  <img class="brand-logo" src="favicon.png" alt="Itqan Solutions">
-  <span class="brand-text">Itqan Solutions</span>
-</a>
-      <div class="links" role="menubar">
-        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
-        <a href="about.html" data-i18n="nav.about" data-link>About</a>
-        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
-        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
-        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
-        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
-      </div>
-      <div class="cta">
-        <button class="lang" id="langToggle" aria-label="Toggle language">AR</button>
-        <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
-      </div>
+    <!-- اللوجو والنص بس -->
+    <a class="brand" href="index.html" data-link>
+      <img class="brand-logo" src="favicon.png" alt="Itqan Solutions">
+      <span class="brand-text">Itqan Solutions</span>
+    </a>
+
+    <!-- زر المنيو (موبايل) -->
+    <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      ☰
+    </button>
+
+    <!-- طبقة العتمة -->
+    <div class="nav-overlay" id="navOverlay" hidden></div>
+
+    <!-- الروابط (خليها عندها id للتوافق مع aria-controls) -->
+    <div class="links" id="primary-nav" role="menubar">
+      <a href="index.html" data-i18n="nav.home" data-link>Home</a>
+      <a href="about.html" data-i18n="nav.about" data-link>About</a>
+      <a href="services.html" data-i18n="nav.services" data-link>Services</a>
+      <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
+      <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+      <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
     </div>
-  </nav>
+
+    <div class="cta">
+      <button class="lang" id="langToggle" aria-label="Toggle language">AR</button>
+      <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+    </div>
+
+  </div>
+</nav>
 
   <!-- ===== HERO VIDEO ===== -->
   <main class="stage" role="banner">
