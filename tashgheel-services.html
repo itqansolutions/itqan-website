@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tashgheel Services — Workshop & Maintenance POS</title>
+    <meta name="description"
+        content="Tashgheel Services POS - The ideal solution for maintenance centers and workshops. Track repairs, spare parts, technicians, and invoicing." />
+    <meta name="keywords"
+        content="Maintenance POS, Workshop System, Repair Tracking, Spare Parts CRM, Tashgheel, Itqan Solutions">
+    <meta name="author" content="Itqan Solutions">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://itqansolutions.org/tashgheel-services.html">
+    <meta property="og:title" content="Tashgheel Services — Workshop & Maintenance POS">
+    <meta property="og:description"
+        content="Manage your efficient workshop. Track status, parts, and technician performance.">
+    <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://itqansolutions.org/tashgheel-services.html">
+    <meta property="twitter:title" content="Tashgheel Services — Workshop & Maintenance POS">
+    <meta property="twitter:description"
+        content="Manage your efficient workshop. Track status, parts, and technician performance.">
+    <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="bg-noise"></div>
+
+    <!-- Identical Navbar to Index -->
+    <nav class="nav" aria-label="Primary">
+        <div class="row">
+            <a class="brand" href="index.html" data-link>
+                <img class="brand-logo" src="favicon.png" alt="Itqan Solutions">
+                <span class="brand-text">Itqan Solutions</span>
+            </a>
+            <button class="menu" id="menuToggle">☰</button>
+            <div class="nav-overlay" id="navOverlay" hidden></div>
+            <div class="links" id="primary-nav">
+                <a href="index.html" data-i18n="nav.home" data-link>Home</a>
+                <a href="about.html" data-i18n="nav.about" data-link>About</a>
+
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-submenu">
+                            <a href="javascript:void(0)" class="dropdown-item"
+                                style="display:flex; justify-content:space-between;">
+                                <span data-i18n="nav.tashgheel">Tashgheel</span>
+                                <span>▸</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
+                                    data-link>Retail</a>
+                                <a href="tashgheel-restaurants.html" class="dropdown-item"
+                                    data-i18n="nav.tashgheel.rest" data-link>Restaurants</a>
+                                <a href="tashgheel-services.html" class="dropdown-item"
+                                    data-i18n="nav.tashgheel.services" data-link>Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="services.html" data-i18n="nav.services" data-link>Services</a>
+                <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
+                <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+                <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+            </div>
+            <div class="cta">
+                <button class="lang" id="langToggle">AR</button>
+                <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="stage"
+        style="min-height:60vh; display:flex; align-items:center; background: radial-gradient(circle at 50% 50%, #1a2236 0%, #000 100%);">
+        <div class="container" style="text-align:center; position:relative; z-index:2;">
+            <h1 data-i18n="srv.hero.title" style="font-size:clamp(32px, 5vw, 56px); margin-bottom:16px;">Tashgheel
+                Services</h1>
+            <p data-i18n="srv.hero.desc" style="color:#ccc; max-width:700px; margin:0 auto 32px; font-size:18px;">
+                Comprehensive system for service centers and workshops.</p>
+            <div style="display:flex; justify-content:center; gap:16px;">
+                <a href="contact.html" class="btn btn-neo btn-xl" data-i18n="ret.cta.demo" data-link>Get a Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview -->
+    <section class="intro">
+        <div class="container">
+            <h2 data-i18n="srv.overview.title">Professional & Organized</h2>
+            <p data-i18n="srv.overview.text">Organize daily operations, track customers, and control costs with ease.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="services">
+        <div class="container">
+            <h2 data-i18n="srv.features.title" style="text-align:center; margin-bottom:40px;">Key Features</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+                <!-- Visits -->
+                <div class="card">
+                    <h3 data-i18n="srv.f1.t">Visits Management</h3>
+                    <p data-i18n="srv.f1.d">Register and track all customer visits. Search by plate, chassis, or name.
+                    </p>
+                </div>
+
+                <!-- Customers & Vehicles -->
+                <div class="card">
+                    <h3 data-i18n="srv.f2.t">Customers & Vehicles</h3>
+                    <p data-i18n="srv.f2.d">Complete profile for customers and vehicles (Model, VIN, Odometer).</p>
+                </div>
+
+                <!-- Spare Parts -->
+                <div class="card">
+                    <h3 data-i18n="srv.f3.t">Spare Parts</h3>
+                    <p data-i18n="srv.f3.d">Track cost/sell prices and profitability. Use parts directly in visits.</p>
+                </div>
+
+                <!-- Suppliers -->
+                <div class="card">
+                    <h3 data-i18n="srv.f4.t">Suppliers</h3>
+                    <p data-i18n="srv.f4.d">Manage supplier debts, payments (full/partial), and transaction history.</p>
+                </div>
+
+                <!-- Services -->
+                <div class="card">
+                    <h3 data-i18n="srv.f5.t">Service Management</h3>
+                    <p data-i18n="srv.f5.d">Add services to visits and combine with parts in one invoice.</p>
+                </div>
+
+                <!-- Invoicing -->
+                <div class="card">
+                    <h3 data-i18n="srv.f6.t">Invoicing</h3>
+                    <p data-i18n="srv.f6.d">Detailed printable invoices with discounts and breakdown.</p>
+                </div>
+
+                <!-- Appointments -->
+                <div class="card">
+                    <h3 data-i18n="srv.f7.t">Appointments</h3>
+                    <p data-i18n="srv.f7.d">Schedule next visits and print reminders on invoices.</p>
+                </div>
+
+                <!-- Staff -->
+                <div class="card">
+                    <h3 data-i18n="srv.f8.t">Staff & Technicians</h3>
+                    <p data-i18n="srv.f8.d">Assign technicians to visits and track performance targets.</p>
+                </div>
+
+                <!-- Expenses -->
+                <div class="card">
+                    <h3 data-i18n="srv.f9.t">Expenses</h3>
+                    <p data-i18n="srv.f9.d">Track operational expenses and their impact on net profit.</p>
+                </div>
+
+                <!-- Reports -->
+                <div class="card">
+                    <h3 data-i18n="srv.f10.t">Reports</h3>
+                    <p data-i18n="srv.f10.d">Revenue, most requested services, parts usage, and supplier balances.</p>
+                </div>
+
+                <!-- Backup -->
+                <div class="card">
+                    <h3 data-i18n="srv.f11.t">Backup</h3>
+                    <p data-i18n="srv.f11.d">Secure backup and restore capabilities without technical help.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Online / Offline -->
+    <section class="testimonials" style="background:#0d111a;">
+        <div class="container">
+            <h2 data-i18n="srv.dep.title">Online & Offline Freedom</h2>
+            <p data-i18n="srv.dep.desc" style="text-align:center; color:#ccc; margin-bottom:40px;">Choose the mode that
+                fits your operation. Fully featured in both.</p>
+
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:32px;">
+                <div class="t-card" style="text-align:center; padding:40px;">
+                    <h3 data-i18n="srv.online.t" style="margin-bottom:12px; color:var(--neo);">Online (Web App)</h3>
+                    <p data-i18n="srv.online.d">Perfect for multi-branch management and remote access.</p>
+                </div>
+                <div class="t-card" style="text-align:center; padding:40px;">
+                    <h3 data-i18n="srv.offline.t" style="margin-bottom:12px; color:var(--violet);">Offline (Desktop)
+                    </h3>
+                    <p data-i18n="srv.offline.d">Maximum stability without internet dependence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="gallery">
+        <div class="container">
+            <h2 data-i18n="gallery.title">Screenshots</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
+                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 1"></div>
+                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
+                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 2"></div>
+                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
+                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="f-grid">
+                <div class="f-col">
+                    <h3>Itqan Solutions</h3>
+                    <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
+                    <p>📞 01126522373</p>
+                    <p>📞 +20 11 55253886</p>
+                </div>
+                <div class="f-col">
+                    <h3 data-i18n="footer.follow">Follow Us</h3>
+                    <div class="social">
+                        <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
+                                alt="Facebook"></a>
+                        <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
+                                alt="Instagram"></a>
+                        <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img
+                                src="icon-linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="f-col">
+                    <p data-i18n="footer.copy">© 2025 Itqan Solutions.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Simple menu toggle reuse
+        const menu = document.getElementById('menuToggle');
+        const links = document.querySelector('.nav .links');
+        const overlay = document.getElementById('navOverlay');
+        menu.addEventListener('click', () => {
+            const isOpen = !links.classList.contains('open');
+            links.classList.toggle('open', isOpen);
+            menu.setAttribute('aria-expanded', isOpen);
+            overlay.hidden = !isOpen;
+            overlay.classList.toggle('show', isOpen);
+        });
+        overlay.addEventListener('click', () => {
+            links.classList.remove('open');
+            menu.setAttribute('aria-expanded', 'false');
+            overlay.hidden = true;
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+
+</html>

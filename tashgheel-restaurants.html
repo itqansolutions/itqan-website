@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tashgheel Restaurants — F&B Operating System</title>
+    <meta name="description"
+        content="Tashgheel Restaurants POS - Specialized system for cafes and restaurants. Table management, Kitchen Display System (KDS), and recipe costing." />
+    <meta name="keywords"
+        content="Restaurant POS, Cafe POS, KDS, Kitchen Display, Recipe Costing, Tashgheel, Itqan Solutions, F&B System">
+    <meta name="author" content="Itqan Solutions">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://itqansolutions.org/tashgheel-restaurants.html">
+    <meta property="og:title" content="Tashgheel Restaurants — Advanced F&B POS">
+    <meta property="og:description"
+        content="Streamline your kitchen and service. Tables, orders, and inventory in sync.">
+    <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://itqansolutions.org/tashgheel-restaurants.html">
+    <meta property="twitter:title" content="Tashgheel Restaurants — Advanced F&B POS">
+    <meta property="twitter:description"
+        content="Streamline your kitchen and service. Tables, orders, and inventory in sync.">
+    <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="bg-noise"></div>
+
+    <!-- Identical Navbar to Index -->
+    <nav class="nav" aria-label="Primary">
+        <div class="row">
+            <a class="brand" href="index.html" data-link>
+                <img class="brand-logo" src="favicon.png" alt="Itqan Solutions">
+                <span class="brand-text">Itqan Solutions</span>
+            </a>
+            <button class="menu" id="menuToggle">☰</button>
+            <div class="nav-overlay" id="navOverlay" hidden></div>
+            <div class="links" id="primary-nav">
+                <a href="index.html" data-i18n="nav.home" data-link>Home</a>
+                <a href="about.html" data-i18n="nav.about" data-link>About</a>
+
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-submenu">
+                            <a href="javascript:void(0)" class="dropdown-item"
+                                style="display:flex; justify-content:space-between;">
+                                <span data-i18n="nav.tashgheel">Tashgheel</span>
+                                <span>▸</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
+                                    data-link>Retail</a>
+                                <a href="tashgheel-restaurants.html" class="dropdown-item"
+                                    data-i18n="nav.tashgheel.rest" data-link>Restaurants</a>
+                                <a href="tashgheel-services.html" class="dropdown-item"
+                                    data-i18n="nav.tashgheel.services" data-link>Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="services.html" data-i18n="nav.services" data-link>Services</a>
+                <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
+                <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+                <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+            </div>
+            <div class="cta">
+                <button class="lang" id="langToggle">AR</button>
+                <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="stage"
+        style="min-height:60vh; display:flex; align-items:center; background: radial-gradient(circle at 50% 50%, #1a2236 0%, #000 100%);">
+        <div class="container" style="text-align:center; position:relative; z-index:2;">
+            <h1 data-i18n="rst.hero.title" style="font-size:clamp(32px, 5vw, 56px); margin-bottom:16px;">Tashgheel
+                Restaurants</h1>
+            <p data-i18n="rst.hero.desc" style="color:#ccc; max-width:700px; margin:0 auto 32px; font-size:18px;">A
+                complete F&B operating system for restaurants & cafes.</p>
+            <div style="display:flex; justify-content:center; gap:16px;">
+                <a href="contact.html" class="btn btn-neo btn-xl" data-i18n="ret.cta.demo" data-link>Get a Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview -->
+    <section class="intro">
+        <div class="container">
+            <h2 data-i18n="rst.overview.title">Kitchen to Cashier</h2>
+            <p data-i18n="rst.overview.text">Master your food costs, waste, and operations in one unified system.</p>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="services">
+        <div class="container">
+            <h2 data-i18n="rst.features.title" style="text-align:center; margin-bottom:40px;">Key Features</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+                <!-- Materials -->
+                <div class="card">
+                    <h3 data-i18n="rst.f1.t">Raw Materials</h3>
+                    <p data-i18n="rst.f1.d">Manage ingredients, suppliers, and debts with full payment tracking.</p>
+                </div>
+
+                <!-- Menu Engineering -->
+                <div class="card">
+                    <h3 data-i18n="rst.f2.t">Menu Engineering</h3>
+                    <p data-i18n="rst.f2.d">Define recipes, calculate actual costs, and track waste ratios per size.</p>
+                </div>
+
+                <!-- Pricing -->
+                <div class="card">
+                    <h3 data-i18n="rst.f3.t">Flexible Pricing</h3>
+                    <p data-i18n="rst.f3.d">Separate prices for Dine-in, Takeaway, and Delivery. Supports Happy Hour.
+                    </p>
+                </div>
+
+                <!-- POS -->
+                <div class="card">
+                    <h3 data-i18n="rst.f4.t">Smart POS</h3>
+                    <p data-i18n="rst.f4.d">Fast order taking for all modes (Dining, Walk-in, Delivery) with detailed
+                        invoices.</p>
+                </div>
+
+                <!-- Tables -->
+                <div class="card">
+                    <h3 data-i18n="rst.f5.t">Table Management</h3>
+                    <p data-i18n="rst.f5.d">Visual table map. Open, close, merge tables, and move orders easily.</p>
+                </div>
+
+                <!-- Orders -->
+                <div class="card">
+                    <h3 data-i18n="rst.f6.t">Order Control</h3>
+                    <p data-i18n="rst.f6.d">Merge orders, split bills, and track preparation status in real-time.</p>
+                </div>
+
+                <!-- Staff -->
+                <div class="card">
+                    <h3 data-i18n="rst.f7.t">Role Management</h3>
+                    <p data-i18n="rst.f7.d">Specialized roles for Waiters, Chefs, and Delivery with performance
+                        tracking.</p>
+                </div>
+
+                <!-- KDS -->
+                <div class="card">
+                    <h3 data-i18n="rst.f8.t">Kitchen Display (KDS)</h3>
+                    <p data-i18n="rst.f8.d">Real-time order screens for kitchen staff. eliminate paper tickets.</p>
+                </div>
+
+                <!-- Delivery -->
+                <div class="card">
+                    <h3 data-i18n="rst.f9.t">Delivery Module</h3>
+                    <p data-i18n="rst.f9.d">Save customer addresses & phones. Auto-fill for returning delivery
+                        customers.</p>
+                </div>
+
+                <!-- Inventory -->
+                <div class="card">
+                    <h3 data-i18n="rst.f10.t">Inventory & Waste</h3>
+                    <p data-i18n="rst.f10.d">Auto-deduct ingredients per order. Detailed waste and consumption reports.
+                    </p>
+                </div>
+
+                <!-- Printing -->
+                <div class="card">
+                    <h3 data-i18n="rst.f11.t">Multi-Printing</h3>
+                    <p data-i18n="rst.f11.d">Route items to specific printers (Bar, Kitchen, Grill) automatically.</p>
+                </div>
+
+                <!-- Reports -->
+                <div class="card">
+                    <h3 data-i18n="rst.f12.t">Advanced Reports</h3>
+                    <p data-i18n="rst.f12.d">Profitability by item, staff performance, and total revenue by order type.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Online / Offline -->
+    <section class="testimonials" style="background:#0d111a;">
+        <div class="container">
+            <h2 data-i18n="rst.dep.title">Hybrid Deployment</h2>
+            <p data-i18n="rst.dep.desc" style="text-align:center; color:#ccc; margin-bottom:40px;">Reliable operation in
+                any environment.</p>
+
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:32px;">
+                <div class="t-card" style="text-align:center; padding:40px;">
+                    <h3 data-i18n="rst.online.t" style="margin-bottom:12px; color:var(--neo);">Online (Web App)</h3>
+                    <p data-i18n="rst.online.d">For remote management and multi-branch chains.</p>
+                </div>
+                <div class="t-card" style="text-align:center; padding:40px;">
+                    <h3 data-i18n="rst.offline.t" style="margin-bottom:12px; color:var(--violet);">Offline (Desktop)
+                    </h3>
+                    <p data-i18n="rst.offline.d">Uninterrupted service even without internet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="gallery">
+        <div class="container">
+            <h2 data-i18n="gallery.title">Screenshots</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
+                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 1"></div>
+                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
+                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 2"></div>
+                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
+                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="f-grid">
+                <div class="f-col">
+                    <h3>Itqan Solutions</h3>
+                    <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
+                    <p>📞 01126522373</p>
+                    <p>📞 +20 11 55253886</p>
+                </div>
+                <div class="f-col">
+                    <h3 data-i18n="footer.follow">Follow Us</h3>
+                    <div class="social">
+                        <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
+                                alt="Facebook"></a>
+                        <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
+                                alt="Instagram"></a>
+                        <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img
+                                src="icon-linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="f-col">
+                    <p data-i18n="footer.copy">© 2025 Itqan Solutions.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Simple menu toggle reuse
+        const menu = document.getElementById('menuToggle');
+        const links = document.querySelector('.nav .links');
+        const overlay = document.getElementById('navOverlay');
+        menu.addEventListener('click', () => {
+            const isOpen = !links.classList.contains('open');
+            links.classList.toggle('open', isOpen);
+            menu.setAttribute('aria-expanded', isOpen);
+            overlay.hidden = !isOpen;
+            overlay.classList.toggle('show', isOpen);
+        });
+        overlay.addEventListener('click', () => {
+            links.classList.remove('open');
+            menu.setAttribute('aria-expanded', 'false');
+            overlay.hidden = true;
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+
+</html>

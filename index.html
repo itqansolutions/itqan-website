@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Itqan Solutions — We Do Everything the Itqan Way</title>
+  <meta name="description"
+    content="Itqan Solutions provides professional Software Development, POS Systems, Web Design, and Digital Marketing services in Egypt and the MENA region.">
+  <meta name="keywords"
+    content="Software Development, POS System, Web Design, Digital Marketing, Retail POS, Restaurant POS, Itqan Solutions, Egypt, MENA">
+  <meta name="author" content="Itqan Solutions">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://itqansolutions.org/">
+  <meta property="og:title" content="Itqan Solutions — We Do Everything the Itqan Way">
+  <meta property="og:description"
+    content="Professional Software, POS, Websites, and Marketing solutions for your business growth.">
+  <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://itqansolutions.org/">
+  <meta property="twitter:title" content="Itqan Solutions — We Do Everything the Itqan Way">
+  <meta property="twitter:description"
+    content="Professional Software, POS, Websites, and Marketing solutions for your business growth.">
+  <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+  <div class="overlay" id="overlay"></div>
+  <div class="bg-noise"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <!-- Logo -->
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="Itqan Solutions">
+        <span class="brand-text">Itqan Solutions</span>
+      </a>
+
+      <!-- Menu Button -->
+      <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        ☰
+      </button>
+
+      <!-- Overlay -->
+      <div class="nav-overlay" id="navOverlay" hidden></div>
+
+      <!-- Links -->
+      <div class="links" id="primary-nav" role="menubar">
+        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+
+        <div class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-submenu">
+              <a href="javascript:void(0)" class="dropdown-item" style="display:flex; justify-content:space-between;">
+                <span data-i18n="nav.tashgheel">Tashgheel</span>
+                <span>▸</span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
+                  data-link>Retail</a>
+                <a href="tashgheel-restaurants.html" class="dropdown-item" data-i18n="nav.tashgheel.rest"
+                  data-link>Restaurants</a>
+                <a href="tashgheel-services.html" class="dropdown-item" data-i18n="nav.tashgheel.services"
+                  data-link>Services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
+        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
+        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </div>
+
+      <div class="cta">
+        <button class="lang" id="langToggle" aria-label="Toggle language">AR</button>
+        <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ===== HERO VIDEO ===== -->
+  <main class="stage" role="banner">
+    <div class="video-wrap" aria-hidden="true">
+      <video id="bgVideo" autoplay muted playsinline loop preload="auto" poster="hero-poster.jpg">
+        <source src="hero-mobile.mp4" type="video/mp4" media="(max-width: 600px)">
+        <source src="hero-desktop.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="actions">
+      <a href="services.html" class="btn btn-neo btn-xl" data-i18n="hero.discover" data-link>Discover Services</a>
+      <a href="contact.html" class="btn btn-ghost btn-xl" data-i18n="hero.contact" data-link>Get in Touch</a>
+    </div>
+  </main>
+
+  <!-- ===== CONTENT (CENTER BLOCK) ===== -->
+  <section class="intro">
+    <div class="container">
+      <h2 data-i18n="intro.title">Built for results, not just deliverables.</h2>
+      <p data-i18n="intro.text">
+        End-to-end delivery from development, POS systems, and websites to digital marketing and growth strategies.
+      </p>
+      <div class="chips">
+        <span>5+ Years Experience</span>
+        <span>POS Online/Offline</span>
+        <span>Bilingual (EN/AR)</span>
+        <span>Digital Marketing</span>
+      </div>
+    </div>
+  </section>
+  <!-- ===== SERVICES TEASER ===== -->
+  <section class="services">
+    <div class="container">
+      <h2 data-i18n="services.title">Our Services</h2>
+
+      <div class="grid service-grid">
+        <div class="card service-card">
+          <div class="icon-box">💻</div>
+          <h3 data-i18n="services.dev.title">Software Development</h3>
+          <p data-i18n="services.dev.desc">Custom systems tailored to your business needs.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon-box">📠</div>
+          <h3 data-i18n="services.pos.title">POS Systems</h3>
+          <p data-i18n="services.pos.desc">Offline/online, bilingual, secure POS for retail & restaurants.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon-box">🌐</div>
+          <h3 data-i18n="services.web.title">Websites & eCommerce</h3>
+          <p data-i18n="services.web.desc">Modern, responsive, SEO-friendly websites.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon-box">📱</div>
+          <h3 data-i18n="services.mobile.title">Mobile Apps</h3>
+          <p data-i18n="services.mobile.desc">iOS & Android apps with smooth user experience.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon-box">🚀</div>
+          <h3 data-i18n="services.marketing.title">Digital Marketing</h3>
+          <p data-i18n="services.marketing.desc">Social media, campaigns, and online growth strategies.</p>
+        </div>
+        <div class="card service-card">
+          <div class="icon-box">🎨</div>
+          <h3 data-i18n="services.branding.title">Branding & Design</h3>
+          <p data-i18n="services.branding.desc">Logos, identity, and professional visuals.</p>
+        </div>
+      </div><!-- /grid -->
+    </div>
+  </section>
+
+  <!-- ===== POS SPOTLIGHT ===== -->
+  <section class="pos-spotlight">
+    <div class="container">
+      <div class="spotlight">
+        <div class="text">
+          <h2 data-i18n="pos.title">POS Spotlight</h2>
+          <p data-i18n="pos.desc" style="color:var(--neo); margin-bottom:24px;">The ultimate business suite.</p>
+
+          <div class="t-grid-2x2">
+            <a href="tashgheel-retail.html" class="t-item" style="display:block; text-decoration:none;" data-link>
+              <h4 data-i18n="tashgheel.retail.t">Retail</h4>
+              <p data-i18n="tashgheel.retail.d">Shops & Clothes</p>
+            </a>
+            <a href="tashgheel-services.html" class="t-item" style="display:block; text-decoration:none;" data-link>
+              <h4 data-i18n="tashgheel.services.t">Services</h4>
+              <p data-i18n="tashgheel.services.d">Maintenance</p>
+            </a>
+            <a href="tashgheel-restaurants.html" class="t-item" style="display:block; text-decoration:none;" data-link>
+              <h4 data-i18n="tashgheel.rest.t">Restaurants</h4>
+              <p data-i18n="tashgheel.rest.d">F&B & Cafes</p>
+            </a>
+            <div class="t-item">
+              <h4 data-i18n="tashgheel.manu.t">Manufacturing</h4>
+              <p data-i18n="tashgheel.manu.d">Factories</p>
+            </div>
+          </div>
+          <a href="services.html" class="btn btn-neo btn-xl" data-i18n="pos.cta">See POS Demo</a>
+        </div><!-- ✅ اقفال div.text هنا -->
+
+        <div class="visual">
+          <img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg" data-img-ar="pos-mockup-AR.jpg"
+            alt="POS Demo Mockup">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 data-i18n="testimonials.title">What Our Clients Say</h2>
+
+      <div class="grid"><!-- ✅ الغلاف المفقود -->
+        <div class="t-card">
+          <p data-i18n="testimonials.t1.text">“Itqan’s POS transformed our sales process, easy to use and reliable.”</p>
+          <span data-i18n="testimonials.t1.author">— Ahmed, Retail Owner</span>
+        </div>
+        <div class="t-card">
+          <p data-i18n="testimonials.t2.text">“The website and marketing boosted our leads by 40% in 3 months.”</p>
+          <span data-i18n="testimonials.t2.author">— Sara, Marketing Manager</span>
+        </div>
+        <div class="t-card">
+          <p data-i18n="testimonials.t3.text">“Professional, bilingual support made all the difference for our
+            business.”</p>
+          <span data-i18n="testimonials.t3.author">— Omar, Restaurant Owner</span>
+        </div>
+      </div><!-- /grid -->
+    </div>
+  </section>
+  <!-- ===== BLOG HIGHLIGHTS ===== -->
+  <section class="blog-highlights">
+    <div class="container">
+      <h2 data-i18n="blog.latest">Latest Blog Posts</h2>
+
+      <div class="grid"><!-- ✅ الغلاف المفقود -->
+        <div class="post">
+          <img src="blog1.jpg" alt="Blog 1">
+          <h3 data-i18n="blog.p1.title">How POS Systems Transform Retail</h3>
+          <p data-i18n="blog.p1.desc">Discover how modern POS systems improve efficiency, reporting, and customer
+            experience.</p>
+          <a href="blog.html#pos-retail" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
+        </div>
+        <div class="post">
+          <img src="blog2.jpg" alt="Blog 2">
+          <h3 data-i18n="blog.p2.title">Why Every Business Needs a Website</h3>
+          <p data-i18n="blog.p2.desc">Your website is your business card. Learn how to make it effective and engaging.
+          </p>
+          <a href="blog.html#business-website" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
+        </div>
+        <div class="post">
+          <img src="blog3.jpg" alt="Blog 3">
+          <h3 data-i18n="blog.p3.title">Digital Marketing Trends 2025</h3>
+          <p data-i18n="blog.p3.desc">Stay ahead with the latest strategies in social media and digital advertising.</p>
+          <a href="blog.html#digital-trends" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
+        </div>
+      </div><!-- /grid -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="f-grid">
+        <div class="f-col">
+          <h3>Itqan Solutions</h3>
+          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
+          <p>📞 01126522373</p>
+          <p>📞 +20 11 55253886</p>
+        </div>
+        <div class="f-col">
+          <h3 data-i18n="footer.follow">Follow Us</h3>
+
+          <div class="social">
+            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
+                alt="Facebook"></a>
+            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
+                alt="Instagram"></a>
+            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png"
+                alt="LinkedIn"></a>
+          </div>
+        </div>
+        <div class="f-col">
+          <p data-i18n="footer.copy">© <span id="year"></span> Itqan Solutions. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    const menu = document.getElementById('menuToggle');
+    const links = document.querySelector('.nav .links');
+    const overlay = document.getElementById('navOverlay');
+
+    function toggleMenu(force) {
+      const isOpen = typeof force === 'boolean' ? force : !links.classList.contains('open');
+      links.classList.toggle('open', isOpen);
+      menu.setAttribute('aria-expanded', isOpen);
+      overlay.hidden = !isOpen;
+      overlay.classList.toggle('show', isOpen);
+      document.documentElement.classList.toggle('no-scroll', isOpen);
+      document.body.classList.toggle('no-scroll', isOpen);
+    }
+
+    menu.addEventListener('click', () => toggleMenu());
+    overlay.addEventListener('click', () => toggleMenu(false));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 900) toggleMenu(false);
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pergola 3D – Three.js</title>
+<style>
+  html, body { height:100%; margin:0; overflow:hidden; background:#e9eef3; }
+  #ui { position:absolute; top:10px; left:10px; right:10px;
+        display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+        background:rgba(255,255,255,.85); padding:8px 12px; border-radius:10px;
+        font-family:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; font-size:14px; }
+  canvas { width:100%; height:100%; display:block; }
+</style>
+</head>
+<body>
+<div id="ui">
+  <strong>Pergola 3D</strong>
+  <span>Drag: orbit • Right-drag: pan • Wheel: zoom</span>
+</div>
+<canvas id="c"></canvas>
+
+<!-- مكتبات Three.js + OrbitControls (نسخة UMD) -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+  const W=7.0, D=5.0, H=2.8;
+  const nx=4, ny=3;
+  const beamThk=0.18, beamWide=0.16;
+  const colSize=0.18, colInset=0.18;
+  const slatThk=0.028, slatWide=0.12, slatGap=0.06;
+
+  const frameColor=0xbcbcbc, woodColor=0x7a3e28;
+
+  const canvas=document.getElementById('c');
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+
+  const scene=new THREE.Scene();
+  scene.background=new THREE.Color(0xe9eef3);
+
+  const camera=new THREE.PerspectiveCamera(45,2,0.1,200);
+  camera.position.set(W*0.9,-D*1.2,H*1.2);
+
+  const controls=new THREE.OrbitControls(camera,renderer.domElement);
+  controls.target.set(W/2,D/2,H*0.5);
+  controls.update();
+
+  scene.add(new THREE.HemisphereLight(0xffffff,0x9aa0a6,0.9));
+  const dir=new THREE.DirectionalLight(0xffffff,0.8);
+  dir.position.set(4,-4,8); scene.add(dir);
+
+  const frameMat=new THREE.MeshStandardMaterial({color:frameColor,roughness:0.6});
+  const woodMat =new THREE.MeshStandardMaterial({color:woodColor, roughness:0.5});
+
+  const pergola=new THREE.Group(); scene.add(pergola);
+
+  // الأعمدة
+  const colGeom=new THREE.BoxGeometry(colSize,colSize,H);
+  [[colInset,colInset],[W-colInset,colInset],[W-colInset,D-colInset],[colInset,D-colInset]]
+    .forEach(([x,y])=>{
+      const m=new THREE.Mesh(colGeom,frameMat);
+      m.position.set(x,y,H/2); pergola.add(m);
+    });
+
+  // الكمر المحيط
+  const beamX=new THREE.BoxGeometry(W-2*beamWide,beamWide,beamThk);
+  const front=new THREE.Mesh(beamX,frameMat);
+  front.position.set(W/2,beamWide/2,H+beamThk/2);
+  const back=front.clone(); back.position.set(W/2,D-beamWide/2,H+beamThk/2);
+  pergola.add(front,back);
+
+  const beamY=new THREE.BoxGeometry(beamWide,D-2*beamWide,beamThk);
+  const left=new THREE.Mesh(beamY,frameMat);
+  left.position.set(beamWide/2,D/2,H+beamThk/2);
+  const right=left.clone(); right.position.set(W-beamWide/2,D/2,H+beamThk/2);
+  pergola.add(left,right);
+
+  // تقسيم البانلز
+  const cellW=(W-2*beamWide)/nx, cellD=(D-2*beamWide)/ny;
+  for(let i=1;i<nx;i++){
+    const x=beamWide+i*cellW;
+    const bar=new THREE.Mesh(new THREE.BoxGeometry(beamWide*0.8,D-2*beamWide,beamThk),frameMat);
+    bar.position.set(x,D/2,H+beamThk/2); pergola.add(bar);
+  }
+  for(let j=1;j<ny;j++){
+    const y=beamWide+j*cellD;
+    const bar=new THREE.Mesh(new THREE.BoxGeometry(W-2*beamWide,beamWide*0.8,beamThk),frameMat);
+    bar.position.set(W/2,y,H+beamThk/2); pergola.add(bar);
+  }
+
+  // البانلز بسلاّت
+  function panel(cx,cy,w,d,rot90=false){
+    const z=H+beamThk-slatThk*0.5, grp=new THREE.Group();
+    grp.position.set(cx-w/2,cy-d/2,z);
+    if(!rot90){
+      const slatG=new THREE.BoxGeometry(w,slatWide,slatThk);
+      for(let y=slatWide/2;y<=d-slatWide/2;y+=slatWide+slatGap){
+        const m=new THREE.Mesh(slatG,woodMat); m.position.set(w/2,y,0); grp.add(m);
+      }
+    }else{
+      const slatG=new THREE.BoxGeometry(slatWide,d,slatThk);
+      for(let x=slatWide/2;x<=w-slatWide/2;x+=slatWide+slatGap){
+        const m=new THREE.Mesh(slatG,woodMat); m.position.set(x,d/2,0); grp.add(m);
+      }
+    }
+    return grp;
+  }
+
+  for(let i=0;i<nx;i++){
+    for(let j=0;j<ny;j++){
+      const cx=beamWide+(i+0.5)*cellW, cy=beamWide+(j+0.5)*cellD;
+      pergola.add(panel(cx,cy,cellW,cellD,(i+j)%2===0));
+    }
+  }
+
+  function resize(){
+    const w=canvas.clientWidth,h=canvas.clientHeight;
+    if(canvas.width!==w||canvas.height!==h){
+      renderer.setSize(w,h,false);
+      camera.aspect=w/h; camera.updateProjectionMatrix();
+    }
+  }
+  function loop(){ resize(); renderer.render(scene,camera); requestAnimationFrame(loop); }
+  loop();
+})();
+</script>
+</body>
+</html>

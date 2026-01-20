@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tashgheel Retail — Professional POS</title>
+    <meta name="description"
+        content="Tashgheel Retail POS - The complete Point of Sale solution for retail shops, clothes stores, and mini-marts. Offline-first, bilingual, and inventory management." />
+    <meta name="keywords"
+        content="Retail POS, Shop POS, Inventory Management, Tashgheel, Itqan Solutions, Point of Sale Egypt, Cashier System">
+    <meta name="author" content="Itqan Solutions">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://itqansolutions.org/tashgheel-retail.html">
+    <meta property="og:title" content="Tashgheel Retail — Professional POS System">
+    <meta property="og:description"
+        content="Manage your shop with ease. Inventory, sales, and reports in one secure offline-first application.">
+    <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://itqansolutions.org/tashgheel-retail.html">
+    <meta property="twitter:title" content="Tashgheel Retail — Professional POS System">
+    <meta property="twitter:description"
+        content="Manage your shop with ease. Inventory, sales, and reports in one secure offline-first application.">
+    <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="bg-noise"></div>
+
+    <!-- Identical Navbar to Index -->
+    <nav class="nav" aria-label="Primary">
+        <div class="row">
+            <a class="brand" href="index.html" data-link>
+                <img class="brand-logo" src="favicon.png" alt="Itqan Solutions">
+                <span class="brand-text">Itqan Solutions</span>
+            </a>
+            <button class="menu" id="menuToggle">☰</button>
+            <div class="nav-overlay" id="navOverlay" hidden></div>
+            <div class="links" id="primary-nav">
+                <a href="index.html" data-i18n="nav.home" data-link>Home</a>
+                <a href="about.html" data-i18n="nav.about" data-link>About</a>
+
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-submenu">
+                            <a href="javascript:void(0)" class="dropdown-item"
+                                style="display:flex; justify-content:space-between;">
+                                <span data-i18n="nav.tashgheel">Tashgheel</span>
+                                <span>▸</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
+                                    data-link>Retail</a>
+                                <a href="tashgheel-restaurants.html" class="dropdown-item"
+                                    data-i18n="nav.tashgheel.rest" data-link>Restaurants</a>
+                                <a href="tashgheel-services.html" class="dropdown-item"
+                                    data-i18n="nav.tashgheel.services" data-link>Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="services.html" data-i18n="nav.services" data-link>Services</a>
+                <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
+                <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+                <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+            </div>
+            <div class="cta">
+                <button class="lang" id="langToggle">AR</button>
+                <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="stage"
+        style="min-height:60vh; display:flex; align-items:center; background: radial-gradient(circle at 50% 50%, #1a2236 0%, #000 100%);">
+        <div class="container" style="text-align:center; position:relative; z-index:2;">
+            <h1 data-i18n="ret.hero.title" style="font-size:clamp(32px, 5vw, 56px); margin-bottom:16px;">Tashgheel POS
+                for Retail</h1>
+            <p data-i18n="ret.hero.desc" style="color:#ccc; max-width:700px; margin:0 auto 32px; font-size:18px;">A
+                professional point of sale system for retail businesses.</p>
+            <div style="display:flex; justify-content:center; gap:16px;">
+                <a href="contact.html" class="btn btn-neo btn-xl" data-i18n="ret.cta.demo" data-link>Get a Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview -->
+    <section class="intro">
+        <div class="container">
+            <h2 data-i18n="ret.overview.title">Professional & Integrated</h2>
+            <p data-i18n="ret.overview.text">Designed to combine ease of use with powerful financial and operational
+                management.</p>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="services">
+        <div class="container">
+            <h2 data-i18n="ret.features.title" style="text-align:center; margin-bottom:40px;">Key Features</h2>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+                <!-- User Management -->
+                <div class="card">
+                    <h3 data-i18n="ret.f1.t">User & Roles</h3>
+                    <p data-i18n="ret.f1.d">Unlimited users, granular permissions, and full access control.</p>
+                </div>
+
+                <!-- Receipt Customization -->
+                <div class="card">
+                    <h3 data-i18n="ret.f2.t">Custom Receipts</h3>
+                    <p data-i18n="ret.f2.d">Customize logo, address, and footer. Professional print-ready design.</p>
+                </div>
+
+                <!-- Inventory -->
+                <div class="card">
+                    <h3 data-i18n="ret.f3.t">Stock & Inventory</h3>
+                    <p data-i18n="ret.f3.d">Track cost/sell prices, categories, and perform stock audits easily.</p>
+                </div>
+
+                <!-- Expenses -->
+                <div class="card">
+                    <h3 data-i18n="ret.f4.t">Expenses</h3>
+                    <p data-i18n="ret.f4.d">Track daily expenses, assign to employees, linked to financial reports.</p>
+                </div>
+
+                <!-- Sales Targets -->
+                <div class="card">
+                    <h3 data-i18n="ret.f5.t">Sales Targets</h3>
+                    <p data-i18n="ret.f5.d">Set monthly targets for staff and track performance percentages.</p>
+                </div>
+
+                <!-- Backup -->
+                <div class="card">
+                    <h3 data-i18n="ret.f6.t">Secure Backup</h3>
+                    <p data-i18n="ret.f6.d">Create and restore backups anytime, anywhere, without technical help.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Reporting Spotlight -->
+    <section class="pos-spotlight">
+        <div class="container">
+            <div class="spotlight">
+                <div class="text">
+                    <h2 data-i18n="ret.rep.title">Enterprise-Grade Reporting</h2>
+                    <p data-i18n="ret.rep.desc" style="color:#ccc; margin-bottom:20px;">Detailed insights inspired by
+                        major ERP systems.</p>
+                    <ul>
+                        <li data-i18n="ret.rep.l1">Total Sales (Cash, Visa, Mobile)</li>
+                        <li data-i18n="ret.rep.l2">Cost of Goods Sold (COGS) & Net Profit</li>
+                        <li data-i18n="ret.rep.l3">Sales by User, Category, or Product</li>
+                        <li data-i18n="ret.rep.l4">Inventory Valuation & Returns</li>
+                    </ul>
+                </div>
+                <div class="visual">
+                    <!-- Placeholder, in real usage use a screenshot -->
+                    <div
+                        style="background:rgba(255,255,255,0.05); border:1px solid var(--line); border-radius:12px; height:300px; display:flex; align-items:center; justify-content:center; color:#555;">
+                        Report Screenshot
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online / Offline -->
+    <section class="testimonials" style="background:#0d111a;">
+        <div class="container">
+            <h2 data-i18n="ret.dep.title">Online & Offline Freedom</h2>
+            <p data-i18n="ret.dep.desc" style="text-align:center; color:#ccc; margin-bottom:40px;">Choose the mode that
+                fits your operation. Fully featured in both.</p>
+
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:32px;">
+                <div class="t-card" style="text-align:center; padding:40px;">
+                    <h3 data-i18n="ret.online.t" style="margin-bottom:12px; color:var(--neo);">Online (Web App)</h3>
+                    <p data-i18n="ret.online.d">Perfect for multi-branch management and remote access. Real-time sync.
+                    </p>
+                </div>
+                <div class="t-card" style="text-align:center; padding:40px;">
+                    <h3 data-i18n="ret.offline.t" style="margin-bottom:12px; color:var(--violet);">Offline (Desktop)
+                    </h3>
+                    <p data-i18n="ret.offline.d">Maximum stability without internet dependence. Local data storage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="gallery">
+        <div class="container">
+            <h2 data-i18n="gallery.title">Screenshots</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
+                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 1"></div>
+                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
+                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 2"></div>
+                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
+                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="f-grid">
+                <div class="f-col">
+                    <h3>Itqan Solutions</h3>
+                    <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
+                </div>
+                <div class="f-col">
+                    <p data-i18n="footer.copy">© 2025 Itqan Solutions.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Simple menu toggle reuse
+        const menu = document.getElementById('menuToggle');
+        const links = document.querySelector('.nav .links');
+        const overlay = document.getElementById('navOverlay');
+        menu.addEventListener('click', () => {
+            const isOpen = !links.classList.contains('open');
+            links.classList.toggle('open', isOpen);
+            overlay.hidden = !isOpen;
+            overlay.classList.toggle('show', isOpen);
+        });
+        overlay.addEventListener('click', () => {
+            links.classList.remove('open');
+            overlay.hidden = true;
+            overlay.classList.remove('show');
+        });
+    </script>
+</body>
+
+</html>
