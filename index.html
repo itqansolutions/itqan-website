@@ -300,6 +300,23 @@
     window.addEventListener('resize', () => {
       if (window.innerWidth >= 900) toggleMenu(false);
     });
+
+    // Mobile Video Autoplay Fix
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('bgVideo');
+      if (video) {
+        const playVideo = () => {
+          if (video.paused) {
+            video.play().catch(e => console.log('Autoplay prevented:', e));
+          }
+        };
+        // Try playing immediately
+        playVideo();
+        // Try on first interaction (fallback)
+        document.addEventListener('touchstart', playVideo, { once: true });
+        document.addEventListener('click', playVideo, { once: true });
+      }
+    });
   </script>
 
 </body>

@@ -171,12 +171,14 @@ body {
   flex-direction: column;
   gap: 14px;
   padding: 18px;
-  background: rgba(10, 15, 24, .96);
-  border-inline-start: 1px solid rgba(255, 255, 255, .06);
+  background: #0a0f18;
+  /* Solid background for better readability */
+  border-inline-start: 1px solid rgba(255, 255, 255, .1);
   transform: translateX(100%);
   /* مخفي خارج الشاشة */
   transition: transform .28s ease;
   z-index: 45;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
 }
 
 /* إظهار السايدبار */

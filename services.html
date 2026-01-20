@@ -36,7 +36,14 @@
   <nav class="nav" aria-label="Primary">
     <div class="row">
       <a class="brand" href="index.html" data-link><span class="dot"></span><span>Itqan Solutions</span></a>
-      <div class="links" role="menubar">
+
+      <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        ☰
+      </button>
+
+      <div class="nav-overlay" id="navOverlay" hidden></div>
+
+      <div class="links" id="primary-nav" role="menubar">
         <a href="index.html" data-i18n="nav.home" data-link>Home</a>
         <a href="about.html" data-i18n="nav.about" data-link>About</a>
 
@@ -233,6 +240,27 @@
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    const menu = document.getElementById('menuToggle');
+    const links = document.querySelector('.nav .links');
+    const overlay = document.getElementById('navOverlay');
+
+    function toggleMenu(force) {
+      const isOpen = typeof force === 'boolean' ? force : !links.classList.contains('open');
+      links.classList.toggle('open', isOpen);
+      menu.setAttribute('aria-expanded', isOpen);
+      overlay.hidden = !isOpen;
+      overlay.classList.toggle('show', isOpen);
+      document.documentElement.classList.toggle('no-scroll', isOpen);
+      document.body.classList.toggle('no-scroll', isOpen);
+    }
+
+    menu.addEventListener('click', () => toggleMenu());
+    overlay.addEventListener('click', () => toggleMenu(false));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 900) toggleMenu(false);
+    });
+  </script>
 </body>
 
 </html>
