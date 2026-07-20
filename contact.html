@@ -1,203 +1,373 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Itqan Solutions — Contact</title>
-  <meta name="description"
-    content="Contact Itqan Solutions for your software, POS, or marketing project. We reply within 24 hours." />
-  <meta name="keywords" content="Contact Itqan, Request Quote, Software Company Egypt, POS Support, Web Design Cairo">
-  <meta name="author" content="Itqan Solutions">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://itqansolutions.org/contact.html">
-  <meta property="og:title" content="Contact Itqan Solutions — Get a Quote">
-  <meta property="og:description" content="Ready to start your project? Get in touch with our team today.">
-  <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://itqansolutions.org/contact.html">
-  <meta property="twitter:title" content="Contact Itqan Solutions — Get a Quote">
-  <meta property="twitter:description" content="Ready to start your project? Get in touch with our team today.">
-  <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
+  <title>Contact Us — ITQAN Solutions</title>
+  <meta name="description" content="Get in touch with ITQAN Solutions for inquiries, demos, or support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
-
 </head>
-
 <body>
   <div class="overlay" id="overlay"></div>
 
+  <!-- NAV (same on every page) -->
   <nav class="nav" aria-label="Primary">
     <div class="row">
-      <a class="brand" href="index.html" data-link><span class="dot"></span><span>Itqan Solutions</span></a>
-
-      <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-        ☰
-      </button>
-
-      <div class="nav-overlay" id="navOverlay" hidden></div>
-
-      <div class="links" id="primary-nav" role="menubar">
-        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
-        <a href="about.html" data-i18n="nav.about" data-link>About</a>
-
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <!-- Solutions dropdown -->
         <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-submenu">
-              <a href="javascript:void(0)" class="dropdown-item" style="display:flex; justify-content:space-between;">
-                <span data-i18n="nav.tashgheel">Tashgheel</span>
-                <span>▸</span>
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
               </a>
-              <div class="dropdown-menu">
-                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
-                  data-link>Retail</a>
-                <a href="tashgheel-restaurants.html" class="dropdown-item" data-i18n="nav.tashgheel.rest"
-                  data-link>Restaurants</a>
-                <a href="tashgheel-services.html" class="dropdown-item" data-i18n="nav.tashgheel.services"
-                  data-link>Services</a>
-              </div>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
             </div>
           </div>
         </div>
-
-        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
-        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
-        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <!-- Products dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
         <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
-      </div>
-      <div class="cta">
-        <button class="lang" id="langToggle">AR</button>
-        <a class="btn btn-neo" href="#form" data-i18n="cta.quote" data-link>Request a Quote</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
       </div>
     </div>
   </nav>
 
-  <header class="intro reveal" style="padding-top:120px">
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- PAGE CONTENT HERE -->
+  <header class="page-hero" style="padding: 100px 0 60px; text-align: center;">
     <div class="container">
-      <h2 data-i18n="contact.title">Get in Touch</h2>
-      <p style="color:#ccc" data-i18n="contact.lead">Tell us about your project. We reply within 24 hours.</p>
+      <span class="section-label badge" data-i18n="contact.label">Get In Touch</span>
+      <h1 class="page-title reveal" data-i18n="contact.title">Contact Us</h1>
+      <p class="page-subtitle reveal" style="animation-delay: 0.1s; max-width: 600px; margin: 1rem auto 0;" data-i18n="contact.desc">We're here to help you accelerate your digital journey.</p>
     </div>
   </header>
 
-  <section class="services contact-section" id="form">
-
+  <section class="section" style="padding: 60px 0;">
     <div class="container">
-      <div class="grid">
-        <div class="card reveal-left contact-card">
-          <h3 data-i18n="contact.info">Contact Info</h3>
-          <ul class="contact-list">
-            <li><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></li>
-            <li>📞 +201126522373</li>
-            <li>📞 +201155253886</li>
-          </ul>
-          <div class="social">
-            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="media/icon-facebook.svg"
-                alt="Facebook"></a>
-            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="media/icon-instagram.svg"
-                alt="Instagram"></a>
-            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="media/icon-linkedin.svg"
-                alt="LinkedIn"></a>
+      <div class="contact-grid stagger" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem;">
+        <div class="contact-info reveal">
+          <h2 data-i18n="contact.info.title" style="margin-bottom: 1rem;">Let's Talk</h2>
+          <p data-i18n="contact.desc" style="margin-bottom: 2rem; color: var(--muted);">We're here to help you accelerate your digital journey.</p>
+          
+          <div class="contact-detail" style="display:flex; gap: 1rem; margin-bottom: 1.5rem">
+            <span style="font-size: 1.5rem">📧</span>
+            <div>
+              <strong style="display:block; margin-bottom: 0.25rem;">Email</strong>
+              <a href="mailto:info@itqansolutions.org" data-i18n="contact.email" style="color: var(--primary); text-decoration: none;">info@itqansolutions.org</a>
+            </div>
+          </div>
+          
+          <div class="contact-detail" style="display:flex; gap: 1rem; margin-bottom: 1.5rem">
+            <span style="font-size: 1.5rem">📞</span>
+            <div>
+              <strong style="display:block; margin-bottom: 0.25rem;" data-i18n="contact.phone.f">Phone</strong>
+              <a href="tel:+201126522373" style="display:block; color:inherit; text-decoration:none;" data-i18n="contact.phone1">+20 112 652 2373</a>
+              <a href="tel:+201155253886" style="display:block; color:inherit; text-decoration:none;" data-i18n="contact.phone2">+20 115 525 3886</a>
+              <a href="tel:+201142703439" style="display:block; color:inherit; text-decoration:none;" data-i18n="contact.phone3">+20 114 270 3439</a>
+            </div>
+          </div>
+          
+          <div class="contact-detail" style="display:flex; gap: 1rem; margin-bottom: 2rem">
+            <span style="font-size: 1.5rem">📍</span>
+            <div>
+              <strong style="display:block; margin-bottom: 0.25rem;">Location</strong>
+              <span>Cairo, Egypt — Egypt & GCC</span>
+            </div>
+          </div>
+          
+          <div class="social-links" style="display:flex; gap: 1rem;">
+            <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <img src="icon-facebook.png" alt="Facebook" style="width:24px;height:24px;">
+            </a>
+            <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <img src="icon-instagram.png" alt="Instagram" style="width:24px;height:24px;">
+            </a>
+            <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <img src="icon-linkedin.png" alt="LinkedIn" style="width:24px;height:24px;">
+            </a>
           </div>
         </div>
 
-
-        <div class="card reveal-right" style="text-align:start">
-          <h3 data-i18n="contact.form.title">Send a Message</h3>
-
-          <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form" novalidate>
-            <!-- صف مزدوج: الاسم + الإيميل -->
-            <div class="row-2">
-              <div class="field">
-                <label for="cf-name" data-i18n="contact.form.name">Name</label>
-                <input id="cf-name" name="name" type="text" required placeholder="" />
+        <div class="contact-form-card card reveal">
+          <h3 data-i18n="contact.form.title" style="margin-bottom: 1.5rem">Send a Message</h3>
+          <form class="contact-form" id="contactForm">
+            <div class="form-grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div>
+                <label data-i18n="contact.name" style="display:block; margin-bottom:0.5rem; font-weight:500; font-size:0.875rem;">Name</label>
+                <input type="text" name="name" required style="width:100%; padding:0.75rem; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit;">
               </div>
-              <div class="field">
-                <label for="cf-email" data-i18n="contact.form.email">Email</label>
-                <input id="cf-email" name="_replyto" type="email" required placeholder="" />
+              <div>
+                <label style="display:block; margin-bottom:0.5rem; font-weight:500; font-size:0.875rem;">Email</label>
+                <input type="email" name="email" required style="width:100%; padding:0.75rem; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit;">
               </div>
             </div>
-
-            <!-- تليفون -->
-            <div class="field">
-              <label for="cf-phone" data-i18n="contact.form.phone">Phone</label>
-              <input id="cf-phone" name="phone" type="tel" placeholder="" />
+            <div class="form-grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div>
+                <label style="display:block; margin-bottom:0.5rem; font-weight:500; font-size:0.875rem;">Phone</label>
+                <input type="tel" name="phone" style="width:100%; padding:0.75rem; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit;">
+              </div>
+              <div>
+                <label style="display:block; margin-bottom:0.5rem; font-weight:500; font-size:0.875rem;">Company</label>
+                <input type="text" name="company" style="width:100%; padding:0.75rem; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit;">
+              </div>
             </div>
-
-            <!-- رسالة -->
-            <div class="field">
-              <label for="cf-msg" data-i18n="contact.form.msg">Message</label>
-              <textarea id="cf-msg" name="message" rows="6" required></textarea>
+            <div style="margin-bottom: 1rem;">
+              <label style="display:block; margin-bottom:0.5rem; font-weight:500; font-size:0.875rem;">Service</label>
+              <select name="service" style="width:100%; padding:0.75rem; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit; background:white;">
+                <option value="software" data-i18n="contact.service.1">Software Engineering</option>
+                <option value="digital" data-i18n="contact.service.2">Digital Solutions</option>
+                <option value="marketing" data-i18n="contact.service.3">Marketing & Creative</option>
+                <option value="automation" data-i18n="contact.service.4">Business Automation</option>
+                <option value="other" data-i18n="contact.service.5">Other</option>
+              </select>
             </div>
-
-            <!-- زر الإرسال -->
-            <div class="form-actions">
-              <button class="btn btn-neo btn-xl" type="submit" data-i18n="contact.form.send">Send</button>
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display:block; margin-bottom:0.5rem; font-weight:500; font-size:0.875rem;">Message</label>
+              <textarea name="message" rows="4" required style="width:100%; padding:0.75rem; border:1px solid #e2e8f0; border-radius:8px; font-family:inherit; resize:vertical;"></textarea>
             </div>
-
-            <!-- رسائل بسيطة -->
-            <p class="form-note" aria-live="polite"></p>
+            <button type="submit" class="btn btn-primary w-full" data-i18n="contact.send" style="width: 100%; justify-content:center">Send Message</button>
+            <p class="form-note" style="margin-top: 1rem; text-align: center; color: var(--success); font-weight: 500; font-size:0.875rem;"></p>
           </form>
         </div>
-
       </div>
     </div>
   </section>
 
-  <footer class="footer">
+  <section class="faq-section section" style="padding: 80px 0; background: var(--surface)">
     <div class="container">
-      <div class="f-grid">
-        <div class="f-col">
-          <h3>Itqan Solutions</h3>
-          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
-          <p>📞 +201126522373</p>
-          <p>📞 +201155253886</p>
-        </div>
-        <div class="f-col">
-          <h3 data-i18n="footer.follow">Follow Us</h3>
-          <div class="social">
-            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
-                alt="Facebook"></a>
-            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
-                alt="Instagram"></a>
-            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png"
-                alt="LinkedIn"></a>
+      <div class="section-header text-center reveal">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title" data-i18n="srv.faq.title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list mx-auto" style="max-width: 800px;">
+        <div class="faq-item card reveal" style="margin-bottom: 1rem; padding: 1.5rem; cursor: pointer;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-family: var(--font-heading);">
+            <span data-i18n="faq.q1">What services does ITQAN Solutions offer?</span>
+            <span class="faq-icon" style="color: var(--primary); font-size: 1.25rem;">+</span>
+          </div>
+          <div class="faq-answer" style="display: none; margin-top: 1rem;">
+            <div class="faq-answer-inner">
+              <p data-i18n="faq.a1" style="color: var(--muted); margin: 0;">We offer software engineering, digital solutions, marketing & creative services, and business automation.</p>
+            </div>
           </div>
         </div>
-        <div class="f-col">
-          <p data-i18n="footer.copy"></p>
+        <div class="faq-item card reveal" style="margin-bottom: 1rem; padding: 1.5rem; cursor: pointer;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-family: var(--font-heading);">
+            <span data-i18n="faq.q2">Do you provide custom ERP solutions?</span>
+            <span class="faq-icon" style="color: var(--primary); font-size: 1.25rem;">+</span>
+          </div>
+          <div class="faq-answer" style="display: none; margin-top: 1rem;">
+            <div class="faq-answer-inner">
+              <p data-i18n="faq.a2" style="color: var(--muted); margin: 0;">Yes, we specialize in building highly customized ERP systems tailored to your specific business requirements.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item card reveal" style="margin-bottom: 1rem; padding: 1.5rem; cursor: pointer;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-family: var(--font-heading);">
+            <span data-i18n="faq.q3">What industries do you serve?</span>
+            <span class="faq-icon" style="color: var(--primary); font-size: 1.25rem;">+</span>
+          </div>
+          <div class="faq-answer" style="display: none; margin-top: 1rem;">
+            <div class="faq-answer-inner">
+              <p data-i18n="faq.a3" style="color: var(--muted); margin: 0;">We serve a wide range of industries including retail, restaurants, services, and B2B enterprises.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item card reveal" style="margin-bottom: 1rem; padding: 1.5rem; cursor: pointer;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-family: var(--font-heading);">
+            <span data-i18n="faq.q4">What is Tashgheel?</span>
+            <span class="faq-icon" style="color: var(--primary); font-size: 1.25rem;">+</span>
+          </div>
+          <div class="faq-answer" style="display: none; margin-top: 1rem;">
+            <div class="faq-answer-inner">
+              <p data-i18n="faq.a4" style="color: var(--muted); margin: 0;">Tashgheel is our flagship suite of products designed specifically for Retail, Restaurants, and Service-based businesses.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item card reveal" style="margin-bottom: 1rem; padding: 1.5rem; cursor: pointer;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-family: var(--font-heading);">
+            <span data-i18n="faq.q5">Do you work with clients outside Egypt?</span>
+            <span class="faq-icon" style="color: var(--primary); font-size: 1.25rem;">+</span>
+          </div>
+          <div class="faq-answer" style="display: none; margin-top: 1rem;">
+            <div class="faq-answer-inner">
+              <p data-i18n="faq.a5" style="color: var(--muted); margin: 0;">Yes, we work with clients across the GCC region and globally to deliver top-tier digital solutions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item card reveal" style="margin-bottom: 1rem; padding: 1.5rem; cursor: pointer;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-family: var(--font-heading);">
+            <span data-i18n="faq.q6">How long does a typical project take?</span>
+            <span class="faq-icon" style="color: var(--primary); font-size: 1.25rem;">+</span>
+          </div>
+          <div class="faq-answer" style="display: none; margin-top: 1rem;">
+            <div class="faq-answer-inner">
+              <p data-i18n="faq.a6" style="color: var(--muted); margin: 0;">Project timelines vary based on scope and complexity. Contact us for a precise estimate for your project.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item card reveal" style="margin-bottom: 1rem; padding: 1.5rem; cursor: pointer;">
+          <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-family: var(--font-heading);">
+            <span data-i18n="faq.q7">How can I request a demo?</span>
+            <span class="faq-icon" style="color: var(--primary); font-size: 1.25rem;">+</span>
+          </div>
+          <div class="faq-answer" style="display: none; margin-top: 1rem;">
+            <div class="faq-answer-inner">
+              <p data-i18n="faq.a7" style="color: var(--muted); margin: 0;">You can request a demo by filling out the contact form on this page or clicking the "Request a Demo" button in the navigation.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 data-i18n="cta.title">Ready to Transform Your Business?</h2>
+      <p data-i18n="cta.desc">Let's build technology that fits the way you work. Request a consultation and we'll design a roadmap tailored to your goals.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white" data-i18n="cta.btn1" data-link>Request a Consultation</a>
+        <a href="portfolio.html" class="btn btn-transparent" data-i18n="cta.btn2" data-link>View Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (same on every page) -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
     </div>
   </footer>
 
   <script src="app.js"></script>
-  <script>
-    const menu = document.getElementById('menuToggle');
-    const links = document.querySelector('.nav .links');
-    const overlay = document.getElementById('navOverlay');
-
-    function toggleMenu(force) {
-      const isOpen = typeof force === 'boolean' ? force : !links.classList.contains('open');
-      links.classList.toggle('open', isOpen);
-      menu.setAttribute('aria-expanded', isOpen);
-      overlay.hidden = !isOpen;
-      overlay.classList.toggle('show', isOpen);
-      document.documentElement.classList.toggle('no-scroll', isOpen);
-      document.body.classList.toggle('no-scroll', isOpen);
-    }
-
-    menu.addEventListener('click', () => toggleMenu());
-    overlay.addEventListener('click', () => toggleMenu(false));
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 900) toggleMenu(false);
-    });
-  </script>
 </body>
-
 </html>

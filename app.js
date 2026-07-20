@@ -1,468 +1,1052 @@
 /* =========================
-   Page transitions (internal links)
+   Page Transitions
    ========================= */
 document.addEventListener('click', (e) => {
   const a = e.target.closest('a[data-link]');
   if (!a) return;
   const url = new URL(a.href, location.href);
-  if (url.origin !== location.origin) return; // external
+  if (url.origin !== location.origin) return;
   e.preventDefault();
   const overlay = document.getElementById('overlay');
   if (overlay) overlay.classList.add('active');
-  setTimeout(() => { location.href = a.href; }, 420);
+  setTimeout(() => { location.href = a.href; }, 380);
 });
 
 /* =========================
-   i18n (EN/AR)
+   i18n Dictionary (EN / AR)
    ========================= */
 const i18n = {
   en: {
-    // Nav + Hero + Intro
-    'nav.home': 'Home', 'nav.about': 'About', 'nav.products': 'Products', 'nav.services': 'Services', 'nav.portfolio': 'Portfolio', 'nav.blog': 'Blog', 'nav.contact': 'Contact',
-    'nav.tashgheel': 'Tashgheel System',
-    'nav.tashgheel.retail': 'Retail POS',
-    'nav.tashgheel.services': 'Services POS',
-    'nav.tashgheel.rest': 'Restaurants POS',
-    'cta.quote': 'Request a Quote', 'hero.discover': 'Discover Services', 'hero.contact': 'Get in Touch',
-    'intro.title': 'Built for results, not just deliverables.',
-    'intro.text': 'End-to-end delivery from development, POS systems, and websites to digital marketing and growth strategies.',
+    /* --- Navigation --- */
+    'nav.solutions':        'Solutions',
+    'nav.sw':               'Software Engineering',
+    'nav.digital':          'Digital Solutions',
+    'nav.marketing':        'Marketing & Creative',
+    'nav.automation':       'Business Automation',
+    'nav.products':         'Products',
+    'nav.ret':              'Tashgheel Retail',
+    'nav.rest':             'Tashgheel Restaurants',
+    'nav.srv':              'Tashgheel Services',
+    'nav.industries':       'Industries',
+    'nav.cases':            'Case Studies',
+    'nav.insights':         'Insights',
+    'nav.about':            'About',
+    'nav.contact':          'Contact',
+    'nav.home':             'Home',
+    'cta.demo':             'Request a Demo',
+    'cta.quote':            'Request a Quote',
 
-    // Services
-    'services.title': 'Our Services',
-    'services.dev.title': 'Software Development',
-    'services.dev.desc': 'Custom systems tailored to your business needs.',
-    'services.pos.title': 'Tashgheel Solutions',
-    'services.pos.desc': 'Offline/online, bilingual, secure POS for retail & restaurants.',
-    'services.web.title': 'Websites & eCommerce',
-    'services.web.desc': 'Modern, responsive, SEO-friendly websites.',
-    'services.mobile.title': 'Mobile Apps',
-    'services.mobile.desc': 'iOS & Android apps with smooth user experience.',
-    'services.marketing.title': 'Digital Marketing',
-    'services.marketing.desc': 'Social media, campaigns, and online growth strategies.',
-    'services.branding.title': 'Branding & Design',
-    'services.branding.desc': 'Logos, identity, and professional visuals.',
+    /* --- Hero --- */
+    'hero.badge':           'Digital Transformation Partner',
+    'hero.h1a':             'Technology That Powers',
+    'hero.h1b':             'Your Business.',
+    'hero.h1c':             'Marketing That Grows It.',
+    'hero.subtitle':        'At ITQAN Solutions, we design, develop, and market tailored digital solutions that help businesses streamline operations, increase productivity, and accelerate growth.',
+    'hero.cta1':            'Request a Demo',
+    'hero.cta2':            'Explore Solutions',
+    'hero.trust':           'Trusted by businesses across Egypt & GCC',
 
-    // Tashgheel Spotlight
-    'pos.title': 'Meet Tashgheel',
-    'pos.desc': 'The ultimate business management suite. Works seamlessly as a **Desktop App (Offline)** or **Web App (Online)**.',
+    /* --- Ecosystem --- */
+    'eco.label':            'One Ecosystem. Unlimited Growth.',
+    'eco.title':            'Everything Your Business Needs, Connected.',
+    'eco.desc':             'From marketing to software, from branding to automation—every part of your operation works together as one intelligent system.',
+    'eco.message':          '🔗 One partner. One ecosystem. Unlimited growth.',
 
-    'tashgheel.retail.t': 'Tashgheel Retail',
-    'tashgheel.retail.d': 'Fashion, clothing, and retail shops.',
+    /* --- Solutions --- */
+    'sol.label':            'Our Solutions',
+    'sol.title':            'Four Divisions. One Vision.',
+    'sol.desc':             'We combine engineering, design, marketing, and automation into a unified platform built around your business goals.',
+    'sol.sw.title':         'Software Engineering',
+    'sol.sw.tag':           'ERP · CRM · POS · HRMS',
+    'sol.sw.desc':          'Enterprise-grade custom software tailored precisely to your operational workflow—from ERP and CRM to POS systems and business intelligence dashboards.',
+    'sol.sw.link':          'Explore Engineering →',
+    'sol.dig.title':        'Digital Solutions',
+    'sol.dig.tag':          'Web · Mobile · UI/UX',
+    'sol.dig.desc':         'Modern websites, high-performance e-commerce platforms, native mobile applications, and user-centered digital experiences that convert visitors into customers.',
+    'sol.dig.link':         'Explore Digital →',
+    'sol.mkt.title':        'Marketing & Creative',
+    'sol.mkt.tag':          'Strategy · Content · Ads · Production',
+    'sol.mkt.desc':         'Full-service marketing from strategy and branding to content production, social media management, performance advertising, and campaign analytics.',
+    'sol.mkt.link':         'Explore Marketing →',
+    'sol.aut.title':        'Business Automation',
+    'sol.aut.tag':          'AI · Integrations · Workflows',
+    'sol.aut.desc':         'Connect every system. Automate repetitive tasks. Leverage AI-powered workflows, API integrations, and intelligent reporting to operate at a higher level.',
+    'sol.aut.link':         'Explore Automation →',
 
-    'tashgheel.services.t': 'Tashgheel Services',
-    'tashgheel.services.d': 'Maintenance centers and service shops.',
+    /* --- Featured Products --- */
+    'prod.label':           'Featured Products',
+    'prod.title':           'Our Flagship Solutions',
+    'prod.desc':            'Purpose-built software products that are already powering businesses across Egypt and the region.',
+    'prod.ret.title':       'Tashgheel Retail',
+    'prod.ret.badge':       'Retail POS',
+    'prod.ret.desc':        'A complete point-of-sale and inventory management solution for retail, clothing, and multi-branch shops.',
+    'prod.ret.f1':          'Multi-branch management',
+    'prod.ret.f2':          'Offline + Online operation',
+    'prod.ret.f3':          'ERP-grade reporting',
+    'prod.ret.f4':          'Arabic & English interface',
+    'prod.rest.title':      'Tashgheel Restaurants',
+    'prod.rest.badge':      'F&B POS',
+    'prod.rest.desc':       'An end-to-end restaurant management platform covering POS, tables, kitchen display, delivery, and COGS analysis.',
+    'prod.rest.f1':         'Kitchen Display System (KDS)',
+    'prod.rest.f2':         'Table & delivery management',
+    'prod.rest.f3':         'Recipe costing & waste tracking',
+    'prod.rest.f4':         'Multi-channel pricing',
+    'prod.srv.title':       'Tashgheel Services',
+    'prod.srv.badge':       'Service Center ERP',
+    'prod.srv.desc':        'Built for maintenance centers, auto workshops, and service businesses. Manage visits, technicians, spare parts, and invoicing.',
+    'prod.srv.f1':          'Customer & vehicle profiles',
+    'prod.srv.f2':          'Technician performance tracking',
+    'prod.srv.f3':          'Supplier & parts management',
+    'prod.srv.f4':          'Appointment scheduling',
+    'prod.erp.title':       'Custom ERP',
+    'prod.erp.badge':       'Enterprise Software',
+    'prod.erp.desc':        'Fully tailored enterprise resource planning systems built around your unique operational processes and industry requirements.',
+    'prod.erp.f1':          'Modular architecture',
+    'prod.erp.f2':          'Cloud & on-premise deployment',
+    'prod.erp.f3':          'Custom workflows & dashboards',
+    'prod.erp.f4':          'API-first integration ready',
 
-    'tashgheel.rest.t': 'Tashgheel Restaurants',
-    'tashgheel.rest.d': 'F&B, cafes, and food service.',
+    /* --- Industries --- */
+    'ind.label':            'Industries We Serve',
+    'ind.title':            'Built for Your Sector',
+    'ind.desc':             'Our solutions are adapted for the unique challenges of each industry—not generic templates.',
+    'ind.retail':           'Retail',
+    'ind.rest':             'Restaurants',
+    'ind.health':           'Healthcare',
+    'ind.edu':              'Education',
+    'ind.mfg':              'Manufacturing',
+    'ind.dist':             'Distribution',
+    'ind.log':              'Logistics',
+    'ind.whole':            'Wholesale',
+    'ind.pro':              'Professional Services',
+    'ind.gov':              'Government',
 
-    'tashgheel.manu.t': 'Tashgheel Manufacturing',
-    'tashgheel.manu.d': 'Factories and production lines.',
+    /* --- Why ITQAN --- */
+    'why.label':            'Why ITQAN',
+    'why.title':            'The Difference Is in the Details',
+    'why.desc':             'We are not a generic software house. We are a strategic technology partner committed to your long-term growth.',
+    'why.b1.t':             'Tailor-Made Solutions',
+    'why.b1.d':             'Every system we build is designed specifically for your business processes—never a generic template.',
+    'why.b2.t':             'Offline + Online Capable',
+    'why.b2.d':             'Our software works with or without internet. Business continuity is never compromised.',
+    'why.b3.t':             'Multi-Branch Ready',
+    'why.b3.d':             'Manage unlimited branches from a single dashboard with real-time synchronization.',
+    'why.b4.t':             'Cloud-First Architecture',
+    'why.b4.d':             'Secure, scalable cloud infrastructure with enterprise-grade reliability and uptime.',
+    'why.b5.t':             'Arabic & English',
+    'why.b5.d':             'Full RTL/LTR bilingual support across all our systems and interfaces.',
+    'why.b6.t':             'Enterprise Security',
+    'why.b6.d':             'Role-based access control, data encryption, secure backups, and GDPR-aligned practices.',
+    'why.b7.t':             'Scalable Systems',
+    'why.b7.d':             'Our architecture grows with your business—from a single location to a nationwide operation.',
+    'why.b8.t':             'Continuous Support',
+    'why.b8.d':             'Bilingual technical support, training, and long-term partnership after every launch.',
 
-    'pos.cta': 'See Tashgheel Demo',
+    /* --- Process --- */
+    'proc.label':           'How We Work',
+    'proc.title':           'Our Proven Process',
+    'proc.desc':            'A structured methodology that ensures quality, speed, and results on every project.',
+    'proc.tab.dev':         'Development Process',
+    'proc.tab.mkt':         'Marketing Process',
+    'proc.d1':              'Discovery',
+    'proc.d1d':             'Understanding your business, goals, and technical requirements.',
+    'proc.d2':              'Analysis',
+    'proc.d2d':             'Deep-dive into workflows, data flows, and system architecture.',
+    'proc.d3':              'Design',
+    'proc.d3d':             'UI/UX wireframes, prototypes, and design system creation.',
+    'proc.d4':              'Development',
+    'proc.d4d':             'Agile sprints delivering working features every 2 weeks.',
+    'proc.d5':              'Testing',
+    'proc.d5d':             'QA, performance testing, and user acceptance testing.',
+    'proc.d6':              'Deployment',
+    'proc.d6d':             'Smooth launch with zero downtime infrastructure setup.',
+    'proc.d7':              'Training',
+    'proc.d7d':             'Full team training and comprehensive documentation.',
+    'proc.d8':              'Support',
+    'proc.d8d':             'Ongoing maintenance, updates, and technical partnership.',
+    'proc.m1':              'Research',
+    'proc.m1d':             'Market research, competitor analysis, and audience profiling.',
+    'proc.m2':              'Strategy',
+    'proc.m2d':             'Go-to-market plan, brand positioning, and campaign roadmap.',
+    'proc.m3':              'Planning',
+    'proc.m3d':             'Content calendar, creative briefs, and channel selection.',
+    'proc.m4':              'Production',
+    'proc.m4d':             'Design, copy, video, and creative asset development.',
+    'proc.m5':              'Launch',
+    'proc.m5d':             'Campaign activation across all selected channels.',
+    'proc.m6':              'Optimization',
+    'proc.m6d':             'Real-time performance monitoring and A/B testing.',
+    'proc.m7':              'Reporting',
+    'proc.m7d':             'Monthly KPI dashboards and ROI analysis reports.',
 
-    // Testimonials
-    'testimonials.title': 'What Our Clients Say',
-    'testimonials.t1.text': '“Itqan’s POS transformed our sales process, easy to use and reliable.”',
-    'testimonials.t1.author': '— Ahmed, Retail Owner',
-    'testimonials.t2.text': '“The website and marketing boosted our leads by 40% in 3 months.”',
-    'testimonials.t2.author': '— Sara, Marketing Manager',
-    'testimonials.t3.text': '“Professional, bilingual support made all the difference for our business.”',
-    'testimonials.t3.author': '— Omar, Restaurant Owner',
+    /* --- Case Studies --- */
+    'cs.label':             'Case Studies',
+    'cs.title':             'Real Results. Real Businesses.',
+    'cs.desc':              'See how we help organizations transform their operations and accelerate growth through technology.',
+    'cs.c1.title':          'Multi-Branch Retail ERP',
+    'cs.c1.ind':            'Retail',
+    'cs.c1.challenge':      'A growing retail chain struggled with manual inventory tracking across 5 branches, causing stock discrepancies and lost sales.',
+    'cs.c1.solution':       'We built a custom offline-first POS integrated with a central ERP dashboard, real-time stock sync, and automated reorder alerts.',
+    'cs.c1.tech':           'Electron · SQL Server · REST API · Power BI',
+    'cs.c1.metric1':        '40%',
+    'cs.c1.label1':         'Faster operations',
+    'cs.c1.metric2':        '5 Branches',
+    'cs.c1.label2':         'Synchronized',
+    'cs.c2.title':          'Restaurant Chain Digital Transformation',
+    'cs.c2.ind':            'F&B',
+    'cs.c2.challenge':      'A restaurant group with 3 locations needed to reduce checkout time, track food costs, and unify operations across branches.',
+    'cs.c2.solution':       'Deployed Tashgheel Restaurants with KDS, table management, recipe costing, and a centralized management dashboard.',
+    'cs.c2.tech':           'Tashgheel POS · KDS · Cloud Dashboard',
+    'cs.c2.metric1':        '60%',
+    'cs.c2.label1':         'Faster checkout',
+    'cs.c2.metric2':        '3 Branches',
+    'cs.c2.label2':         'Unified system',
+    'cs.c3.title':          'Digital Marketing Campaign',
+    'cs.c3.ind':            'Marketing',
+    'cs.c3.challenge':      'A B2B services company had strong offerings but struggled with brand visibility and digital lead generation.',
+    'cs.c3.solution':       'Delivered a complete brand identity, corporate website, SEO strategy, and a 3-month Meta Ads campaign targeting decision-makers.',
+    'cs.c3.tech':           'Meta Ads · Google Ads · SEO · Brand Design',
+    'cs.c3.metric1':        '220%',
+    'cs.c3.label1':         'More website traffic',
+    'cs.c3.metric2':        '4×',
+    'cs.c3.label2':         'Lead increase',
 
-    // Blog
-    'blog.latest': 'Latest Blog Posts',
-    'blog.readmore': 'Read More',
-    'blog.p1.title': 'How POS Systems Transform Retail',
-    'blog.p1.desc': 'Discover how modern POS systems improve efficiency, reporting, and customer experience.',
-    'blog.p2.title': 'Why Every Business Needs a Website',
-    'blog.p2.desc': 'Your website is your business card. Learn how to make it effective and engaging.',
-    'blog.p3.title': 'Digital Marketing Trends 2025',
-    'blog.p3.desc': 'Stay ahead with the latest strategies in social media and digital advertising.',
-    //Blog PAge
-    "blog.title": "Our Blog",
-    "blog.subtitle": "Insights, trends, and updates from Itqan Solutions",
-    "read.more": "Read More",
+    /* --- Testimonials --- */
+    'test.label':           'Testimonials',
+    'test.title':           'What Our Clients Say',
+    'test.t1.text':         'ITQAN delivered a POS system that completely transformed how we run our 4 branches. The offline capability was critical for our business continuity.',
+    'test.t1.name':         'Ahmed M.',
+    'test.t1.role':         'Retail Chain Owner, Cairo',
+    'test.t2.text':         'Their marketing team built our brand from scratch and ran our digital campaigns. Within 3 months, our leads increased by 4×. Exceptional work.',
+    'test.t2.name':         'Sara K.',
+    'test.t2.role':         'CEO, Professional Services Firm',
+    'test.t3.text':         'The custom ERP they built for our distribution company saved us hundreds of hours monthly. The bilingual support made adoption seamless across our team.',
+    'test.t3.name':         'Omar R.',
+    'test.t3.role':         'Operations Director, Distribution Company',
 
-    "post1.title": "Why Every Business Needs a POS System in 2025",
-    "post1.snippet": "From seamless inventory tracking to real-time sales reports, discover how modern POS can transform your operations.",
+    /* --- Integrations --- */
+    'int.label':            'Integrations',
+    'int.title':            'Connects With Your Entire Stack',
+    'int.desc':             'Our systems integrate natively with the tools and platforms your business already uses.',
 
-    "post2.title": "Digital Marketing Trends You Can’t Ignore",
-    "post2.snippet": "AI-driven ads, personalized content, and cross-platform growth — here’s what will dominate 2025.",
+    /* --- Insights --- */
+    'ins.label':            'Insights',
+    'ins.title':            'Knowledge That Drives Growth',
+    'ins.desc':             'Expert perspectives on digital transformation, software engineering, and business growth strategies.',
+    'ins.readmore':         'Read Article →',
+    'ins.p1.cat':           'Digital Transformation',
+    'ins.p1.title':         'Why Mid-Market Companies Are Investing in Custom ERP in 2025',
+    'ins.p1.desc':          'Off-the-shelf software no longer fits complex operational needs. Here is why bespoke ERP is becoming the competitive advantage.',
+    'ins.p2.cat':           'Marketing Strategy',
+    'ins.p2.title':         'The Performance Marketing Playbook for B2B Growth in the MENA Region',
+    'ins.p2.desc':          'A data-driven framework for running Meta Ads, Google Ads, and LinkedIn campaigns that generate qualified enterprise leads.',
+    'ins.p3.cat':           'Business Automation',
+    'ins.p3.title':         'How AI-Powered Automation Is Reshaping Business Operations',
+    'ins.p3.desc':          'From document processing to intelligent reporting—explore how businesses are using automation to cut costs and accelerate decisions.',
 
-    "post3.title": "From Retail to Restaurants: The Future of Smart POS",
-    "post3.snippet": "How POS is evolving to serve both shops and restaurants with tailored solutions.",
+    /* --- CTA Section --- */
+    'cta.title':            'Ready to Transform Your Business?',
+    'cta.desc':             'Let\'s build technology that fits the way you work. Request a consultation and we\'ll design a roadmap tailored to your goals.',
+    'cta.btn1':             'Request a Consultation',
+    'cta.btn2':             'View Our Work',
 
-    'about.title': 'About Itqan Solutions',
-    'about.subtitle': 'We build software, POS, websites, and growth engines with precision.',
-    'about.desc': 'At Itqan Solutions, we believe technology should simplify work, not complicate it. For more than five years, we have been helping businesses transform their operations through smart software, reliable POS systems, professional websites, and result-driven digital strategies. We don’t just deliver projects—we build long-term success stories.',
+    /* --- Footer --- */
+    'footer.tagline':       'Technology that powers your business. Marketing that grows it.',
+    'footer.col.solutions': 'Solutions',
+    'footer.col.products':  'Products',
+    'footer.col.company':   'Company',
+    'footer.follow':        'Follow Us',
+    'footer.copy':          '© {year} ITQAN Solutions. All rights reserved.',
 
-    'about.ch1': '5+ Years', 'about.ch2': 'Bilingual (EN/AR)', 'about.ch3': 'End-to-End Delivery',
-    'about.values': 'Our Principles',
-    'about.v1.t': 'Quality', 'about.v1.d': 'Clean code, structured processes, and measurable results. Everything we build is designed to be stable, scalable, and business-ready.',
-    'about.v2.t': 'Speed', 'about.v2.d': 'Fast delivery with zero compromise on reliability. We respect deadlines and real business needs.',
-    'about.v3.t': 'Support', 'about.v3.d': 'Bilingual support (EN/AR) and long-term partnership. We stay with our clients after launch, not just before it.',
-    'services.lead': 'Software, POS, websites, mobile apps, marketing, and branding.',
-    'services.cta': 'Start a Project',
+    /* --- About Page --- */
+    'about.label':          'About ITQAN Solutions',
+    'about.title':          'We Engineer Growth.',
+    'about.subtitle':       'A digital transformation and software engineering company helping businesses in Egypt and the MENA region operate smarter and grow faster.',
+    'about.desc':           'At ITQAN Solutions, we believe technology should work for your business—not the other way around. Founded in 2020, we combine software engineering, digital innovation, and strategic marketing into a single, cohesive ecosystem that helps organizations at every stage of their growth journey. From building your first ERP to launching your next digital campaign—we engineer growth.',
+    'about.mission.t':      'Our Mission',
+    'about.mission.d':      'To empower businesses with practical, reliable, and intelligent technology that simplifies complexity, increases efficiency, and drives sustainable growth.',
+    'about.vision.t':       'Our Vision',
+    'about.vision.d':       'To be the leading digital transformation partner in the MENA region, recognized for engineering excellence, creative impact, and long-term business results.',
+    'about.v1.t':           'Engineering Quality',
+    'about.v1.d':           'Clean architecture, scalable systems, and code that stands the test of time.',
+    'about.v2.t':           'Delivery Speed',
+    'about.v2.d':           'Agile execution with real business outcomes, not just deliverables.',
+    'about.v3.t':           'Partnership Depth',
+    'about.v3.d':           'We stay with our clients long after launch—training, support, and continuous improvement.',
+    'about.time.1.y':       '2020',
+    'about.time.1.t':       'Founded',
+    'about.time.1.d':       'ITQAN was established with a clear vision: build meaningful, practical software for real businesses.',
+    'about.time.2.y':       '2021',
+    'about.time.2.t':       'First Enterprise ERP',
+    'about.time.2.d':       'Delivered our first custom ERP for a multi-branch distribution company, proving our engineering capabilities.',
+    'about.time.3.y':       '2022',
+    'about.time.3.t':       'Tashgheel POS Launch',
+    'about.time.3.d':       'Released the Tashgheel platform covering retail, restaurants, and service centers across Egypt.',
+    'about.time.4.y':       '2023',
+    'about.time.4.t':       'Digital & Marketing Division',
+    'about.time.4.d':       'Expanded into full-service digital solutions and performance marketing, becoming a complete transformation partner.',
+    'about.time.5.y':       '2024',
+    'about.time.5.t':       'Regional Expansion',
+    'about.time.5.d':       'Extended our reach into GCC markets with cloud-ready enterprise solutions and remote implementation.',
+    'about.time.6.y':       '2025–26',
+    'about.time.6.t':       'AI & Automation Era',
+    'about.time.6.d':       'Integrating AI-powered automation, intelligent analytics, and next-generation workflows into all our products.',
+    'about.tech.t':         'Technology Stack',
+    'about.tech.d':         'We build with the best modern tools, organized into capability layers.',
+    'about.process.t':      'Our Process',
 
-    // Services Detailed Content
-    'srv.why.title': 'Why Choose Itqan?',
-    'srv.why.1.t': 'Local Expertise', 'srv.why.1.d': 'We understand the MENA market, RTL requirements, and local business logic.',
-    'srv.why.2.t': 'Agile & Fast', 'srv.why.2.d': 'We work in sprints to deliver usable features quickly and iterate based on feedback.',
-    'srv.why.3.t': 'Full Support', 'srv.why.3.d': 'Our job doesn’t end at launch. We provide training, maintenance, and scale-up support.',
+    /* --- Services Page --- */
+    'srv.label':            'Our Services',
+    'srv.title':            'Four Divisions. One Vision.',
+    'srv.desc':             'ITQAN offers complete end-to-end solutions organized into four strategic divisions, each designed to address a specific dimension of your business growth.',
+    'srv.p1.num':           '01',
+    'srv.p1.label':         'Software Engineering',
+    'srv.p1.title':         'Custom Business Software',
+    'srv.p1.desc':          'We engineer enterprise-grade software systems tailored precisely to your operational workflows—not adapted from a template.',
+    'srv.p2.num':           '02',
+    'srv.p2.label':         'Digital Solutions',
+    'srv.p2.title':         'Digital Presence & Products',
+    'srv.p2.desc':          'Modern digital experiences that make your brand stand out—websites, apps, portals, and platforms built for performance.',
+    'srv.p3.num':           '03',
+    'srv.p3.label':         'Marketing & Creative',
+    'srv.p3.title':         'Growth Marketing & Brand Building',
+    'srv.p3.desc':          'From brand identity and content production to digital advertising and social media—we help you attract, engage, and convert.',
+    'srv.p4.num':           '04',
+    'srv.p4.label':         'Business Automation',
+    'srv.p4.title':         'Intelligent Automation & Integration',
+    'srv.p4.desc':          'Connect your systems, eliminate manual processes, and leverage AI-driven automation to operate with higher efficiency.',
+    'srv.why.title':        'Why Choose ITQAN?',
+    'srv.why.1.t':          'MENA Market Expertise',
+    'srv.why.1.d':          'Deep understanding of local business dynamics, regulatory requirements, and Arabic language needs.',
+    'srv.why.2.t':          'Full-Spectrum Capabilities',
+    'srv.why.2.d':          'Software, design, marketing, and automation under one roof—no need for multiple vendors.',
+    'srv.why.3.t':          'Long-Term Partnership',
+    'srv.why.3.d':          'We invest in your success beyond the project delivery. Support, training, and improvement never stop.',
+    'srv.faq.title':        'Frequently Asked Questions',
 
-    'srv.dev.feat': 'Custom ERPs, API Integrations, Automation Tools',
-    'srv.pos.feat': 'Inventory, sales, CRM, and tax compliance (ZATCA/ETA).',
-    'srv.web.feat': 'Landing pages, corporate sites, and high-performance e-commerce.',
-    'srv.mob.feat': 'Native & Cross-platform apps (Flutter/React Native).',
-    'srv.mkt.feat': 'SEO, Social Media Management, and Paid Ads (PPC).',
-    'srv.brd.feat': 'Logo design, brand guidelines, and visual identity.',
+    /* --- FAQ --- */
+    'faq.q1':               'Do you build fully custom software from scratch?',
+    'faq.a1':               'Yes. Every software solution we deliver is purpose-built for your specific business processes, workflows, and industry requirements. We never use generic templates.',
+    'faq.q2':               'Can your systems work without an internet connection?',
+    'faq.a2':               'Absolutely. Our desktop POS and ERP solutions are designed with offline-first architecture. They operate fully without internet and sync automatically when connectivity is restored.',
+    'faq.q3':               'Can you integrate with our existing systems?',
+    'faq.a3':               'Yes. Our API-first architecture allows seamless integration with ERP systems, accounting software, payment gateways, CRM platforms, e-commerce stores, and virtually any third-party system.',
+    'faq.q4':               'Do you support multi-branch operations?',
+    'faq.a4':               'Yes. All our enterprise solutions support unlimited branches with real-time data synchronization, centralized reporting, and branch-level permission controls.',
+    'faq.q5':               'Do you provide training after delivery?',
+    'faq.a5':               'Every project includes a comprehensive training program for all user roles—from administrators to daily operators. We also provide documentation and video tutorials.',
+    'faq.q6':               'What kind of ongoing support do you offer?',
+    'faq.a6':               'We offer tiered support packages including bug fixes, feature updates, performance monitoring, and a dedicated account manager for enterprise clients.',
+    'faq.q7':               'Do you offer marketing services alongside software?',
+    'faq.a7':               'Yes. Our Marketing & Creative division offers full-service solutions: brand identity, content production, social media management, Meta/Google Ads, SEO, and analytics.',
 
-    // Portfolio Extended
-    'portfolio.title': 'Selected Projects',
-    'portfolio.lead': 'A glimpse of software, POS, websites, and campaigns we delivered.',
-    'port.feat.title': 'Featured Case Study',
-    'port.feat.name': 'Tashgheel POS Ecosystem',
-    'port.feat.desc': 'A complete ecosystem for retail and service businesses. Includes a desktop POS, a cloud management dashboard, and a mobile app for business owners to track sales in real-time.',
-    'port.feat.tag': 'Flagship Product',
+    /* --- Contact Page --- */
+    'contact.label':        'Contact Us',
+    'contact.title':        'Let\'s Build Something',
+    'contact.desc':         'Tell us about your project     'contact.info.title':   'Contact Information',
+    'contact.email':        'info@itqansolutions.org',
+    'contact.phone1':       '+20 112 652 2373',
+    'contact.phone2':       '+20 115 525 3886',
+    'contact.phone3':       '+20 114 270 3439',
+    'contact.form.title':   'Send Us a Message',
+    'contact.name':         'Full Name',
+    'contact.email.f':      'Email Address',
+    'contact.phone.f':      'Phone Number',
+    'contact.company':      'Company Name',
+    'contact.service':      'Service of Interest',
+    'contact.service.sw':   'Software Engineering',
+    'contact.service.dig':  'Digital Solutions',
+    'contact.service.mkt':  'Marketing & Creative',
+    'contact.service.aut':  'Business Automation',
+    'contact.service.oth':  'Other / Not Sure',
+    'contact.message':      'Tell us about your project',
+    'contact.send':         'Send Message',
+    'contact.sending':      'Sending…',
+    'contact.success':      '✓ Message sent! We\'ll be in touch within 24 hours.',
+    'contact.error':        'Something went wrong. Please email us directly.',
 
-    'port.p1.t': 'Retail POS — Multi-branch', 'port.p1.d': 'Offline-first POS with Arabic/English UI, inventory & reports.', 'port.p1.tags': 'Desktop, Electron, SQLite',
-    'port.p2.t': 'Restaurant POS', 'port.p2.d': 'Tables, kitchen display, returns/discounts, COGS.', 'port.p2.tags': 'Touch Screen, Printers',
-    'port.p3.t': 'Company Website', 'port.p3.d': 'Modern, bilingual, high performance & SEO structure.', 'port.p3.tags': 'HTML5, CSS3, SEO',
-    'port.p4.t': 'E-Commerce Platform', 'port.p4.d': 'Full online store with payment gateway integration and animated UI.', 'port.p4.tags': 'React, Node.js, Stripe',
-    'port.p5.t': 'Car Service Center ERP', 'port.p5.d': 'Managing visits, technicians, spare parts, and invoicing.', 'port.p5.tags': 'Web App, Cloud',
-    'port.p6.t': 'Mobile Loyalty App', 'port.p6.d': 'Customer retention app with points, rewards, and push notifications.', 'port.p6.tags': 'Flutter, iOS, Android',
+    /* --- Services Page Pillars & Features --- */
+    'srv.label':            'Our Solutions',
+    'srv.title':            'Comprehensive Technology & Marketing',
+    'srv.desc':             'From software engineering and digital transformation to performance marketing and business automation.',
+    'srv.p1.label':         'Pillar 01',
+    'srv.p1.title':         'Software Engineering',
+    'srv.p1.desc':          'Robust, scalable, and secure systems tailored for complex business needs.',
+    'srv.p2.label':         'Pillar 02',
+    'srv.p2.title':         'Digital Solutions',
+    'srv.p2.desc':          'Engaging digital products built for speed, conversion, and user satisfaction.',
+    'srv.p3.label':         'Pillar 03',
+    'srv.p3.title':         'Marketing & Creative',
+    'srv.p3.desc':          'Strategic growth, brand identity, content production, and performance ads.',
+    'srv.p4.label':         'Pillar 04',
+    'srv.p4.title':         'Business Automation',
+    'srv.p4.desc':          'Connect systems, automate workflows, and save hours with AI and integrations.',
+    'srv.why.title':        'Why Choose ITQAN',
+    'srv.why.1.t':          'Strategic Partnership',
+    'srv.why.1.d':          'We don\'t just deliver code—we partner with you to achieve measurable business growth.',
+    'srv.why.2.t':          'Unified Platform',
+    'srv.why.2.d':          'Engineering, design, marketing, and automation working together seamlessly.',
+    'srv.why.3.t':          'Measurable ROI',
+    'srv.why.3.d':          'Data-driven execution focused on efficiency, conversions, and revenue.',
+    'srv.faq.title':        'Frequently Asked Questions',
 
-    'cta.project': 'Have a similar project?',
-    'contact.title': 'Get in Touch', 'contact.lead': 'Tell us about your project. We reply within 24 hours.',
-    'contact.info': 'Contact Info',
-    'contact.form.title': 'Send a Message', 'contact.form.name': 'Name', 'contact.form.email': 'Email', 'contact.form.phone': 'Phone', 'contact.form.msg': 'Message', 'contact.form.send': 'Send',
+    /* --- Service Features (Pillars 1-4) --- */
+    'srv.sf1.t': 'Custom ERP Systems',           'srv.sf1.d': 'Fully tailored enterprise resource planning systems.',
+    'srv.sf2.t': 'CRM',                          'srv.sf2.d': 'Customer relationship management built for your sales process.',
+    'srv.sf3.t': 'HRMS',                         'srv.sf3.d': 'Attendance, payroll, recruitment, and performance management.',
+    'srv.sf4.t': 'Retail POS',                   'srv.sf4.d': 'Multi-branch retail point of sale with offline capability.',
+    'srv.sf5.t': 'Restaurant POS',               'srv.sf5.d': 'F&B management with kitchen display and table tracking.',
+    'srv.sf6.t': 'Inventory Management',        'srv.sf6.d': 'Real-time stock control across locations.',
+    'srv.sf7.t': 'Finance & Accounting',        'srv.sf7.d': 'AR/AP, invoicing, and financial reporting.',
+    'srv.sf8.t': 'Procurement',                  'srv.sf8.d': 'Purchase orders, vendor management, and cost control.',
+    'srv.sf9.t': 'Business Intelligence',       'srv.sf9.d': 'Custom dashboards and data-driven reporting.',
 
+    'srv.dg1.t': 'Corporate Websites',          'srv.dg1.d': 'Professional online presence optimized for speed and SEO.',
+    'srv.dg2.t': 'E-Commerce Platforms',        'srv.dg2.d': 'High-converting web stores with local payment integrations.',
+    'srv.dg3.t': 'Landing Pages',               'srv.dg3.d': 'Focused, high-impact pages designed for ad campaigns.',
+    'srv.dg4.t': 'Mobile Applications',         'srv.dg4.d': 'Native iOS and Android apps for seamless mobile experience.',
+    'srv.dg5.t': 'Customer Portals',            'srv.dg5.d': 'Self-service web applications for client interaction.',
+    'srv.dg6.t': 'UI/UX Design',                'srv.dg6.d': 'Intuitive, beautiful user experience and product design.',
+    'srv.dg7.t': 'Hosting & Infrastructure',    'srv.dg7.d': 'Reliable cloud setup, SSL, and server management.',
+    'srv.dg8.t': 'Maintenance & Support',       'srv.dg8.d': 'Ongoing updates, security patches, and issue resolution.',
+    'srv.dg9.t': 'Website Optimization',       'srv.dg9.d': 'Speed enhancement, core web vitals, and UX audit.',
 
+    'srv.mk1.t': 'Marketing Strategy',          'srv.mk1.d': 'Data-backed roadmap to reach your ideal audience.',
+    'srv.mk2.t': 'Brand Identity',              'srv.mk2.d': 'Logos, brand guidelines, and visual storytelling.',
+    'srv.mk3.t': 'Content Production',          'srv.mk3.d': 'Professional video, photography, and copy writing.',
+    'srv.mk4.t': 'Social Media Management',     'srv.mk4.d': 'End-to-end management, content plans, and engagement.',
+    'srv.mk5.t': 'Performance Advertising',    'srv.mk5.d': 'Target Meta, Google, and TikTok ads focused on ROI.',
+    'srv.mk6.t': 'SEO & Search Growth',         'srv.mk6.d': 'Organic traffic growth through keyword strategy.',
 
-    // Tashgheel Retail Page
-    'ret.hero.title': 'Tashgheel POS for Retail',
-    'ret.hero.desc': 'A professional point of sale system designed for modern retail, combining ease of use with ERP-grade reporting.',
-    'ret.cta.demo': 'Get a Demo',
-    'ret.overview.title': 'Professional & Integrated',
-    'ret.overview.text': 'Combines operational power with financial precision.',
-    'ret.features.title': 'Key Features',
-    'ret.f1.t': 'User & Role Management', 'ret.f1.d': 'Unlimited users with granular permission controls.',
-    'ret.f2.t': 'Fully Customizable Receipts', 'ret.f2.d': 'Custom logo, address, language, and footer messages.',
-    'ret.f3.t': 'Advanced Inventory', 'ret.f3.d': 'Track cost/sell prices, categories, and perform stock audits.',
-    'ret.f4.t': 'Expense Tracking', 'ret.f4.d': 'Record daily expenses linked to employees and financial reports.',
-    'ret.f5.t': 'Sales Targets', 'ret.f5.d': 'Set and track monthly targets for your sales staff.',
-    'ret.f6.t': 'Secure Backup', 'ret.f6.d': 'One-click backup and restore without technical expertise.',
+    'srv.at1.t': 'Workflow Automation',         'srv.at1.d': 'Streamline internal tasks and eliminate manual entry.',
+    'srv.at2.t': 'AI Powered Systems',          'srv.at2.d': 'Intelligent bots, automated routing, and smart insights.',
+    'srv.at3.t': 'API Integrations',            'srv.at3.d': 'Seamless communication between your software ecosystem.',
+    'srv.at4.t': 'WhatsApp Automation',         'srv.at4.d': 'Automated customer messaging and order updates.',
+    'srv.at5.t': 'Payment Gateway Setup',       'srv.at5.d': 'Secure online payment processing with local channels.',
+    'srv.at6.t': 'Reporting Automation',        'srv.at6.d': 'Automated daily/weekly reporting directly to management.',
 
-    'ret.rep.title': 'Enterprise-Grade Reporting',
-    'ret.rep.desc': 'Insights inspired by professional ERP systems.',
-    'ret.rep.l1': 'Total Sales (Cash, Visa, Mobile)',
-    'ret.rep.l2': 'COGS & Net Profit Analysis',
-    'ret.rep.l3': 'Sales by User, Product, or Category',
-    'ret.rep.l4': 'Inventory Value & Returns Tracking',
+    /* --- Case Studies 4 & 5 --- */
+    'cs.c4.ind': 'Healthcare',
+    'cs.c4.title': 'HRMS for a Multi-Department Healthcare Organization',
+    'cs.c4.challenge': 'A 200-employee clinic struggled with manual attendance, payroll, and leave management across departments.',
+    'cs.c4.solution': 'Deployed a custom HRMS covering attendance tracking, automated payroll calculation, leave management, and performance reviews.',
+    'cs.c4.metric1': '85%', 'cs.c4.label1': 'Reduction in Manual HR Tasks',
+    'cs.c4.metric2': '200', 'cs.c4.label2': 'Employees Onboarded in 2 weeks',
 
-    'ret.dep.title': 'Online & Offline Modes',
-    'ret.dep.desc': 'Choose the deployment that fits your infrastructure.',
-    'ret.online.t': 'Online (Web App)', 'ret.online.d': 'Ideal for multi-branch and remote access. Real-time sync.',
-    'ret.offline.t': 'Offline (Desktop)', 'ret.offline.d': 'Maximum stability, no internet needed. Local data.',
+    'cs.c5.ind': 'Retail',
+    'cs.c5.title': 'Custom E-Commerce Platform with ERP Integration',
+    'cs.c5.challenge': 'A wholesale brand wanted to sell direct-to-consumer online with real-time inventory sync from their existing ERP.',
+    'cs.c5.solution': 'Built a high-performance e-commerce store with live inventory sync, product catalog management, and integrated payment gateways.',
+    'cs.c5.metric1': '3×', 'cs.c5.label1': 'Online Revenue Growth',
+    'cs.c5.metric2': 'Real-time', 'cs.c5.label2': 'Inventory Sync Across Channels',
 
-    'gallery.title': 'Screenshots',
+    /* --- Tashgheel Retail --- */
+    'ret.label':            'Tashgheel Retail',
+    'ret.title':            'The Complete Retail Intelligence Platform.',
+    'ret.subtitle':         'A professional point-of-sale and ERP system designed for modern retail—combining operational simplicity with enterprise-grade reporting.',
+    'ret.cta1':             'Request a Demo',
+    'ret.cta2':             'View Features',
+    'ret.ov.title':         'One Platform. Every Retail Operation.',
+    'ret.ov.desc':          'From the sales counter to the back office—Tashgheel Retail covers every aspect of running a modern retail business.',
+    'ret.feat.title':       'Key Features',
+    'ret.f1.t':             'Multi-User & Roles',
+    'ret.f1.d':             'Unlimited users with granular role-based permission controls.',
+    'ret.f2.t':             'Custom Receipts',
+    'ret.f2.d':             'Logo, address, language, footer, and promotional messages—fully customizable.',
+    'ret.f3.t':             'Advanced Inventory',
+    'ret.f3.d':             'Track cost/sell prices by category, perform stock audits, and set reorder alerts.',
+    'ret.f4.t':             'Expense Tracking',
+    'ret.f4.d':             'Record daily expenses linked to employees and financial reports.',
+    'ret.f5.t':             'Sales Targets',
+    'ret.f5.d':             'Set monthly targets per salesperson and track real-time achievement.',
+    'ret.f6.t':             'Secure Backup',
+    'ret.f6.d':             'One-click encrypted backup and restore without technical expertise.',
+    'ret.rep.title':        'Enterprise-Grade Reports',
+    'ret.rep.l1':           'Total Sales — Cash, Visa, Mobile Wallet',
+    'ret.rep.l2':           'COGS & Net Profit Analysis',
+    'ret.rep.l3':           'Sales by User, Product, or Category',
+    'ret.rep.l4':           'Inventory Value & Returns Tracking',
+    'ret.dep.title':        'Flexible Deployment',
+    'ret.online.t':         'Online — Web App',
+    'ret.online.d':         'Ideal for multi-branch and remote management. Real-time cloud sync.',
+    'ret.offline.t':        'Offline — Desktop',
+    'ret.offline.d':        'Maximum stability. No internet required. All data stored locally.',
 
-    // Tashgheel Services Page
-    'srv.hero.title': 'Tashgheel Services',
-    'srv.hero.desc': 'A comprehensive system designed for service centers, workshops, and car maintenance businesses.',
-    'srv.overview.title': 'Professional & Organized',
-    'srv.overview.text': 'Organize daily operations, track customers, and control costs with ease.',
-    'srv.features.title': 'Key Features',
-    'srv.f1.t': 'Visits Management', 'srv.f1.d': 'Register and track all customer visits. Search by plate, chassis, or name.',
-    'srv.f2.t': 'Customers & Vehicles', 'srv.f2.d': 'Complete profile for customers and vehicles (Brand, Model, VIN, Odometer).',
-    'srv.f3.t': 'Spare Parts', 'srv.f3.d': 'Track cost/sell prices and profitability. Use parts directly in visits.',
-    'srv.f4.t': 'Suppliers Management', 'srv.f4.d': 'Manage supplier debts, payments (full/partial), and transaction history.',
-    'srv.f5.t': 'Service Management', 'srv.f5.d': 'Add services to visits and combine with parts in a single invoice.',
-    'srv.f6.t': 'Invoicing', 'srv.f6.d': 'Detailed printable invoices with discounts and breakdown.',
-    'srv.f7.t': 'Appointments', 'srv.f7.d': 'Schedule next visits and print reminders on invoices.',
-    'srv.f8.t': 'Staff & Technicians', 'srv.f8.d': 'Assign technicians to visits and track performance targets.',
-    'srv.f9.t': 'Expense Tracking', 'srv.f9.d': 'Track operational expenses and their impact on net profit.',
-    'srv.f10.t': 'Reports & Analytics', 'srv.f10.d': 'Revenue, most requested services, technician performance, and supplier balances.',
-    'srv.f11.t': 'Secure Backup', 'srv.f11.d': 'Create and restore backups anytime without technical assistance.',
+    /* --- Tashgheel Restaurants --- */
+    'rst.label':            'Tashgheel Restaurants',
+    'rst.title':            'Built for the Pace of F&B.',
+    'rst.subtitle':         'An end-to-end restaurant management platform covering POS, kitchen display, table management, delivery, recipe costing, and COGS analysis.',
+    'rst.f1.t':             'Raw Material Management',
+    'rst.f1.d':             'Add ingredients, link to suppliers, and track payment schedules.',
+    'rst.f2.t':             'Menu Engineering',
+    'rst.f2.d':             'Calculate actual recipe cost and waste percentages per item and size.',
+    'rst.f3.t':             'Flexible Pricing',
+    'rst.f3.d':             'Different prices for dine-in, takeaway, and delivery with Happy Hour support.',
+    'rst.f4.t':             'Point of Sale (POS)',
+    'rst.f4.d':             'Fast interface with discounts, multi-payment, and split billing.',
+    'rst.f5.t':             'Table Management',
+    'rst.f5.d':             'Visual floor plan, merge, transfer, and close tables with ease.',
+    'rst.f6.t':             'Kitchen Display (KDS)',
+    'rst.f6.d':             'Real-time kitchen screen with order status management.',
+    'rst.f7.t':             'Staff & Permissions',
+    'rst.f7.d':             'Waiter, chef, and cashier roles with individual performance tracking.',
+    'rst.f8.t':             'Delivery Management',
+    'rst.f8.d':             'Customer database with saved addresses for fast order processing.',
+    'rst.f9.t':             'Inventory & Waste',
+    'rst.f9.d':             'Auto-deduct ingredients on sale with accurate waste and loss reports.',
+    'rst.f10.t':            'Multi-Printer Routing',
+    'rst.f10.d':            'Food orders to kitchen, drinks to bar—automatic and configurable.',
+    'rst.f11.t':            'Advanced Analytics',
+    'rst.f11.d':            'Revenue, channel performance, staff KPIs, and supplier balances.',
+    'rst.f12.t':            'Secure Backup',
+    'rst.f12.d':            'One-click backup and data recovery without technical assistance.',
 
-    'srv.dep.title': 'Deployment Options',
-    'srv.dep.desc': 'Available as Online Web App or Offline Desktop App.',
-    'srv.online.t': 'Online (Web App)', 'srv.online.d': 'Perfect for multi-branch management and remote access.',
-    'srv.offline.t': 'Offline (Desktop)', 'srv.offline.d': 'Maximum stability without internet dependence.',
+    /* --- Tashgheel Services --- */
+    'svc.label':            'Tashgheel Services',
+    'svc.title':            'Power Your Service Center.',
+    'svc.subtitle':         'A comprehensive system for maintenance centers, auto workshops, and service businesses—track visits, technicians, spare parts, and invoicing.',
+    'svc.f1.t':             'Visits Management',
+    'svc.f1.d':             'Register and track all customer visits. Search by plate, chassis, or name.',
+    'svc.f2.t':             'Customer & Vehicle Profiles',
+    'svc.f2.d':             'Complete records including model, VIN, odometer, and service history.',
+    'svc.f3.t':             'Spare Parts',
+    'svc.f3.d':             'Track cost, sell price, and profitability. Link parts directly to visits.',
+    'svc.f4.t':             'Supplier Management',
+    'svc.f4.d':             'Manage debts, partial payments, and full transaction history per supplier.',
+    'svc.f5.t':             'Service Management',
+    'svc.f5.d':             'Add services to visits and combine with parts in a single invoice.',
+    'svc.f6.t':             'Invoicing',
+    'svc.f6.d':             'Detailed printable invoices with discount support and itemized breakdown.',
+    'svc.f7.t':             'Appointments',
+    'svc.f7.d':             'Schedule next service visits and print reminders on invoices.',
+    'svc.f8.t':             'Technician Tracking',
+    'svc.f8.d':             'Assign technicians to visits and monitor performance targets.',
+    'svc.f9.t':             'Expense Tracking',
+    'svc.f9.d':             'Record operational costs and track impact on net profit.',
+    'svc.f10.t':            'Reports & Analytics',
+    'svc.f10.d':            'Revenue, top services, technician KPIs, and supplier balances.',
+    'svc.f11.t':            'Secure Backup',
+    'svc.f11.d':            'Create and restore backups anytime without technical assistance.',
 
+    /* --- Shared Product Strings --- */
+    'prod.dep.title':       'Deployment Options',
+    'prod.online.t':        'Online — Web Application',
+    'prod.online.d':        'Perfect for multi-branch management and remote access. Real-time cloud sync.',
+    'prod.offline.t':       'Offline — Desktop Application',
+    'prod.offline.d':       'Maximum stability and data security. No internet dependency.',
+    'prod.cta.demo':        'Request a Free Demo',
 
-    // Footer
-    'footer.follow': 'Follow Us',
-    'footer.copy': '© {year} Itqan Solutions. Technology Built for Growth.',
+    /* --- Blog / Insights Page --- */
+    'blog.label':           'ITQAN Insights',
+    'blog.title':           'Knowledge Drives Growth',
+    'blog.subtitle':        'Expert perspectives on digital transformation, ERP, marketing, automation, and business growth from the ITQAN team.',
+    'blog.all':             'All Topics',
+    'blog.cat.dt':          'Digital Transformation',
+    'blog.cat.erp':         'ERP & Systems',
+    'blog.cat.mkt':         'Marketing',
+    'blog.cat.ai':          'AI & Automation',
+    'blog.cat.web':         'Web & Mobile',
+    'blog.cat.biz':         'Business Growth',
 
-    // New About Sections
-    'about.mission.t': 'Our Mission',
-    'about.mission.d': 'To empower businesses with practical, reliable, and intelligent technology that simplifies complexity, increases efficiency, and drives sustainable growth.',
-    'about.vision.t': 'Our Vision',
-    'about.vision.d': 'To be the leading digital transformation partner in the MENA region, recognized for innovation, trust, and real business impact.',
+    /* --- Portfolio / Case Studies Page --- */
+    'port.label':           'Case Studies',
+    'port.title':           'Real Solutions. Measurable Results.',
+    'port.desc':            'A selection of projects where ITQAN helped businesses transform their operations through technology, marketing, and automation.',
 
-    'about.stats.years': 'Years Experience',
-    'about.stats.projects': 'Projects Delivered',
-    'about.stats.clients': 'Happy Clients',
-    'about.stats.team': 'Team Members',
-
-    'about.timeline.t': 'Our Journey',
-    'about.time.1.y': '2020', 'about.time.1.t': 'Founded', 'about.time.1.d': 'Started as a focused development team with a vision to build meaningful and practical business solutions.',
-    'about.time.2.y': '2022', 'about.time.2.t': 'Tashgheel POS Launch', 'about.time.2.d': 'Released our flagship POS system tailored for retail, restaurants, and manufacturing sectors.',
-    'about.time.3.y': '2024', 'about.time.3.t': 'Expansion', 'about.time.3.d': 'Entered new market segments and expanded our services to include full digital transformation and marketing solutions.',
-    'about.time.4.y': '2025', 'about.time.4.t': 'Innovation', 'about.time.4.d': 'Integrating AI and automation into our products to deliver smarter workflows and data-driven decisions.',
-    'about.time.5.y': '2026', 'about.time.5.t': 'Scale & Intelligence', 'about.time.5.d': 'Expanding cloud infrastructure, advanced integrations, and AI-powered analytics to help businesses operate with higher efficiency and clearer insights.',
-
-    'about.process.t': 'Our Process',
-    'about.proc.1': 'Discovery – Understand your business challenges and goals',
-    'about.proc.2': 'Strategy – Design the right technical and business solution',
-    'about.proc.3': 'Build – Develop with precision and best practices',
-    'about.proc.4': 'Launch – Deploy, train, and optimize',
-    'about.proc.5': 'Growth – Continuous improvement and scaling',
-
-    'about.tech.t': 'Technology Stack',
-    'about.tech.d': 'We build with the best modern tools.',
+    /* --- Footer links --- */
+    'footer.sw':            'Software Engineering',
+    'footer.dig':           'Digital Solutions',
+    'footer.mkt':           'Marketing & Creative',
+    'footer.aut':           'Business Automation',
+    'footer.ret':           'Tashgheel Retail',
+    'footer.rest':          'Tashgheel Restaurants',
+    'footer.srv':           'Tashgheel Services',
+    'footer.erp':           'Custom ERP',
+    'footer.about':         'About Us',
+    'footer.cases':         'Case Studies',
+    'footer.insights':      'Insights',
+    'footer.contact':       'Contact',
   },
 
   ar: {
-    // Nav + Hero + Intro
-    'nav.home': 'الرئيسية', 'nav.about': 'من نحن', 'nav.products': 'منتجاتنا', 'nav.services': 'الخدمات', 'nav.portfolio': 'أعمالنا', 'nav.blog': 'المدونة', 'nav.contact': 'اتصل بنا',
-    'nav.tashgheel': 'نظام تشغيل',
-    'nav.tashgheel.retail': 'تشغيل ريتيل',
-    'nav.tashgheel.services': 'تشغيل خدمات',
-    'nav.tashgheel.rest': 'تشغيل مطاعم',
-    'cta.quote': 'اطلب عرض سعر', 'hero.discover': 'استعرض الخدمات', 'hero.contact': 'تواصل معنا',
-    'intro.title': 'نبني من أجل النتائج، لا مجرد التسليمات.',
-    'intro.text': 'حلول متكاملة من التطوير وأنظمة نقاط البيع إلى المواقع واستراتيجيات التسويق والنمو.',
+    /* --- Navigation --- */
+    'nav.solutions':        'الحلول',
+    'nav.sw':               'هندسة البرمجيات',
+    'nav.digital':          'الحلول الرقمية',
+    'nav.marketing':        'التسويق والإبداع',
+    'nav.automation':       'أتمتة الأعمال',
+    'nav.products':         'المنتجات',
+    'nav.ret':              'تشغيل ريتيل',
+    'nav.rest':             'تشغيل مطاعم',
+    'nav.srv':              'تشغيل خدمات',
+    'nav.industries':       'القطاعات',
+    'nav.cases':            'دراسات الحالة',
+    'nav.insights':         'المقالات',
+    'nav.about':            'من نحن',
+    'nav.contact':          'اتصل بنا',
+    'nav.home':             'الرئيسية',
+    'cta.demo':             'اطلب عرضًا تجريبيًا',
+    'cta.quote':            'اطلب عرض سعر',
 
-    // Services
-    'services.title': 'خدماتنا',
-    'services.dev.title': 'تطوير البرمجيات',
-    'services.dev.desc': 'أنظمة مخصّصة حسب احتياج عملك.',
-    'services.pos.title': 'حلول تشغيل',
-    'services.pos.desc': 'أونلاين/أوفلاين، ثنائي اللغة وآمن لتجارة التجزئة والمطاعم.',
-    'services.web.title': 'المواقع والتجارة الإلكترونية',
-    'services.web.desc': 'مواقع عصرية سريعة ومتوافقة مع SEO.',
-    'services.mobile.title': 'تطبيقات الموبايل',
-    'services.mobile.desc': 'تجربة استخدام سلسة على iOS وAndroid.',
-    'services.marketing.title': 'التسويق الرقمي',
-    'services.marketing.desc': 'سوشيال ميديا، حملات، واستراتيجيات نمو عبر الإنترنت.',
-    'services.branding.title': 'الهوية والتصميم',
-    'services.branding.desc': 'شعارات وهوية بصرية وتصميمات احترافية.',
+    /* --- Hero --- */
+    'hero.badge':           'شريك التحول الرقمي',
+    'hero.h1a':             'تكنولوجيا تُشغّل',
+    'hero.h1b':             'أعمالك.',
+    'hero.h1c':             'تسويق يُنمّيها.',
+    'hero.subtitle':        'في إتقان سوليوشنز، نصمم ونطور ونسوّق حلولاً رقمية مخصصة تساعد الشركات على تبسيط العمليات وزيادة الإنتاجية وتسريع النمو.',
+    'hero.cta1':            'اطلب عرضًا تجريبيًا',
+    'hero.cta2':            'استعرض الحلول',
+    'hero.trust':           'موثوق من شركات في مصر ودول الخليج',
 
-    // Tashgheel Spotlight
-    'pos.title': 'اكتشف "تشغيل"',
-    'pos.desc': 'الجناح المتكامل لإدارة أعمالك. يعمل بسلاسة **كتطبيق سطح مكتب (أوفلاين)** أو **تطبيق ويب (أونلاين)**.',
+    /* --- Ecosystem --- */
+    'eco.label':            'منظومة متكاملة. نمو لا محدود.',
+    'eco.title':            'كل ما تحتاجه، متصل في منظومة واحدة.',
+    'eco.desc':             'من التسويق إلى البرمجيات، ومن الهوية البصرية إلى الأتمتة—كل جانب من عملك يعمل بتناسق كامل كمنظومة ذكية واحدة.',
+    'eco.message':          '🔗 شريك واحد. منظومة واحدة. نمو لا محدود.',
 
-    'tashgheel.retail.t': 'تشغيل ريتيل',
-    'tashgheel.retail.d': 'للملابس ومحلات التجزئة.',
+    /* --- Solutions --- */
+    'sol.label':            'حلولنا',
+    'sol.title':            'أربعة أقسام. رؤية واحدة.',
+    'sol.desc':             'ندمج الهندسة والتصميم والتسويق والأتمتة في منظومة موحدة مبنية حول أهداف عملك.',
+    'sol.sw.title':         'هندسة البرمجيات',
+    'sol.sw.tag':           'ERP · CRM · POS · HRMS',
+    'sol.sw.desc':          'برمجيات مخصصة بمستوى المؤسسات مصممة بدقة لعمليات عملك—من الـ ERP والـ CRM وحتى أنظمة نقاط البيع ولوحات تحليل الأعمال.',
+    'sol.sw.link':          'استعرض الهندسة ←',
+    'sol.dig.title':        'الحلول الرقمية',
+    'sol.dig.tag':          'ويب · موبايل · UI/UX',
+    'sol.dig.desc':         'مواقع إلكترونية عصرية، منصات تجارة إلكترونية عالية الأداء، تطبيقات موبايل أصيلة، وتجارب رقمية تحول الزوار إلى عملاء.',
+    'sol.dig.link':         'استعرض الحلول الرقمية ←',
+    'sol.mkt.title':        'التسويق والإبداع',
+    'sol.mkt.tag':          'استراتيجية · محتوى · إعلانات · إنتاج',
+    'sol.mkt.desc':         'خدمات تسويق متكاملة من الاستراتيجية وبناء الهوية إلى إنتاج المحتوى وإدارة السوشيال ميديا والإعلانات الأدائية وتحليلات الحملات.',
+    'sol.mkt.link':         'استعرض التسويق ←',
+    'sol.aut.title':        'أتمتة الأعمال',
+    'sol.aut.tag':          'ذكاء اصطناعي · تكاملات · سير عمل',
+    'sol.aut.desc':         'ربط كل أنظمتك. أتمتة المهام المتكررة. استثمار سير العمل المدعومة بالذكاء الاصطناعي وتكاملات API والتقارير الذكية للعمل بمستوى أعلى.',
+    'sol.aut.link':         'استعرض الأتمتة ←',
 
-    'tashgheel.services.t': 'تشغيل خدمات',
-    'tashgheel.services.d': 'لمراكز الصيانة والخدمات.',
+    /* --- Services Page Pillars & Features --- */
+    'srv.label':            'حلولنا',
+    'srv.title':            'تكنولوجيا متكاملة واستراتيجيات تسويق',
+    'srv.desc':             'من هندسة البرمجيات والتحول الرقمي إلى تسويق النمو وأتمتة الأعمال الذكية—نقدم حلولاً متكاملة تنمو مع أعمالك.',
+    'srv.p1.label':         'الركيزة 01',
+    'srv.p1.title':         'هندسة البرمجيات',
+    'srv.p1.desc':          'أنظمة مخصصة وقوية قابلة للتوسع وآمنة مصممة بدقة لتلبية احتياجات عملك المعقدة.',
+    'srv.p2.label':         'الركيزة 02',
+    'srv.p2.title':         'الحلول الرقمية',
+    'srv.p2.desc':          'منتجات رقمية جذابة مبنية للسرعة، تحويل الزوار، ورضا المستخدمين.',
+    'srv.p3.label':         'الركيزة 03',
+    'srv.p3.title':         'التسويق والإبداع',
+    'srv.p3.desc':          'نمو استراتيجي، هوية بصرية، إنتاج محتوى، وإعلانات أدائية تستهدف أعلى عائد استثمار.',
+    'srv.p4.label':         'الركيزة 04',
+    'srv.p4.title':         'أتمتة الأعمال',
+    'srv.p4.desc':          'ربط الأنظمة وأتمتة المهام وتوفير مئات الساعات عبر الذكاء الاصطناعي والتكاملات.',
+    'srv.why.title':        'لماذا تختار إتقان للحلول والخدمات',
+    'srv.why.1.t':          'شراكة استراتيجية',
+    'srv.why.1.d':          'نحن لا نسلم كودًا فحسب—بل نشاركك المسيرة لتحقيق نمو حقيقي وقابل للقياس.',
+    'srv.why.2.t':          'منظومة موحدة',
+    'srv.why.2.d':          'الهندسة والتصميم والتسويق والأتمتة تعمل جميعها بتناسق كامل.',
+    'srv.why.3.t':          'عائد استثمار ملموس',
+    'srv.why.3.d':          'تنفيذ قائم على البيانات يركز على الكفاءة التشغيلية وزيادة الإيرادات.',
+    'srv.faq.title':        'الأسئلة الشائعة',
 
-    'tashgheel.rest.t': 'تشغيل مطاعم',
-    'tashgheel.rest.d': 'للمطاعم والكافيهات والأغذية.',
+    'srv.sf1.t': 'أنظمة ERP مخصصة',            'srv.sf1.d': 'أنظمة تخطيط موارد المؤسسات المصممة بالكامل حسب دورتك التشغيلية.',
+    'srv.sf2.t': 'إدارة علاقات العملاء (CRM)',    'srv.sf2.d': 'إدارة العملاء والمبيعات المبنية خصيصًا لدورة مبيعاتك.',
+    'srv.sf3.t': 'إدارة الموارد البشرية (HRMS)', 'srv.sf3.d': 'الحضور والانصراف، المرتبات، التوظيف، وتقييم الأداء.',
+    'srv.sf4.t': 'نقاط بيع التجزئة (POS)',      'srv.sf4.d': 'أنظمة نقاط البيع للمتاجر متعددة الفروع مع العمل أوفلاين.',
+    'srv.sf5.t': 'نقاط بيع المطاعم',            'srv.sf5.d': 'إدارة الأغذية والمشروبات مع شاشات المطبخ والطاولات.',
+    'srv.sf6.t': 'إدارة المخزون',              'srv.sf6.d': 'مراقبة المخزون الفورية وتتبع الحركة عبر كل المستودعات.',
+    'srv.sf7.t': 'المالية والحسابات',          'srv.sf7.d': 'المقبوضات والمستحقات، الفواتير، والتقارير المالية الشاملة.',
+    'srv.sf8.t': 'المشتريات والتموين',          'srv.sf8.d': 'أوامر الشراء، إدارة الموردين، والتحكم المالي بالتكاليف.',
+    'srv.sf9.t': 'ذكاء الأعمال (BI)',           'srv.sf9.d': 'لوحات تحكم مخصصة وتقارير تفاعلية مدعومة بالبيانات.',
 
-    'tashgheel.manu.t': 'تشغيل تصنيع',
-    'tashgheel.manu.d': 'للمصانع وخطوط الإنتاج.',
+    'srv.dg1.t': 'المواقع المؤسسية',          'srv.dg1.d': 'تواجد رقمي احترافي محسن للسرعة ومحركات البحث SEO.',
+    'srv.dg2.t': 'منصات التجارة الإلكترونية',  'srv.dg2.d': 'متاجر إلكترونية عالية التحويل مع ربط بوابات الدفع المحلية.',
+    'srv.dg3.t': 'صفحات الهبوط (Landing Pages)', 'srv.dg3.d': 'صفحات مركزة عالية التأثير مصممة خصيصًا للحملات الإعلانية.',
+    'srv.dg4.t': 'تطبيقات الموبايل',           'srv.dg4.d': 'تطبيقات iOS وأندرويد أصيلة لتجربة مستخدم سلسة.',
+    'srv.dg5.t': 'بوابات العملاء',            'srv.dg5.d': 'تطبيقات ويب ذاتية الخدمة لتسهيل تفاعل العملاء.',
+    'srv.dg6.t': 'تصميم واجهات المستخدم (UI/UX)', 'srv.dg6.d': 'تجارب مستخدم مبتكرة وتصاميم عصرية للمنتجات الرقمية.',
+    'srv.dg7.t': 'الاستضافة والبنية التحتية',   'srv.dg7.d': 'إعدادات سحابية آمنة، شهادات الأمان SSL، وإدارة السيرفرات.',
+    'srv.dg8.t': 'الصيانة والدعم الفني',       'srv.dg8.d': 'تحديثات مستمرة، ترقيعات أمنية، ودعم فني سريع.',
+    'srv.dg9.t': 'تحسين أداء المواقع',         'srv.dg9.d': 'تسريع التحميل، تحسين مؤشرات الأداء، وتجربة الاستخدام.',
 
-    'pos.cta': 'شاهد ديمو تشغيل',
+    'srv.mk1.t': 'استراتيجيات التسويق',        'srv.mk1.d': 'خارطة طريق استراتيجية مدعومة بالبيانات للوصول لجمهورك.',
+    'srv.mk2.t': 'الهوية البصرية والعلامة',    'srv.mk2.d': 'شعارات، أدلة الهوية، وصياغة القصة البصرية لعلامتك.',
+    'srv.mk3.t': 'إنتاج المحتوى',              'srv.mk3.d': 'إنتاج الفيديو الاحترافي، التصوير، وكتابة النصوص الإعلانية.',
+    'srv.mk4.t': 'إدارة السوشيال ميديا',       'srv.mk4.d': 'إدارة كاملة، خطط المحتوى، والتفاعل المستمر مع المتابعين.',
+    'srv.mk5.t': 'التسويق الأدائي والإعلانات',  'srv.mk5.d': 'إعلانات موجهة عبر ميتا وجوجل وتيك توك تستهدف أعلى ROI.',
+    'srv.mk6.t': 'تحسين محركات البحث (SEO)',   'srv.mk6.d': 'زيادة الزيارات المجانية عبر استراتيجيات الكلمات المفتاحية.',
 
-    // Testimonials
-    'testimonials.title': 'آراء عملائنا',
-    'testimonials.t1.text': '"حلول Itqan لنقاط البيع حسّنت عملية المبيعات — سهلة وموثوقة."',
-    'testimonials.t1.author': '— أحمد، صاحب متجر',
-    'testimonials.t2.text': '"الموقع والتسويق زودوا عدد العملاء المحتملين 40% خلال 3 شهور."',
-    'testimonials.t2.author': '— سارة، مديرة تسويق',
-    'testimonials.t3.text': '"الدعم ثنائي اللغة أحدث فارقًا حقيقيًا في أعمالنا."',
-    'testimonials.t3.author': '— عمر، صاحب مطعم',
+    'srv.at1.t': 'أتمتة سير العمل',            'srv.at1.d': 'تبسيط المهام الداخلية وإلغاء الإدخال اليدوي المكرر.',
+    'srv.at2.t': 'أنظمة الذكاء الاصطناعي',     'srv.at2.d': 'بوتات ذكية، توجيه تلقائي، ورؤى تحليلية متقدمة.',
+    'srv.at3.t': 'تكاملات الأنظمة (APIs)',      'srv.at3.d': 'ربط سلس وتكامل كامل بين أنظمة منظومتك البرمجية.',
+    'srv.at4.t': 'أتمتة الواتساب',             'srv.at4.d': 'إرسال رسائل تلقائية وتحديثات الطلبات للعملاء عبر الواتساب.',
+    'srv.at5.t': 'ربط بوابات الدفع',           'srv.at5.d': 'معالجة دفع إلكتروني آمنة ودعم قنوات السداد المحلية.',
+    'srv.at6.t': 'أتمتة التقارير',             'srv.at6.d': 'تقارير دورية تلقائية ترسل مباشرة إلى الإدارة.',
 
-    // Blog
-    'blog.latest': 'أحدث المقالات',
-    'blog.readmore': 'اقرأ المزيد',
-    'blog.p1.title': 'كيف تغيّر أنظمة نقاط البيع تجارة التجزئة',
-    'blog.p1.desc': 'تعرّف كيف تحسّن أنظمة POS الحديثة الكفاءة والتقارير وتجربة العملاء.',
-    'blog.p2.title': 'لماذا يحتاج كل عمل إلى موقع إلكتروني',
-    'blog.p2.desc': 'موقعك هو بطاقتك التعريفية — تعلّم كيف تجعله فعّالًا وجذابًا.',
-    'blog.p3.title': 'اتجاهات التسويق الرقمي 2025',
-    'blog.p3.desc': 'ابقَ متقدمًا بأحدث استراتيجيات السوشيال والإعلانات الرقمية.',
-    //Blog Page 
-    "nav.home": "الرئيسية",
-    "nav.about": "من نحن",
-    "nav.services": "خدماتنا",
-    "nav.portfolio": "أعمالنا",
-    "nav.blog": "المدوّنة",
-    "nav.contact": "اتصل بنا",
+    /* --- Featured Products --- */
+    'prod.label':           'منتجاتنا المميزة',
+    'prod.title':           'حلولنا الرائدة',
+    'prod.desc':            'برمجيات متخصصة تشغّل بالفعل شركات في مصر والمنطقة.',
+    'prod.ret.title':       'تشغيل ريتيل',
+    'prod.ret.badge':       'نقاط بيع التجزئة',
+    'prod.ret.desc':        'حل متكامل لنقاط البيع وإدارة المخزون للمتاجر والملابس والمحلات متعددة الفروع.',
+    'prod.ret.f1':          'إدارة متعددة الفروع',
+    'prod.ret.f2':          'يعمل أونلاين وأوفلاين',
+    'prod.ret.f3':          'تقارير بمستوى ERP',
+    'prod.ret.f4':          'واجهة عربية وإنجليزية',
+    'prod.rest.title':      'تشغيل مطاعم',
+    'prod.rest.badge':      'نقاط بيع المطاعم',
+    'prod.rest.desc':       'منصة إدارة مطاعم شاملة تغطي نقاط البيع والطاولات وشاشة المطبخ والدليفري وحساب تكاليف الوصفات.',
+    'prod.rest.f1':         'شاشة المطبخ (KDS)',
+    'prod.rest.f2':         'إدارة الطاولات والدليفري',
+    'prod.rest.f3':         'حساب تكلفة الوصفات وتتبع الهدر',
+    'prod.rest.f4':         'أسعار متعددة القنوات',
+    'prod.srv.title':       'تشغيل خدمات',
+    'prod.srv.badge':       'ERP مراكز الخدمة',
+    'prod.srv.desc':        'مصمم لمراكز الصيانة والورش وشركات الخدمات. إدارة الزيارات والفنيين وقطع الغيار والفواتير.',
+    'prod.srv.f1':          'ملفات العملاء والمركبات',
+    'prod.srv.f2':          'تتبع أداء الفنيين',
+    'prod.srv.f3':          'إدارة الموردين وقطع الغيار',
+    'prod.srv.f4':          'جدولة المواعيد',
+    'prod.erp.title':       'ERP مخصص',
+    'prod.erp.badge':       'برمجيات المؤسسات',
+    'prod.erp.desc':        'أنظمة تخطيط موارد المؤسسات مبنية بالكامل حول عمليات ومتطلبات قطاعك الفريدة.',
+    'prod.erp.f1':          'بنية معيارية قابلة للتوسع',
+    'prod.erp.f2':          'سحابي ومحلي',
+    'prod.erp.f3':          'سير عمل ولوحات تحكم مخصصة',
+    'prod.erp.f4':          'API-first جاهز للتكامل',
 
-    "blog.title": "مدوّنتنا",
-    "blog.subtitle": "رؤى، اتجاهات، وتحديثات من إتقان سوليوشنز",
-    "read.more": "اقرأ المزيد",
+    /* --- Tashgheel Retail --- */
+    'ret.label':            'تشغيل ريتيل',
+    'ret.title':            'منصة إدارة وتجزئة متكاملة',
+    'ret.subtitle':         'نظام نقاط بيع وإدارة مخزون احترافي مصمم للتجزئة الحديثة—يجمع بين سهولة الاستخدام وتقارير بمستوى المؤسسات.',
+    'ret.cta1':             'اطلب عرضًا تجريبيًا',
+    'ret.cta2':             'استعرض الميزات',
+    'ret.ov.title':         'منظومة واحدة لكل عمليات التجزئة',
+    'ret.ov.desc':          'من كاونتر المبيعات إلى الإدارة الخلفية—تشغيل ريتيل يغطي كافة جوانب عملك.',
+    'ret.feat.title':       'الميزات الرئيسية',
+    'ret.f1.t':             'إدارة المستخدمين والصلاحيات',
+    'ret.f1.d':             'مستخدمين غير محدودين مع التحكم الصارم في الصلاحيات لكل دور.',
+    'ret.f2.t':             'فواتير قابلة للتخصيص',
+    'ret.f2.d':             'إضافة اللوجو، العنوان، اللغة، والتذييل ورسائل العروض بكل سهولة.',
+    'ret.f3.t':             'إدارة المخزون المتقدمة',
+    'ret.f3.d':             'تتبع أسعار الشراء والبيع، الجرد الدوري، وتنبيهات نواقص المخزون.',
+    'ret.f4.t':             'تتبع المصروفات',
+    'ret.f4.d':             'تسجيل المصروفات اليومية وربطها بالموظفين والتقارير المالية.',
+    'ret.f5.t':             'تاركت المبيعات',
+    'ret.f5.d':             'تحديد أهداف المبيعات الشهرية لكل بائع وتتبع الإنجاز فورياً.',
+    'ret.f6.t':             'نسخ احتياطي آمن',
+    'ret.f6.d':             'نسخ احتياطي مشفر بضغطة زر دون الحاجة لخبرة تقنية.',
+    'ret.rep.title':        'تقارير احترافية شمولية',
+    'ret.rep.l1':           'إجمالي المبيعات — كاش، فيزا، محفظة إلكترونية',
+    'ret.rep.l2':           'تحليل تكلفة البضاعة وصافي الأرباح',
+    'ret.rep.l3':           'المبيعات حسب الموظف، المنتجات، أو الأقسام',
+    'ret.rep.l4':           'تقييم المخزون وتتبع المرتجعات',
+    'ret.dep.title':        'خيارات التشغيل',
+    'ret.online.t':         'سحابي — تطبيق ويب',
+    'ret.online.d':         'مثالي لإدارة الفروع المتعددة والمتابعة عن بُعد مع مزامنة فورية.',
+    'ret.offline.t':        'أوفلاين — تطبيق سطح المكتب',
+    'ret.offline.d':        'استقرار كامل بدون إنترنت. حفظ البيانات محلياً على جهازك.',
 
-    "post1.title": "لماذا تحتاج كل شركة إلى نظام POS في 2025",
-    "post1.snippet": "من تتبع المخزون بسهولة إلى تقارير المبيعات الفورية، اكتشف كيف يمكن لنظام POS الحديث أن يغيّر عملك.",
+    /* --- Tashgheel Restaurants --- */
+    'rst.label':            'تشغيل مطاعم',
+    'rst.title':            'مصمم لسرعة وتحديات قطاع الأغذية والمشروبات',
+    'rst.subtitle':         'منصة إدارة مطاعم شاملة تغطي نقاط البيع، شاشة المطبخ، إدارة الطاولات، الدليفري، وحساب تكاليف الوصفات.',
+    'rst.f1.t':             'إدارة المواد الخام',
+    'rst.f1.d':             'إضافة المكونات، ربط الموردين، وتتبع مواعيد السداد.',
+    'rst.f2.t':             'حساب تكلفة المنيو',
+    'rst.f2.d':             'حساب التكلفة الفعلية للوجبات وتتبع نسب الهدر والفاقد.',
+    'rst.f3.t':             'تسعير مرن',
+    'rst.f3.d':             'أسعار مختلفة للصالة، التيك أواي، والدليفري مع دعم الساعات السعيدة.',
+    'rst.f4.t':             'نقاط البيع السريعة (POS)',
+    'rst.f4.d':             'واجهة فائقة السرعة مع الخصومات وسداد متعدد وفصل الفواتير.',
+    'rst.f5.t':             'إدارة الطاولات',
+    'rst.f5.d':             'خريطة تفاعلية للصالة، دمج ونقل وإغلاق الطاولات بمرونة.',
+    'rst.f6.t':             'شاشة المطبخ (KDS)',
+    'rst.f6.d':             'عرض الطلبات مباشرة للمطبخ مع تتبع حالات التحضير.',
+    'rst.f7.t':             'إدارة فريق العمل',
+    'rst.f7.d':             'أدوار محددة للويتر، الشيف، والكاشير مع تقارير الأداء.',
+    'rst.f8.t':             'إدارة الدليفري',
+    'rst.f8.d':             'قاعدة بيانات العملاء وعناوينهم لتسريع الطلبات الهاتفية.',
+    'rst.f9.t':             'المخزون والهدر',
+    'rst.f9.d':             'خصم تلقائي للمكونات عند البيع مع تقارير دقيقة للهدر.',
+    'rst.f10.t':            'طباعة موزعة',
+    'rst.f10.d':            'توجيه طلبات المأكولات للمطبخ والمشروبات للبار تلقائياً.',
+    'rst.f11.t':            'تحليلات المبيعات',
+    'rst.f11.d':            'تحليل الإيرادات، قنوات البيع، وأداء الموظفين والموردين.',
+    'rst.f12.t':            'نسخ احتياطي آمن',
+    'rst.f12.d':            'حفظ واسترجاع البيانات بضغطة زر واحدة.',
 
-    "post2.title": "اتجاهات التسويق الرقمي التي لا يمكنك تجاهلها",
-    "post2.snippet": "الإعلانات المدعومة بالذكاء الاصطناعي، المحتوى المخصص، والنمو عبر المنصات — هذه أبرز ملامح 2025.",
+    /* --- Tashgheel Services --- */
+    'svc.label':            'تشغيل خدمات',
+    'svc.title':            'شغّل مركز خدمتك بكفاءة فائقة',
+    'svc.subtitle':         'نظام شامل لمراكز الصيانة وورش السيارات والخدمات—تتبع الزيارات، الفنيين، قطع الغيار، والفواتير.',
+    'svc.f1.t':             'إدارة الزيارات وأوامر الشغل',
+    'svc.f1.d':             'تسجيل وتتبع زيارات العملاء. البحث برقم اللوحة أو الشاسيه أو الاسم.',
+    'svc.f2.t':             'ملفات العملاء والمركبات',
+    'svc.f2.d':             'سجل كامل يشمل الموديل، رقم الشاسيه، عداد الكيلومترات، وسجل الصيانة.',
+    'svc.f3.t':             'قطع الغيار والمخزون',
+    'svc.f3.d':             'تتبع التكلفة وسعر البيع والربحية. ربط القطع مباشرة بأوامر الشغل.',
+    'svc.f4.t':             'إدارة الموردين',
+    'svc.f4.d':             'متابعة الديون والمدفوعات وسجل المعاملات لكل مورد.',
+    'svc.f5.t':             'إدارة المصنعيات والخدمات',
+    'svc.f5.d':             'إضافة المصنعيات ودمجها مع قطع الغيار في فاتورة واحدة.',
+    'svc.f6.t':             'الفوترة الاحترافية',
+    'svc.f6.d':             'فواتير تفصيلية قابلة للطباعة مع دعم الخصومات والتفاصيل.',
+    'svc.f7.t':             'جدولة المواعيد',
+    'svc.f7.d':             'تنظيم المواعيد وتنبيهات الصيانة القادمة على الفاتورة.',
+    'svc.f8.t':             'تتبع أداء الفنيين',
+    'svc.f8.d':             'توزيع الأعمال على الفنيين ومتابعة إنتاجية كل فني.',
+    'svc.f9.t':             'تتبع المصروفات التشغيلية',
+    'svc.f9.d':             'تسجيل المصاريف اليومية وتحديد صافي الأرباح.',
+    'svc.f10.t':            'التقارير والتحليلات',
+    'svc.f10.d':            'تقارير الإيرادات، أكثر الخدمات طلباً، وأداء الفنيين.',
+    'svc.f11.t':            'حماية ونسخ احتياطي',
+    'svc.f11.d':            'حماية بياناتك واسترجاعها بسهولة في أي وقت.',
 
-    "post3.title": "من التجزئة إلى المطاعم: مستقبل أنظمة POS الذكية",
-    "post3.snippet": "كيف تتطور أنظمة POS لتخدم المتاجر والمطاعم بحلول مخصصة.",
-    'about.title': 'عن إتقان سوليوشنز',
-    'about.subtitle': 'نبني البرمجيات وPOS والمواقع ومحركات النمو بإتقان.',
-    'about.desc': 'في إتقان سوليوشنز، نؤمن بأن التكنولوجيا يجب أن تسهل العمل لا أن تعقده. لأكثر من خمس سنوات، نساعد الشركات على تطوير عملياتها من خلال برمجيات ذكية، أنظمة POS موثوقة، مواقع احترافية، واستراتيجيات رقمية تركز على النتائج. نحن لا نسلم مشاريع فحسب—نحن نبني قصص نجاح طويلة الأمد.',
+    /* --- Shared Product Strings --- */
+    'prod.dep.title':       'خيارات التشغيل',
+    'prod.online.t':        'سحابي — تطبيق ويب',
+    'prod.online.d':        'مثالي لإدارة الفروع المترابطة والوصول عن بُعد مع مزامنة سحابية.',
+    'prod.offline.t':       'أوفلاين — تطبيق سطح المكتب',
+    'prod.offline.d':       'تشغيل محلي استقرار تام وبدون الحاجة لاتصال بالإنترنت.',
+    'prod.cta.demo':        'اطلب عرضًا تجريبيًا مجانيًا',
 
-    'about.ch1': '+5 سنوات', 'about.ch2': 'ثنائي اللغة (ع/EN)', 'about.ch3': 'تسليم شامل',
-    'about.values': 'مبادئنا',
-    'about.v1.t': 'الجودة', 'about.v1.d': 'كود نظيف، عمليات منظمة، ونتائج قابلة للقياس. كل ما نبنيه مصمم ليكون مستقرًا وقابلاً للتوسع وجاهزًا للأعمال.',
-    'about.v2.t': 'السرعة', 'about.v2.d': 'تسليم سريع دون أي مساومة على الاعتمادية. نحترم المواعيد واحتياجات العمل الحقيقية.',
-    'about.v3.t': 'الدعم', 'about.v3.d': 'دعم ثنائي اللغة (إنجليزي/عربي) وشراكة طويلة الأمد. نبقى مع عملائنا بعد الإطلاق، ليس فقط قبله.',
+    /* --- Industries --- */
+    'ind.label':            'القطاعات التي نخدمها',
+    'ind.title':            'مصمم لقطاعك',
+    'ind.desc':             'حلولنا مكيّفة للتحديات الفريدة لكل قطاع—لا قوالب جاهزة.',
+    'ind.retail':           'التجزئة',
+    'ind.rest':             'المطاعم',
+    'ind.health':           'الرعاية الصحية',
+    'ind.edu':              'التعليم',
+    'ind.mfg':              'التصنيع',
+    'ind.dist':             'التوزيع',
+    'ind.log':              'اللوجستيات',
+    'ind.whole':            'الجملة',
+    'ind.pro':              'الخدمات المهنية',
+    'ind.gov':              'الحكومة',
 
-    // New About Sections AR
-    'about.mission.t': 'مهمتنا',
-    'about.mission.d': 'تمكين الشركات من خلال تكنولوجيا عملية وموثوقة وذكية تبسط التعقيد، تزيد الكفاءة، وتدفع النمو المستدام.',
-    'about.vision.t': 'رؤيتنا',
-    'about.vision.d': 'أن نكون شريك التحول الرقمي الرائد في منطقة الشرق الأوسط وشمال أفريقيا، المعروفين بالابتكار، الثقة، والتأثير الحقيقي في الأعمال.',
+    /* --- Why ITQAN --- */
+    'why.label':            'لماذا إتقان',
+    'why.title':            'الفرق يكمن في التفاصيل',
+    'why.desc':             'لسنا شركة برمجيات عادية. نحن شريك تكنولوجي استراتيجي ملتزم بنموك على المدى البعيد.',
+    'why.b1.t':             'حلول مخصصة بالكامل',
+    'why.b1.d':             'كل نظام نبنيه مصمم خصيصًا لعمليات عملك—لا قوالب جاهزة.',
+    'why.b2.t':             'أونلاين وأوفلاين',
+    'why.b2.d':             'برمجياتنا تعمل مع الإنترنت وبدونه. استمرارية أعمالك مضمونة دائمًا.',
+    'why.b3.t':             'دعم متعدد الفروع',
+    'why.b3.d':             'إدارة فروع غير محدودة من لوحة تحكم واحدة مع مزامنة فورية.',
+    'why.b4.t':             'بنية سحابية أولاً',
+    'why.b4.d':             'بنية تحتية سحابية آمنة وقابلة للتوسع بموثوقية مستوى المؤسسات.',
+    'why.b5.t':             'عربي وإنجليزي',
+    'why.b5.d':             'دعم كامل للغتين مع RTL/LTR في جميع أنظمتنا وواجهاتنا.',
+    'why.b6.t':             'أمان المؤسسات',
+    'why.b6.d':             'صلاحيات قائمة على الأدوار، تشفير البيانات، نسخ احتياطية آمنة.',
+    'why.b7.t':             'أنظمة قابلة للتوسع',
+    'why.b7.d':             'بنيتنا تنمو مع عملك—من فرع واحد إلى عملية على مستوى وطني.',
+    'why.b8.t':             'دعم مستمر',
+    'why.b8.d':             'دعم تقني ثنائي اللغة، تدريب، وشراكة طويلة الأمد بعد كل إطلاق.',
 
-    'about.stats.years': 'سنوات خبرة',
-    'about.stats.projects': 'مشروع مُسلم',
-    'about.stats.clients': 'عميل سعيد',
-    'about.stats.team': 'عضو بالفريق',
+    /* --- Process --- */
+    'proc.label':           'كيف نعمل',
+    'proc.title':           'منهجيتنا المثبتة',
+    'proc.desc':            'منهجية منظمة تضمن الجودة والسرعة والنتائج في كل مشروع.',
+    'proc.tab.dev':         'عملية التطوير',
+    'proc.tab.mkt':         'عملية التسويق',
+    'proc.d1':              'الاستكشاف',    'proc.d1d': 'فهم عملك وأهدافك ومتطلباتك التقنية.',
+    'proc.d2':              'التحليل',      'proc.d2d': 'دراسة معمقة لسير العمل وتدفقات البيانات والبنية التقنية.',
+    'proc.d3':              'التصميم',      'proc.d3d': 'إطارات wireframes ونماذج أولية ومنظومة تصميم.',
+    'proc.d4':              'التطوير',      'proc.d4d': 'سبرينتات مرنة تسلّم ميزات قابلة للاستخدام كل أسبوعين.',
+    'proc.d5':              'الاختبار',     'proc.d5d': 'اختبارات جودة وأداء وقبول المستخدم.',
+    'proc.d6':              'الإطلاق',      'proc.d6d': 'إطلاق سلس مع إعداد بنية تحتية دون توقف.',
+    'proc.d7':              'التدريب',      'proc.d7d': 'تدريب شامل للفريق وتوثيق متكامل.',
+    'proc.d8':              'الدعم',        'proc.d8d': 'صيانة مستمرة، تحديثات، وشراكة تقنية دائمة.',
+    'proc.m1':              'البحث',        'proc.m1d': 'أبحاث السوق وتحليل المنافسين وتحديد الجمهور.',
+    'proc.m2':              'الاستراتيجية', 'proc.m2d': 'خطة الوصول للسوق وتموضع العلامة وخارطة الحملات.',
+    'proc.m3':              'التخطيط',      'proc.m3d': 'تقويم المحتوى والـ Creative Briefs واختيار القنوات.',
+    'proc.m4':              'الإنتاج',      'proc.m4d': 'تصميم وكتابة ومقاطع فيديو وتطوير الأصول الإبداعية.',
+    'proc.m5':              'الإطلاق',      'proc.m5d': 'تفعيل الحملة عبر جميع القنوات المختارة.',
+    'proc.m6':              'التحسين',      'proc.m6d': 'مراقبة الأداء الفوري واختبارات A/B.',
+    'proc.m7':              'التقارير',     'proc.m7d': 'لوحات KPI شهرية وتقارير تحليل العائد على الاستثمار.',
 
-    'about.timeline.t': 'رحلتنا',
-    'about.time.1.y': '2020', 'about.time.1.t': 'التأسيس', 'about.time.1.d': 'البداية كفريق تطوير متخصص برؤية لبناء حلول أعمال عملية وذات مغزى.',
-    'about.time.2.y': '2022', 'about.time.2.t': 'إطلاق نقاط بيع "تشغيل"', 'about.time.2.d': 'إطاق نظامنا الرائد لنقاط البيع المصمم لقطاعات التجزئة والمطاعم والتصنيع.',
-    'about.time.3.y': '2024', 'about.time.3.t': 'التوسع', 'about.time.3.d': 'دخول قطاعات سوقية جديدة وتوسيع خدماتنا لتشمل التحول الرقمي الكامل وحلول التسويق.',
-    'about.time.4.y': '2025', 'about.time.4.t': 'الابتكار', 'about.time.4.d': 'دمج الذكاء الاصطناعي والأتمتة في منتجاتنا لتقديم سير عمل أذكى وقرارات مبنية على البيانات.',
-    'about.time.5.y': '2026', 'about.time.5.t': 'التوسع والذكاء', 'about.time.5.d': 'توسيع البنية التحتية السحابية، التكاملات المتقدمة، وتحليلات مدعومة بالذكاء الاصطناعي لمساعدة الشركات على العمل بكفاءة أعلى ورؤى أوضح.',
+    /* --- Case Studies --- */
+    'cs.label':             'دراسات الحالة',
+    'cs.title':             'نتائج حقيقية. شركات حقيقية.',
+    'cs.desc':              'كيف نساعد المنظمات على تحويل عملياتها وتسريع نموها من خلال التكنولوجيا.',
+    'cs.c1.title':          'ERP تجزئة متعدد الفروع',
+    'cs.c1.ind':            'تجزئة',
+    'cs.c1.challenge':      'سلسلة تجزئة متنامية عانت من تتبع مخزون يدوي عبر 5 فروع مما تسبب في تناقضات وخسارة مبيعات.',
+    'cs.c1.solution':       'بنينا نقطة بيع أوفلاين أولاً مدمجة مع لوحة ERP مركزية ومزامنة مخزون فورية وتنبيهات إعادة طلب تلقائية.',
+    'cs.c1.tech':           'Electron · SQL Server · REST API · Power BI',
+    'cs.c1.metric1':        '40%',         'cs.c1.label1': 'تسريع العمليات',
+    'cs.c1.metric2':        '5 فروع',      'cs.c1.label2': 'متزامنة',
+    'cs.c2.title':          'تحول رقمي لسلسلة مطاعم',
+    'cs.c2.ind':            'مطاعم',
+    'cs.c2.challenge':      'مجموعة مطاعم بـ 3 فروع احتاجت لتقليل وقت الخروج وتتبع تكاليف الطعام وتوحيد العمليات.',
+    'cs.c2.solution':       'نشرنا تشغيل مطاعم مع KDS وإدارة الطاولات وحساب تكاليف الوصفات ولوحة إدارة مركزية.',
+    'cs.c2.tech':           'Tashgheel POS · KDS · Cloud Dashboard',
+    'cs.c2.metric1':        '60%',         'cs.c2.label1': 'أسرع عند الدفع',
+    'cs.c2.metric2':        '3 فروع',      'cs.c2.label2': 'نظام موحد',
+    'cs.c3.title':          'حملة تسويق رقمي',
+    'cs.c3.ind':            'تسويق',
+    'cs.c3.challenge':      'شركة خدمات B2B لديها عروض قوية لكنها تعاني من ضعف الحضور الرقمي وتوليد العملاء المحتملين.',
+    'cs.c3.solution':       'قدمنا هوية بصرية كاملة وموقعًا مؤسسيًا واستراتيجية SEO وحملة Meta Ads لمدة 3 أشهر.',
+    'cs.c3.tech':           'Meta Ads · Google Ads · SEO · Brand Design',
+    'cs.c3.metric1':        '220%',        'cs.c3.label1': 'زيادة الزوار',
+    'cs.c3.metric2':        '4×',          'cs.c3.label2': 'زيادة العملاء',
 
-    'about.process.t': 'مراحل العمل',
-    'about.proc.1': 'الاستكشاف – فهم تحديات عملك وأهدافك',
-    'about.proc.2': 'الاستراتيجية – تصميم الحل التقني والعملي المناسب',
-    'about.proc.3': 'البناء – التطوير بدقة وأفضل الممارسات',
-    'about.proc.4': 'الإطلاق – النشر، التدريب، والتحسين',
-    'about.proc.5': 'النمو – التحسين المستمر والتوسع',
+    'cs.c4.ind':            'الرعاية الصحية',
+    'cs.c4.title':          'نظام HRMS لمؤسسة رعاية صحية متعددة الأقسام',
+    'cs.c4.challenge':      'مركز طبي يضم 200 موظف عانى من التتبع اليدوي للحضور والمرتبات وإدارات الإجازات بين الأقسام.',
+    'cs.c4.solution':       'نشر نظام HRMS مخصص يغطي تتبع الحضور، الحساب الآلي للمرتبات، إدارة الإجازات، وتقييمات الأداء.',
+    'cs.c4.metric1':        '85%',         'cs.c4.label1': 'خفض في المهام اليدوية',
+    'cs.c4.metric2':        '200',         'cs.c4.label2': 'موظف تم انضمامهم في أسبوعين',
 
-    'about.tech.t': 'التقنيات المستخدمة',
-    'about.tech.d': 'نعتمد على أحدث أدوات التكنولوجيا العالمية.',
-    'services.lead': 'برمجيات، نقاط بيع، مواقع، تطبيقات موبايل، تسويق وهوية.',
-    'services.cta': 'ابدأ مشروعك',
+    'cs.c5.ind':            'التجزئة والجملة',
+    'cs.c5.title':          'منصة تجارة إلكترونية مخصصة متكاملة مع الـ ERP',
+    'cs.c5.challenge':      'علامة تجارية للجملة أرادت البيع المباشر للمستهلك عبر الإنترنت مع مزامنة المخزون المباشرة من الـ ERP.',
+    'cs.c5.solution':       'بناء متجر إلكتروني عالي الأداء مع مزامنة المخزون المباشرة، إدارة الكتالوج، وبوابات دفع متكاملة.',
+    'cs.c5.metric1':        '3 أضعاف',     'cs.c5.label1': 'نمو المبيعات أونلاين',
+    'cs.c5.metric2':        'فوري',        'cs.c5.label2': 'مزامنة المخزون عبر القنوات',
 
-    // Services Detailed Content AR
-    'srv.why.title': 'لماذا تختار إتقان؟',
-    'srv.why.1.t': 'خبرة محلية', 'srv.why.1.d': 'نفهم السوق العربي، متطلبات RTL، وقواعد العمل المحلية.',
-    'srv.why.2.t': 'مرونة وسرعة', 'srv.why.2.d': 'نعمل بنظام Sprints لتسليم ميزات قابلة للاستخدام بسرعة وتطويرها بناءً على الملاحظات.',
-    'srv.why.3.t': 'دعم كامل', 'srv.why.3.d': 'عملنا لا ينتهي عند الإطلاق. نوفر التدريب، الصيانة، ودعم التوسع.',
+    /* --- Testimonials --- */
+    'test.label':           'آراء العملاء',
+    'test.title':           'ماذا يقول عملاؤنا',
+    'test.t1.text':         'سلّمت إتقان نظام POS غيّر طريقة إدارتنا لـ 4 فروع كليًا. قدرة العمل أوفلاين كانت حيوية لاستمرارية أعمالنا.',
+    'test.t1.name':         'أحمد م.',
+    'test.t1.role':         'مالك سلسلة تجزئة، القاهرة',
+    'test.t2.text':         'بنى فريق التسويق علامتنا التجارية من الصفر وأدار حملاتنا الرقمية. خلال 3 أشهر، تضاعفت عملاؤنا المحتملون 4 مرات.',
+    'test.t2.name':         'سارة ك.',
+    'test.t2.role':         'الرئيس التنفيذي، شركة خدمات مهنية',
+    'test.t3.text':         'الـ ERP المخصص الذي بنوه لشركة التوزيع وفّر علينا مئات الساعات شهريًا. الدعم ثنائي اللغة جعل التبني سلسًا للفريق بأكمله.',
+    'test.t3.name':         'عمر ر.',
+    'test.t3.role':         'مدير العمليات، شركة توزيع',
 
-    'srv.dev.feat': 'أنظمة ERP مخصصة، ربط API، وأدوات الأتمتة.',
-    'srv.pos.feat': 'مخزون، مبيعات، CRM، وامتثال ضريبي كامل.',
-    'srv.web.feat': 'صفحات هبوط، مواقع شركات، ومتاجر إلكترونية عالية الأداء.',
-    'srv.mob.feat': 'تطبيقات أصلية ومتعددة المنصات (Flutter/React Native).',
-    'srv.mkt.feat': 'SEO، إدارة وسائل التواصل، وإعلانات ممولة.',
-    'srv.brd.feat': 'تصميم شعارات، هوية بصرية، وأدلة استخدام العلامة التجارية.',
+    /* --- Integrations --- */
+    'int.label':            'التكاملات',
+    'int.title':            'يتصل بكل منظومتك',
+    'int.desc':             'أنظمتنا تتكامل بشكل أصيل مع الأدوات والمنصات التي تستخدمها شركتك بالفعل.',
 
-    // Portfolio Extended AR
-    'portfolio.title': 'أعمال مختارة',
-    'portfolio.lead': 'لمحة عن البرمجيات، أنظمة POS، المواقع، والحملات التي قدمناها.',
-    'port.feat.title': 'دراسة حالة مميزة',
-    'port.feat.name': 'منظومة تشغيل POS',
-    'port.feat.desc': 'نظام متكامل لتجارة التجزئة والخدمات. يشمل نقطة بيع لسطح المكتب، لوحة تحكم سحابية، وتطبيق موبايل لمتابعة المبيعات لحظيًا.',
-    'port.feat.tag': 'المنتج الرائد',
+    /* --- Insights --- */
+    'ins.label':            'المقالات',
+    'ins.title':            'معرفة تدفع النمو',
+    'ins.desc':             'رؤى متخصصة في التحول الرقمي وهندسة البرمجيات واستراتيجيات نمو الأعمال.',
+    'ins.readmore':         'اقرأ المقال ←',
+    'ins.p1.cat':           'التحول الرقمي',
+    'ins.p1.title':         'لماذا تستثمر الشركات المتوسطة في ERP مخصص في 2025',
+    'ins.p1.desc':          'البرمجيات الجاهزة لم تعد تلائم الاحتياجات التشغيلية المعقدة. إليك لماذا أصبح الـ ERP المخصص ميزة تنافسية.',
+    'ins.p2.cat':           'استراتيجية التسويق',
+    'ins.p2.title':         'دليل التسويق الأدائي لنمو B2B في منطقة الشرق الأوسط',
+    'ins.p2.desc':          'إطار عمل قائم على البيانات لتشغيل حملات Meta Ads وGoogle Ads وLinkedIn تولّد عملاء محتملين مؤهلين.',
+    'ins.p3.cat':           'أتمتة الأعمال',
+    'ins.p3.title':         'كيف تعيد الأتمتة المدعومة بالذكاء الاصطناعي تشكيل العمليات التجارية',
+    'ins.p3.desc':          'من معالجة المستندات إلى التقارير الذكية—اكتشف كيف تستخدم الشركات الأتمتة لخفض التكاليف وتسريع القرارات.',
 
-    'port.p1.t': 'نقاط بيع تجزئة — متعدد الفروع', 'port.p1.d': 'يعمل دون إنترنت، واجهة عربية/إنجليزية، تقارير ومخزون.', 'port.p1.tags': 'Desktop, Electron, SQLite',
-    'port.p2.t': 'نقاط بيع مطاعم', 'port.p2.d': 'طاولات، شاشة مطبخ، مرتجعات/خصومات، وحساب تكاليف.', 'port.p2.tags': 'Touch Screen, Printers',
-    'port.p3.t': 'موقع تعريفي للشركات', 'port.p3.d': 'عصري، ثنائي اللغة، وأداء عالي متوافق مع SEO.', 'port.p3.tags': 'HTML5, CSS3, SEO',
-    'port.p4.t': 'منصة تجارة إلكترونية', 'port.p4.d': 'متجر كامل بربط بوابات الدفع وواجهة تفاعلية.', 'port.p4.tags': 'React, Node.js, Stripe',
-    'port.p5.t': 'نظام إدارة مراكز صيانة', 'port.p5.d': 'إدارة زيارات، فنيين، قطع غيار، وفواتير.', 'port.p5.tags': 'Web App, Cloud',
-    'port.p6.t': 'تطبيق ولاء عملاء', 'port.p6.d': 'تطبيق موبايل للنقاط والمكافآت والإشعارات.', 'port.p6.tags': 'Flutter, iOS, Android',
+    /* --- CTA --- */
+    'cta.title':            'مستعد لتحويل أعمالك رقميًا؟',
+    'cta.desc':             'دعنا نبني تكنولوجيا تعمل بالطريقة التي تعمل بها. اطلب استشارة ونصمم خارطة طريق مخصصة لأهدافك.',
+    'cta.btn1':             'اطلب استشارة',
+    'cta.btn2':             'استعرض أعمالنا',
 
-    'cta.project': 'هل لديك مشروع مشابه؟',
-    'contact.title': 'تواصل معنا', 'contact.lead': 'أخبرنا عن مشروعك. نرد خلال 24 ساعة.',
-    'contact.info': 'بيانات التواصل',
-    'contact.form.title': 'أرسل رسالة', 'contact.form.name': 'الاسم', 'contact.form.email': 'البريد', 'contact.form.phone': 'الهاتف', 'contact.form.msg': 'الرسالة', 'contact.form.send': 'إرسال',
+    /* --- Footer --- */
+    'footer.tagline':       'تكنولوجيا تُشغّل أعمالك. تسويق يُنمّيها.',
+    'footer.col.solutions': 'الحلول',
+    'footer.col.products':  'المنتجات',
+    'footer.col.company':   'الشركة',
+    'footer.follow':        'تابعنا',
+    'footer.copy':          '© {year} إتقان سوليوشنز. جميع الحقوق محفوظة.',
 
-    // Tashgheel Retail Page
-    'ret.hero.title': 'تشغيل ريتيل (للتجزئة)',
-    'ret.hero.desc': 'نظام نقاط بيع احترافي صُمم خصيصًا لتلبية احتياجات متاجر التجزئة، يجمع بين السهولة وقوة تقارير الـ ERP.',
-    'ret.cta.demo': 'اطلب نسخة تجريبية',
-    'ret.overview.title': 'نظام احترافي وشامل',
-    'ret.overview.text': 'يجمع بين سهولة الاستخدام وقوة الإدارة المالية والتشغيلية.',
-    'ret.features.title': 'المميزات الرئيسية',
-    'ret.f1.t': 'إدارة المستخدمين والصلاحيات', 'ret.f1.d': 'عدد لا نهائي من المستخدمين مع تحكم دقيق في الصلاحيات.',
-    'ret.f2.t': 'فواتير مخصصة بالكامل', 'ret.f2.d': 'تحكم في اللوجو، العنوان، اللغة، ورسالة التذييل.',
-    'ret.f3.t': 'إدارة المخزون المتقدمة', 'ret.f3.d': 'متابعة التكلفة/البيع، التصنيفات، وجرد المخزون الفعلي.',
-    'ret.f4.t': 'إدارة المصروفات', 'ret.f4.d': 'تسجيل المصروفات وربطها بالموظفين والتقارير المالية.',
-    'ret.f5.t': 'تتبع أهداف المبيعات', 'ret.f5.d': 'تحديد "تارجت" شهري للبائعين ومتابعة نسبة الإنجاز.',
-    'ret.f6.t': 'النسخ الاحتياطي', 'ret.f6.d': 'إنشاء واستعادة النسخة الاحتياطية بسهولة في أي وقت.',
+    /* --- About --- */
+    'about.label':          'عن إتقان سوليوشنز',
+    'about.title':          'نهندس النمو.',
+    'about.subtitle':       'شركة تحول رقمي وهندسة برمجيات تساعد الشركات في مصر ومنطقة الشرق الأوسط على العمل بذكاء أكبر والنمو بسرعة أعلى.',
+    'about.desc':           'في إتقان سوليوشنز، نؤمن بأن التكنولوجيا يجب أن تخدم عملك—لا العكس. منذ 2020، ندمج هندسة البرمجيات والابتكار الرقمي والتسويق الاستراتيجي في منظومة واحدة متكاملة تساعد المنظمات في كل مرحلة من مسيرة نموها.',
+    'about.mission.t':      'مهمتنا',
+    'about.mission.d':      'تمكين الشركات بتكنولوجيا عملية وموثوقة وذكية تبسط التعقيد وتزيد الكفاءة وتدفع النمو المستدام.',
+    'about.vision.t':       'رؤيتنا',
+    'about.vision.d':       'أن نكون الشريك الرائد للتحول الرقمي في منطقة الشرق الأوسط، معروفين بالتميز الهندسي والتأثير الإبداعي ونتائج الأعمال الحقيقية.',
+    'about.v1.t':           'جودة الهندسة',
+    'about.v1.d':           'بنية نظيفة، أنظمة قابلة للتوسع، وكود يصمد أمام اختبار الزمن.',
+    'about.v2.t':           'سرعة التسليم',
+    'about.v2.d':           'تنفيذ مرن بنتائج أعمال حقيقية، لا مجرد تسليمات.',
+    'about.v3.t':           'عمق الشراكة',
+    'about.v3.d':           'نبقى مع عملائنا بعد الإطلاق—تدريب، دعم، وتحسين مستمر.',
+    'about.time.1.y':       '2020', 'about.time.1.t': 'التأسيس',              'about.time.1.d': 'تأسست إتقان برؤية واضحة: بناء برمجيات ذات معنى وعملية لشركات حقيقية.',
+    'about.time.2.y':       '2021', 'about.time.2.t': 'أول ERP مؤسسي',        'about.time.2.d': 'سلّمنا أول ERP مخصص لشركة توزيع متعددة الفروع مما أثبت قدراتنا الهندسية.',
+    'about.time.3.y':       '2022', 'about.time.3.t': 'إطلاق تشغيل',         'about.time.3.d': 'إطلاق منصة تشغيل للتجزئة والمطاعم ومراكز الخدمة في مصر.',
+    'about.time.4.y':       '2023', 'about.time.4.t': 'قسم الرقمي والتسويق', 'about.time.4.d': 'توسعنا في الحلول الرقمية الكاملة والتسويق الأدائي لنصبح شريكًا متكاملًا.',
+    'about.time.5.y':       '2024', 'about.time.5.t': 'التوسع الإقليمي',     'about.time.5.d': 'امتد نطاقنا لأسواق الخليج بحلول سحابية وتطبيقات عن بعد.',
+    'about.time.6.y':       '2025–26', 'about.time.6.t': 'عصر الذكاء الاصطناعي', 'about.time.6.d': 'دمج أتمتة مدعومة بالذكاء الاصطناعي وتحليلات ذكية وسير عمل الجيل التالي.',
+    'about.tech.t':         'التقنيات المستخدمة',
+    'about.tech.d':         'نبني بأفضل الأدوات الحديثة، منظمة في طبقات قدرات.',
+    'about.process.t':      'مراحل العمل',
 
-    'ret.rep.title': 'تقارير بمستوى ERP',
-    'ret.rep.desc': 'تقارير تفصيلية دقيقة لمتابعة الأرباح.',
-    'ret.rep.l1': 'إجمالي المبيعات (كاش، فيزا، موبايل)',
-    'ret.rep.l2': 'تحليل تكلفة البضاعة (COGS) وصافي الربح',
-    'ret.rep.l3': 'المبيعات حسب المستخدم أو الصنف',
-    'ret.rep.l4': 'قيمة المخزون والمرتجهات',
+    /* --- Contact --- */
+    'contact.label':        'تواصل معنا',
+    'contact.title':        'دعنا نبني شيئًا رائعًا',
+    'contact.desc':         'أخبرنا عن مشروعك وأهدافك. نرد في غضون 24 ساعة بخطوة واضحة تالية.',
+    'contact.info.title':   'معلومات التواصل',
+    'contact.email':        'info@itqansolutions.org',
+    'contact.phone1':       '+20 112 652 2373',
+    'contact.phone2':       '+20 115 525 3886',
+    'contact.phone3':       '+20 114 270 3439',
+    'contact.form.title':   'أرسل لنا رسالة',
+    'contact.name':         'الاسم الكامل',
+    'contact.email.f':      'البريد الإلكتروني',
+    'contact.phone.f':      'رقم الهاتف',
+    'contact.company':      'اسم الشركة',
+    'contact.service':      'الخدمة المطلوبة',
+    'contact.service.sw':   'هندسة البرمجيات',
+    'contact.service.dig':  'الحلول الرقمية',
+    'contact.service.mkt':  'التسويق والإبداع',
+    'contact.service.aut':  'أتمتة الأعمال',
+    'contact.service.oth':  'أخرى / غير متأكد',
+    'contact.message':      'أخبرنا عن مشروعك',
+    'contact.send':         'إرسال الرسالة',
+    'contact.sending':      'جارٍ الإرسال…',
+    'contact.success':      '✓ تم الإرسال! سنتواصل معك خلال 24 ساعة.',
+    'contact.error':        'حدث خطأ. يرجى مراسلتنا مباشرة على البريد الإلكتروني.',
 
-    'ret.dep.title': 'تعدد أنماط التشغيل',
-    'ret.dep.desc': 'اختر النظام الأنسب لطبيعة عملك.',
-    'ret.online.t': 'نسخة أونلاين (ويب)', 'ret.online.d': 'مثالية للفروع المتعددة والمتابعة عن بعد.',
-    'ret.offline.t': 'نسخة أوفلاين (ديسك توب)', 'ret.offline.d': 'استقرار تام بدون إنترنت وحفظ البيانات محليًا.',
+    /* --- Blog --- */
+    'blog.label':           'مقالات إتقان',
+    'blog.title':           'المعرفة تدفع النمو',
+    'blog.subtitle':        'رؤى متخصصة في التحول الرقمي والـ ERP والتسويق والأتمتة ونمو الأعمال من فريق إتقان.',
+    'blog.all':             'كل الموضوعات',
+    'blog.cat.dt':          'التحول الرقمي',
+    'blog.cat.erp':         'ERP والأنظمة',
+    'blog.cat.mkt':         'التسويق',
+    'blog.cat.ai':          'الذكاء الاصطناعي',
+    'blog.cat.web':         'ويب وموبايل',
+    'blog.cat.biz':         'نمو الأعمال',
 
-    'gallery.title': 'لقطات من النظام',
+    /* --- Portfolio --- */
+    'port.label':           'دراسات الحالة',
+    'port.title':           'حلول حقيقية. نتائج قابلة للقياس.',
+    'port.desc':            'مجموعة مختارة من المشاريع التي ساعدت فيها إتقان الشركات على تحويل عملياتها.',
 
-    // Tashgheel Services Page
-    'srv.hero.title': 'تشغيل خدمات (للصيانة والورش)',
-    'srv.hero.desc': 'نظام متكامل لإدارة مراكز الصيانة والخدمات وورش السيارات، يساعدك على تنظيم العمل اليومي ومتابعة العملاء.',
-    'srv.overview.title': 'نظام احترافي ومنظم',
-    'srv.overview.text': 'نظم العمل اليومي، تابع العملاء والمركبات، وتحكم في التكاليف بكل سهولة.',
-    'srv.features.title': 'المميزات الرئيسية',
-    'srv.f1.t': 'إدارة الزيارات', 'srv.f1.d': 'تسجيل ومتابعة جميع الزيارات والبحث برقم اللوحة أو الشاسيه.',
-    'srv.f2.t': 'العملاء والمركبات', 'srv.f2.d': 'ملف كامل للعميل والمركبة (الموديل، العداد، رقم الشاسيه).',
-    'srv.f3.t': 'قطع الغيار', 'srv.f3.d': 'تتبع التكلفة والربحية واستخدام القطع مباشرة داخل الزيارات.',
-    'srv.f4.t': 'إدارة الموردين', 'srv.f4.d': 'متابعة مديونيات الموردين، سداد كلي/جزئي، وتقارير المعاملات.',
-    'srv.f5.t': 'إدارة الخدمات', 'srv.f5.d': 'إضافة خدمات للزيارة ودمجها مع قطع الغيار في فاتورة واحدة.',
-    'srv.f6.t': 'الفواتير والخصومات', 'srv.f6.d': 'فواتير تفصيلية قابلة للطباعة مع دعم الخصومات.',
-    'srv.f7.t': 'المواعيد القادمة', 'srv.f7.d': 'تحديد مواعيد الصيانات القادمة وتذكير العميل بها.',
-    'srv.f8.t': 'الموظفين والفنيين', 'srv.f8.d': 'إسناد الفنيين للزيارات ومتابعة أهداف الأداء.',
-    'srv.f9.t': 'إدارة المصروفات', 'srv.f9.d': 'تسجيل المصروفات التشغيلية ومتابعة تأثيرها على الأرباح.',
-    'srv.f10.t': 'التقارير والتحليلات', 'srv.f10.d': 'تقارير الإيرادات، الخدمات الأكثر طلبًا، أداء الفنيين، ومديونيات الموردين.',
-    'srv.f11.t': 'النسخ الاحتياطي', 'srv.f11.d': 'حفظ واستعادة البيانات في أي وقت لضمان الأمان.',
-
-    'srv.dep.title': 'أنماط التشغيل',
-    'srv.dep.desc': 'يعمل كنظام ويب أو سطح مكتب بنفس الكفاءة.',
-    'srv.online.t': 'Web Application (أونلاين)', 'srv.online.d': 'لإدارة الفروع وربط البيانات لحظيًا.',
-    'srv.offline.t': 'Desktop Application (أوفلاين)', 'srv.offline.d': 'استقرار تام دون الحاجة لإنترنت.',
-
-    // Tashgheel Restaurants
-    'rst.hero.title': 'تشغيل مطاعم',
-    'rst.hero.desc': 'نظام تشغيل متكامل لإدارة المطاعم، يشمل نقاط البيع، والمطبخ، والمخزون، والتكاليف.',
-    'rst.overview.title': 'من المطبخ للكاشير',
-    'rst.overview.text': 'تحكم في التكاليف، قلل الهدر، وارفع كفاءة التشغيل في نظام واحد.',
-
-    'rst.features.title': 'المميزات الرئيسية',
-    'rst.f1.t': 'إدارة الخامات', 'rst.f1.d': 'إضافة الخامات، ربطها بالموردين، ومتابعة مديونيات وتواريخ السداد.',
-    'rst.f2.t': 'هندسة المنيو', 'rst.f2.d': 'حساب التكلفة الفعلية (Recipe Costing) ونسب الهدر لكل صنف ومقاس.',
-    'rst.f3.t': 'تسعير مرن', 'rst.f3.d': 'أسعار مختلفة للصالات، التيك أواي، والدليفري، مع دعم الـ Happy Hour.',
-    'rst.f4.t': 'نقاط البيع (POS)', 'rst.f4.d': 'واجهة سريعة، خصومات، وتعدد طرق الدفع في شاشة واحدة.',
-    'rst.f5.t': 'إدارة الطاولات', 'rst.f5.d': 'رسم توضيحي للطاولات، دمج، نقل، وإغلاق الطاولات بسهولة.',
-    'rst.f6.t': 'التحكم في الطلبات', 'rst.f6.d': 'تعديل، إلغاء، تقسيم الفواتير (Split Bill) ومتابعة حالة الطلب.',
-    'rst.f7.t': 'إدارة الموظفين', 'rst.f7.d': 'صلاحيات خاصة للويتر والشيف والكاشير، مع تتبع الأداء.',
-    'rst.f8.t': 'شاشة المطبخ (KDS)', 'rst.f8.d': 'عرض الطلبات لحظيًا في المطبخ وتحديث حالتها (تحضير/جاهز).',
-    'rst.f9.t': 'إدارة الدليفري', 'rst.f9.d': 'قاعدة بيانات للعملاء وحفظ العناوين لسرعة الطلب.',
-    'rst.f10.t': 'المخزون والهدر', 'rst.f10.d': 'خصم المكونات تلقائيًا مع البيع، وتقارير دقيقة للهدر والفاقد.',
-    'rst.f11.t': 'الطباعة المتعددة', 'rst.f11.d': 'توجيه طلبات الأكل للمطبخ والمشروبات للبار تلقائيًا.',
-    'rst.f12.t': 'تقارير متقدمة', 'rst.f12.d': 'تحليل الربحية، مبيعات القنوات المختلفة، وأداء الموظفين.',
-
-    'rst.dep.title': 'خيارات التشغيل',
-    'rst.dep.desc': 'اختر ما يناسبك، أونلاين أو أوفلاين.',
-    'rst.online.t': 'أونلاين (ويب)', 'rst.online.d': 'للسلاسل والفروع المتعددة والمتابعة عن بعد.',
-    'rst.offline.t': 'أوفلاين (ديسك توب)', 'rst.offline.d': 'استقرار وثبات 100% دون الحاجة لإنترنت.',
-
-
-    // Footer
-    'footer.follow': 'تابعنا',
-    'footer.copy': '© {year} Itqan Solutions. جميع الحقوق محفوظة.'
+    /* --- Footer links --- */
+    'footer.sw':            'هندسة البرمجيات',
+    'footer.dig':           'الحلول الرقمية',
+    'footer.mkt':           'التسويق والإبداع',
+    'footer.aut':           'أتمتة الأعمال',
+    'footer.ret':           'تشغيل ريتيل',
+    'footer.rest':          'تشغيل مطاعم',
+    'footer.srv':           'تشغيل خدمات',
+    'footer.erp':           'ERP مخصص',
+    'footer.about':         'من نحن',
+    'footer.cases':         'دراسات الحالة',
+    'footer.insights':      'المقالات',
+    'footer.contact':       'اتصل بنا',
   }
 };
 
+/* =========================
+   Language System
+   ========================= */
 const langBtn = document.getElementById('langToggle');
+
 function applyLang(lang) {
   document.documentElement.lang = lang;
   document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
@@ -473,18 +1057,22 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const k = el.getAttribute('data-i18n');
     if (!dict[k]) return;
-    const val = (k === 'footer.copy')
-      ? dict[k].replace('{year}', year)
-      : dict[k];
+    const val = (k === 'footer.copy') ? dict[k].replace('{year}', year) : dict[k];
     el.textContent = val;
   });
 
-  // Switch images based on language
+  // Switch images (AR/EN)
   document.querySelectorAll('[data-img-en]').forEach(el => {
     const src = (lang === 'ar' && el.getAttribute('data-img-ar'))
       ? el.getAttribute('data-img-ar')
       : el.getAttribute('data-img-en');
-    el.src = src;
+    if (src) el.src = src;
+  });
+
+  // Update placeholder attributes
+  document.querySelectorAll('[data-ph]').forEach(el => {
+    const k = el.getAttribute('data-ph');
+    if (dict[k]) el.placeholder = dict[k];
   });
 }
 
@@ -502,270 +1090,229 @@ if (langBtn) {
 }
 
 /* =========================
-   Intersection Observer: reveal on scroll
+   Navigation — Navbar scroll state
    ========================= */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+const nav = document.querySelector('.nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+}
 
 /* =========================
-   Auto assign reveal-left/right per row (grids)
+   Navigation — Mobile Sidebar
    ========================= */
-function getColsCount(gridEl) {
-  const style = window.getComputedStyle(gridEl);
-  const cols = style.getPropertyValue('grid-template-columns');
-  if (!cols) return 1;
-  return cols.split(' ').filter(Boolean).length;
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn  = document.getElementById('menuBtn');
+  const sidebar  = document.getElementById('navSidebar');
+  const navOvl   = document.getElementById('navOverlay');
+  const closeBtn = document.getElementById('sidebarClose');
 
-function autoRevealForGrid(gridSelector, itemSelector) {
-  const grid = document.querySelector(gridSelector);
-  if (!grid) return;
+  function openSidebar() {
+    if (!sidebar) return;
+    sidebar.classList.add('open');
+    if (navOvl) navOvl.classList.add('show');
+    document.documentElement.classList.add('no-scroll');
+    document.body.classList.add('no-scroll');
+  }
 
-  const items = Array.from(grid.querySelectorAll(itemSelector));
-  const cols = getColsCount(grid) || 1;
+  function closeSidebar() {
+    if (!sidebar) return;
+    sidebar.classList.remove('open');
+    if (navOvl) navOvl.classList.remove('show');
+    document.documentElement.classList.remove('no-scroll');
+    document.body.classList.remove('no-scroll');
+  }
 
-  items.forEach(el => el.classList.remove('reveal', 'reveal-left', 'reveal-right', 'is-visible'));
+  if (menuBtn)  menuBtn.addEventListener('click', openSidebar);
+  if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  if (navOvl)   navOvl.addEventListener('click', closeSidebar);
 
-  items.forEach((el, i) => {
-    const colIndex = i % cols;
-    if (cols === 1) {
-      el.classList.add('reveal');
-    } else if (cols === 2) {
-      el.classList.add(colIndex === 0 ? 'reveal-left' : 'reveal-right');
-    } else {
-      el.classList.add(colIndex === 0 ? 'reveal-left' : (colIndex === cols - 1 ? 'reveal-right' : 'reveal'));
-    }
-    observer.observe(el);
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 960) closeSidebar();
   });
-}
-
-function runAutoReveal() {
-  // في حال فيه عناصر خارج الجريد مضافة يدويًا
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-
-  autoRevealForGrid('.services .grid', '.card');
-  autoRevealForGrid('.testimonials .grid', '.t-card');
-  autoRevealForGrid('.blog-highlights .grid', '.post');
-
-  const left = document.querySelector('.pos-spotlight .text');
-  const right = document.querySelector('.pos-spotlight .visual');
-  if (left) { left.classList.remove('reveal', 'reveal-left', 'reveal-right', 'is-visible'); left.classList.add('reveal-left'); observer.observe(left); }
-  if (right) { right.classList.remove('reveal', 'reveal-left', 'reveal-right', 'is-visible'); right.classList.add('reveal-right'); observer.observe(right); }
-}
-
-document.addEventListener('DOMContentLoaded', runAutoReveal);
-window.addEventListener('resize', () => {
-  clearTimeout(window.__revealResizeTimer);
-  window.__revealResizeTimer = setTimeout(runAutoReveal, 150);
 });
 
 /* =========================
-   Spotlight Effect
+   Navigation — Desktop Dropdowns (click on mobile)
    ========================= */
-function initSpotlight() {
-  const cards = document.querySelectorAll('.card, .t-card, .post');
-
-  window.addEventListener('mousemove', (e) => {
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  });
-}
-document.addEventListener('DOMContentLoaded', initSpotlight);
-
-/* =========================
-   Magnetic Buttons
-   ========================= */
-function makeMagnetic(btn, intensity = 18) {
-  if (!btn) return;
-  btn.classList.add('magnet-active');
-
-  function onMove(e) {
-    const r = btn.getBoundingClientRect();
-    const cx = (e.clientX ?? (e.touches && e.touches[0].clientX));
-    const cy = (e.clientY ?? (e.touches && e.touches[0].clientY));
-    const x = (cx - (r.left + r.width / 2)) / (r.width / 2);
-    const y = (cy - (r.top + r.height / 2)) / (r.height / 2);
-    const clampedX = Math.max(-1, Math.min(1, x));
-    const clampedY = Math.max(-1, Math.min(1, y));
-    btn.style.transform = `translate(${clampedX * intensity}px, ${clampedY * intensity}px)`;
-  }
-  function reset() { btn.style.transform = 'translate(0,0)'; }
-
-  btn.addEventListener('mousemove', onMove);
-  btn.addEventListener('mouseleave', reset);
-  btn.addEventListener('touchmove', onMove, { passive: true });
-  btn.addEventListener('touchend', reset);
-}
-
-function initMagnetic() {
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  document.querySelectorAll('.actions .btn, .btn-neo, .btn-ghost, .footer .btn, a.btn')
-    .forEach(b => makeMagnetic(b));
-}
-document.addEventListener('DOMContentLoaded', initMagnetic);
-
-/* =========================
-   Parallax (POS visual + Blog images)
-   ========================= */
-function initParallax() {
-  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) return;
-
-  const parallaxEls = new Set();
-
-  const posImg = document.querySelector('.pos-spotlight .visual img');
-  if (posImg) {
-    posImg.classList.add('parallax');
-    posImg.closest('.visual')?.classList.add('parallax-wrap');
-    parallaxEls.add(posImg);
-  }
-
-  document.querySelectorAll('.blog-highlights .post img').forEach(img => {
-    img.classList.add('parallax');
-    img.closest('.post')?.classList.add('parallax-wrap');
-    parallaxEls.add(img);
-  });
-
-  if (!parallaxEls.size) return;
-
-  const MAX_SHIFT = 18;
-  const MAX_TILT = 2;
-  let ticking = false;
-
-  function updateParallax() {
-    ticking = false;
-    const vh = window.innerHeight || 1;
-
-    parallaxEls.forEach(el => {
-      const r = el.getBoundingClientRect();
-      const centerY = r.top + r.height / 2;
-      const ratioY = ((centerY / vh) - 0.5) * 2; // -1..1
-      const dy = -ratioY * MAX_SHIFT;
-      const tilt = -ratioY * MAX_TILT;
-      el.style.transform = `translate3d(0, ${dy}px, 0) rotateX(${tilt}deg) scale(1.02)`;
-    });
-  }
-
-  function onScroll() {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(updateParallax);
+document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    if (window.innerWidth < 960) {
+      e.preventDefault();
+      const parent = btn.closest('.dropdown');
+      parent.classList.toggle('open');
     }
+  });
+});
+
+/* =========================
+   Scroll Reveal (IntersectionObserver)
+   ========================= */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+
+function initReveal() {
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-up')
+    .forEach(el => revealObserver.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', initReveal);
+
+/* =========================
+   Animated Number Counters
+   ========================= */
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-target') || el.textContent, 10);
+  if (isNaN(target)) return;
+  const suffix = el.getAttribute('data-suffix') || '';
+  const duration = 1800;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease-out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
   }
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        parallaxEls.add(e.target);
-      } else {
-        parallaxEls.delete(e.target);
-        e.target.style.transform = 'translate3d(0,0,0)';
-      }
-    });
-  }, { threshold: 0.05 });
-
-  parallaxEls.forEach(el => io.observe(el));
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
-  requestAnimationFrame(updateParallax);
+  requestAnimationFrame(update);
 }
-document.addEventListener('DOMContentLoaded', initParallax);
-// Minimal AJAX for contact form (optional)
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+});
+
+/* =========================
+   Process Tabs
+   ========================= */
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.process-tab');
+  const panels = document.querySelectorAll('.process-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-tab');
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const panel = document.getElementById(target);
+      if (panel) panel.classList.add('active');
+    });
+  });
+});
+
+/* =========================
+   FAQ Accordion
+   ========================= */
+document.addEventListener('click', (e) => {
+  const question = e.target.closest('.faq-question');
+  if (!question) return;
+  const item = question.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+
+  // Open clicked (if it wasn't open)
+  if (!isOpen) item.classList.add('open');
+});
+
+/* =========================
+   Blog Filter Tabs
+   ========================= */
+document.addEventListener('DOMContentLoaded', () => {
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  if (!filterTabs.length) return;
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const cat = tab.getAttribute('data-cat');
+      document.querySelectorAll('.insight-card, .blog-post-card').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+
+/* =========================
+   Contact Form
+   ========================= */
 document.addEventListener('submit', async (e) => {
   const form = e.target.closest('form.contact-form');
   if (!form) return;
   e.preventDefault();
+
+  const btn  = form.querySelector('[type=submit]');
   const note = form.querySelector('.form-note');
-  const isAr = document.documentElement.lang === 'ar';
+  const lang = document.documentElement.lang;
+  const dict = i18n[lang] || i18n.en;
 
-  note.textContent = isAr ? 'جارٍ الإرسال…' : 'Sending…';
-  note.style.color = '#ccc';
+  if (btn) { btn.disabled = true; btn.textContent = dict['contact.sending']; }
+  if (note) { note.textContent = dict['contact.sending']; note.style.color = ''; }
 
-  // Simulate network delay for demo
-  await new Promise(r => setTimeout(r, 1500));
+  try {
+    const data = Object.fromEntries(new FormData(form));
+    const res = await fetch('https://formspree.io/f/mkndjpzj', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-  // Always succeed for demo
-  note.textContent = isAr ? 'تم الإرسال بنجاح. سنعاودك قريبًا.' : 'Message sent successfully. We will contact you soon.';
-  note.style.color = 'var(--neo)';
-  form.reset();
+    if (res.ok) {
+      form.reset();
+      if (note) { note.textContent = dict['contact.success']; note.style.color = 'var(--success)'; }
+    } else {
+      throw new Error('Server error');
+    }
+  } catch {
+    if (note) { note.textContent = dict['contact.error']; note.style.color = '#ef4444'; }
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = dict['contact.send']; }
+  }
 });
 
+/* =========================
+   Footer Year
+   ========================= */
+document.addEventListener('DOMContentLoaded', () => {
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
 
 /* =========================
-   Cinematic Text Reveal
+   Smooth Active Link
    ========================= */
-function initTextReveal() {
-  // Target specific headings or paragraphs
-  const targets = document.querySelectorAll('.intro h2, .intro p, .spotlight h2, .spotlight ul li');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-text-active');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  targets.forEach(el => {
-    el.classList.add('reveal-text');
-    observer.observe(el);
-  });
-}
-document.addEventListener('DOMContentLoaded', initTextReveal);
-
-/* =========================
-   iOS autoplay nudge for <video>
-   ========================= */
-document.addEventListener('touchstart', () => {
-  const v = document.getElementById('bgVideo');
-  if (v) v.play().catch(() => { });
-}, { once: true });
-
-/* =========================
-   Number Counter Animation
-   ========================= */
-function initCounters() {
-  const counters = document.querySelectorAll('.stat-number');
-  const speed = 200; // The lower the slower
-
-  const animate = (counter) => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
-    const inc = target / speed;
-
-    if (count < target) {
-      counter.innerText = Math.ceil(count + inc);
-      setTimeout(() => animate(counter), 20);
-    } else {
-      counter.innerText = target + "+";
+document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a[data-link], .nav-sidebar a[data-link]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href === path || (path === '' && href === 'index.html')) {
+      a.classList.add('active');
     }
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animate(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(counter => {
-    observer.observe(counter);
   });
-}
-
-document.addEventListener('DOMContentLoaded', initCounters);
+});

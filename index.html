@@ -1,324 +1,654 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Itqan Solutions — We Do Everything the Itqan Way</title>
-  <meta name="description"
-    content="Itqan Solutions provides professional Software Development, POS Systems, Web Design, and Digital Marketing services in Egypt and the MENA region.">
-  <meta name="keywords"
-    content="Software Development, POS System, Web Design, Digital Marketing, Retail POS, Restaurant POS, Itqan Solutions, Egypt, MENA">
-  <meta name="author" content="Itqan Solutions">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://itqansolutions.org/">
-  <meta property="og:title" content="Itqan Solutions — We Do Everything the Itqan Way">
-  <meta property="og:description"
-    content="Professional Software, POS, Websites, and Marketing solutions for your business growth.">
-  <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://itqansolutions.org/">
-  <meta property="twitter:title" content="Itqan Solutions — We Do Everything the Itqan Way">
-  <meta property="twitter:description"
-    content="Professional Software, POS, Websites, and Marketing solutions for your business growth.">
-  <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
+  <title>Home — ITQAN Solutions</title>
+  <meta name="description" content="Digital Transformation & Custom Software Company">
+  <!-- OG/Twitter meta tags -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
-
 <body>
   <div class="overlay" id="overlay"></div>
-  <div class="bg-noise"></div>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- NAV (same on every page) -->
   <nav class="nav" aria-label="Primary">
     <div class="row">
-      <!-- Logo -->
       <a class="brand" href="index.html" data-link>
-        <img class="brand-logo" src="favicon.png" alt="Itqan Solutions">
-        <span class="brand-text">Itqan Solutions</span>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
       </a>
-
-      <!-- Menu Button -->
-      <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-        ☰
-      </button>
-
-      <!-- Overlay -->
-      <div class="nav-overlay" id="navOverlay" hidden></div>
-
-      <!-- Links -->
-      <div class="links" id="primary-nav" role="menubar">
-        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
-        <a href="about.html" data-i18n="nav.about" data-link>About</a>
-
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <!-- Solutions dropdown -->
         <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-submenu">
-              <a href="javascript:void(0)" class="dropdown-item" style="display:flex; justify-content:space-between;">
-                <span data-i18n="nav.tashgheel">Tashgheel</span>
-                <span>▸</span>
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
               </a>
-              <div class="dropdown-menu">
-                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
-                  data-link>Retail</a>
-                <a href="tashgheel-restaurants.html" class="dropdown-item" data-i18n="nav.tashgheel.rest"
-                  data-link>Restaurants</a>
-                <a href="tashgheel-services.html" class="dropdown-item" data-i18n="nav.tashgheel.services"
-                  data-link>Services</a>
-              </div>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
             </div>
           </div>
         </div>
-
-        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
-        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
-        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <!-- Products dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
         <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
       </div>
-
-      <div class="cta">
-        <button class="lang" id="langToggle" aria-label="Toggle language">AR</button>
-        <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
-      </div>
-
     </div>
   </nav>
 
-  <!-- ===== HERO VIDEO ===== -->
-  <main class="stage" role="banner">
-    <div class="video-wrap" aria-hidden="true">
-      <video id="bgVideo" autoplay muted playsinline loop preload="auto" poster="hero-poster.jpg">
-        <source src="hero-mobile.mp4" type="video/mp4" media="(max-width: 600px)">
-        <source src="hero-desktop.mp4" type="video/mp4">
-      </video>
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
     </div>
+  </aside>
 
-    <div class="actions">
-      <a href="services.html" class="btn btn-neo btn-xl" data-i18n="hero.discover" data-link>Discover Services</a>
-      <a href="contact.html" class="btn btn-ghost btn-xl" data-i18n="hero.contact" data-link>Get in Touch</a>
-    </div>
-  </main>
-
-  <!-- ===== CONTENT (CENTER BLOCK) ===== -->
-  <section class="intro">
-    <div class="container">
-      <h2 data-i18n="intro.title">Built for results, not just deliverables.</h2>
-      <p data-i18n="intro.text">
-        End-to-end delivery from development, POS systems, and websites to digital marketing and growth strategies.
-      </p>
-      <div class="chips">
-        <span>5+ Years Experience</span>
-        <span>POS Online/Offline</span>
-        <span>Bilingual (EN/AR)</span>
-        <span>Digital Marketing</span>
+  <section class="hero-section">
+    <video class="hero-bg-video" autoplay muted loop playsinline poster="pos-mockup-EN.jpg">
+      <source src="hero-desktop.mp4" type="video/mp4" media="(min-width: 768px)">
+      <source src="hero-mobile.mp4" type="video/mp4">
+    </video>
+    <div class="hero-bg-overlay"></div>
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge"><span class="dot-pulse"></span><span data-i18n="hero.badge"></span></div>
+        <h1><span data-i18n="hero.h1a"></span><br><span style="color:var(--primary)"><span data-i18n="hero.h1b"></span> <span data-i18n="hero.h1c"></span></span></h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle"></p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary" data-i18n="hero.cta1" data-link></a>
+          <a href="portfolio.html" class="btn btn-ghost" data-i18n="hero.cta2" data-link></a>
+        </div>
       </div>
-    </div>
-  </section>
-  <!-- ===== SERVICES TEASER ===== -->
-  <section class="services">
-    <div class="container">
-      <h2 data-i18n="services.title">Our Services</h2>
-
-      <div class="grid service-grid">
-        <div class="card service-card">
-          <div class="icon-box">💻</div>
-          <h3 data-i18n="services.dev.title">Software Development</h3>
-          <p data-i18n="services.dev.desc">Custom systems tailored to your business needs.</p>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">📠</div>
-          <h3 data-i18n="services.pos.title">POS Systems</h3>
-          <p data-i18n="services.pos.desc">Offline/online, bilingual, secure POS for retail & restaurants.</p>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">🌐</div>
-          <h3 data-i18n="services.web.title">Websites & eCommerce</h3>
-          <p data-i18n="services.web.desc">Modern, responsive, SEO-friendly websites.</p>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">📱</div>
-          <h3 data-i18n="services.mobile.title">Mobile Apps</h3>
-          <p data-i18n="services.mobile.desc">iOS & Android apps with smooth user experience.</p>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">🚀</div>
-          <h3 data-i18n="services.marketing.title">Digital Marketing</h3>
-          <p data-i18n="services.marketing.desc">Social media, campaigns, and online growth strategies.</p>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">🎨</div>
-          <h3 data-i18n="services.branding.title">Branding & Design</h3>
-          <p data-i18n="services.branding.desc">Logos, identity, and professional visuals.</p>
-        </div>
-      </div><!-- /grid -->
-    </div>
-  </section>
-
-  <!-- ===== POS SPOTLIGHT ===== -->
-  <section class="pos-spotlight">
-    <div class="container">
-      <div class="spotlight">
-        <div class="text">
-          <h2 data-i18n="pos.title">POS Spotlight</h2>
-          <p data-i18n="pos.desc" style="color:var(--neo); margin-bottom:24px;">The ultimate business suite.</p>
-
-          <div class="t-grid-2x2">
-            <a href="tashgheel-retail.html" class="t-item" style="display:block; text-decoration:none;" data-link>
-              <h4 data-i18n="tashgheel.retail.t">Retail</h4>
-              <p data-i18n="tashgheel.retail.d">Shops & Clothes</p>
-            </a>
-            <a href="tashgheel-services.html" class="t-item" style="display:block; text-decoration:none;" data-link>
-              <h4 data-i18n="tashgheel.services.t">Services</h4>
-              <p data-i18n="tashgheel.services.d">Maintenance</p>
-            </a>
-            <a href="tashgheel-restaurants.html" class="t-item" style="display:block; text-decoration:none;" data-link>
-              <h4 data-i18n="tashgheel.rest.t">Restaurants</h4>
-              <p data-i18n="tashgheel.rest.d">F&B & Cafes</p>
-            </a>
-            <div class="t-item">
-              <h4 data-i18n="tashgheel.manu.t">Manufacturing</h4>
-              <p data-i18n="tashgheel.manu.d">Factories</p>
+      <div class="hero-visual">
+        <div class="dashboard-mockup">
+          <div class="dash-window main-dash">
+            <div class="window-titlebar">
+              <span class="wt-dot r"></span>
+              <span class="wt-dot y"></span>
+              <span class="wt-dot g"></span>
+              <span class="window-titlebar-text">ITQAN Platform Showcase</span>
+            </div>
+            <div class="window-body video-container">
+              <video class="dash-video-player" autoplay muted loop playsinline poster="pos-mockup-EN.jpg">
+                <source src="hero-desktop.mp4" type="video/mp4" media="(min-width: 768px)">
+                <source src="hero-mobile.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
-          <a href="services.html" class="btn btn-neo btn-xl" data-i18n="pos.cta">See POS Demo</a>
-        </div><!-- ✅ اقفال div.text هنا -->
-
-        <div class="visual">
-          <img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg" data-img-ar="pos-mockup-AR.jpg"
-            alt="POS Demo Mockup">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TESTIMONIALS ===== -->
-  <section class="testimonials">
-    <div class="container">
-      <h2 data-i18n="testimonials.title">What Our Clients Say</h2>
-
-      <div class="grid"><!-- ✅ الغلاف المفقود -->
-        <div class="t-card">
-          <p data-i18n="testimonials.t1.text">“Itqan’s POS transformed our sales process, easy to use and reliable.”</p>
-          <span data-i18n="testimonials.t1.author">— Ahmed, Retail Owner</span>
-        </div>
-        <div class="t-card">
-          <p data-i18n="testimonials.t2.text">“The website and marketing boosted our leads by 40% in 3 months.”</p>
-          <span data-i18n="testimonials.t2.author">— Sara, Marketing Manager</span>
-        </div>
-        <div class="t-card">
-          <p data-i18n="testimonials.t3.text">“Professional, bilingual support made all the difference for our
-            business.”</p>
-          <span data-i18n="testimonials.t3.author">— Omar, Restaurant Owner</span>
-        </div>
-      </div><!-- /grid -->
-    </div>
-  </section>
-  <!-- ===== BLOG HIGHLIGHTS ===== -->
-  <section class="blog-highlights">
-    <div class="container">
-      <h2 data-i18n="blog.latest">Latest Blog Posts</h2>
-
-      <div class="grid"><!-- ✅ الغلاف المفقود -->
-        <div class="post">
-          <img src="blog1.jpg" alt="Blog 1">
-          <h3 data-i18n="blog.p1.title">How POS Systems Transform Retail</h3>
-          <p data-i18n="blog.p1.desc">Discover how modern POS systems improve efficiency, reporting, and customer
-            experience.</p>
-          <a href="blog.html#pos-retail" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
-        </div>
-        <div class="post">
-          <img src="blog2.jpg" alt="Blog 2">
-          <h3 data-i18n="blog.p2.title">Why Every Business Needs a Website</h3>
-          <p data-i18n="blog.p2.desc">Your website is your business card. Learn how to make it effective and engaging.
-          </p>
-          <a href="blog.html#business-website" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
-        </div>
-        <div class="post">
-          <img src="blog3.jpg" alt="Blog 3">
-          <h3 data-i18n="blog.p3.title">Digital Marketing Trends 2025</h3>
-          <p data-i18n="blog.p3.desc">Stay ahead with the latest strategies in social media and digital advertising.</p>
-          <a href="blog.html#digital-trends" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
-        </div>
-      </div><!-- /grid -->
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="f-grid">
-        <div class="f-col">
-          <h3>Itqan Solutions</h3>
-          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
-          <p>📞 01126522373</p>
-          <p>📞 +20 11 55253886</p>
-        </div>
-        <div class="f-col">
-          <h3 data-i18n="footer.follow">Follow Us</h3>
-
-          <div class="social">
-            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
-                alt="Facebook"></a>
-            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
-                alt="Instagram"></a>
-            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png"
-                alt="LinkedIn"></a>
+          <div class="float-card fc-erp">
+            <div class="fc-icon" style="color:var(--success)">📊</div>
+            <div>
+              <div class="fc-val">ERP</div>
+              <div class="fc-lbl">System Active</div>
+            </div>
+          </div>
+          <div class="float-card fc-crm">
+            <div class="fc-icon" style="color:var(--secondary)">👥</div>
+            <div>
+              <div class="fc-val">CRM</div>
+              <div class="fc-lbl">1,240 Contacts</div>
+            </div>
+          </div>
+          <div class="float-card fc-pos">
+            <div class="fc-icon" style="color:var(--primary)">🛍️</div>
+            <div>
+              <div class="fc-val">POS</div>
+              <div class="fc-lbl">Synced</div>
+            </div>
+          </div>
+          <div class="float-card fc-hr">
+            <div class="fc-icon" style="color:orange">👤</div>
+            <div>
+              <div class="fc-val">HRMS</div>
+              <div class="fc-lbl">Staff Portal</div>
+            </div>
           </div>
         </div>
-        <div class="f-col">
-          <p data-i18n="footer.copy">© <span id="year"></span> Itqan Solutions. All rights reserved.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ecosystem-section reveal">
+    <div class="section-header">
+      <span class="label" data-i18n="eco.label"></span>
+      <h2 data-i18n="eco.title"></h2>
+      <p data-i18n="eco.desc"></p>
+    </div>
+    <div class="ecosystem-diagram">
+      <div class="eco-row"><div class="eco-node">📣 Marketing + Branding</div></div>
+      <div class="eco-connector-v"></div>
+      <div class="eco-row"><div class="eco-node">🌐 Website + Portal</div></div>
+      <div class="eco-connector-v"></div>
+      <div class="eco-row flex-row">
+        <div class="eco-node">👥 CRM</div>
+        <div class="eco-connector-h"></div>
+        <div class="eco-node">⚙️ ERP</div>
+        <div class="eco-connector-h"></div>
+        <div class="eco-node">💰 Finance</div>
+      </div>
+      <div class="eco-connector-v"></div>
+      <div class="eco-row flex-row">
+        <div class="eco-node">🛍️ POS</div>
+        <div class="eco-node">📦 Inventory</div>
+      </div>
+      <div class="eco-connector-v"></div>
+      <div class="eco-row"><div class="eco-node">📊 Analytics</div></div>
+    </div>
+    <div class="eco-center-message">
+      <span class="eco-tag" data-i18n="eco.message"></span>
+    </div>
+  </section>
+
+  <section class="solutions-section">
+    <div class="section-header">
+      <span class="label" data-i18n="sol.label"></span>
+      <h2 data-i18n="sol.title"></h2>
+      <p data-i18n="sol.desc"></p>
+    </div>
+    <div class="solutions-grid stagger">
+      <div class="solution-card reveal">
+        <div class="sc-icon">⚙️</div>
+        <h3 data-i18n="sol.sw.title"></h3>
+        <div class="sc-tagline" data-i18n="sol.sw.tag"></div>
+        <p data-i18n="sol.sw.desc"></p>
+        <div class="sc-tags"><span>Custom ERP</span><span>CRM</span><span>HRMS</span><span>POS</span></div>
+        <a href="services.html" class="sc-link" data-i18n="sol.sw.link" data-link></a>
+      </div>
+      <div class="solution-card reveal">
+        <div class="sc-icon blue">🌐</div>
+        <h3 data-i18n="sol.dig.title"></h3>
+        <div class="sc-tagline" data-i18n="sol.dig.tag"></div>
+        <p data-i18n="sol.dig.desc"></p>
+        <div class="sc-tags"><span>Websites</span><span>Mobile Apps</span><span>UI/UX</span></div>
+        <a href="services.html#digital" class="sc-link" data-i18n="sol.dig.link" data-link></a>
+      </div>
+      <div class="solution-card reveal">
+        <div class="sc-icon orange">📣</div>
+        <h3 data-i18n="sol.mkt.title"></h3>
+        <div class="sc-tagline" data-i18n="sol.mkt.tag"></div>
+        <p data-i18n="sol.mkt.desc"></p>
+        <div class="sc-tags"><span>Strategy</span><span>Content</span><span>Meta Ads</span><span>SEO</span></div>
+        <a href="services.html#marketing" class="sc-link" data-i18n="sol.mkt.link" data-link></a>
+      </div>
+      <div class="solution-card reveal">
+        <div class="sc-icon green">🤖</div>
+        <h3 data-i18n="sol.aut.title"></h3>
+        <div class="sc-tagline" data-i18n="sol.aut.tag"></div>
+        <p data-i18n="sol.aut.desc"></p>
+        <div class="sc-tags"><span>AI Workflows</span><span>API Integration</span><span>WhatsApp</span></div>
+        <a href="services.html#automation" class="sc-link" data-i18n="sol.aut.link" data-link></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <div class="section-header">
+      <span class="label" data-i18n="prod.label"></span>
+      <h2 data-i18n="prod.title"></h2>
+      <p data-i18n="prod.desc"></p>
+    </div>
+    <div class="products-grid stagger">
+      <div class="product-card reveal">
+        <div class="product-card-img">
+          <img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg" data-img-ar="pos-mockup-AR.jpg" alt="Tashgheel Retail">
+        </div>
+        <div class="product-card-body">
+          <span class="badge badge-primary product-card-badge">Retail POS</span>
+          <h3 data-i18n="prod.ret.title"></h3>
+          <p data-i18n="prod.ret.desc"></p>
+          <ul class="product-card-features">
+            <li class="product-card-feature" data-i18n="prod.ret.f1"></li>
+            <li class="product-card-feature" data-i18n="prod.ret.f2"></li>
+            <li class="product-card-feature" data-i18n="prod.ret.f3"></li>
+            <li class="product-card-feature" data-i18n="prod.ret.f4"></li>
+          </ul>
+          <a href="tashgheel-retail.html" class="btn btn-ghost btn-sm" data-link style="margin-top:16px;">Explore Retail →</a>
         </div>
       </div>
+      <div class="product-card reveal">
+        <div class="product-card-img">
+          <div class="product-card-img-placeholder">🍽️</div>
+        </div>
+        <div class="product-card-body">
+          <span class="badge badge-secondary product-card-badge">F&B POS</span>
+          <h3 data-i18n="prod.rest.title"></h3>
+          <p data-i18n="prod.rest.desc"></p>
+          <ul class="product-card-features">
+            <li class="product-card-feature" data-i18n="prod.rest.f1"></li>
+            <li class="product-card-feature" data-i18n="prod.rest.f2"></li>
+            <li class="product-card-feature" data-i18n="prod.rest.f3"></li>
+            <li class="product-card-feature" data-i18n="prod.rest.f4"></li>
+          </ul>
+          <a href="tashgheel-restaurants.html" class="btn btn-ghost btn-sm" data-link style="margin-top:16px;">Explore Restaurants →</a>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-card-img">
+          <div class="product-card-img-placeholder">🔧</div>
+        </div>
+        <div class="product-card-body">
+          <span class="badge badge-success product-card-badge">Service Center</span>
+          <h3 data-i18n="prod.srv.title"></h3>
+          <p data-i18n="prod.srv.desc"></p>
+          <ul class="product-card-features">
+            <li class="product-card-feature" data-i18n="prod.srv.f1"></li>
+            <li class="product-card-feature" data-i18n="prod.srv.f2"></li>
+            <li class="product-card-feature" data-i18n="prod.srv.f3"></li>
+            <li class="product-card-feature" data-i18n="prod.srv.f4"></li>
+          </ul>
+          <a href="tashgheel-services.html" class="btn btn-ghost btn-sm" data-link style="margin-top:16px;">Explore Services →</a>
+        </div>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-card-img">
+          <div class="product-card-img-placeholder">⚙️</div>
+        </div>
+        <div class="product-card-body">
+          <span class="badge badge-warning product-card-badge">Enterprise ERP</span>
+          <h3 data-i18n="prod.erp.title"></h3>
+          <p data-i18n="prod.erp.desc"></p>
+          <ul class="product-card-features">
+            <li class="product-card-feature" data-i18n="prod.erp.f1"></li>
+            <li class="product-card-feature" data-i18n="prod.erp.f2"></li>
+            <li class="product-card-feature" data-i18n="prod.erp.f3"></li>
+            <li class="product-card-feature" data-i18n="prod.erp.f4"></li>
+          </ul>
+          <a href="contact.html" class="btn btn-ghost btn-sm" data-link style="margin-top:16px;">Explore Custom ERP →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="industries-section">
+    <div class="section-header">
+      <span class="label" data-i18n="ind.label"></span>
+      <h2 data-i18n="ind.title"></h2>
+      <p data-i18n="ind.desc"></p>
+    </div>
+    <div class="industries-grid stagger">
+      <div class="industry-card reveal"><div class="industry-icon">🛍️</div><div class="industry-name" data-i18n="ind.retail"></div></div>
+      <div class="industry-card reveal"><div class="industry-icon">🍽️</div><div class="industry-name" data-i18n="ind.rest"></div></div>
+      <div class="industry-card reveal"><div class="industry-icon">🏥</div><div class="industry-name" data-i18n="ind.health"></div></div>
+      <div class="industry-card reveal"><div class="industry-icon">🎓</div><div class="industry-name" data-i18n="ind.edu"></div></div>
+      <div class="industry-card reveal"><div class="industry-icon">🏭</div><div class="industry-name" data-i18n="ind.mfg"></div></div>
+      <div class="industry-card reveal"><div class="industry-icon">🚛</div><div class="industry-name" data-i18n="ind.dist"></div></div>
+      <div class="industry-card reveal"><div class="industry-icon">📦</div><div class="industry-name" data-i18n="ind.log"></div></div>
+      <div class="industry-card reveal"><div class="industry-icon">🏪</div><div class="industry-name" data-i18n="ind.whole"></div></div>
+      <div class="industry-card reveal"><div class="industry-icon">💼</div><div class="industry-name" data-i18n="ind.prof"></div></div>
+      <div class="industry-card reveal"><div class="industry-icon">🏛️</div><div class="industry-name" data-i18n="ind.gov"></div></div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="section-header">
+      <span class="label" data-i18n="why.label"></span>
+      <h2 data-i18n="why.title"></h2>
+      <p data-i18n="why.desc"></p>
+    </div>
+    <div class="badges-grid stagger">
+      <div class="trust-badge reveal"><div class="tb-icon">🎯</div><h4 data-i18n="why.b1.t"></h4><p data-i18n="why.b1.d"></p></div>
+      <div class="trust-badge reveal"><div class="tb-icon">📡</div><h4 data-i18n="why.b2.t"></h4><p data-i18n="why.b2.d"></p></div>
+      <div class="trust-badge reveal"><div class="tb-icon">🌿</div><h4 data-i18n="why.b3.t"></h4><p data-i18n="why.b3.d"></p></div>
+      <div class="trust-badge reveal"><div class="tb-icon">☁️</div><h4 data-i18n="why.b4.t"></h4><p data-i18n="why.b4.d"></p></div>
+      <div class="trust-badge reveal"><div class="tb-icon">🌐</div><h4 data-i18n="why.b5.t"></h4><p data-i18n="why.b5.d"></p></div>
+      <div class="trust-badge reveal"><div class="tb-icon">🔒</div><h4 data-i18n="why.b6.t"></h4><p data-i18n="why.b6.d"></p></div>
+      <div class="trust-badge reveal"><div class="tb-icon">📈</div><h4 data-i18n="why.b7.t"></h4><p data-i18n="why.b7.d"></p></div>
+      <div class="trust-badge reveal"><div class="tb-icon">🤝</div><h4 data-i18n="why.b8.t"></h4><p data-i18n="why.b8.d"></p></div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div class="section-header">
+      <span class="label" data-i18n="proc.label"></span>
+      <h2 data-i18n="proc.title"></h2>
+      <p data-i18n="proc.desc"></p>
+    </div>
+    <div class="process-tabs">
+      <button class="process-tab active" data-tab="dev-process" data-i18n="proc.tab.dev">Development Process</button>
+      <button class="process-tab" data-tab="mkt-process" data-i18n="proc.tab.mkt">Marketing Process</button>
+    </div>
+    <div id="dev-process" class="process-panel active">
+      <div class="process-steps">
+        <div class="process-step active"><div class="step-num">1</div><h4 data-i18n="proc.d1"></h4><p data-i18n="proc.d1d"></p></div>
+        <div class="process-step active"><div class="step-num">2</div><h4 data-i18n="proc.d2"></h4><p data-i18n="proc.d2d"></p></div>
+        <div class="process-step active"><div class="step-num">3</div><h4 data-i18n="proc.d3"></h4><p data-i18n="proc.d3d"></p></div>
+        <div class="process-step active"><div class="step-num">4</div><h4 data-i18n="proc.d4"></h4><p data-i18n="proc.d4d"></p></div>
+        <div class="process-step"><div class="step-num">5</div><h4 data-i18n="proc.d5"></h4><p data-i18n="proc.d5d"></p></div>
+        <div class="process-step"><div class="step-num">6</div><h4 data-i18n="proc.d6"></h4><p data-i18n="proc.d6d"></p></div>
+        <div class="process-step"><div class="step-num">7</div><h4 data-i18n="proc.d7"></h4><p data-i18n="proc.d7d"></p></div>
+        <div class="process-step"><div class="step-num">8</div><h4 data-i18n="proc.d8"></h4><p data-i18n="proc.d8d"></p></div>
+      </div>
+    </div>
+    <div id="mkt-process" class="process-panel">
+      <div class="process-steps">
+        <div class="process-step"><div class="step-num">1</div><h4 data-i18n="proc.m1"></h4><p data-i18n="proc.m1d"></p></div>
+        <div class="process-step"><div class="step-num">2</div><h4 data-i18n="proc.m2"></h4><p data-i18n="proc.m2d"></p></div>
+        <div class="process-step"><div class="step-num">3</div><h4 data-i18n="proc.m3"></h4><p data-i18n="proc.m3d"></p></div>
+        <div class="process-step"><div class="step-num">4</div><h4 data-i18n="proc.m4"></h4><p data-i18n="proc.m4d"></p></div>
+        <div class="process-step"><div class="step-num">5</div><h4 data-i18n="proc.m5"></h4><p data-i18n="proc.m5d"></p></div>
+        <div class="process-step"><div class="step-num">6</div><h4 data-i18n="proc.m6"></h4><p data-i18n="proc.m6d"></p></div>
+        <div class="process-step"><div class="step-num">7</div><h4 data-i18n="proc.m7"></h4><p data-i18n="proc.m7d"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-studies-section">
+    <div class="section-header">
+      <span class="label" data-i18n="cs.label"></span>
+      <h2 data-i18n="cs.title"></h2>
+      <p data-i18n="cs.desc"></p>
+    </div>
+    <div class="case-grid stagger">
+      <div class="case-card reveal">
+        <div class="case-card-header">
+          <div class="case-industry-icon">🛍️</div>
+          <span class="badge badge-primary" data-i18n="cs.c1.ind"></span>
+        </div>
+        <div class="case-card-body">
+          <h3 data-i18n="cs.c1.title"></h3>
+          <p data-i18n="cs.c1.challenge"></p>
+          <div class="case-tags">
+            <span class="tag">ERP</span>
+            <span class="tag">POS</span>
+          </div>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <span class="case-metric-val" data-i18n="cs.c1.metric1"></span>
+              <span class="case-metric-label" data-i18n="cs.c1.label1"></span>
+            </div>
+            <div class="case-metric">
+              <span class="case-metric-val" data-i18n="cs.c1.metric2"></span>
+              <span class="case-metric-label" data-i18n="cs.c1.label2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-card-header">
+          <div class="case-industry-icon">🍽️</div>
+          <span class="badge badge-secondary" data-i18n="cs.c2.ind"></span>
+        </div>
+        <div class="case-card-body">
+          <h3 data-i18n="cs.c2.title"></h3>
+          <p data-i18n="cs.c2.challenge"></p>
+          <div class="case-tags">
+            <span class="tag">Digital Menu</span>
+            <span class="tag">CRM</span>
+          </div>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <span class="case-metric-val" data-i18n="cs.c2.metric1"></span>
+              <span class="case-metric-label" data-i18n="cs.c2.label1"></span>
+            </div>
+            <div class="case-metric">
+              <span class="case-metric-val" data-i18n="cs.c2.metric2"></span>
+              <span class="case-metric-label" data-i18n="cs.c2.label2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-card-header">
+          <div class="case-industry-icon">📊</div>
+          <span class="badge badge-success" data-i18n="cs.c3.ind"></span>
+        </div>
+        <div class="case-card-body">
+          <h3 data-i18n="cs.c3.title"></h3>
+          <p data-i18n="cs.c3.challenge"></p>
+          <div class="case-tags">
+            <span class="tag">Automation</span>
+            <span class="tag">WhatsApp</span>
+          </div>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <span class="case-metric-val" data-i18n="cs.c3.metric1"></span>
+              <span class="case-metric-label" data-i18n="cs.c3.label1"></span>
+            </div>
+            <div class="case-metric">
+              <span class="case-metric-val" data-i18n="cs.c3.metric2"></span>
+              <span class="case-metric-label" data-i18n="cs.c3.label2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="portfolio.html" class="btn btn-ghost" data-i18n="port.title" data-link>View All Case Studies →</a>
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <div class="section-header">
+      <span class="label" data-i18n="test.label"></span>
+      <h2 data-i18n="test.title"></h2>
+    </div>
+    <div class="testimonials-grid stagger">
+      <div class="testimonial-card reveal">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text" data-i18n="test.t1.text"></p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">💼</div>
+          <div>
+            <div class="testimonial-author-name" data-i18n="test.t1.name"></div>
+            <div class="testimonial-author-role" data-i18n="test.t1.role"></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text" data-i18n="test.t2.text"></p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">👩‍💼</div>
+          <div>
+            <div class="testimonial-author-name" data-i18n="test.t2.name"></div>
+            <div class="testimonial-author-role" data-i18n="test.t2.role"></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text" data-i18n="test.t3.text"></p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">👨‍💼</div>
+          <div>
+            <div class="testimonial-author-name" data-i18n="test.t3.name"></div>
+            <div class="testimonial-author-role" data-i18n="test.t3.role"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="integrations-section">
+    <div class="section-header">
+      <span class="label" data-i18n="int.label"></span>
+      <h2 data-i18n="int.title"></h2>
+      <p data-i18n="int.desc"></p>
+    </div>
+    <div class="integrations-grid">
+      <div class="int-chip">💬 WhatsApp</div>
+      <div class="int-chip">📊 Microsoft 365</div>
+      <div class="int-chip">🔍 Google Workspace</div>
+      <div class="int-chip">📘 Meta (Facebook)</div>
+      <div class="int-chip">💳 Payment Gateways</div>
+      <div class="int-chip">📱 SMS Gateway</div>
+      <div class="int-chip">📷 Barcode / QR</div>
+      <div class="int-chip">📈 Power BI</div>
+      <div class="int-chip">☁️ Microsoft Azure</div>
+      <div class="int-chip">⚡ AWS</div>
+      <div class="int-chip">🛒 E-commerce Platforms</div>
+      <div class="int-chip">📧 Email Marketing</div>
+    </div>
+  </section>
+
+  <section class="insights-section">
+    <div class="section-header">
+      <span class="label" data-i18n="ins.label"></span>
+      <h2 data-i18n="ins.title"></h2>
+      <p data-i18n="ins.desc"></p>
+    </div>
+    <div class="insights-grid stagger">
+      <div class="insight-card reveal">
+        <img src="blog1.jpg" alt="Insight 1">
+        <div class="ic-meta"><span data-i18n="ins.p1.cat"></span> • <span>Jul 2025</span></div>
+        <h3 data-i18n="ins.p1.title"></h3>
+        <p data-i18n="ins.p1.desc"></p>
+        <a href="blog.html" class="insight-link" data-i18n="ins.readmore" data-link></a>
+      </div>
+      <div class="insight-card reveal">
+        <img src="blog2.jpg" alt="Insight 2">
+        <div class="ic-meta"><span data-i18n="ins.p2.cat"></span> • <span>Jun 2025</span></div>
+        <h3 data-i18n="ins.p2.title"></h3>
+        <p data-i18n="ins.p2.desc"></p>
+        <a href="blog.html" class="insight-link" data-i18n="ins.readmore" data-link></a>
+      </div>
+      <div class="insight-card reveal">
+        <img src="blog3.jpg" alt="Insight 3">
+        <div class="ic-meta"><span data-i18n="ins.p3.cat"></span> • <span>May 2025</span></div>
+        <h3 data-i18n="ins.p3.title"></h3>
+        <p data-i18n="ins.p3.desc"></p>
+        <a href="blog.html" class="insight-link" data-i18n="ins.readmore" data-link></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 data-i18n="cta.title"></h2>
+      <p data-i18n="cta.desc"></p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white" data-i18n="cta.btn1" data-link></a>
+        <a href="portfolio.html" class="btn btn-transparent" data-i18n="cta.btn2" data-link></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (same on every page) -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
     </div>
   </footer>
 
   <script src="app.js"></script>
-  <script>
-    const menu = document.getElementById('menuToggle');
-    const links = document.querySelector('.nav .links');
-    const overlay = document.getElementById('navOverlay');
-
-    function toggleMenu(force) {
-      const isOpen = typeof force === 'boolean' ? force : !links.classList.contains('open');
-      links.classList.toggle('open', isOpen);
-      menu.setAttribute('aria-expanded', isOpen);
-      overlay.hidden = !isOpen;
-      overlay.classList.toggle('show', isOpen);
-      document.documentElement.classList.toggle('no-scroll', isOpen);
-      document.body.classList.toggle('no-scroll', isOpen);
-    }
-
-    menu.addEventListener('click', () => toggleMenu());
-    overlay.addEventListener('click', () => toggleMenu(false));
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 900) toggleMenu(false);
-    });
-
-    // Mobile Video Autoplay Fix
-    document.addEventListener('DOMContentLoaded', () => {
-      const video = document.getElementById('bgVideo');
-      if (video) {
-        const playVideo = () => {
-          if (video.paused) {
-            video.play().catch(e => console.log('Autoplay prevented:', e));
-          }
-        };
-        // Try playing immediately
-        playVideo();
-        // Try on first interaction (fallback)
-        document.addEventListener('touchstart', playVideo, { once: true });
-        document.addEventListener('click', playVideo, { once: true });
-      }
-    });
-  </script>
-
 </body>
-
 </html>

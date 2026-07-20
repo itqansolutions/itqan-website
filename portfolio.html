@@ -1,259 +1,369 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Itqan Solutions — Portfolio</title>
-  <meta name="description"
-    content="View Itqan Solutions portfolio: Success stories in Retail POS, Restaurant Management, E-commerce, and Digital Marketing." />
-  <meta name="keywords" content="Portfolio, Case Studies, Projects, POS, Websites, Mobile Apps, Itqan Solutions">
-  <meta name="author" content="Itqan Solutions">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://itqansolutions.org/portfolio.html">
-  <meta property="og:title" content="Itqan Solutions — Selected Projects">
-  <meta property="og:description" content="See how we help businesses succeed with technology.">
-  <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://itqansolutions.org/portfolio.html">
-  <meta property="twitter:title" content="Itqan Solutions — Selected Projects">
-  <meta property="twitter:description" content="See how we help businesses succeed with technology.">
-  <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
+  <title>Case Studies — ITQAN Solutions</title>
+  <meta name="description" content="Explore our portfolio of successful projects spanning software engineering, marketing, and digital solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
-
 </head>
-
 <body>
   <div class="overlay" id="overlay"></div>
 
+  <!-- NAV -->
   <nav class="nav" aria-label="Primary">
     <div class="row">
-      <a class="brand" href="index.html" data-link><span class="dot"></span><span>Itqan Solutions</span></a>
-
-      <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-        ☰
-      </button>
-
-      <div class="nav-overlay" id="navOverlay" hidden></div>
-
-      <div class="links" id="primary-nav" role="menubar">
-        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
-        <a href="about.html" data-i18n="nav.about" data-link>About</a>
-
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
         <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-submenu">
-              <a href="javascript:void(0)" class="dropdown-item" style="display:flex; justify-content:space-between;">
-                <span data-i18n="nav.tashgheel">Tashgheel</span>
-                <span>▸</span>
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
               </a>
-              <div class="dropdown-menu">
-                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
-                  data-link>Retail</a>
-                <a href="tashgheel-restaurants.html" class="dropdown-item" data-i18n="nav.tashgheel.rest"
-                  data-link>Restaurants</a>
-                <a href="tashgheel-services.html" class="dropdown-item" data-i18n="nav.tashgheel.services"
-                  data-link>Services</a>
-              </div>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
             </div>
           </div>
         </div>
-
-        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
-        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
-        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
         <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
-      </div>
-      <div class="cta">
-        <button class="lang" id="langToggle">AR</button>
-        <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
       </div>
     </div>
   </nav>
 
-  <header class="intro reveal" style="padding-top:120px">
-    <div class="container">
-      <h2 data-i18n="portfolio.title">Selected Projects</h2>
-      <p style="color:#ccc" data-i18n="portfolio.lead">A glimpse of software, POS, websites, and campaigns we delivered.
-      </p>
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
     </div>
-  </header>
+  </aside>
 
-  <!-- Featured Project -->
-  <section class="featured-project" style="padding: 60px 20px; background: #0d111a;">
-    <div class="container">
-      <div class="featured-grid">
-        <div class="feat-content">
-          <span class="feat-tag" data-i18n="port.feat.tag">Flagship Product</span>
-          <h2 data-i18n="port.feat.name">Tashgheel POS Ecosystem</h2>
-          <p data-i18n="port.feat.desc">A complete ecosystem for retail and service businesses. Includes a desktop POS,
-            a cloud management dashboard, and a mobile app for business owners to track sales in real-time.</p>
-          <a href="tashgheel-retail.html" class="btn btn-neo" data-link>View Details</a>
+  <!-- Page Hero -->
+  <section class="page-hero reveal">
+    <div class="row text-center">
+      <div class="badge" data-i18n="port.label">Case Studies</div>
+      <h1 class="heading-1" data-i18n="port.title">Our Success Stories</h1>
+      <p class="hero-desc" data-i18n="port.desc" style="margin: 0 auto;">Discover how we've helped businesses achieve digital transformation and measurable growth.</p>
+    </div>
+  </section>
+
+  <!-- Case Study 1 -->
+  <section class="case-study-full py-xl">
+    <div class="row">
+      <div class="case-study-grid stagger" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+        <div class="cs-content reveal">
+          <div class="cs-label" style="color:var(--muted);font-weight:600;margin-bottom:8px;">🛍️ Retail & E-Commerce</div>
+          <h2 class="heading-2" data-i18n="cs.c1.title" style="margin-bottom:16px;">Multi-Branch Retail ERP</h2>
+          <div class="badge" style="background:rgba(90,70,255,0.1);color:var(--primary);margin-bottom:24px;">Software Engineering</div>
+          <p style="margin-bottom:12px;"><strong>Challenge:</strong> <span data-i18n="cs.c1.challenge">Managing inventory across multiple retail locations was chaotic and prone to errors.</span></p>
+          <p style="margin-bottom:24px;"><strong>Solution:</strong> <span data-i18n="cs.c1.solution">We built a centralized ERP system to sync inventory in real-time and provide unified reporting.</span></p>
+          <div class="cs-steps" style="display:flex;gap:12px;margin:16px 0;flex-wrap:wrap;">
+            <span class="badge" style="background:var(--surface)">Inventory Audit</span>
+            <span class="badge" style="background:var(--surface)">System Design</span>
+            <span class="badge" style="background:var(--surface)">ERP Build</span>
+            <span class="badge" style="background:var(--surface)">Training & Launch</span>
+          </div>
+          <p style="margin-top:24px;"><strong>Technologies:</strong> <span data-i18n="cs.c1.tech">.NET, SQL Server, Angular, Azure</span></p>
+          <div class="cs-metrics" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;">
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" class="counter" data-target="99" data-i18n="cs.c1.metric1">99%</h3>
+              <p data-i18n="cs.c1.label1">Inventory Accuracy</p>
+            </div>
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" class="counter" data-target="15" data-i18n="cs.c1.metric2">15+</h3>
+              <p data-i18n="cs.c1.label2">Branches Connected</p>
+            </div>
+          </div>
         </div>
-        <div class="feat-img">
-          <img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg" data-img-ar="pos-mockup-AR.jpg"
-            alt="Tashgheel POS">
+        <div class="cs-visual reveal" style="background:var(--surface);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:120px;height:100%;min-height:400px;">
+          🛍️
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Grid -->
-  <section class="blog-highlights">
-    <div class="container">
-      <div class="grid port-grid">
-        <!-- Project 1 -->
-        <div class="post project-card">
-          <div class="project-img-wrap">
-            <img src="media/port1.jpg" alt="POS Retail" loading="lazy">
-            <div class="overlay-hover">
-              <a href="contact.html" class="btn btn-ghost">View Case Study</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="tags" data-i18n="port.p1.tags">Desktop, Electron</div>
-            <h3 data-i18n="port.p1.t">Retail POS — Multi-branch</h3>
-            <p data-i18n="port.p1.d">Offline-first POS with Arabic/English UI, inventory & reports.</p>
-          </div>
+  <!-- Case Study 2 -->
+  <section class="case-study-full py-xl" style="background:var(--surface)">
+    <div class="row">
+      <div class="case-study-grid stagger" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+        <div class="cs-visual reveal" style="background:#fff;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:120px;height:100%;min-height:400px;order:-1;">
+          🍽️
         </div>
-        <!-- Project 2 -->
-        <div class="post project-card">
-          <div class="project-img-wrap">
-            <img src="media/port2.jpg" alt="Restaurant POS" loading="lazy">
-            <div class="overlay-hover">
-              <a href="contact.html" class="btn btn-ghost">View Case Study</a>
+        <div class="cs-content reveal">
+          <div class="cs-label" style="color:var(--muted);font-weight:600;margin-bottom:8px;">🍽️ Food & Beverage</div>
+          <h2 class="heading-2" data-i18n="cs.c2.title" style="margin-bottom:16px;">Restaurant Chain POS & KDS</h2>
+          <div class="badge" style="background:rgba(90,70,255,0.1);color:var(--primary);margin-bottom:24px;">Software Engineering</div>
+          <p style="margin-bottom:12px;"><strong>Challenge:</strong> <span data-i18n="cs.c2.challenge">Slow table turnover and kitchen miscommunication during peak hours.</span></p>
+          <p style="margin-bottom:24px;"><strong>Solution:</strong> <span data-i18n="cs.c2.solution">Implemented a custom POS and Kitchen Display System to streamline orders.</span></p>
+          <div class="cs-steps" style="display:flex;gap:12px;margin:16px 0;flex-wrap:wrap;">
+            <span class="badge" style="background:#fff">Operational Analysis</span>
+            <span class="badge" style="background:#fff">POS Deployment</span>
+            <span class="badge" style="background:#fff">KDS Setup</span>
+            <span class="badge" style="background:#fff">Multi-Branch Launch</span>
+          </div>
+          <p style="margin-top:24px;"><strong>Technologies:</strong> <span data-i18n="cs.c2.tech">React, Node.js, PostgreSQL, AWS</span></p>
+          <div class="cs-metrics" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;">
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" class="counter" data-target="30" data-i18n="cs.c2.metric1">30%</h3>
+              <p data-i18n="cs.c2.label1">Faster Table Turnover</p>
             </div>
-          </div>
-          <div class="project-info">
-            <div class="tags" data-i18n="port.p2.tags">Touch Screen, Printers</div>
-            <h3 data-i18n="port.p2.t">Restaurant POS — Kitchen & Tables</h3>
-            <p data-i18n="port.p2.d">Tables, kitchen display, returns/discounts, COGS.</p>
-          </div>
-        </div>
-        <!-- Project 3 -->
-        <div class="post project-card">
-          <div class="project-img-wrap">
-            <img src="media/port3.jpg" alt="Business Website" loading="lazy">
-            <div class="overlay-hover">
-              <a href="contact.html" class="btn btn-ghost">View Case Study</a>
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" class="counter" data-target="0" data-i18n="cs.c2.metric2">0%</h3>
+              <p data-i18n="cs.c2.label2">Order Errors</p>
             </div>
-          </div>
-          <div class="project-info">
-            <div class="tags" data-i18n="port.p3.tags">HTML5, CSS3, SEO</div>
-            <h3 data-i18n="port.p3.t">Company Website — SEO Ready</h3>
-            <p data-i18n="port.p3.d">Modern, bilingual, high performance & SEO structure.</p>
-          </div>
-        </div>
-        <!-- Project 4 (New) -->
-        <div class="post project-card">
-          <div class="project-img-wrap">
-            <img src="media/port4.jpg" alt="E-Commerce" loading="lazy" style="background:#222;"> <!-- Placeholder bg -->
-            <div class="overlay-hover">
-              <a href="contact.html" class="btn btn-ghost">View Case Study</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="tags" data-i18n="port.p4.tags">React, Node.js</div>
-            <h3 data-i18n="port.p4.t">E-Commerce Platform</h3>
-            <p data-i18n="port.p4.d">Full online store with payment gateway integration.</p>
-          </div>
-        </div>
-        <!-- Project 5 (New) -->
-        <div class="post project-card">
-          <div class="project-img-wrap">
-            <img src="media/port5.jpg" alt="ERP System" loading="lazy" style="background:#222;">
-            <div class="overlay-hover">
-              <a href="contact.html" class="btn btn-ghost">View Case Study</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="tags" data-i18n="port.p5.tags">Web App, Cloud</div>
-            <h3 data-i18n="port.p5.t">Car Service Center ERP</h3>
-            <p data-i18n="port.p5.d">Managing visits, technicians, spare parts, and invoicing.</p>
-          </div>
-        </div>
-        <!-- Project 6 (New) -->
-        <div class="post project-card">
-          <div class="project-img-wrap">
-            <img src="media/port6.jpg" alt="Loyalty App" loading="lazy" style="background:#222;">
-            <div class="overlay-hover">
-              <a href="contact.html" class="btn btn-ghost">View Case Study</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="tags" data-i18n="port.p6.tags">Flutter, iOS, Android</div>
-            <h3 data-i18n="port.p6.t">Mobile Loyalty App</h3>
-            <p data-i18n="port.p6.d">Customer retention app with points, rewards, and push notifications.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-section" style="padding: 80px 20px; text-align: center;">
-    <div class="container">
-      <h2 data-i18n="cta.project">Have a similar project?</h2>
-      <a href="contact.html" class="btn btn-neo btn-xl" style="margin-top: 20px;" data-link
-        data-i18n="contact.title">Get in Touch</a>
+  <!-- Case Study 3 -->
+  <section class="case-study-full py-xl">
+    <div class="row">
+      <div class="case-study-grid stagger" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+        <div class="cs-content reveal">
+          <div class="cs-label" style="color:var(--muted);font-weight:600;margin-bottom:8px;">📊 Marketing</div>
+          <h2 class="heading-2" data-i18n="cs.c3.title" style="margin-bottom:16px;">360° Digital Marketing Campaign</h2>
+          <div class="badge" style="background:rgba(90,70,255,0.1);color:var(--primary);margin-bottom:24px;">Marketing & Creative</div>
+          <p style="margin-bottom:12px;"><strong>Challenge:</strong> <span data-i18n="cs.c3.challenge">A new real estate project needed strong market entry and lead generation.</span></p>
+          <p style="margin-bottom:24px;"><strong>Solution:</strong> <span data-i18n="cs.c3.solution">Executed a multi-channel campaign across Meta, Google, and TikTok.</span></p>
+          <div class="cs-steps" style="display:flex;gap:12px;margin:16px 0;flex-wrap:wrap;">
+            <span class="badge" style="background:var(--surface)">Market Research</span>
+            <span class="badge" style="background:var(--surface)">Brand Identity</span>
+            <span class="badge" style="background:var(--surface)">Website Launch</span>
+            <span class="badge" style="background:var(--surface)">Paid Campaigns</span>
+          </div>
+          <p style="margin-top:24px;"><strong>Technologies:</strong> <span data-i18n="cs.c3.tech">Meta Ads, Google Analytics, WordPress, HubSpot</span></p>
+          <div class="cs-metrics" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;">
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" class="counter" data-target="5000" data-i18n="cs.c3.metric1">5,000+</h3>
+              <p data-i18n="cs.c3.label1">Qualified Leads</p>
+            </div>
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" class="counter" data-target="4" data-i18n="cs.c3.metric2">4x</h3>
+              <p data-i18n="cs.c3.label2">ROI on Ad Spend</p>
+            </div>
+          </div>
+        </div>
+        <div class="cs-visual reveal" style="background:var(--surface);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:120px;height:100%;min-height:400px;">
+          📊
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Case Study 4 -->
+  <section class="case-study-full py-xl" style="background:var(--surface)">
+    <div class="row">
+      <div class="case-study-grid stagger" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+        <div class="cs-visual reveal" style="background:#fff;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:120px;height:100%;min-height:400px;order:-1;">
+          🏥
+        </div>
+        <div class="cs-content reveal">
+          <div class="cs-label" style="color:var(--muted);font-weight:600;margin-bottom:8px;" data-i18n="cs.c4.ind">🏥 Healthcare</div>
+          <h2 class="heading-2" style="margin-bottom:16px;" data-i18n="cs.c4.title">HRMS for a Multi-Department Healthcare Organization</h2>
+          <div class="badge" style="background:rgba(90,70,255,0.1);color:var(--primary);margin-bottom:24px;" data-i18n="nav.sw">Software Engineering</div>
+          <p style="margin-bottom:12px;" data-i18n="cs.c4.challenge"><strong>Challenge:</strong> A 200-employee clinic struggled with manual attendance, payroll, and leave management across departments.</p>
+          <p style="margin-bottom:24px;" data-i18n="cs.c4.solution"><strong>Solution:</strong> Deployed a custom HRMS covering attendance tracking, automated payroll calculation, leave management, and performance reviews.</p>
+          <div class="cs-steps" style="display:flex;gap:12px;margin:16px 0;flex-wrap:wrap;">
+            <span class="badge" style="background:#fff">HR Audit</span>
+            <span class="badge" style="background:#fff">System Blueprint</span>
+            <span class="badge" style="background:#fff">Development</span>
+            <span class="badge" style="background:#fff">UAT</span>
+            <span class="badge" style="background:#fff">Rollout</span>
+          </div>
+          <p style="margin-top:24px;"><strong>Technologies:</strong> ASP.NET Core · SQL Server · Azure Active Directory</p>
+          <div class="cs-metrics" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;">
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" class="counter" data-target="85" data-i18n="cs.c4.metric1">85%</h3>
+              <p data-i18n="cs.c4.label1">Reduction in Manual HR Tasks</p>
+            </div>
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" class="counter" data-target="200" data-i18n="cs.c4.metric2">200</h3>
+              <p data-i18n="cs.c4.label2">Employees Onboarded in 2 weeks</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study 5 -->
+  <section class="case-study-full py-xl">
+    <div class="row">
+      <div class="case-study-grid stagger" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+        <div class="cs-content reveal">
+          <div class="cs-label" style="color:var(--muted);font-weight:600;margin-bottom:8px;" data-i18n="cs.c5.ind">🛒 Retail</div>
+          <h2 class="heading-2" style="margin-bottom:16px;" data-i18n="cs.c5.title">Custom E-Commerce Platform with ERP Integration</h2>
+          <div class="badge" style="background:rgba(90,70,255,0.1);color:var(--primary);margin-bottom:24px;" data-i18n="nav.digital">Digital Solutions</div>
+          <p style="margin-bottom:12px;" data-i18n="cs.c5.challenge"><strong>Challenge:</strong> A wholesale brand wanted to sell direct-to-consumer online with real-time inventory sync from their existing ERP.</p>
+          <p style="margin-bottom:24px;" data-i18n="cs.c5.solution"><strong>Solution:</strong> Built a high-performance e-commerce store with live inventory sync, product catalog management, and integrated payment gateways.</p>
+          <div class="cs-steps" style="display:flex;gap:12px;margin:16px 0;flex-wrap:wrap;">
+            <span class="badge" style="background:var(--surface)">UX Research</span>
+            <span class="badge" style="background:var(--surface)">Design System</span>
+            <span class="badge" style="background:var(--surface)">Development</span>
+            <span class="badge" style="background:var(--surface)">Payment Integration</span>
+            <span class="badge" style="background:var(--surface)">Launch</span>
+          </div>
+          <p style="margin-top:24px;"><strong>Technologies:</strong> React · Node.js · REST API · Stripe · Tabby</p>
+          <div class="cs-metrics" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;">
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" data-i18n="cs.c5.metric1">3×</h3>
+              <p data-i18n="cs.c5.label1">Online Revenue</p>
+            </div>
+            <div>
+              <h3 style="color:var(--primary);font-size:32px;" data-i18n="cs.c5.metric2">Real-time</h3>
+              <p data-i18n="cs.c5.label2">Inventory Sync</p>
+            </div>
+          </div>
+        </div>
+        <div class="cs-visual reveal" style="background:var(--surface);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:120px;height:100%;min-height:400px;">
+          🛒
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 data-i18n="cta.title">Ready to Transform Your Business?</h2>
+      <p data-i18n="cta.desc">Let's build technology that fits the way you work. Request a consultation and we'll design a roadmap tailored to your goals.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white" data-i18n="cta.btn1" data-link>Request a Consultation</a>
+        <a href="portfolio.html" class="btn btn-transparent" data-i18n="cta.btn2" data-link>View Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <div class="f-grid">
-        <div class="f-col">
-          <h3>Itqan Solutions</h3>
-          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
-          <p>📞 01126522373</p>
-          <p>📞 +20 11 55253886</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
         </div>
-        <div class="f-col">
-          <h3 data-i18n="footer.follow">Follow Us</h3>
-          <div class="social">
-            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
-                alt="Facebook"></a>
-            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
-                alt="Instagram"></a>
-            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png"
-                alt="LinkedIn"></a>
-          </div>
-        </div>
-        <div class="f-col">
-          <p data-i18n="footer.copy"></p>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
         </div>
       </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
     </div>
   </footer>
 
   <script src="app.js"></script>
-  <script>
-    const menu = document.getElementById('menuToggle');
-    const links = document.querySelector('.nav .links');
-    const overlay = document.getElementById('navOverlay');
-
-    function toggleMenu(force) {
-      const isOpen = typeof force === 'boolean' ? force : !links.classList.contains('open');
-      links.classList.toggle('open', isOpen);
-      menu.setAttribute('aria-expanded', isOpen);
-      overlay.hidden = !isOpen;
-      overlay.classList.toggle('show', isOpen);
-      document.documentElement.classList.toggle('no-scroll', isOpen);
-      document.body.classList.toggle('no-scroll', isOpen);
-    }
-
-    menu.addEventListener('click', () => toggleMenu());
-    overlay.addEventListener('click', () => toggleMenu(false));
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 900) toggleMenu(false);
-    });
-  </script>
 </body>
-
 </html>

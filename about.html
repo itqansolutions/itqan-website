@@ -1,303 +1,371 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Itqan Solutions — About</title>
-  <meta name="description"
-    content="About Itqan Solutions - Helping businesses transform their operations through smart software, reliable POS systems, and result-driven digital strategies." />
-  <meta name="keywords" content="About Itqan, Software Company, Digital Transformation, POS Provider, Tech Team, Egypt">
-  <meta name="author" content="Itqan Solutions">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://itqansolutions.org/about.html">
-  <meta property="og:title" content="About Itqan Solutions — Our Mission & Journey">
-  <meta property="og:description"
-    content="We build long-term success stories through technology, innovation, and trust.">
-  <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://itqansolutions.org/about.html">
-  <meta property="twitter:title" content="About Itqan Solutions — Our Mission & Journey">
-  <meta property="twitter:description"
-    content="We build long-term success stories through technology, innovation, and trust.">
-  <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
+  <title>About Us — ITQAN Solutions</title>
+  <meta name="description" content="Learn about ITQAN Solutions, our mission, vision, and the team driving digital transformation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
-
 <body>
   <div class="overlay" id="overlay"></div>
 
+  <!-- NAV (same on every page) -->
   <nav class="nav" aria-label="Primary">
     <div class="row">
-      <a class="brand" href="index.html" data-link><span class="dot"></span><span>Itqan Solutions</span></a>
-
-      <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-        ☰
-      </button>
-
-      <div class="nav-overlay" id="navOverlay" hidden></div>
-
-      <div class="links" id="primary-nav" role="menubar">
-        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
-        <a href="about.html" data-i18n="nav.about" data-link>About</a>
-
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <!-- Solutions dropdown -->
         <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-submenu">
-              <a href="javascript:void(0)" class="dropdown-item" style="display:flex; justify-content:space-between;">
-                <span data-i18n="nav.tashgheel">Tashgheel</span>
-                <span>▸</span>
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
               </a>
-              <div class="dropdown-menu">
-                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
-                  data-link>Retail</a>
-                <a href="tashgheel-restaurants.html" class="dropdown-item" data-i18n="nav.tashgheel.rest"
-                  data-link>Restaurants</a>
-                <a href="tashgheel-services.html" class="dropdown-item" data-i18n="nav.tashgheel.services"
-                  data-link>Services</a>
-              </div>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
             </div>
           </div>
         </div>
-
-        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
-        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
-        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <!-- Products dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
         <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
-      </div>
-      <div class="cta">
-        <button class="lang" id="langToggle">AR</button>
-        <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
       </div>
     </div>
   </nav>
 
-  <header class="stage"
-    style="min-height: 50vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, #1a2236 0%, #000 80%); text-align: center;">
-    <div class="container">
-      <h1 data-i18n="about.title" style="font-size: clamp(32px, 5vw, 64px); margin-bottom: 20px;">About Itqan Solutions
-      </h1>
-      <p data-i18n="about.desc"
-        style="color: #ccc; max-width: 800px; margin: 0 auto 30px; font-size: 18px; line-height: 1.6;">At Itqan
-        Solutions, we believe technology should simplify work, not complicate it. For more than five years, we have been
-        helping businesses transform their operations through smart software, reliable POS systems, professional
-        websites, and result-driven digital strategies. We don’t just deliver projects—we build long-term success
-        stories.</p>
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- PAGE CONTENT HERE -->
+  <header class="page-hero">
+    <div class="page-hero-inner">
+      <span class="badge badge-primary reveal mb-3" data-i18n="about.label">About ITQAN</span>
+      <h1 class="page-title reveal" data-i18n="about.title">We Engineer Growth.</h1>
+      <p class="page-subtitle reveal" data-i18n="about.subtitle">Building the future of business through innovative technology and strategic marketing.</p>
     </div>
   </header>
 
-  <!-- Mission & Vision -->
-  <section class="intro" style="padding-top: 0;">
+  <section class="section" style="padding: 80px 0; background: var(--surface)">
     <div class="container">
-      <div class="grid"
-        style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: left;">
-        <div class="card mv-card mv-mission">
-          <h2 data-i18n="about.mission.t">Our Mission</h2>
-          <p data-i18n="about.mission.d">To empower businesses with practical, reliable, and intelligent technology that
-            simplifies complexity, increases efficiency, and drives sustainable growth.</p>
+      <div class="about-mission-grid stagger" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="mv-card mv-mission card reveal">
+          <h2 data-i18n="about.mission.t" style="margin-bottom: 1rem;">Our Mission</h2>
+          <p data-i18n="about.mission.d" style="color: var(--muted);">To empower businesses with cutting-edge digital solutions and strategic marketing that drive measurable growth and operational excellence.</p>
         </div>
-        <div class="card mv-card mv-vision">
-          <h2 data-i18n="about.vision.t">Our Vision</h2>
-          <p data-i18n="about.vision.d">To be the leading digital transformation partner in the MENA region, recognized
-            for innovation, trust, and real business impact.</p>
+        <div class="mv-card mv-vision card reveal">
+          <h2 data-i18n="about.vision.t" style="margin-bottom: 1rem;">Our Vision</h2>
+          <p data-i18n="about.vision.d" style="color: var(--muted);">To be the leading partner for digital transformation in the MENA region, recognized for technical mastery and innovative business solutions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Counter -->
-  <section class="stats" style="padding: 60px 20px; background: #0d111a;">
+  <section class="section" style="padding: 80px 0;">
+    <div class="container text-center">
+      <div class="section-header reveal">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title" data-i18n="about.title">We Engineer Growth.</h2>
+        <p class="section-desc mx-auto" data-i18n="about.desc" style="max-width: 800px; margin: 1.5rem auto 0;">From a small technical team to a comprehensive digital agency, ITQAN Solutions was founded on the belief that technology should be a multiplier for business potential, not a bottleneck.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 80px 0; background: var(--surface)">
     <div class="container">
-      <h2 style="text-align:center; margin-bottom:40px;">Our Impact</h2>
-      <div class="grid" style="grid-template-columns: repeat(4, 1fr); text-align: center; gap: 20px;">
-        <div class="stat-item">
-          <div class="stat-number" data-target="5" style="font-size: 48px; font-weight: bold; color: var(--neo);">0
+      <div class="section-header text-center reveal">
+        <h2 class="section-title" data-i18n="about.time.title">Our Journey</h2>
+      </div>
+      <div class="timeline stagger" style="max-width: 800px; margin: 0 auto;">
+        <div class="timeline-item active reveal" style="padding-bottom: 2rem; border-left: 2px solid var(--primary); padding-left: 2rem; position: relative;">
+          <div class="timeline-dot" style="position: absolute; left: -0.6rem; top: 0; background: var(--primary); color: white; border-radius: 50%; width: 1.2rem; height: 1.2rem;"></div>
+          <div class="timeline-content card" style="padding: 1.5rem;">
+            <span class="timeline-year section-label" data-i18n="about.time.1.y">2018</span>
+            <h3 data-i18n="about.time.1.t" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">The Beginning</h3>
+            <p data-i18n="about.time.1.d" style="color: var(--muted); margin: 0;">Founded with a focus on custom software development.</p>
           </div>
-          <p data-i18n="about.stats.years">Years Experience</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="50" style="font-size: 48px; font-weight: bold; color: var(--violet);">0
+        <div class="timeline-item active reveal" style="padding-bottom: 2rem; border-left: 2px solid var(--primary); padding-left: 2rem; position: relative;">
+          <div class="timeline-dot" style="position: absolute; left: -0.6rem; top: 0; background: var(--primary); color: white; border-radius: 50%; width: 1.2rem; height: 1.2rem;"></div>
+          <div class="timeline-content card" style="padding: 1.5rem;">
+            <span class="timeline-year section-label" data-i18n="about.time.2.y">2020</span>
+            <h3 data-i18n="about.time.2.t" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Expansion</h3>
+            <p data-i18n="about.time.2.d" style="color: var(--muted); margin: 0;">Launched marketing and creative services.</p>
           </div>
-          <p data-i18n="about.stats.projects">Projects Delivered</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="40" style="font-size: 48px; font-weight: bold; color: var(--neo);">0
+        <div class="timeline-item active reveal" style="padding-bottom: 2rem; border-left: 2px solid var(--primary); padding-left: 2rem; position: relative;">
+          <div class="timeline-dot" style="position: absolute; left: -0.6rem; top: 0; background: var(--primary); color: white; border-radius: 50%; width: 1.2rem; height: 1.2rem;"></div>
+          <div class="timeline-content card" style="padding: 1.5rem;">
+            <span class="timeline-year section-label" data-i18n="about.time.3.y">2022</span>
+            <h3 data-i18n="about.time.3.t" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Tashgheel Suite</h3>
+            <p data-i18n="about.time.3.d" style="color: var(--muted); margin: 0;">Introduced our flagship Tashgheel products.</p>
           </div>
-          <p data-i18n="about.stats.clients">Happy Clients</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="5" style="font-size: 48px; font-weight: bold; color: var(--violet);">0
+        <div class="timeline-item reveal" style="padding-bottom: 2rem; border-left: 2px solid #ccc; padding-left: 2rem; position: relative;">
+          <div class="timeline-dot" style="position: absolute; left: -0.6rem; top: 0; background: #ccc; color: white; border-radius: 50%; width: 1.2rem; height: 1.2rem;"></div>
+          <div class="timeline-content card" style="padding: 1.5rem;">
+            <span class="timeline-year section-label" data-i18n="about.time.4.y">2023</span>
+            <h3 data-i18n="about.time.4.t" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Regional Growth</h3>
+            <p data-i18n="about.time.4.d" style="color: var(--muted); margin: 0;">Expanded services across the GCC region.</p>
           </div>
-          <p data-i18n="about.stats.team">Team Members</p>
+        </div>
+        <div class="timeline-item reveal" style="padding-bottom: 2rem; border-left: 2px solid #ccc; padding-left: 2rem; position: relative;">
+          <div class="timeline-dot" style="position: absolute; left: -0.6rem; top: 0; background: #ccc; color: white; border-radius: 50%; width: 1.2rem; height: 1.2rem;"></div>
+          <div class="timeline-content card" style="padding: 1.5rem;">
+            <span class="timeline-year section-label" data-i18n="about.time.5.y">2024</span>
+            <h3 data-i18n="about.time.5.t" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Digital Transformation</h3>
+            <p data-i18n="about.time.5.d" style="color: var(--muted); margin: 0;">Focused on comprehensive enterprise solutions.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal" style="padding-bottom: 0; border-left: 2px solid #ccc; padding-left: 2rem; position: relative;">
+          <div class="timeline-dot" style="position: absolute; left: -0.6rem; top: 0; background: #ccc; color: white; border-radius: 50%; width: 1.2rem; height: 1.2rem;"></div>
+          <div class="timeline-content card" style="padding: 1.5rem;">
+            <span class="timeline-year section-label" data-i18n="about.time.6.y">2025</span>
+            <h3 data-i18n="about.time.6.t" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">AI & Automation</h3>
+            <p data-i18n="about.time.6.d" style="color: var(--muted); margin: 0;">Integrating AI-driven insights into our core platforms.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Timeline -->
-  <section class="timeline-section" style="padding: 100px 20px;">
+  <section class="section" style="padding: 80px 0;">
     <div class="container">
-      <h2 data-i18n="about.timeline.t" style="text-align: center; margin-bottom: 60px;">Our Journey</h2>
-      <div class="timeline">
-        <!-- 2020 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="year" data-i18n="about.time.1.y">2020</span>
-            <h3 data-i18n="about.time.1.t">Founded</h3>
-            <p data-i18n="about.time.1.d">Started as a focused development team with a vision to build meaningful and
-              practical business solutions.</p>
-          </div>
+      <div class="section-header text-center reveal">
+        <span class="section-label">Our Principles</span>
+        <h2 class="section-title">Core Values</h2>
+      </div>
+      <div class="grid-3 stagger" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div class="card reveal text-center">
+          <div class="card-icon" style="font-size: 2.5rem; margin-bottom: 1rem">🏆</div>
+          <h3 data-i18n="about.v1.t" style="margin-bottom: 0.5rem;">Excellence</h3>
+          <p data-i18n="about.v1.d" style="color: var(--muted);">We deliver nothing short of the best in every project.</p>
         </div>
-        <!-- 2022 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="year" data-i18n="about.time.2.y">2022</span>
-            <h3 data-i18n="about.time.2.t">Tashgheel POS Launch</h3>
-            <p data-i18n="about.time.2.d">Released our flagship POS system tailored for retail, restaurants, and
-              manufacturing sectors.</p>
-          </div>
+        <div class="card reveal text-center">
+          <div class="card-icon" style="font-size: 2.5rem; margin-bottom: 1rem">⚡</div>
+          <h3 data-i18n="about.v2.t" style="margin-bottom: 0.5rem;">Innovation</h3>
+          <p data-i18n="about.v2.d" style="color: var(--muted);">Continuously adapting and learning the latest technologies.</p>
         </div>
-        <!-- 2024 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="year" data-i18n="about.time.3.y">2024</span>
-            <h3 data-i18n="about.time.3.t">Expansion</h3>
-            <p data-i18n="about.time.3.d">Entered new market segments and expanded our services to include full digital
-              transformation and marketing solutions.</p>
-          </div>
-        </div>
-        <!-- 2025 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="year" data-i18n="about.time.4.y">2025</span>
-            <h3 data-i18n="about.time.4.t">Innovation</h3>
-            <p data-i18n="about.time.4.d">Integrating AI and automation into our products to deliver smarter workflows
-              and data-driven decisions.</p>
-          </div>
-        </div>
-        <!-- 2026 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <span class="year" data-i18n="about.time.5.y">2026</span>
-            <h3 data-i18n="about.time.5.t">Scale & Intelligence</h3>
-            <p data-i18n="about.time.5.d">Expanding cloud infrastructure, advanced integrations, and AI-powered
-              analytics to help businesses operate with higher efficiency and clearer insights.</p>
-          </div>
+        <div class="card reveal text-center">
+          <div class="card-icon" style="font-size: 2.5rem; margin-bottom: 1rem">🤝</div>
+          <h3 data-i18n="about.v3.t" style="margin-bottom: 0.5rem;">Partnership</h3>
+          <p data-i18n="about.v3.d" style="color: var(--muted);">We treat our clients' businesses as our own.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services (Values) -->
-  <section class="services" style="background: #0a0f18;">
+  <section class="section" style="padding: 80px 0; background: var(--surface)">
     <div class="container">
-      <h2 data-i18n="about.values" style="margin-bottom: 40px;">Our Principles</h2>
-      <div class="grid">
-        <div class="card">
-          <h3 data-i18n="about.v1.t">Quality</h3>
-          <p data-i18n="about.v1.d">Clean code, clear process, measurable results.</p>
+      <div class="section-header text-center reveal">
+        <h2 class="section-title" data-i18n="about.tech.t">Our Technology Stack</h2>
+        <p class="section-desc mx-auto" data-i18n="about.tech.d" style="max-width: 600px; margin-top: 1rem;">Built on robust, scalable enterprise technologies.</p>
+      </div>
+      <div class="tech-grid stagger" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+        <div class="tech-group reveal card">
+          <h3 style="margin-bottom: 0.5rem;">Backend</h3>
+          <p style="color: var(--muted);">.NET Core, ASP.NET, SQL Server, REST APIs, Node.js</p>
         </div>
-        <div class="card">
-          <h3 data-i18n="about.v2.t">Speed</h3>
-          <p data-i18n="about.v2.d">Ship fast with no compromise on reliability.</p>
+        <div class="tech-group reveal card">
+          <h3 style="margin-bottom: 0.5rem;">Frontend</h3>
+          <p style="color: var(--muted);">HTML5, CSS3, JavaScript, Responsive Design, React</p>
         </div>
-        <div class="card">
-          <h3 data-i18n="about.v3.t">Support</h3>
-          <p data-i18n="about.v3.d">Bilingual support and long-term partnership.</p>
+        <div class="tech-group reveal card">
+          <h3 style="margin-bottom: 0.5rem;">Mobile & Cloud</h3>
+          <p style="color: var(--muted);">Flutter, Android, iOS, Azure, AWS, Windows Server</p>
+        </div>
+        <div class="tech-group reveal card">
+          <h3 style="margin-bottom: 0.5rem;">Analytics</h3>
+          <p style="color: var(--muted);">Power BI, Excel Integration, Custom Dashboards, Reporting API</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process -->
-  <section class="process" style="padding: 80px 20px;">
-    <div class="container" style="text-align: center;">
-      <h2 data-i18n="about.process.t" style="margin-bottom: 40px;">Our Process</h2>
-      <div class="process-steps">
-        <div class="step">
-          <div class="step-icon">1</div>
-          <p data-i18n="about.proc.1">Discovery</p>
+  <section class="section" style="padding: 80px 0;">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <h2 class="section-title">Why Choose ITQAN</h2>
+      </div>
+      <div class="badges-grid stagger" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+        <div class="trust-badge reveal card text-center">
+          <h4 data-i18n="why.b1.t" style="margin-bottom: 0.5rem;">Proven Expertise</h4>
+          <p data-i18n="why.b1.d" class="text-sm" style="color: var(--muted);">Years of industry experience.</p>
         </div>
-        <div class="step-line"></div>
-        <div class="step">
-          <div class="step-icon">2</div>
-          <p data-i18n="about.proc.2">Strategy</p>
+        <div class="trust-badge reveal card text-center">
+          <h4 data-i18n="why.b2.t" style="margin-bottom: 0.5rem;">Custom Solutions</h4>
+          <p data-i18n="why.b2.d" class="text-sm" style="color: var(--muted);">Tailored to your exact needs.</p>
         </div>
-        <div class="step-line"></div>
-        <div class="step">
-          <div class="step-icon">3</div>
-          <p data-i18n="about.proc.3">Build</p>
+        <div class="trust-badge reveal card text-center">
+          <h4 data-i18n="why.b3.t" style="margin-bottom: 0.5rem;">Agile Approach</h4>
+          <p data-i18n="why.b3.d" class="text-sm" style="color: var(--muted);">Fast and iterative delivery.</p>
         </div>
-        <div class="step-line"></div>
-        <div class="step">
-          <div class="step-icon">4</div>
-          <p data-i18n="about.proc.4">Launch</p>
+        <div class="trust-badge reveal card text-center">
+          <h4 data-i18n="why.b4.t" style="margin-bottom: 0.5rem;">Dedicated Support</h4>
+          <p data-i18n="why.b4.d" class="text-sm" style="color: var(--muted);">24/7 technical assistance.</p>
         </div>
-        <div class="step-line"></div>
-        <div class="step">
-          <div class="step-icon">5</div>
-          <p data-i18n="about.proc.5">Growth</p>
+        <div class="trust-badge reveal card text-center">
+          <h4 data-i18n="why.b5.t" style="margin-bottom: 0.5rem;">Scalable Architecture</h4>
+          <p data-i18n="why.b5.d" class="text-sm" style="color: var(--muted);">Grows with your business.</p>
+        </div>
+        <div class="trust-badge reveal card text-center">
+          <h4 data-i18n="why.b6.t" style="margin-bottom: 0.5rem;">Secure Systems</h4>
+          <p data-i18n="why.b6.d" class="text-sm" style="color: var(--muted);">Top-tier data protection.</p>
+        </div>
+        <div class="trust-badge reveal card text-center">
+          <h4 data-i18n="why.b7.t" style="margin-bottom: 0.5rem;">Transparent Pricing</h4>
+          <p data-i18n="why.b7.d" class="text-sm" style="color: var(--muted);">No hidden costs or fees.</p>
+        </div>
+        <div class="trust-badge reveal card text-center">
+          <h4 data-i18n="why.b8.t" style="margin-bottom: 0.5rem;">Client-Centric</h4>
+          <p data-i18n="why.b8.d" class="text-sm" style="color: var(--muted);">Your success is our priority.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 data-i18n="cta.title">Ready to Transform Your Business?</h2>
+      <p data-i18n="cta.desc">Let's build technology that fits the way you work. Request a consultation and we'll design a roadmap tailored to your goals.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white" data-i18n="cta.btn1" data-link>Request a Consultation</a>
+        <a href="portfolio.html" class="btn btn-transparent" data-i18n="cta.btn2" data-link>View Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (same on every page) -->
   <footer class="footer">
-    <div class="container">
-      <div class="f-grid">
-        <div class="f-col">
-          <h3>Itqan Solutions</h3>
-          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
-          <p>📞 01126522373</p>
-          <p>📞 +20 11 55253886</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
         </div>
-        <div class="f-col">
-          <h3 data-i18n="footer.follow">Follow Us</h3>
-          <div class="social">
-            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
-                alt="Facebook"></a>
-            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
-                alt="Instagram"></a>
-            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png"
-                alt="LinkedIn"></a>
-          </div>
-        </div>
-        <div class="f-col">
-          <p data-i18n="footer.copy"></p>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
         </div>
       </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
     </div>
   </footer>
 
   <script src="app.js"></script>
-  <script>
-    const menu = document.getElementById('menuToggle');
-    const links = document.querySelector('.nav .links');
-    const overlay = document.getElementById('navOverlay');
-
-    function toggleMenu(force) {
-      const isOpen = typeof force === 'boolean' ? force : !links.classList.contains('open');
-      links.classList.toggle('open', isOpen);
-      menu.setAttribute('aria-expanded', isOpen);
-      overlay.hidden = !isOpen;
-      overlay.classList.toggle('show', isOpen);
-      document.documentElement.classList.toggle('no-scroll', isOpen);
-      document.body.classList.toggle('no-scroll', isOpen);
-    }
-
-    menu.addEventListener('click', () => toggleMenu());
-    overlay.addEventListener('click', () => toggleMenu(false));
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 900) toggleMenu(false);
-    });
-  </script>
 </body>
-
 </html>

@@ -1,184 +1,317 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Itqan Solutions — Blog</title>
-  <meta name="description"
-    content="Read the latest insights from Itqan Solutions on POS systems, web development trends, and digital marketing strategies." />
-  <meta name="keywords"
-    content="Itqan Blog, POS Trends, Digital Marketing Tips, Web Development Articles, Technology News">
-  <meta name="author" content="Itqan Solutions">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://itqansolutions.org/blog.html">
-  <meta property="og:title" content="Itqan Solutions — Blog & Insights">
-  <meta property="og:description" content="Stay updated with the latest in technology and business growth.">
-  <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://itqansolutions.org/blog.html">
-  <meta property="twitter:title" content="Itqan Solutions — Blog & Insights">
-  <meta property="twitter:description" content="Stay updated with the latest in technology and business growth.">
-  <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
+  <title>Insights & Blog — ITQAN Solutions</title>
+  <meta name="description" content="Discover actionable insights, trends, and strategies for digital transformation and business growth.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
-
 <body>
   <div class="overlay" id="overlay"></div>
 
-  <!-- ===== NAVBAR (نفس بتاع الهوم) ===== -->
+  <!-- NAV -->
   <nav class="nav" aria-label="Primary">
     <div class="row">
       <a class="brand" href="index.html" data-link>
-        <span class="dot" aria-hidden="true">
-          <img src="favicon.png" alt="Logo" class="dot-logo">
-        </span>
-        <span>Itqan Solutions</span>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
       </a>
-
-      <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-        ☰
-      </button>
-
-      <div class="nav-overlay" id="navOverlay" hidden></div>
-
-      <div class="links" id="primary-nav" role="menubar">
-        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
-        <a href="about.html" data-i18n="nav.about" data-link>About</a>
-
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
         <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-submenu">
-              <a href="javascript:void(0)" class="dropdown-item" style="display:flex; justify-content:space-between;">
-                <span data-i18n="nav.tashgheel">Tashgheel</span>
-                <span>▸</span>
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
               </a>
-              <div class="dropdown-menu">
-                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
-                  data-link>Retail</a>
-                <a href="tashgheel-restaurants.html" class="dropdown-item" data-i18n="nav.tashgheel.rest"
-                  data-link>Restaurants</a>
-                <a href="tashgheel-services.html" class="dropdown-item" data-i18n="nav.tashgheel.services"
-                  data-link>Services</a>
-              </div>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
             </div>
           </div>
         </div>
-
-        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
-        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
-        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
         <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
-      </div>
-      <div class="cta">
-        <button class="lang" id="langToggle" aria-label="Toggle language">AR</button>
-        <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
       </div>
     </div>
   </nav>
 
-  <!-- ===== BLOG HERO بسيط ===== -->
-  <header class="intro reveal" style="padding-top:120px;">
-    <div class="container">
-      <h2 data-i18n="blog.latest">Latest Blog Posts</h2>
-      <p style="color:#ccc;max-width:720px;margin:10px auto 0;">
-        Insights, trends, and updates from Itqan Solutions
-      </p>
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
     </div>
-  </header>
+  </aside>
 
-  <!-- ===== POSTS GRID (يتوافق مع JS: .blog-highlights .grid/.post) ===== -->
-  <section class="blog-highlights">
-    <div class="container">
-      <div class="grid">
-        <article class="post">
-          <img src="blog1.jpg" alt="POS Retail" loading="lazy">
-          <h3 data-i18n="blog.p1.title">How POS Systems Transform Retail</h3>
-          <p data-i18n="blog.p1.desc">
-            Discover how modern POS systems improve efficiency, reporting, and customer experience.
-          </p>
-          <a href="#" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
-        </article>
+  <!-- PAGE CONTENT -->
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <span class="badge badge-primary reveal mb-3" data-i18n="blog.label">Insights</span>
+        <h1 class="reveal" data-i18n="blog.title">Knowledge Drives Growth</h1>
+        <p class="reveal" data-i18n="blog.subtitle">Expert perspectives on digital transformation, ERP, marketing, automation, and business growth from the ITQAN team.</p>
+      </div>
+    </section>
 
-        <article class="post">
-          <img src="blog2.jpg" alt="Business Website" loading="lazy">
-          <h3 data-i18n="blog.p2.title">Why Every Business Needs a Website</h3>
-          <p data-i18n="blog.p2.desc">
-            Your website is your business card. Learn how to make it effective and engaging.
-          </p>
-          <a href="#" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
-        </article>
+    <section class="blog-page-section section pt-0">
+      <div class="container">
+        <div class="blog-filter-tabs reveal" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:40px;">
+          <button data-cat="all" class="active btn btn-ghost" data-i18n="blog.all">All Topics</button>
+          <button data-cat="dt" class="btn btn-ghost" data-i18n="blog.cat.dt">Digital Transformation</button>
+          <button data-cat="erp" class="btn btn-ghost" data-i18n="blog.cat.erp">ERP & Systems</button>
+          <button data-cat="mkt" class="btn btn-ghost" data-i18n="blog.cat.mkt">Marketing</button>
+          <button data-cat="ai" class="btn btn-ghost" data-i18n="blog.cat.ai">AI & Automation</button>
+          <button data-cat="web" class="btn btn-ghost" data-i18n="blog.cat.web">Web & Mobile</button>
+          <button data-cat="biz" class="btn btn-ghost" data-i18n="blog.cat.biz">Business Growth</button>
+        </div>
 
-        <article class="post">
-          <img src="blog3.jpg" alt="Digital Marketing Trends" loading="lazy">
-          <h3 data-i18n="blog.p3.title">Digital Marketing Trends 2025</h3>
-          <p data-i18n="blog.p3.desc">
-            Stay ahead with the latest strategies in social media and digital advertising.
-          </p>
-          <a href="#" class="btn btn-ghost" data-i18n="blog.readmore">Read More</a>
-        </article>
+        <div class="blog-grid stagger grid-3">
+          <!-- Article 1 -->
+          <article class="insight-card reveal" data-cat="dt">
+            <div class="insight-card-img" style="height:200px; background:url('blog1.jpg') center/cover var(--surface-2);"></div>
+            <div class="insight-card-content p-4">
+              <span class="badge badge-outline">Digital Transformation</span>
+              <div class="text-sm text-muted mt-2">Jul 2025</div>
+              <h3 class="mt-2" data-i18n="ins.p1.title">The Future of Digital Transformation</h3>
+              <p class="text-muted mt-2" data-i18n="ins.p1.desc">Exploring how the digital landscape is changing.</p>
+              <a href="#" class="btn btn-ghost mt-4 p-0">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="insight-card reveal" data-cat="mkt">
+            <div class="insight-card-img" style="height:200px; background:url('blog2.jpg') center/cover var(--surface-2);"></div>
+            <div class="insight-card-content p-4">
+              <span class="badge badge-outline">Marketing Strategy</span>
+              <div class="text-sm text-muted mt-2">Jun 2025</div>
+              <h3 class="mt-2" data-i18n="ins.p2.title">Data-Driven Marketing Success</h3>
+              <p class="text-muted mt-2" data-i18n="ins.p2.desc">Using data to refine your marketing efforts.</p>
+              <a href="#" class="btn btn-ghost mt-4 p-0">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="insight-card reveal" data-cat="ai">
+            <div class="insight-card-img" style="height:200px; background:url('blog3.jpg') center/cover var(--surface-2);"></div>
+            <div class="insight-card-content p-4">
+              <span class="badge badge-outline">AI & Automation</span>
+              <div class="text-sm text-muted mt-2">May 2025</div>
+              <h3 class="mt-2" data-i18n="ins.p3.title">Automating the Modern Workplace</h3>
+              <p class="text-muted mt-2" data-i18n="ins.p3.desc">How AI can boost your productivity.</p>
+              <a href="#" class="btn btn-ghost mt-4 p-0">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="insight-card reveal" data-cat="erp">
+            <div class="insight-card-img" style="height:200px; display:flex; align-items:center; justify-content:center; font-size:4rem; background:var(--surface-2);">📊</div>
+            <div class="insight-card-content p-4">
+              <span class="badge badge-outline">ERP & Systems</span>
+              <div class="text-sm text-muted mt-2">Apr 2025</div>
+              <h3 class="mt-2">How to Choose Between Custom ERP and Off-the-Shelf Software</h3>
+              <p class="text-muted mt-2">A practical decision framework for businesses evaluating enterprise software options for the first time.</p>
+              <a href="#" class="btn btn-ghost mt-4 p-0">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="insight-card reveal" data-cat="web">
+            <div class="insight-card-img" style="height:200px; display:flex; align-items:center; justify-content:center; font-size:4rem; background:var(--surface-2);">🌐</div>
+            <div class="insight-card-content p-4">
+              <span class="badge badge-outline">Web & Mobile</span>
+              <div class="text-sm text-muted mt-2">Mar 2025</div>
+              <h3 class="mt-2">Why Progressive Web Apps Are the Future of Mobile Business</h3>
+              <p class="text-muted mt-2">PWAs combine the best of web and native apps—here is why they are gaining traction in the MENA market.</p>
+              <a href="#" class="btn btn-ghost mt-4 p-0">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="insight-card reveal" data-cat="biz">
+            <div class="insight-card-img" style="height:200px; display:flex; align-items:center; justify-content:center; font-size:4rem; background:var(--surface-2);">💼</div>
+            <div class="insight-card-content p-4">
+              <span class="badge badge-outline">Business Growth</span>
+              <div class="text-sm text-muted mt-2">Feb 2025</div>
+              <h3 class="mt-2">5 Digital Transformation Mistakes That Are Costing Businesses Growth</h3>
+              <p class="text-muted mt-2">From underestimating change management to choosing the wrong vendor—avoid the pitfalls that derail transformation.</p>
+              <a href="#" class="btn btn-ghost mt-4 p-0">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Article 7 -->
+          <article class="insight-card reveal" data-cat="mkt">
+            <div class="insight-card-img" style="height:200px; display:flex; align-items:center; justify-content:center; font-size:4rem; background:var(--surface-2);">📣</div>
+            <div class="insight-card-content p-4">
+              <span class="badge badge-outline">Marketing Strategy</span>
+              <div class="text-sm text-muted mt-2">Jan 2025</div>
+              <h3 class="mt-2">Building a B2B Brand That Earns Trust in the Arab Market</h3>
+              <p class="text-muted mt-2">Trust signals, Arabic content strategy, and the cultural nuances that determine whether B2B buyers choose you.</p>
+              <a href="#" class="btn btn-ghost mt-4 p-0">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Article 8 -->
+          <article class="insight-card reveal" data-cat="erp">
+            <div class="insight-card-img" style="height:200px; display:flex; align-items:center; justify-content:center; font-size:4rem; background:var(--surface-2);">⚙️</div>
+            <div class="insight-card-content p-4">
+              <span class="badge badge-outline">ERP & Systems</span>
+              <div class="text-sm text-muted mt-2">Dec 2024</div>
+              <h3 class="mt-2">POS vs ERP: What Does Your Growing Business Actually Need?</h3>
+              <p class="text-muted mt-2">A clear breakdown of when a point-of-sale system is enough and when you need a full ERP platform.</p>
+              <a href="#" class="btn btn-ghost mt-4 p-0">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Article 9 -->
+          <article class="insight-card reveal" data-cat="ai">
+            <div class="insight-card-img" style="height:200px; display:flex; align-items:center; justify-content:center; font-size:4rem; background:var(--surface-2);">🤖</div>
+            <div class="insight-card-content p-4">
+              <span class="badge badge-outline">AI & Automation</span>
+              <div class="text-sm text-muted mt-2">Nov 2024</div>
+              <h3 class="mt-2">Practical AI for SMEs: Where to Start Without Overcomplicating It</h3>
+              <p class="text-muted mt-2">No buzzwords—just real, actionable AI use cases for small and mid-market businesses starting their automation journey.</p>
+              <a href="#" class="btn btn-ghost mt-4 p-0">Read More →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 data-i18n="cta.title">Ready to Transform Your Business?</h2>
+      <p data-i18n="cta.desc">Let's build technology that fits the way you work. Request a consultation and we'll design a roadmap tailored to your goals.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white" data-i18n="cta.btn1" data-link>Request a Consultation</a>
+        <a href="portfolio.html" class="btn btn-transparent" data-i18n="cta.btn2" data-link>View Our Work</a>
       </div>
     </div>
   </section>
+  </main>
 
-  <!-- ===== FOOTER (نفس بتاعنا) ===== -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <div class="f-grid">
-        <div class="f-col">
-          <h3>Itqan Solutions</h3>
-          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
-          <p>📞 01126522373</p>
-          <p>📞 +20 11 55253886</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
         </div>
-        <div class="f-col">
-          <h3 data-i18n="footer.follow">Follow Us</h3>
-          <div class="social">
-            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
-                alt="Facebook"></a>
-            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
-                alt="Instagram"></a>
-            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png"
-                alt="LinkedIn"></a>
-          </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
         </div>
-        <div class="f-col">
-          <p data-i18n="footer.copy">© 2025 Itqan Solutions. All rights reserved.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
         </div>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
   </footer>
 
-  <!-- نفس السكربت المشترك -->
   <script src="app.js"></script>
-  <script>
-    const menu = document.getElementById('menuToggle');
-    const links = document.querySelector('.nav .links');
-    const overlay = document.getElementById('navOverlay');
-
-    function toggleMenu(force) {
-      const isOpen = typeof force === 'boolean' ? force : !links.classList.contains('open');
-      links.classList.toggle('open', isOpen);
-      menu.setAttribute('aria-expanded', isOpen);
-      overlay.hidden = !isOpen;
-      overlay.classList.toggle('show', isOpen);
-      document.documentElement.classList.toggle('no-scroll', isOpen);
-      document.body.classList.toggle('no-scroll', isOpen);
-    }
-
-    menu.addEventListener('click', () => toggleMenu());
-    overlay.addEventListener('click', () => toggleMenu(false));
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 900) toggleMenu(false);
-    });
-  </script>
 </body>
-
 </html>

@@ -1,266 +1,521 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Itqan Solutions — Services</title>
-  <meta name="description"
-    content="Explore Itqan Solutions services: Software Development, POS Systems, Web Design, Mobile Apps, and Digital Marketing." />
-  <meta name="keywords"
-    content="Services, Software, POS, Web Design, Mobile Apps, Marketing, Branding, Itqan Solutions">
-  <meta name="author" content="Itqan Solutions">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://itqansolutions.org/services.html">
-  <meta property="og:title" content="Itqan Solutions — Our Services">
-  <meta property="og:description" content="Comprehensive digital solutions tailored to your business needs.">
-  <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://itqansolutions.org/services.html">
-  <meta property="twitter:title" content="Itqan Solutions — Our Services">
-  <meta property="twitter:description" content="Comprehensive digital solutions tailored to your business needs.">
-  <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
+  <title>Services — ITQAN Solutions</title>
+  <meta name="description" content="Our full range of software engineering, digital solutions, marketing, and business automation services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
-
 </head>
-
 <body>
   <div class="overlay" id="overlay"></div>
 
+  <!-- NAV -->
   <nav class="nav" aria-label="Primary">
     <div class="row">
-      <a class="brand" href="index.html" data-link><span class="dot"></span><span>Itqan Solutions</span></a>
-
-      <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-        ☰
-      </button>
-
-      <div class="nav-overlay" id="navOverlay" hidden></div>
-
-      <div class="links" id="primary-nav" role="menubar">
-        <a href="index.html" data-i18n="nav.home" data-link>Home</a>
-        <a href="about.html" data-i18n="nav.about" data-link>About</a>
-
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
         <div class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-submenu">
-              <a href="javascript:void(0)" class="dropdown-item" style="display:flex; justify-content:space-between;">
-                <span data-i18n="nav.tashgheel">Tashgheel</span>
-                <span>▸</span>
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
               </a>
-              <div class="dropdown-menu">
-                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
-                  data-link>Retail</a>
-                <a href="tashgheel-restaurants.html" class="dropdown-item" data-i18n="nav.tashgheel.rest"
-                  data-link>Restaurants</a>
-                <a href="tashgheel-services.html" class="dropdown-item" data-i18n="nav.tashgheel.services"
-                  data-link>Services</a>
-              </div>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
             </div>
           </div>
         </div>
-
-        <a href="services.html" data-i18n="nav.services" data-link>Services</a>
-        <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
-        <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
         <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
-      </div>
-      <div class="cta">
-        <button class="lang" id="langToggle">AR</button>
-        <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
       </div>
     </div>
   </nav>
 
-  <header class="intro reveal" style="padding-top:120px">
-    <div class="container">
-      <h2 data-i18n="services.title">Our Services</h2>
-      <p style="color:#ccc" data-i18n="services.lead">Software, POS, websites, mobile apps, marketing, and branding.</p>
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
     </div>
-  </header>
+  </aside>
 
-  <section class="services">
-    <div class="container">
-      <!-- Detailed Services Grid -->
-      <div class="grid service-grid">
-        <div class="card service-card">
-          <div class="icon-box">💻</div>
-          <h3 data-i18n="services.dev.title">Software Development</h3>
-          <p data-i18n="services.dev.desc">Custom systems tailored to your business needs.</p>
-          <p class="feat-list" data-i18n="srv.dev.feat">Custom ERPs, API Integrations</p>
-          <a class="btn btn-ghost" href="contact.html" data-link data-i18n="services.cta">Start a Project</a>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">📠</div>
-          <h3 data-i18n="services.pos.title">POS Systems</h3>
-          <p data-i18n="services.pos.desc">Offline/online, bilingual, secure POS for retail & restaurants.</p>
-          <p class="feat-list" data-i18n="srv.pos.feat">Inventory, sales, CRM</p>
-          <a class="btn btn-ghost" href="contact.html" data-link data-i18n="services.cta">Start a Project</a>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">🌐</div>
-          <h3 data-i18n="services.web.title">Websites & eCommerce</h3>
-          <p data-i18n="services.web.desc">Modern, responsive, SEO-friendly websites.</p>
-          <p class="feat-list" data-i18n="srv.web.feat">Landing pages, e-commerce</p>
-          <a class="btn btn-ghost" href="contact.html" data-link data-i18n="services.cta">Start a Project</a>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">📱</div>
-          <h3 data-i18n="services.mobile.title">Mobile Apps</h3>
-          <p data-i18n="services.mobile.desc">iOS & Android apps with smooth user experience.</p>
-          <p class="feat-list" data-i18n="srv.mob.feat">Native & Cross-platform</p>
-          <a class="btn btn-ghost" href="contact.html" data-link data-i18n="services.cta">Start a Project</a>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">🚀</div>
-          <h3 data-i18n="services.marketing.title">Digital Marketing</h3>
-          <p data-i18n="services.marketing.desc">Social media, campaigns, and online growth strategies.</p>
-          <p class="feat-list" data-i18n="srv.mkt.feat">SEO, Social Media, Ads</p>
-          <a class="btn btn-ghost" href="contact.html" data-link data-i18n="services.cta">Start a Project</a>
-        </div>
-        <div class="card service-card">
-          <div class="icon-box">🎨</div>
-          <h3 data-i18n="services.branding.title">Branding & Design</h3>
-          <p data-i18n="services.branding.desc">Logos, identity, and professional visuals.</p>
-          <p class="feat-list" data-i18n="srv.brd.feat">Logo, Identity, Brand Book</p>
-          <a class="btn btn-ghost" href="contact.html" data-link data-i18n="services.cta">Start a Project</a>
-        </div>
-      </div>
+  <!-- Page Hero -->
+  <section class="page-hero reveal">
+    <div class="row">
+      <div class="badge" data-i18n="srv.label">Our Services</div>
+      <h1 class="heading-1" data-i18n="srv.title">Comprehensive Solutions for Modern Businesses</h1>
+      <p class="hero-desc" data-i18n="srv.desc">End-to-end technology and marketing services designed to transform your operations and scale your growth.</p>
     </div>
   </section>
 
-  <!-- Process Section (Reusing About Us Process) -->
-  <section class="process" style="padding: 80px 20px; background: #0a0f18;">
-    <div class="container" style="text-align: center;">
-      <h2 data-i18n="about.process.t" style="margin-bottom: 40px;">Our Process</h2>
-      <div class="process-steps">
-        <div class="step">
-          <div class="step-icon">1</div>
-          <p data-i18n="about.proc.1">Discovery</p>
-        </div>
-        <div class="step-line"></div>
-        <div class="step">
-          <div class="step-icon">2</div>
-          <p data-i18n="about.proc.2">Strategy</p>
-        </div>
-        <div class="step-line"></div>
-        <div class="step">
-          <div class="step-icon">3</div>
-          <p data-i18n="about.proc.3">Build</p>
-        </div>
-        <div class="step-line"></div>
-        <div class="step">
-          <div class="step-icon">4</div>
-          <p data-i18n="about.proc.4">Launch</p>
-        </div>
-        <div class="step-line"></div>
-        <div class="step">
-          <div class="step-icon">5</div>
-          <p data-i18n="about.proc.5">Growth</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section class="why-us" style="padding: 80px 20px;">
-    <div class="container">
-      <h2 data-i18n="srv.why.title" style="text-align: center; margin-bottom: 40px;">Why Choose Itqan?</h2>
-      <div class="grid">
-        <div class="card">
-          <h3 data-i18n="srv.why.1.t">Local Expertise</h3>
-          <p data-i18n="srv.why.1.d">We understand the MENA market, RTL requirements, and local business logic.</p>
-        </div>
-        <div class="card">
-          <h3 data-i18n="srv.why.2.t">Agile & Fast</h3>
-          <p data-i18n="srv.why.2.d">We work in sprints to deliver usable features quickly and iterate based on
-            feedback.</p>
-        </div>
-        <div class="card">
-          <h3 data-i18n="srv.why.3.t">Full Support</h3>
-          <p data-i18n="srv.why.3.d">Our job doesn’t end at launch. We provide training, maintenance, and scale-up
-            support.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pos-spotlight">
-    <div class="container">
-      <div class="spotlight">
-        <div class="text">
-          <h2 data-i18n="pos.title">POS Spotlight</h2>
-          <ul>
-            <li data-i18n="pos.li1">Bilingual (EN/AR) + RTL</li>
-            <li data-i18n="pos.li2">Reports, Returns, Discounts, COGS</li>
-            <li data-i18n="pos.li3">Offline-first, secure licensing</li>
-          </ul>
-          <a href="contact.html" class="btn btn-neo btn-xl" data-link data-i18n="pos.cta">See POS Demo</a>
-        </div>
-        <div class="visual">
-          <img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg" data-img-ar="pos-mockup-AR.jpg"
-            alt="POS Demo Mockup">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="f-grid">
-        <div class="f-col">
-          <h3>Itqan Solutions</h3>
-          <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
-          <p>📞 01126522373</p>
-          <p>📞 +20 11 55253886</p>
-        </div>
-        <div class="f-col">
-          <h3 data-i18n="footer.follow">Follow Us</h3>
-          <div class="social">
-            <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
-                alt="Facebook"></a>
-            <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
-                alt="Instagram"></a>
-            <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img src="icon-linkedin.png"
-                alt="LinkedIn"></a>
+  <!-- Pillar 1 -->
+  <section class="service-pillar" id="software">
+    <div class="row">
+      <div class="pillar-inner">
+        <div class="pillar-header reveal">
+          <div class="pillar-num">01</div>
+          <div>
+            <div class="badge" data-i18n="srv.p1.label">Software Engineering</div>
+            <h2 class="heading-2" data-i18n="srv.p1.title">Enterprise Software Development</h2>
+            <p data-i18n="srv.p1.desc">Robust, scalable, and secure systems tailored for complex business needs.</p>
           </div>
         </div>
-        <div class="f-col">
-          <p data-i18n="footer.copy"></p>
+        <div class="services-feature-grid stagger">
+          <div class="service-feature reveal">
+            <div class="sf-icon">⚙️</div>
+            <h4 data-i18n="srv.sf1.t">Custom ERP Systems</h4>
+            <p data-i18n="srv.sf1.d">Fully tailored enterprise resource planning systems.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">👥</div>
+            <h4 data-i18n="srv.sf2.t">CRM</h4>
+            <p data-i18n="srv.sf2.d">Customer relationship management built for your sales process.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">👤</div>
+            <h4 data-i18n="srv.sf3.t">HRMS</h4>
+            <p data-i18n="srv.sf3.d">Attendance, payroll, recruitment, and performance management.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🛍️</div>
+            <h4 data-i18n="srv.sf4.t">Retail POS</h4>
+            <p data-i18n="srv.sf4.d">Multi-branch retail point of sale with offline capability.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🍽️</div>
+            <h4 data-i18n="srv.sf5.t">Restaurant POS</h4>
+            <p data-i18n="srv.sf5.d">F&B management with kitchen display and table tracking.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📦</div>
+            <h4 data-i18n="srv.sf6.t">Inventory Management</h4>
+            <p data-i18n="srv.sf6.d">Real-time stock control across locations.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">💰</div>
+            <h4 data-i18n="srv.sf7.t">Finance & Accounting</h4>
+            <p data-i18n="srv.sf7.d">AR/AP, invoicing, and financial reporting.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🛒</div>
+            <h4 data-i18n="srv.sf8.t">Procurement</h4>
+            <p data-i18n="srv.sf8.d">Purchase orders, vendor management, and cost control.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📊</div>
+            <h4 data-i18n="srv.sf9.t">Business Intelligence</h4>
+            <p data-i18n="srv.sf9.d">Custom dashboards and data-driven reporting.</p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Pillar 2 -->
+  <section class="service-pillar" id="digital" style="background: var(--surface)">
+    <div class="row">
+      <div class="pillar-inner">
+        <div class="pillar-header reveal">
+          <div class="pillar-num">02</div>
+          <div>
+            <div class="badge" data-i18n="srv.p2.label">Digital Solutions</div>
+            <h2 class="heading-2" data-i18n="srv.p2.title">Web & Mobile Experiences</h2>
+            <p data-i18n="srv.p2.desc">Engaging digital products built for speed, conversion, and user satisfaction.</p>
+          </div>
+        </div>
+        <div class="services-feature-grid stagger">
+          <div class="service-feature reveal">
+            <div class="sf-icon">🌐</div>
+            <h4 data-i18n="srv.dg1.t">Corporate Websites</h4>
+            <p data-i18n="srv.dg1.d">Professional online presence optimized for speed and SEO.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🛒</div>
+            <h4 data-i18n="srv.dg2.t">E-Commerce Platforms</h4>
+            <p data-i18n="srv.dg2.d">High-conversion stores built for retail growth.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📄</div>
+            <h4 data-i18n="srv.dg3.t">Landing Pages</h4>
+            <p data-i18n="srv.dg3.d">Focused, high-performing pages for marketing campaigns.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📱</div>
+            <h4 data-i18n="srv.dg4.t">Mobile Applications</h4>
+            <p data-i18n="srv.dg4.d">Native and cross-platform apps for iOS and Android.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🖥️</div>
+            <h4 data-i18n="srv.dg5.t">Customer Portals</h4>
+            <p data-i18n="srv.dg5.d">Self-service platforms for client management.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🎨</div>
+            <h4 data-i18n="srv.dg6.t">UI/UX Design</h4>
+            <p data-i18n="srv.dg6.d">Intuitive user interfaces and engaging experiences.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">☁️</div>
+            <h4 data-i18n="srv.dg7.t">Hosting & Infrastructure</h4>
+            <p data-i18n="srv.dg7.d">Secure, reliable cloud hosting and server management.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🔧</div>
+            <h4 data-i18n="srv.dg8.t">Maintenance & Support</h4>
+            <p data-i18n="srv.dg8.d">Ongoing technical support and updates for your platforms.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">⚡</div>
+            <h4 data-i18n="srv.dg9.t">Website Optimization</h4>
+            <p data-i18n="srv.dg9.d">Speed improvements and technical SEO enhancements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillar 3 -->
+  <section class="service-pillar" id="marketing">
+    <div class="row">
+      <div class="pillar-inner">
+        <div class="pillar-header reveal">
+          <div class="pillar-num">03</div>
+          <div>
+            <div class="badge" data-i18n="srv.p3.label">Marketing & Creative</div>
+            <h2 class="heading-2" data-i18n="srv.p3.title">Brand Growth & Visibility</h2>
+            <p data-i18n="srv.p3.desc">Data-driven marketing campaigns and compelling creative content.</p>
+          </div>
+        </div>
+        <div class="services-feature-grid stagger" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          <div class="service-feature reveal">
+            <div class="sf-icon">🎯</div>
+            <h4 data-i18n="srv.mk1.t">Marketing Strategy</h4>
+            <p data-i18n="srv.mk1.d">Comprehensive plans aligned with your business goals.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">✨</div>
+            <h4 data-i18n="srv.mk2.t">Brand Identity</h4>
+            <p data-i18n="srv.mk2.d">Cohesive visual identity and brand guidelines.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🎨</div>
+            <h4 data-i18n="srv.mk2.t">Logo Design</h4>
+            <p data-i18n="srv.mk2.d">Memorable and impactful logo creation.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📝</div>
+            <h4 data-i18n="srv.mk3.t">Content Production</h4>
+            <p data-i18n="srv.mk3.d">Planning and producing engaging content.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📅</div>
+            <h4 data-i18n="srv.mk4.t">Social Media Calendars</h4>
+            <p data-i18n="srv.mk4.d">Consistent and strategic posting schedules.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">✍️</div>
+            <h4 data-i18n="srv.mk3.t">Copywriting</h4>
+            <p data-i18n="srv.mk3.d">Persuasive copy that converts and engages.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🎬</div>
+            <h4 data-i18n="srv.mk3.t">Reels Production</h4>
+            <p data-i18n="srv.mk3.d">Short-form video content for social platforms.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🎥</div>
+            <h4 data-i18n="srv.mk3.t">Commercial Videos</h4>
+            <p data-i18n="srv.mk3.d">High-quality video production for ads.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📘</div>
+            <h4 data-i18n="srv.mk5.t">Meta Ads</h4>
+            <p data-i18n="srv.mk5.d">Targeted campaigns on Facebook and Instagram.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🔍</div>
+            <h4 data-i18n="srv.mk5.t">Google Ads</h4>
+            <p data-i18n="srv.mk5.d">Search, display, and YouTube advertising.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📱</div>
+            <h4 data-i18n="srv.mk5.t">TikTok Ads</h4>
+            <p data-i18n="srv.mk5.d">Engaging ad campaigns for younger demographics.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📈</div>
+            <h4 data-i18n="srv.mk6.t">Campaign Reports</h4>
+            <p data-i18n="srv.mk6.d">Detailed analytics and performance tracking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillar 4 -->
+  <section class="service-pillar" id="automation" style="background: var(--surface)">
+    <div class="row">
+      <div class="pillar-inner">
+        <div class="pillar-header reveal">
+          <div class="pillar-num">04</div>
+          <div>
+            <div class="badge" data-i18n="srv.p4.label">Business Automation</div>
+            <h2 class="heading-2" data-i18n="srv.p4.title">Efficiency & Integration</h2>
+            <p data-i18n="srv.p4.desc">Streamline operations with smart automation and seamless system connectivity.</p>
+          </div>
+        </div>
+        <div class="services-feature-grid stagger">
+          <div class="service-feature reveal">
+            <div class="sf-icon">🔄</div>
+            <h4 data-i18n="srv.at1.t">Workflow Automation</h4>
+            <p data-i18n="srv.at1.d">Automate repetitive tasks to save time and reduce errors.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🧠</div>
+            <h4 data-i18n="srv.at2.t">AI Solutions</h4>
+            <p data-i18n="srv.at2.d">Implement artificial intelligence for smarter operations.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🔌</div>
+            <h4 data-i18n="srv.at3.t">API Integrations</h4>
+            <p data-i18n="srv.at3.d">Connect disparate systems for unified data flow.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">💬</div>
+            <h4 data-i18n="srv.at4.t">WhatsApp Integration</h4>
+            <p data-i18n="srv.at4.d">Automated messaging and customer service via WhatsApp.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">💳</div>
+            <h4 data-i18n="srv.at5.t">Payment Gateway Integration</h4>
+            <p data-i18n="srv.at5.d">Secure online payment processing setups.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">🏗️</div>
+            <h4 data-i18n="srv.at3.t">ERP Integration</h4>
+            <p data-i18n="srv.at3.d">Sync your ERP with external tools and platforms.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">☁️</div>
+            <h4 data-i18n="srv.at1.t">Cloud Infrastructure</h4>
+            <p data-i18n="srv.at1.d">Scalable cloud architectures for automated workflows.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📊</div>
+            <h4 data-i18n="srv.at6.t">Reporting Automation</h4>
+            <p data-i18n="srv.at6.d">Generate and distribute reports automatically.</p>
+          </div>
+          <div class="service-feature reveal">
+            <div class="sf-icon">📈</div>
+            <h4 data-i18n="srv.at6.t">Custom Dashboards</h4>
+            <p data-i18n="srv.at6.d">Real-time automated metric tracking in one place.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose ITQAN -->
+  <section class="why-section py-xl">
+    <div class="row">
+      <div class="section-header text-center reveal">
+        <h2 class="heading-2" data-i18n="srv.why.title">Why Choose ITQAN Solutions?</h2>
+      </div>
+      <div class="badges-grid stagger" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px;margin-top:40px;">
+        <div class="trust-badge reveal" style="padding:32px;background:var(--surface);border-radius:24px;">
+          <h4 data-i18n="srv.why.1.title" style="margin-bottom:12px;font-size:20px;font-weight:600;">End-to-End Delivery</h4>
+          <p data-i18n="srv.why.1.desc" style="color:var(--muted);line-height:1.6;">From initial strategy and software development to full-scale marketing execution.</p>
+        </div>
+        <div class="trust-badge reveal" style="padding:32px;background:var(--surface);border-radius:24px;">
+          <h4 data-i18n="srv.why.2.title" style="margin-bottom:12px;font-size:20px;font-weight:600;">Industry Expertise</h4>
+          <p data-i18n="srv.why.2.desc" style="color:var(--muted);line-height:1.6;">Proven track record in retail, F&B, healthcare, and professional services.</p>
+        </div>
+        <div class="trust-badge reveal" style="padding:32px;background:var(--surface);border-radius:24px;">
+          <h4 data-i18n="srv.why.3.title" style="margin-bottom:12px;font-size:20px;font-weight:600;">Scalable Solutions</h4>
+          <p data-i18n="srv.why.3.desc" style="color:var(--muted);line-height:1.6;">Technology designed to grow with your business, without limitation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section py-xl" style="background:var(--surface)">
+    <div class="row">
+      <div class="section-header text-center reveal">
+        <h2 class="heading-2" data-i18n="srv.faq.title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list stagger" style="max-width:800px;margin:40px auto 0;">
+        <div class="faq-item reveal" style="background:#fff;padding:24px;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+          <h4 data-i18n="faq.q1" style="font-weight:600;margin-bottom:8px;">How long does it take to develop a custom ERP?</h4>
+          <p data-i18n="faq.a1" style="color:var(--muted);">Timelines vary depending on complexity, but a typical rollout takes between 3 to 6 months.</p>
+        </div>
+        <div class="faq-item reveal" style="background:#fff;padding:24px;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+          <h4 data-i18n="faq.q2" style="font-weight:600;margin-bottom:8px;">Do you provide support after launch?</h4>
+          <p data-i18n="faq.a2" style="color:var(--muted);">Yes, we offer ongoing maintenance and support contracts to ensure smooth operations.</p>
+        </div>
+        <div class="faq-item reveal" style="background:#fff;padding:24px;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+          <h4 data-i18n="faq.q3" style="font-weight:600;margin-bottom:8px;">Can you integrate with our existing systems?</h4>
+          <p data-i18n="faq.a3" style="color:var(--muted);">Absolutely. We build robust APIs to connect seamlessly with legacy and third-party tools.</p>
+        </div>
+        <div class="faq-item reveal" style="background:#fff;padding:24px;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+          <h4 data-i18n="faq.q4" style="font-weight:600;margin-bottom:8px;">Do you manage marketing budgets directly?</h4>
+          <p data-i18n="faq.a4" style="color:var(--muted);">Yes, we can manage digital ad spend across Meta, Google, and TikTok on your behalf.</p>
+        </div>
+        <div class="faq-item reveal" style="background:#fff;padding:24px;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+          <h4 data-i18n="faq.q5" style="font-weight:600;margin-bottom:8px;">What industries do you specialize in?</h4>
+          <p data-i18n="faq.a5" style="color:var(--muted);">We have deep expertise in retail, F&B, healthcare, real estate, and professional services.</p>
+        </div>
+        <div class="faq-item reveal" style="background:#fff;padding:24px;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+          <h4 data-i18n="faq.q6" style="font-weight:600;margin-bottom:8px;">Are your POS systems cloud-based or on-premise?</h4>
+          <p data-i18n="faq.a6" style="color:var(--muted);">Our POS solutions are cloud-first but support offline mode to ensure uninterrupted service.</p>
+        </div>
+        <div class="faq-item reveal" style="background:#fff;padding:24px;border-radius:12px;margin-bottom:16px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+          <h4 data-i18n="faq.q7" style="font-weight:600;margin-bottom:8px;">How do we get started?</h4>
+          <p data-i18n="faq.a7" style="color:var(--muted);">Simply contact us for a free consultation. We'll assess your needs and propose a tailored strategy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 data-i18n="cta.title">Ready to Transform Your Business?</h2>
+      <p data-i18n="cta.desc">Let's build technology that fits the way you work. Request a consultation and we'll design a roadmap tailored to your goals.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white" data-i18n="cta.btn1" data-link>Request a Consultation</a>
+        <a href="portfolio.html" class="btn btn-transparent" data-i18n="cta.btn2" data-link>View Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
     </div>
   </footer>
 
   <script src="app.js"></script>
-  <script>
-    const menu = document.getElementById('menuToggle');
-    const links = document.querySelector('.nav .links');
-    const overlay = document.getElementById('navOverlay');
-
-    function toggleMenu(force) {
-      const isOpen = typeof force === 'boolean' ? force : !links.classList.contains('open');
-      links.classList.toggle('open', isOpen);
-      menu.setAttribute('aria-expanded', isOpen);
-      overlay.hidden = !isOpen;
-      overlay.classList.toggle('show', isOpen);
-      document.documentElement.classList.toggle('no-scroll', isOpen);
-      document.body.classList.toggle('no-scroll', isOpen);
-    }
-
-    menu.addEventListener('click', () => toggleMenu());
-    overlay.addEventListener('click', () => toggleMenu(false));
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 900) toggleMenu(false);
-    });
-  </script>
 </body>
-
 </html>

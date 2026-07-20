@@ -1,270 +1,318 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tashgheel Services — Workshop & Maintenance POS</title>
-    <meta name="description"
-        content="Tashgheel Services POS - The ideal solution for maintenance centers and workshops. Track repairs, spare parts, technicians, and invoicing." />
-    <meta name="keywords"
-        content="Maintenance POS, Workshop System, Repair Tracking, Spare Parts CRM, Tashgheel, Itqan Solutions">
-    <meta name="author" content="Itqan Solutions">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="product">
-    <meta property="og:url" content="https://itqansolutions.org/tashgheel-services.html">
-    <meta property="og:title" content="Tashgheel Services — Workshop & Maintenance POS">
-    <meta property="og:description"
-        content="Manage your efficient workshop. Track status, parts, and technician performance.">
-    <meta property="og:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://itqansolutions.org/tashgheel-services.html">
-    <meta property="twitter:title" content="Tashgheel Services — Workshop & Maintenance POS">
-    <meta property="twitter:description"
-        content="Manage your efficient workshop. Track status, parts, and technician performance.">
-    <meta property="twitter:image" content="https://itqansolutions.org/pos-mockup-EN.jpg">
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tashgheel Services — ITQAN Solutions</title>
+  <meta name="description" content="Tashgheel Services Management System by ITQAN Solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
-
 <body>
-    <div class="overlay" id="overlay"></div>
-    <div class="bg-noise"></div>
+  <div class="overlay" id="overlay"></div>
 
-    <!-- Identical Navbar to Index -->
-    <nav class="nav" aria-label="Primary">
-        <div class="row">
-            <a class="brand" href="index.html" data-link>
-                <img class="brand-logo" src="favicon.png" alt="Itqan Solutions">
-                <span class="brand-text">Itqan Solutions</span>
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
+              </a>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
             </a>
-            <button class="menu" id="menuToggle">☰</button>
-            <div class="nav-overlay" id="navOverlay" hidden></div>
-            <div class="links" id="primary-nav">
-                <a href="index.html" data-i18n="nav.home" data-link>Home</a>
-                <a href="about.html" data-i18n="nav.about" data-link>About</a>
-
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-i18n="nav.products">Products</a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-submenu">
-                            <a href="javascript:void(0)" class="dropdown-item"
-                                style="display:flex; justify-content:space-between;">
-                                <span data-i18n="nav.tashgheel">Tashgheel</span>
-                                <span>▸</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a href="tashgheel-retail.html" class="dropdown-item" data-i18n="nav.tashgheel.retail"
-                                    data-link>Retail</a>
-                                <a href="tashgheel-restaurants.html" class="dropdown-item"
-                                    data-i18n="nav.tashgheel.rest" data-link>Restaurants</a>
-                                <a href="tashgheel-services.html" class="dropdown-item"
-                                    data-i18n="nav.tashgheel.services" data-link>Services</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="services.html" data-i18n="nav.services" data-link>Services</a>
-                <a href="portfolio.html" data-i18n="nav.portfolio" data-link>Portfolio</a>
-                <a href="blog.html" data-i18n="nav.blog" data-link>Blog</a>
-                <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
-            </div>
-            <div class="cta">
-                <button class="lang" id="langToggle">AR</button>
-                <a class="btn btn-neo" href="contact.html" data-i18n="cta.quote" data-link>Request a Quote</a>
-            </div>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
         </div>
-    </nav>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero -->
-    <header class="stage"
-        style="min-height:60vh; display:flex; align-items:center; background: radial-gradient(circle at 50% 50%, #1a2236 0%, #000 100%);">
-        <div class="container" style="text-align:center; position:relative; z-index:2;">
-            <h1 data-i18n="srv.hero.title" style="font-size:clamp(32px, 5vw, 56px); margin-bottom:16px;">Tashgheel
-                Services</h1>
-            <p data-i18n="srv.hero.desc" style="color:#ccc; max-width:700px; margin:0 auto 32px; font-size:18px;">
-                Comprehensive system for service centers and workshops.</p>
-            <div style="display:flex; justify-content:center; gap:16px;">
-                <a href="contact.html" class="btn btn-neo btn-xl" data-i18n="ret.cta.demo" data-link>Get a Demo</a>
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Product Hero -->
+    <section class="product-hero section pt-32 pb-32">
+      <div class="container">
+        <div class="product-hero-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+          <div class="product-hero-content reveal-left">
+            <span class="badge badge-primary mb-4" data-i18n="svc.label">Service Management</span>
+            <h1 class="mb-4 text-4xl font-bold" data-i18n="svc.title">Tashgheel Services</h1>
+            <p class="mb-8 text-xl text-muted" data-i18n="svc.subtitle">Tailored operations software for maintenance, vehicle service, and professional service centers.</p>
+            <div class="hero-actions" style="display:flex; gap:16px;">
+              <a href="contact.html" class="btn btn-primary" data-i18n="ret.cta1" data-link>Get Started</a>
+              <a href="#features" class="btn btn-ghost" data-i18n="ret.cta2">View Features</a>
             </div>
+          </div>
+          <div class="product-hero-visual reveal-right">
+            <div style="height:350px; display:flex; align-items:center; justify-content:center; font-size:6rem; background:var(--surface-2); border-radius:var(--r-lg); box-shadow:0 20px 40px rgba(0,0,0,0.1);">🔧</div>
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
 
     <!-- Overview -->
-    <section class="intro">
-        <div class="container">
-            <h2 data-i18n="srv.overview.title">Professional & Organized</h2>
-            <p data-i18n="srv.overview.text">Organize daily operations, track customers, and control costs with ease.
-            </p>
+    <section class="section" style="padding:80px 0; background:var(--surface);">
+      <div class="container text-center reveal">
+        <h2 class="section-header" data-i18n="ret.ov.title" style="margin-bottom:16px;">Why Tashgheel Services?</h2>
+        <p style="max-width:600px; margin:0 auto 40px; color:var(--muted);" data-i18n="ret.ov.desc">Built for speed, reliability, and scale. Ensure your service operations run flawlessly.</p>
+        <div class="badges-grid stagger" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+          <div class="badge badge-outline p-3 reveal" style="font-size:1.1rem; border-radius:12px;">📋 Visits Tracking</div>
+          <div class="badge badge-outline p-3 reveal" style="font-size:1.1rem; border-radius:12px;">🚗 Vehicle Profiles</div>
+          <div class="badge badge-outline p-3 reveal" style="font-size:1.1rem; border-radius:12px;">🔩 Spare Parts</div>
+          <div class="badge badge-outline p-3 reveal" style="font-size:1.1rem; border-radius:12px;">👨‍🔧 Technician KPIs</div>
         </div>
+      </div>
     </section>
 
-    <!-- Features Grid -->
-    <section class="services">
-        <div class="container">
-            <h2 data-i18n="srv.features.title" style="text-align:center; margin-bottom:40px;">Key Features</h2>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-
-                <!-- Visits -->
-                <div class="card">
-                    <h3 data-i18n="srv.f1.t">Visits Management</h3>
-                    <p data-i18n="srv.f1.d">Register and track all customer visits. Search by plate, chassis, or name.
-                    </p>
-                </div>
-
-                <!-- Customers & Vehicles -->
-                <div class="card">
-                    <h3 data-i18n="srv.f2.t">Customers & Vehicles</h3>
-                    <p data-i18n="srv.f2.d">Complete profile for customers and vehicles (Model, VIN, Odometer).</p>
-                </div>
-
-                <!-- Spare Parts -->
-                <div class="card">
-                    <h3 data-i18n="srv.f3.t">Spare Parts</h3>
-                    <p data-i18n="srv.f3.d">Track cost/sell prices and profitability. Use parts directly in visits.</p>
-                </div>
-
-                <!-- Suppliers -->
-                <div class="card">
-                    <h3 data-i18n="srv.f4.t">Suppliers</h3>
-                    <p data-i18n="srv.f4.d">Manage supplier debts, payments (full/partial), and transaction history.</p>
-                </div>
-
-                <!-- Services -->
-                <div class="card">
-                    <h3 data-i18n="srv.f5.t">Service Management</h3>
-                    <p data-i18n="srv.f5.d">Add services to visits and combine with parts in one invoice.</p>
-                </div>
-
-                <!-- Invoicing -->
-                <div class="card">
-                    <h3 data-i18n="srv.f6.t">Invoicing</h3>
-                    <p data-i18n="srv.f6.d">Detailed printable invoices with discounts and breakdown.</p>
-                </div>
-
-                <!-- Appointments -->
-                <div class="card">
-                    <h3 data-i18n="srv.f7.t">Appointments</h3>
-                    <p data-i18n="srv.f7.d">Schedule next visits and print reminders on invoices.</p>
-                </div>
-
-                <!-- Staff -->
-                <div class="card">
-                    <h3 data-i18n="srv.f8.t">Staff & Technicians</h3>
-                    <p data-i18n="srv.f8.d">Assign technicians to visits and track performance targets.</p>
-                </div>
-
-                <!-- Expenses -->
-                <div class="card">
-                    <h3 data-i18n="srv.f9.t">Expenses</h3>
-                    <p data-i18n="srv.f9.d">Track operational expenses and their impact on net profit.</p>
-                </div>
-
-                <!-- Reports -->
-                <div class="card">
-                    <h3 data-i18n="srv.f10.t">Reports</h3>
-                    <p data-i18n="srv.f10.d">Revenue, most requested services, parts usage, and supplier balances.</p>
-                </div>
-
-                <!-- Backup -->
-                <div class="card">
-                    <h3 data-i18n="srv.f11.t">Backup</h3>
-                    <p data-i18n="srv.f11.d">Secure backup and restore capabilities without technical help.</p>
-                </div>
-
-            </div>
+    <!-- Key Features -->
+    <section id="features" class="section" style="padding:80px 0;">
+      <div class="container">
+        <h2 class="section-header text-center reveal" data-i18n="ret.feat.title" style="margin-bottom:48px;">Key Features</h2>
+        <div class="services-feature-grid stagger" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:32px;">
+          <!-- 11 Features -->
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">📋</div>
+            <h4 data-i18n="svc.f1.t" class="mb-2">Job Cards</h4>
+            <p data-i18n="svc.f1.d" class="text-muted">Create and manage service tickets effortlessly.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">🚗</div>
+            <h4 data-i18n="svc.f2.t" class="mb-2">Asset/Vehicle Profiles</h4>
+            <p data-i18n="svc.f2.d" class="text-muted">Maintain history for every vehicle or machine.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">🔩</div>
+            <h4 data-i18n="svc.f3.t" class="mb-2">Parts Inventory</h4>
+            <p data-i18n="svc.f3.d" class="text-muted">Track spare parts linked directly to job cards.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">🤝</div>
+            <h4 data-i18n="svc.f4.t" class="mb-2">Client Management</h4>
+            <p data-i18n="svc.f4.d" class="text-muted">Build a client database with detailed histories.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">🛠️</div>
+            <h4 data-i18n="svc.f5.t" class="mb-2">Service Packages</h4>
+            <p data-i18n="svc.f5.d" class="text-muted">Bundle parts and labor for common services.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">🧾</div>
+            <h4 data-i18n="svc.f6.t" class="mb-2">Invoicing & Billing</h4>
+            <p data-i18n="svc.f6.d" class="text-muted">Generate professional invoices on the spot.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">📅</div>
+            <h4 data-i18n="svc.f7.t" class="mb-2">Appointment Scheduling</h4>
+            <p data-i18n="svc.f7.d" class="text-muted">Organize client visits and prevent overlaps.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">👨‍🔧</div>
+            <h4 data-i18n="svc.f8.t" class="mb-2">Technician Assignment</h4>
+            <p data-i18n="svc.f8.d" class="text-muted">Assign jobs and monitor individual productivity.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">💸</div>
+            <h4 data-i18n="svc.f9.t" class="mb-2">Expenses Tracking</h4>
+            <p data-i18n="svc.f9.d" class="text-muted">Keep an eye on internal shop expenses.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">📊</div>
+            <h4 data-i18n="svc.f10.t" class="mb-2">Performance Reports</h4>
+            <p data-i18n="svc.f10.d" class="text-muted">Visualize revenues and operational bottlenecks.</p>
+          </div>
+          <div class="service-feature reveal p-6" style="background:var(--surface-2); border-radius:var(--r-lg);">
+            <div class="sf-icon mb-4" style="font-size:2rem;">🔐</div>
+            <h4 data-i18n="svc.f11.t" class="mb-2">Data Security</h4>
+            <p data-i18n="svc.f11.d" class="text-muted">Role-based access ensures sensitive info stays safe.</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Online / Offline -->
-    <section class="testimonials" style="background:#0d111a;">
-        <div class="container">
-            <h2 data-i18n="srv.dep.title">Online & Offline Freedom</h2>
-            <p data-i18n="srv.dep.desc" style="text-align:center; color:#ccc; margin-bottom:40px;">Choose the mode that
-                fits your operation. Fully featured in both.</p>
-
-            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:32px;">
-                <div class="t-card" style="text-align:center; padding:40px;">
-                    <h3 data-i18n="srv.online.t" style="margin-bottom:12px; color:var(--neo);">Online (Web App)</h3>
-                    <p data-i18n="srv.online.d">Perfect for multi-branch management and remote access.</p>
-                </div>
-                <div class="t-card" style="text-align:center; padding:40px;">
-                    <h3 data-i18n="srv.offline.t" style="margin-bottom:12px; color:var(--violet);">Offline (Desktop)
-                    </h3>
-                    <p data-i18n="srv.offline.d">Maximum stability without internet dependence.</p>
-                </div>
-            </div>
-        </div>
+    <!-- Reporting -->
+    <section class="section" style="padding:80px 0; background:var(--surface);">
+      <div class="container text-center reveal">
+        <h2 class="section-header" data-i18n="ret.rep.title" style="margin-bottom:32px;">Powerful Reporting</h2>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:16px; align-items:center; font-size:1.1rem;">
+          <li style="display:flex; align-items:center; gap:8px;"><span style="color:var(--success); font-weight:bold;">✓</span> <span data-i18n="ret.rep.l1">End-of-day sales summaries</span></li>
+          <li style="display:flex; align-items:center; gap:8px;"><span style="color:var(--success); font-weight:bold;">✓</span> <span data-i18n="ret.rep.l2">Tax and VAT compliance reporting</span></li>
+          <li style="display:flex; align-items:center; gap:8px;"><span style="color:var(--success); font-weight:bold;">✓</span> <span data-i18n="ret.rep.l3">Inventory valuation and movement</span></li>
+          <li style="display:flex; align-items:center; gap:8px;"><span style="color:var(--success); font-weight:bold;">✓</span> <span data-i18n="ret.rep.l4">Branch performance comparisons</span></li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Screenshots -->
-    <section class="gallery">
-        <div class="container">
-            <h2 data-i18n="gallery.title">Screenshots</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
-                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 1"></div>
-                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
-                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 2"></div>
-                <div class="gallery-item"><img src="pos-mockup-EN.jpg" data-img-en="pos-mockup-EN.jpg"
-                        data-img-ar="pos-mockup-AR.jpg" alt="Screen 3"></div>
-            </div>
+    <!-- Deployment Options -->
+    <section class="section" style="padding:80px 0;">
+      <div class="container reveal">
+        <h2 class="section-header text-center" data-i18n="ret.dep.title" style="margin-bottom:48px;">Deployment Options</h2>
+        <div class="grid-2" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px;">
+          <div class="card p-8" style="background:var(--surface-2); border-radius:var(--r-lg); text-align:center;">
+            <div style="font-size:3rem; margin-bottom:16px;">☁️</div>
+            <h3 data-i18n="prod.online.t" class="mb-4">Cloud-Hosted</h3>
+            <p data-i18n="prod.online.d" class="text-muted mb-4">Manage multiple service centers with centralized reporting in the cloud.</p>
+            <span class="badge badge-primary">Cloud</span>
+          </div>
+          <div class="card p-8" style="background:var(--surface-2); border-radius:var(--r-lg); text-align:center;">
+            <div style="font-size:3rem; margin-bottom:16px;">💾</div>
+            <h3 data-i18n="prod.offline.t" class="mb-4">On-Premise (Desktop)</h3>
+            <p data-i18n="prod.offline.d" class="text-muted mb-4">Deploy completely offline for enhanced privacy and independence.</p>
+            <span class="badge badge-primary">Desktop</span>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="f-grid">
-                <div class="f-col">
-                    <h3>Itqan Solutions</h3>
-                    <p><a href="mailto:info@itqansolutions.org">info@itqansolutions.org</a></p>
-                    <p>📞 01126522373</p>
-                    <p>📞 +20 11 55253886</p>
-                </div>
-                <div class="f-col">
-                    <h3 data-i18n="footer.follow">Follow Us</h3>
-                    <div class="social">
-                        <a href="https://facebook.com/itqansolutions" target="_blank"><img src="icon-facebook.png"
-                                alt="Facebook"></a>
-                        <a href="https://instagram.com/itqansolutions" target="_blank"><img src="icon-instagram.png"
-                                alt="Instagram"></a>
-                        <a href="https://linkedin.com/company/itqansolutions" target="_blank"><img
-                                src="icon-linkedin.png" alt="LinkedIn"></a>
-                    </div>
-                </div>
-                <div class="f-col">
-                    <p data-i18n="footer.copy">© 2025 Itqan Solutions.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 data-i18n="cta.title">Ready to Transform Your Business?</h2>
+      <p data-i18n="cta.desc">Let's build technology that fits the way you work. Request a consultation and we'll design a roadmap tailored to your goals.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white" data-i18n="cta.btn1" data-link>Request a Consultation</a>
+        <a href="portfolio.html" class="btn btn-transparent" data-i18n="cta.btn2" data-link>View Our Work</a>
+      </div>
+    </div>
+  </section>
+  </main>
 
-    <script src="app.js"></script>
-    <script>
-        // Simple menu toggle reuse
-        const menu = document.getElementById('menuToggle');
-        const links = document.querySelector('.nav .links');
-        const overlay = document.getElementById('navOverlay');
-        menu.addEventListener('click', () => {
-            const isOpen = !links.classList.contains('open');
-            links.classList.toggle('open', isOpen);
-            menu.setAttribute('aria-expanded', isOpen);
-            overlay.hidden = !isOpen;
-            overlay.classList.toggle('show', isOpen);
-        });
-        overlay.addEventListener('click', () => {
-            links.classList.remove('open');
-            menu.setAttribute('aria-expanded', 'false');
-            overlay.hidden = true;
-            overlay.classList.remove('show');
-        });
-    </script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
-
 </html>
