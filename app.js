@@ -342,8 +342,8 @@ const i18n = {
 
     /* --- Contact Page --- */
     'contact.label':        'Contact Us',
-    'contact.title':        'Let\'s Build Something',
-    'contact.desc':         'Tell us about your project     'contact.info.title':   'Contact Information',
+    'contact.desc':         'Tell us about your project and goals. We respond within 24 hours with a clear next step.',
+    'contact.info.title':   'Contact Information',
     'contact.email':        'info@itqansolutions.org',
     'contact.phone1':       '+20 112 652 2373',
     'contact.phone2':       '+20 115 525 3886',
