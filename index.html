@@ -125,47 +125,55 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="dashboard-mockup">
-          <div class="dash-window main-dash">
-            <div class="window-titlebar">
-              <span class="wt-dot r"></span>
-              <span class="wt-dot y"></span>
-              <span class="wt-dot g"></span>
-              <span class="window-titlebar-text">ITQAN Platform Showcase</span>
+        <!-- Live HTML Floating Dashboard Widget -->
+        <div class="live-dashboard-card spotlight-card">
+          <div class="dash-topbar">
+            <div class="dash-dots">
+              <span class="dash-dot dot-red"></span>
+              <span class="dash-dot dot-yellow"></span>
+              <span class="dash-dot dot-green"></span>
             </div>
-            <div class="window-body video-container">
-              <video class="dash-video-player" autoplay muted loop playsinline poster="pos-mockup-EN.jpg">
-                <source src="hero-desktop.mp4" type="video/mp4" media="(min-width: 768px)">
-                <source src="hero-mobile.mp4" type="video/mp4">
-              </video>
+            <div class="live-badge">
+              <span class="live-badge-dot"></span>
+              <span>LIVE DASHBOARD</span>
             </div>
           </div>
-          <div class="float-card fc-erp">
-            <div class="fc-icon" style="color:var(--success)">📊</div>
-            <div>
-              <div class="fc-val">ERP</div>
-              <div class="fc-lbl">System Active</div>
+          <div class="dash-stats-grid">
+            <div class="stat-widget">
+              <span style="font-size:12px;color:var(--text-muted);font-weight:600">Revenue</span>
+              <div class="stat-val" id="dashLiveRev">+18.4%</div>
+              <span class="stat-change">▲ Growing</span>
+            </div>
+            <div class="stat-widget">
+              <span style="font-size:12px;color:var(--text-muted);font-weight:600">Live Orders</span>
+              <div class="stat-val" id="dashLiveOrd">241</div>
+              <span class="stat-change">● Synced</span>
+            </div>
+            <div class="stat-widget">
+              <span style="font-size:12px;color:var(--text-muted);font-weight:600">Stock Sync</span>
+              <div class="stat-val" id="dashLiveStock">99.8%</div>
+              <span class="stat-change">✓ Active</span>
+            </div>
+            <div class="stat-widget">
+              <span style="font-size:12px;color:var(--text-muted);font-weight:600">Active Staff</span>
+              <div class="stat-val">42</div>
+              <span class="stat-change">👥 Online</span>
             </div>
           </div>
-          <div class="float-card fc-crm">
-            <div class="fc-icon" style="color:var(--secondary)">👥</div>
-            <div>
-              <div class="fc-val">CRM</div>
-              <div class="fc-lbl">1,240 Contacts</div>
+          <!-- Live Chart Widget -->
+          <div class="dash-chart-area">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);font-weight:600">
+              <span>Weekly Enterprise Performance</span>
+              <span style="color:var(--primary)">Real-Time Sync</span>
             </div>
-          </div>
-          <div class="float-card fc-pos">
-            <div class="fc-icon" style="color:var(--primary)">🛍️</div>
-            <div>
-              <div class="fc-val">POS</div>
-              <div class="fc-lbl">Synced</div>
-            </div>
-          </div>
-          <div class="float-card fc-hr">
-            <div class="fc-icon" style="color:orange">👤</div>
-            <div>
-              <div class="fc-val">HRMS</div>
-              <div class="fc-lbl">Staff Portal</div>
+            <div class="bar-chart-flex">
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:45%"></div></div>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:65%"></div></div>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:55%"></div></div>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:85%"></div></div>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:70%"></div></div>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:95%"></div></div>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:78%"></div></div>
             </div>
           </div>
         </div>
@@ -173,34 +181,88 @@
     </div>
   </section>
 
-  <section class="ecosystem-section reveal">
-    <div class="section-header">
-      <span class="label" data-i18n="eco.label"></span>
-      <h2 data-i18n="eco.title"></h2>
-      <p data-i18n="eco.desc"></p>
-    </div>
-    <div class="ecosystem-diagram">
-      <div class="eco-row"><div class="eco-node">📣 Marketing + Branding</div></div>
-      <div class="eco-connector-v"></div>
-      <div class="eco-row"><div class="eco-node">🌐 Website + Portal</div></div>
-      <div class="eco-connector-v"></div>
-      <div class="eco-row flex-row">
-        <div class="eco-node">👥 CRM</div>
-        <div class="eco-connector-h"></div>
-        <div class="eco-node">⚙️ ERP</div>
-        <div class="eco-connector-h"></div>
-        <div class="eco-node">💰 Finance</div>
+  <!-- Interactive Business Ecosystem Signature Section -->
+  <section class="ecosystem-signature">
+    <div class="bg-grid-pattern"></div>
+    <div class="ambient-orb orb-primary" style="top:10%;left:5%"></div>
+    <div class="ambient-orb orb-secondary" style="bottom:10%;right:5%"></div>
+
+    <div class="row">
+      <div class="section-header text-center reveal">
+        <span class="label" data-i18n="eco.label">Integrated Digital Architecture</span>
+        <h2 class="heading-2" data-i18n="eco.title">Interactive Business Ecosystem</h2>
+        <p data-i18n="eco.desc">Every solution connects seamlessly into one unified growth engine for your enterprise.</p>
       </div>
-      <div class="eco-connector-v"></div>
-      <div class="eco-row flex-row">
-        <div class="eco-node">🛍️ POS</div>
-        <div class="eco-node">📦 Inventory</div>
+
+      <div class="eco-graph-container" id="ecoGraphContainer">
+        <svg class="eco-svg-canvas" id="ecoSvgCanvas"></svg>
+
+        <div class="eco-node-grid">
+          <div class="eco-interactive-node spotlight-card" data-node-id="mkt">
+            <span class="eco-node-icon">📣</span>
+            <div class="eco-node-title">Marketing</div>
+            <span class="eco-node-tag">Lead Generation</span>
+            <div class="node-tooltip">Drives qualified customer traffic into your CRM & digital storefronts.</div>
+          </div>
+
+          <div class="eco-interactive-node spotlight-card" data-node-id="crm">
+            <span class="eco-node-icon">👥</span>
+            <div class="eco-node-title">CRM</div>
+            <span class="eco-node-tag">Client Pipeline</span>
+            <div class="node-tooltip">Tracks leads, automated follow-ups, and sales conversions.</div>
+          </div>
+
+          <!-- Central Core Node -->
+          <div class="eco-interactive-node core-node" data-node-id="erp">
+            <span class="eco-node-icon">⚙️</span>
+            <div class="eco-node-title">ITQAN ERP</div>
+            <span class="eco-node-tag">Central Core</span>
+            <div class="node-tooltip">Central brain managing all data, inventory, finance, and operations.</div>
+          </div>
+
+          <div class="eco-interactive-node spotlight-card" data-node-id="fin">
+            <span class="eco-node-icon">💰</span>
+            <div class="eco-node-title">Finance</div>
+            <span class="eco-node-tag">Revenue & Audit</span>
+            <div class="node-tooltip">Automates invoicing, AR/AP, and P&L financial statements.</div>
+          </div>
+
+          <div class="eco-interactive-node spotlight-card" data-node-id="pos">
+            <span class="eco-node-icon">🛍️</span>
+            <div class="eco-node-title">POS / Retail</div>
+            <span class="eco-node-tag">Multi-Branch</span>
+            <div class="node-tooltip">Multi-branch cashier sales with instant offline-to-cloud sync.</div>
+          </div>
+
+          <div class="eco-interactive-node spotlight-card" data-node-id="inv">
+            <span class="eco-node-icon">📦</span>
+            <div class="eco-node-title">Inventory</div>
+            <span class="eco-node-tag">Stock Control</span>
+            <div class="node-tooltip">Real-time stock deduction, reorder alerts, and warehouse control.</div>
+          </div>
+
+          <div class="eco-interactive-node spotlight-card" data-node-id="hrm">
+            <span class="eco-node-icon">👤</span>
+            <div class="eco-node-title">HRMS</div>
+            <span class="eco-node-tag">Payroll & Staff</span>
+            <div class="node-tooltip">Attendance tracking, salary calculations, and employee self-service.</div>
+          </div>
+
+          <div class="eco-interactive-node spotlight-card" data-node-id="aut">
+            <span class="eco-node-icon">🤖</span>
+            <div class="eco-node-title">AI & Automations</div>
+            <span class="eco-node-tag">Smart Workflows</span>
+            <div class="node-tooltip">Automated WhatsApp notifications, AI reporting, and API triggers.</div>
+          </div>
+
+          <div class="eco-interactive-node spotlight-card" data-node-id="bi">
+            <span class="eco-node-icon">📊</span>
+            <div class="eco-node-title">Analytics / BI</div>
+            <span class="eco-node-tag">Executive BI</span>
+            <div class="node-tooltip">Real-time executive dashboards and predictive business intelligence.</div>
+          </div>
+        </div>
       </div>
-      <div class="eco-connector-v"></div>
-      <div class="eco-row"><div class="eco-node">📊 Analytics</div></div>
-    </div>
-    <div class="eco-center-message">
-      <span class="eco-tag" data-i18n="eco.message"></span>
     </div>
   </section>
 
@@ -211,7 +273,7 @@
       <p data-i18n="sol.desc"></p>
     </div>
     <div class="solutions-grid stagger">
-      <div class="solution-card reveal">
+      <div class="solution-card spotlight-card reveal">
         <div class="sc-icon">⚙️</div>
         <h3 data-i18n="sol.sw.title"></h3>
         <div class="sc-tagline" data-i18n="sol.sw.tag"></div>
@@ -219,7 +281,7 @@
         <div class="sc-tags"><span>Custom ERP</span><span>CRM</span><span>HRMS</span><span>POS</span></div>
         <a href="services.html" class="sc-link" data-i18n="sol.sw.link" data-link></a>
       </div>
-      <div class="solution-card reveal">
+      <div class="solution-card spotlight-card reveal">
         <div class="sc-icon blue">🌐</div>
         <h3 data-i18n="sol.dig.title"></h3>
         <div class="sc-tagline" data-i18n="sol.dig.tag"></div>
@@ -227,7 +289,7 @@
         <div class="sc-tags"><span>Websites</span><span>Mobile Apps</span><span>UI/UX</span></div>
         <a href="services.html#digital" class="sc-link" data-i18n="sol.dig.link" data-link></a>
       </div>
-      <div class="solution-card reveal">
+      <div class="solution-card spotlight-card reveal">
         <div class="sc-icon orange">📣</div>
         <h3 data-i18n="sol.mkt.title"></h3>
         <div class="sc-tagline" data-i18n="sol.mkt.tag"></div>
@@ -235,13 +297,84 @@
         <div class="sc-tags"><span>Strategy</span><span>Content</span><span>Meta Ads</span><span>SEO</span></div>
         <a href="services.html#marketing" class="sc-link" data-i18n="sol.mkt.link" data-link></a>
       </div>
-      <div class="solution-card reveal">
+      <div class="solution-card spotlight-card reveal">
         <div class="sc-icon green">🤖</div>
         <h3 data-i18n="sol.aut.title"></h3>
         <div class="sc-tagline" data-i18n="sol.aut.tag"></div>
         <p data-i18n="sol.aut.desc"></p>
         <div class="sc-tags"><span>AI Workflows</span><span>API Integration</span><span>WhatsApp</span></div>
         <a href="services.html#automation" class="sc-link" data-i18n="sol.aut.link" data-link></a>
+      </div>
+    </div>
+
+    <!-- AI & Marketing Pipeline Sections -->
+    <div class="row" style="margin-top:60px;">
+      <div class="section-header text-center reveal">
+        <span class="label">Automated Workflows</span>
+        <h2 class="heading-2">End-to-End Execution Pipelines</h2>
+        <p>See how data flows seamlessly through our AI & Marketing pipelines.</p>
+      </div>
+
+      <!-- AI Pipeline -->
+      <div class="spotlight-card" style="padding:24px;border-radius:24px;margin-bottom:24px;">
+        <h4 style="font-size:16px;font-weight:700;margin-bottom:8px;">🤖 AI & Automation Pipeline</h4>
+        <div class="pipeline-flow">
+          <div class="pipeline-node active">
+            <span style="font-size:20px;display:block">📄</span>
+            <strong style="font-size:13px">Raw Data / CV</strong>
+          </div>
+          <span class="pipeline-arrow">➔</span>
+          <div class="pipeline-node">
+            <span style="font-size:20px;display:block">🧠</span>
+            <strong style="font-size:13px">AI Analysis</strong>
+          </div>
+          <span class="pipeline-arrow">➔</span>
+          <div class="pipeline-node">
+            <span style="font-size:20px;display:block">⚙️</span>
+            <strong style="font-size:13px">Smart Workflow</strong>
+          </div>
+          <span class="pipeline-arrow">➔</span>
+          <div class="pipeline-node">
+            <span style="font-size:20px;display:block">🎯</span>
+            <strong style="font-size:13px">Recommendation</strong>
+          </div>
+          <span class="pipeline-arrow">➔</span>
+          <div class="pipeline-node">
+            <span style="font-size:20px;display:block">📊</span>
+            <strong style="font-size:13px">Live Dashboard</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marketing Pipeline -->
+      <div class="spotlight-card" style="padding:24px;border-radius:24px;">
+        <h4 style="font-size:16px;font-weight:700;margin-bottom:8px;">📣 Marketing Growth Pipeline</h4>
+        <div class="pipeline-flow">
+          <div class="pipeline-node active">
+            <span style="font-size:20px;display:block">🔍</span>
+            <strong style="font-size:13px">Research</strong>
+          </div>
+          <span class="pipeline-arrow">➔</span>
+          <div class="pipeline-node">
+            <span style="font-size:20px;display:block">🎯</span>
+            <strong style="font-size:13px">Strategy</strong>
+          </div>
+          <span class="pipeline-arrow">➔</span>
+          <div class="pipeline-node">
+            <span style="font-size:20px;display:block">📝</span>
+            <strong style="font-size:13px">Content & Reels</strong>
+          </div>
+          <span class="pipeline-arrow">➔</span>
+          <div class="pipeline-node">
+            <span style="font-size:20px;display:block">🚀</span>
+            <strong style="font-size:13px">Paid Ads</strong>
+          </div>
+          <span class="pipeline-arrow">➔</span>
+          <div class="pipeline-node">
+            <span style="font-size:20px;display:block">📈</span>
+            <strong style="font-size:13px">Revenue Growth</strong>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -482,67 +615,104 @@
     </div>
   </section>
 
+  <!-- Apple-Style Marquee Testimonials -->
   <section class="testimonials-section">
-    <div class="section-header">
-      <span class="label" data-i18n="test.label"></span>
-      <h2 data-i18n="test.title"></h2>
+    <div class="section-header text-center reveal">
+      <span class="label" data-i18n="test.label">Client Feedback</span>
+      <h2 data-i18n="test.title">What Enterprise Leaders Say</h2>
     </div>
-    <div class="testimonials-grid stagger">
-      <div class="testimonial-card reveal">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text" data-i18n="test.t1.text"></p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">💼</div>
-          <div>
-            <div class="testimonial-author-name" data-i18n="test.t1.name"></div>
-            <div class="testimonial-author-role" data-i18n="test.t1.role"></div>
+
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <div class="testimonial-card spotlight-card marquee-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text" data-i18n="test.t1.text"></p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">💼</div>
+            <div>
+              <div class="testimonial-author-name" data-i18n="test.t1.name"></div>
+              <div class="testimonial-author-role" data-i18n="test.t1.role"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text" data-i18n="test.t2.text"></p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">👩‍💼</div>
-          <div>
-            <div class="testimonial-author-name" data-i18n="test.t2.name"></div>
-            <div class="testimonial-author-role" data-i18n="test.t2.role"></div>
+        <div class="testimonial-card spotlight-card marquee-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text" data-i18n="test.t2.text"></p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👩‍💼</div>
+            <div>
+              <div class="testimonial-author-name" data-i18n="test.t2.name"></div>
+              <div class="testimonial-author-role" data-i18n="test.t2.role"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <p class="testimonial-text" data-i18n="test.t3.text"></p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">👨‍💼</div>
-          <div>
-            <div class="testimonial-author-name" data-i18n="test.t3.name"></div>
-            <div class="testimonial-author-role" data-i18n="test.t3.role"></div>
+        <div class="testimonial-card spotlight-card marquee-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text" data-i18n="test.t3.text"></p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👨‍💼</div>
+            <div>
+              <div class="testimonial-author-name" data-i18n="test.t3.name"></div>
+              <div class="testimonial-author-role" data-i18n="test.t3.role"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Duplicate for Infinite Loop -->
+        <div class="testimonial-card spotlight-card marquee-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text" data-i18n="test.t1.text"></p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">💼</div>
+            <div>
+              <div class="testimonial-author-name" data-i18n="test.t1.name"></div>
+              <div class="testimonial-author-role" data-i18n="test.t1.role"></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card spotlight-card marquee-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text" data-i18n="test.t2.text"></p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👩‍💼</div>
+            <div>
+              <div class="testimonial-author-name" data-i18n="test.t2.name"></div>
+              <div class="testimonial-author-role" data-i18n="test.t2.role"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="integrations-section">
-    <div class="section-header">
-      <span class="label" data-i18n="int.label"></span>
-      <h2 data-i18n="int.title"></h2>
-      <p data-i18n="int.desc"></p>
-    </div>
-    <div class="integrations-grid">
-      <div class="int-chip">💬 WhatsApp</div>
-      <div class="int-chip">📊 Microsoft 365</div>
-      <div class="int-chip">🔍 Google Workspace</div>
-      <div class="int-chip">📘 Meta (Facebook)</div>
-      <div class="int-chip">💳 Payment Gateways</div>
-      <div class="int-chip">📱 SMS Gateway</div>
-      <div class="int-chip">📷 Barcode / QR</div>
-      <div class="int-chip">📈 Power BI</div>
-      <div class="int-chip">☁️ Microsoft Azure</div>
-      <div class="int-chip">⚡ AWS</div>
-      <div class="int-chip">🛒 E-commerce Platforms</div>
-      <div class="int-chip">📧 Email Marketing</div>
+  <!-- Orbiting Integrations Showcase -->
+  <section class="orbit-section">
+    <div class="row">
+      <div class="section-header text-center reveal">
+        <span class="label" data-i18n="int.label">Unified Ecosystem</span>
+        <h2 data-i18n="int.title">Orbiting Ecosystem Integrations</h2>
+        <p data-i18n="int.desc">Seamless native connections to your tools.</p>
+      </div>
+
+      <div class="orbit-wrapper">
+        <div class="orbit-center-node">
+          <span>ITQAN</span>
+          <small style="font-size:10px;opacity:0.8">CORE</small>
+        </div>
+
+        <div class="orbit-ring ring-outer">
+          <div class="orbit-chip" style="top:-24px;left:50%;transform:translateX(-50%)">💬</div>
+          <div class="orbit-chip" style="bottom:-24px;left:50%;transform:translateX(-50%)">📘</div>
+          <div class="orbit-chip" style="left:-24px;top:50%;transform:translateY(-50%)">📊</div>
+          <div class="orbit-chip" style="right:-24px;top:50%;transform:translateY(-50%)">💳</div>
+        </div>
+
+        <div class="orbit-ring ring-inner">
+          <div class="orbit-chip" style="top:-24px;left:50%;transform:translateX(-50%)">🔍</div>
+          <div class="orbit-chip" style="bottom:-24px;left:50%;transform:translateX(-50%)">📈</div>
+          <div class="orbit-chip" style="left:-24px;top:50%;transform:translateY(-50%)">☁️</div>
+          <div class="orbit-chip" style="right:-24px;top:50%;transform:translateY(-50%)">⚡</div>
+        </div>
+      </div>
     </div>
   </section>
 

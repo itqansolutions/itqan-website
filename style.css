@@ -2980,3 +2980,604 @@ p { color: var(--text-muted); line-height: 1.7; }
   .eco-connector-h { width: 24px; }
   .hero h1 { letter-spacing: -.025em; }
 }
+
+/* =========================================================
+   21 World-Class Interactive Animations & Ecosystem Styles
+   ========================================================= */
+
+/* 1. Vercel-Style Animated Grid & Ambient Glow Orbs */
+.bg-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(15, 23, 42, 0.07) 1px, transparent 0);
+  background-size: 32px 32px;
+  animation: gridMove 40s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  0%   { background-position: 0 0; }
+  100% { background-position: 32px 64px; }
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  animation: orbPulse 8s ease-in-out infinite alternate;
+}
+
+.orb-primary   { background: var(--primary); width: 450px; height: 450px; }
+.orb-secondary { background: var(--secondary); width: 350px; height: 350px; }
+.orb-success   { background: var(--success); width: 300px; height: 300px; }
+
+@keyframes orbPulse {
+  0%   { transform: scale(1) translate(0, 0); opacity: 0.12; }
+  100% { transform: scale(1.15) translate(20px, -20px); opacity: 0.22; }
+}
+
+/* 2. Mouse Spotlight Card Effect */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(90, 70, 255, 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 20px 40px rgba(90, 70, 255, 0.14), var(--shadow-lg);
+  border-color: rgba(90, 70, 255, 0.3);
+}
+
+.spotlight-card .sc-icon,
+.spotlight-card .sf-icon,
+.spotlight-card .trust-icon {
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.spotlight-card:hover .sc-icon,
+.spotlight-card:hover .sf-icon,
+.spotlight-card:hover .trust-icon {
+  transform: rotate(8deg) scale(1.12);
+}
+
+/* 3. Interactive Business Ecosystem Signature Section */
+.ecosystem-signature {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--white) 0%, var(--surface-2) 100%);
+  overflow: hidden;
+}
+
+.eco-graph-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  min-height: 520px;
+  margin: 40px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eco-svg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.eco-connection-line {
+  stroke: var(--border);
+  stroke-width: 2px;
+  stroke-dasharray: 6 6;
+  animation: lineDash 20s linear infinite;
+  transition: stroke 0.4s ease, stroke-width 0.4s ease;
+}
+
+.eco-connection-line.active {
+  stroke: var(--primary);
+  stroke-width: 3px;
+  stroke-dasharray: none;
+  filter: drop-shadow(0 0 6px rgba(90,70,255,0.6));
+}
+
+@keyframes lineDash {
+  to { stroke-dashoffset: -120; }
+}
+
+.eco-node-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 24px;
+  width: 100%;
+  align-items: center;
+}
+
+.eco-interactive-node {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.35s var(--ease-spring);
+  position: relative;
+  user-select: none;
+}
+
+.eco-interactive-node.core-node {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  box-shadow: 0 12px 36px rgba(90,70,255,0.35);
+  border: none;
+  transform: scale(1.12);
+}
+
+.eco-interactive-node:hover,
+.eco-interactive-node.highlighted {
+  transform: translateY(-6px) scale(1.08);
+  border-color: var(--primary);
+  box-shadow: 0 16px 40px rgba(90, 70, 255, 0.2);
+}
+
+.eco-node-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.eco-node-title {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.eco-node-tag {
+  font-size: 11px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.eco-interactive-node.core-node .eco-node-tag {
+  color: rgba(255,255,255,0.85);
+}
+
+/* Tooltip Popup */
+.node-tooltip {
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--text);
+  color: var(--white);
+  padding: 10px 14px;
+  border-radius: var(--r-sm);
+  font-size: 12px;
+  width: 200px;
+  box-shadow: var(--shadow-lg);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.eco-interactive-node:hover .node-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 4. Live HTML Floating Dashboard Widget */
+.live-dashboard-card {
+  background: var(--white);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xl);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dash-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.dash-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dash-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(39, 201, 63, 0.12);
+  color: #27C93F;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+}
+
+.live-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: #27C93F;
+  border-radius: 50%;
+  animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.9); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.4; }
+  100% { transform: scale(0.9); opacity: 1; }
+}
+
+.dash-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-widget {
+  background: var(--surface-2);
+  border-radius: var(--r);
+  padding: 14px;
+  border: 1px solid var(--border-light);
+  transition: transform 0.3s ease;
+}
+
+.stat-widget:hover {
+  transform: translateY(-3px);
+}
+
+.stat-val {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: var(--text);
+  margin-top: 4px;
+}
+
+.stat-change {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--success);
+}
+
+/* Animated Micro Chart */
+.dash-chart-area {
+  background: var(--surface);
+  border-radius: var(--r-md);
+  padding: 16px;
+  border: 1px solid var(--border-light);
+}
+
+.bar-chart-flex {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 90px;
+  padding-top: 16px;
+}
+
+.chart-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bar {
+  width: 100%;
+  background: linear-gradient(180deg, var(--primary) 0%, rgba(90,70,255,0.4) 100%);
+  border-radius: 4px 4px 0 0;
+  transition: height 0.6s var(--ease);
+}
+
+/* 5. Orbiting Integrations Showcase */
+.orbit-section {
+  position: relative;
+  padding: 90px 0;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.orbit-wrapper {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-ring {
+  position: absolute;
+  border: 2px dashed rgba(90, 70, 255, 0.2);
+  border-radius: 50%;
+  animation: rotateOrbit 45s linear infinite;
+}
+
+.ring-outer { width: 420px; height: 420px; }
+.ring-inner { width: 260px; height: 260px; animation-duration: 30s; animation-direction: reverse; }
+
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.orbit-center-node {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-weight: 800;
+  font-family: var(--font-heading);
+  box-shadow: 0 0 40px rgba(90, 70, 255, 0.4);
+  z-index: 5;
+}
+
+.orbit-chip {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+}
+
+.orbit-wrapper:hover .orbit-ring {
+  animation-play-state: paused;
+}
+
+/* 6. Pipeline Workflow Visuals */
+.pipeline-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 40px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.pipeline-node {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  border-radius: var(--r-md);
+  text-align: center;
+  min-width: 130px;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.35s var(--ease);
+}
+
+.pipeline-node.active,
+.pipeline-node:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.pipeline-arrow {
+  color: var(--text-xlight);
+  font-size: 18px;
+  font-weight: 700;
+  animation: arrowPulse 2s infinite;
+}
+
+@keyframes arrowPulse {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50%      { transform: translateX(4px); opacity: 1; }
+}
+
+/* 7. Interactive Before / After Portfolio Flip */
+.transformation-card {
+  perspective: 1000px;
+  min-height: 280px;
+}
+
+.trans-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s var(--ease);
+  transform-style: preserve-3d;
+}
+
+.transformation-card:hover .trans-inner {
+  transform: rotateY(180deg);
+}
+
+.trans-front, .trans-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--r-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.trans-front {
+  background: var(--surface-2);
+  border: 1px dashed var(--border);
+}
+
+.trans-back {
+  background: linear-gradient(135deg, var(--text) 0%, #1E293B 100%);
+  color: var(--white);
+  transform: rotateY(180deg);
+  box-shadow: var(--shadow-xl);
+}
+
+/* 8. Apple-Style Marquee Testimonials */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 20px 0;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee-container::before { left: 0; background: linear-gradient(90deg, var(--white), transparent); }
+.marquee-container::after  { right: 0; background: linear-gradient(-90deg, var(--white), transparent); }
+
+.marquee-track {
+  display: inline-flex;
+  gap: 24px;
+  animation: marqueeScroll 35s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-card {
+  width: 360px;
+  white-space: normal;
+  flex-shrink: 0;
+}
+
+/* 9. Custom Interactive Cursor */
+.cursor-dot, .cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0;
+  border-radius: 50%;
+  z-index: 9999;
+  transition: transform 0.15s ease-out, opacity 0.2s ease;
+  opacity: 0;
+}
+
+body:hover .cursor-dot,
+body:hover .cursor-ring { opacity: 1; }
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  margin-top: -4px;
+  margin-left: -4px;
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(90, 70, 255, 0.5);
+  margin-top: -16px;
+  margin-left: -16px;
+  transition: transform 0.25s ease-out, width 0.25s ease, height 0.25s ease;
+}
+
+.cursor-ring.expand {
+  transform: scale(1.8);
+  background: rgba(90, 70, 255, 0.08);
+  border-color: var(--primary);
+}
+
+/* SVG Wave Divider */
+.svg-divider {
+  width: 100%;
+  height: 60px;
+  display: block;
+  fill: var(--surface-2);
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 992px) {
+  .eco-node-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dash-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .orbit-wrapper {
+    width: 320px;
+    height: 320px;
+  }
+  .ring-outer { width: 300px; height: 300px; }
+  .ring-inner { width: 180px; height: 180px; }
+}
+
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+}

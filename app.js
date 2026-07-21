@@ -1316,3 +1316,158 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+/* =========================================================
+   21 World-Class Interactive Animations & Engines (ITQAN)
+   ========================================================= */
+
+// 1. Mouse Spotlight Card Tracking
+document.addEventListener('mousemove', (e) => {
+  const cards = document.querySelectorAll('.spotlight-card');
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+  });
+});
+
+// 2. Custom Interactive Dual Cursor
+document.addEventListener('DOMContentLoaded', () => {
+  const dot = document.createElement('div');
+  const ring = document.createElement('div');
+  dot.className = 'cursor-dot';
+  ring.className = 'cursor-ring';
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
+
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+  });
+
+  function renderCursor() {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+    requestAnimationFrame(renderCursor);
+  }
+  renderCursor();
+
+  // Magnify on interactive items
+  const interactives = 'a, button, .spotlight-card, .eco-interactive-node, .pipeline-node, input, select, textarea';
+  document.querySelectorAll(interactives).forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('expand'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('expand'));
+  });
+});
+
+// 3. Live Floating HTML Dashboard Real-Time Simulation
+document.addEventListener('DOMContentLoaded', () => {
+  const revVal = document.getElementById('dashLiveRev');
+  const ordVal = document.getElementById('dashLiveOrd');
+  const stockVal = document.getElementById('dashLiveStock');
+
+  if (!revVal || !ordVal) return;
+
+  setInterval(() => {
+    // Fluctuate Live Orders (235 to 255)
+    const currentOrd = parseInt(ordVal.textContent || '241');
+    const newOrd = currentOrd + (Math.random() > 0.4 ? 1 : -1);
+    ordVal.textContent = newOrd;
+
+    // Random chart bar animation
+    const bars = document.querySelectorAll('.chart-bar');
+    bars.forEach(bar => {
+      const randomHeight = Math.floor(Math.random() * 65) + 30;
+      bar.style.height = `${randomHeight}%`;
+    });
+  }, 2500);
+});
+
+// 4. Interactive Business Ecosystem Node & Particle Engine
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('ecoGraphContainer');
+  const svgCanvas = document.getElementById('ecoSvgCanvas');
+
+  if (!container || !svgCanvas) return;
+
+  const coreNode = container.querySelector('.core-node');
+  const nodes = container.querySelectorAll('.eco-interactive-node:not(.core-node)');
+
+  if (!coreNode) return;
+
+  function drawConnections() {
+    svgCanvas.innerHTML = '';
+    const containerRect = container.getBoundingClientRect();
+    const coreRect = coreNode.getBoundingClientRect();
+
+    const coreX = coreRect.left + coreRect.width / 2 - containerRect.left;
+    const coreY = coreRect.top + coreRect.height / 2 - containerRect.top;
+
+    nodes.forEach(node => {
+      const nodeRect = node.getBoundingClientRect();
+      const nodeX = nodeRect.left + nodeRect.width / 2 - containerRect.left;
+      const nodeY = nodeRect.top + nodeRect.height / 2 - containerRect.top;
+
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      const d = `M ${coreX} ${coreY} Q ${(coreX + nodeX)/2} ${(coreY + nodeY)/2 - 20} ${nodeX} ${nodeY}`;
+      path.setAttribute('d', d);
+      path.setAttribute('class', 'eco-connection-line');
+      path.setAttribute('data-target-id', node.getAttribute('data-node-id') || '');
+      svgCanvas.appendChild(path);
+    });
+  }
+
+  // Draw connections on load & resize
+  drawConnections();
+  window.addEventListener('resize', drawConnections);
+
+  // Hover highlighting
+  nodes.forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      const id = node.getAttribute('data-node-id');
+      node.classList.add('highlighted');
+      coreNode.classList.add('highlighted');
+
+      svgCanvas.querySelectorAll('.eco-connection-line').forEach(line => {
+        if (line.getAttribute('data-target-id') === id) {
+          line.classList.add('active');
+        }
+      });
+    });
+
+    node.addEventListener('mouseleave', () => {
+      node.classList.remove('highlighted');
+      coreNode.classList.remove('highlighted');
+
+      svgCanvas.querySelectorAll('.eco-connection-line').forEach(line => {
+        line.classList.remove('active');
+      });
+    });
+  });
+});
+
+// 5. Interactive Pipeline Flow Step Highlights
+document.addEventListener('DOMContentLoaded', () => {
+  const pipelineNodes = document.querySelectorAll('.pipeline-node');
+  if (!pipelineNodes.length) return;
+
+  let currentStep = 0;
+  setInterval(() => {
+    pipelineNodes.forEach((n, idx) => {
+      if (idx === currentStep) {
+        n.classList.add('active');
+      } else {
+        n.classList.remove('active');
+      }
+    });
+    currentStep = (currentStep + 1) % pipelineNodes.length;
+  }, 2000);
+});
+
