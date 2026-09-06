@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practical AI for SMEs: Where to Start Without Overcomplicating It — ITQAN Solutions</title>
+  <meta name="description" content="No buzzwords—just practical, actionable AI use cases, workflows, and adoption roadmaps for small and mid-market companies.">
+  
+  <!-- OG / Twitter Card meta tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ITQAN Solutions">
+  <meta property="og:title" content="Practical AI for SMEs: Where to Start | الذكاء الاصطناعي العملي للشركات">
+  <meta property="og:description" content="No buzzwords—just practical, actionable use cases to automate repetitive workflows and empower your workforce.">
+  <meta property="og:image" content="https://itqansolutions.org/favicon.png">
+  <meta property="og:url" content="https://itqansolutions.org/blog-practical-ai-for-smes.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Practical AI for SMEs: Where to Start | ITQAN Solutions">
+  <meta name="twitter:description" content="No buzzwords—just practical, actionable use cases to automate repetitive workflows and empower your workforce.">
+  <meta name="twitter:image" content="https://itqansolutions.org/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
+              </a>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.solutions" data-link>Solutions</a>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.products" data-link>Products</a>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <button class="lang-btn" id="langToggleMobile" style="width:100%; justify-content:center;">AR</button>
+      <a class="btn btn-primary" href="contact.html" style="width:100%; justify-content:center;" data-i18n="cta.demo" data-link>Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- MAIN ARTICLE -->
+  <main class="article-container">
+    <!-- Breadcrumbs -->
+    <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html" data-link>Home</a> &gt; 
+      <a href="blog.html" data-link>Insights</a> &gt; 
+      <span class="lang-en">Practical AI for SMEs</span>
+      <span class="lang-ar">الذكاء الاصطناعي العملي للشركات</span>
+    </nav>
+
+    <article class="article-content">
+      <!-- Article Header -->
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="insight-category" style="background:rgba(124, 58, 237, 0.1); color:var(--purple);">AI & Automation</span>
+          <span class="article-date">Nov 2024</span>
+          <span class="article-read-time"><span class="lang-en">6 min read</span><span class="lang-ar">6 دقائق قراءة</span></span>
+        </div>
+
+        <!-- English Title -->
+        <div class="lang-en">
+          <h1 class="article-title">Practical AI for SMEs: Where to Start Without Overcomplicating It</h1>
+          <p class="article-subtitle">No buzzwords—just practical, actionable use cases for immediate business value.</p>
+        </div>
+
+        <!-- Arabic Title -->
+        <div class="lang-ar">
+          <h1 class="article-title">الذكاء الاصطناعي العملي للشركات الصغيرة والمتوسطة: من أين تبدأ دون تعقيد؟</h1>
+          <p class="article-subtitle">لا شعارات رنانة، بل استخدامات عملية قابلة للتنفيذ وتعود بقيمة فورية.</p>
+        </div>
+      </header>
+
+      <!-- Hero Visual Graphic Banner -->
+      <div class="article-hero-graphic" style="background: linear-gradient(135deg, #3b0764 0%, #1e1b4b 100%); padding: 48px 32px; border-radius: 16px; margin-bottom: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1); box-shadow: var(--shadow-md);">
+        <div style="font-size: 48px; margin-bottom: 16px;">🤖 ⚡ 📈</div>
+        <h3 style="color: #fff; margin-bottom: 8px; font-size: 22px;">
+          <span class="lang-en">Clear Need → Small Experiment → Measurable Result</span>
+          <span class="lang-ar">احتياج واضح ← تجربة صغيرة ← نتيجة قابلة للقياس</span>
+        </h3>
+        <p style="color: #c4b5fd; font-size: 15px; margin: 0; max-width: 600px; margin: 0 auto;">
+          <span class="lang-en">Practical AI isn't about massive transformation programs—it's about removing friction from your everyday operational bottlenecks.</span>
+          <span class="lang-ar">الذكاء الاصطناعي العملي لا يتطلب مشاريع عملاقة معقدة، بل يبدأ من حل المشاكل الروتينية اليومية وتحرير وقت فريقك.</span>
+        </p>
+      </div>
+
+      <!-- ARABIC CONTENT -->
+      <div class="lang-ar article-body">
+        <p class="lead-paragraph">
+          أصبح الذكاء الاصطناعي حاضرًا في معظم النقاشات حول مستقبل الأعمال. لكن بالنسبة للشركات الصغيرة والمتوسطة، قد تبدو البداية مربكة: ما الأداة المناسبة؟ وما المشكلة التي يجب حلها أولًا؟ وهل تحتاج الشركة إلى نظام معقد؟
+        </p>
+        <p>
+          الإجابة الأفضل والمثبتة عمليًا هي أن تبدأ من <strong>احتياج واضح، وتجربة صغيرة، ونتيجة قابلة للقياس</strong>.
+        </p>
+
+        <h2>1. ابدأ بالمهام المتكررة (Quick Wins)</h2>
+        <p>من أفضل نقاط البداية التي تعطي عائدًا سريعًا على الاستثمار هي المهام التي تتسم بالخصائص التالية:</p>
+        <ul>
+          <li>تتكرر يوميًا أو أسبوعيًا بشكل روتيني ممل.</li>
+          <li>تستهلك وقتًا كبيرًا وطاقة ذهنية من الفريق.</li>
+          <li>تعتمد على معلومات مسجلة ويمكن الوصول إليها.</li>
+          <li>لا تحتاج إلى قرار بشري معقد أو مخاطرة استراتيجية في كل خطوة.</li>
+        </ul>
+
+        <div style="background:var(--bg-surface); padding:24px; border-radius:12px; border:1px solid var(--border); margin:24px 0;">
+          <h4 style="margin-top:0; color:var(--purple); display:flex; align-items:center; gap:8px;">
+            <span>💡</span> أمثلة عملية جاهزة للتطبيق فورًا:
+          </h4>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-top:16px;">
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>📝 تلخيص الاجتماعات:</strong> تحويل التسجيلات إلى محاضر ونقاط عمل وتكليفات تلقائية.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>📑 تصنيف المستندات:</strong> فرز الفواتير، العقود، والطلبات وتوجيهها للقسم المعني.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>✉️ إعداد مسودات الردود:</strong> صياغة مسودات أولية لرسائل خدمة العملاء والبريد اليومي.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>🔍 البحث داخل المعرفة:</strong> استرجاع اللوائح وسياسات العمل والمستندات الداخلية بلغة طبيعية.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>📊 تحليل بيانات بسيطة:</strong> اكتشاف الأنماط في المبيعات أو سلوك العملاء دون معادلات معقدة.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>📋 تقارير أولية:</strong> تجميع مؤشرات الأداء الأسبوعية بصياغة واضحة للمدراء.
+            </div>
+          </div>
+        </div>
+
+        <h2>2. لا تحاول أتمتة كل شيء دفعة واحدة</h2>
+        <p>
+          ليس الهدف استخدام الذكاء الاصطناعي في كل قسم أو استبدال كل الأدوات الحالية.
+        </p>
+        <p>
+          الأفضل هو اختيار <strong>حالة استخدام واحدة محددة</strong>، تشغيلها لمدة أسبوعين إلى شهر، ثم قياس المؤشرات التالية بدقة:
+        </p>
+        <ol>
+          <li><strong>الوقت الذي تم توفيره:</strong> كم ساعة عمل بشرية أصبحت متاحة لمهام ذات قيمة أعلى؟</li>
+          <li><strong>جودة ودقة النتيجة:</strong> هل المخرجات تفي بالمعايير المطلوبة؟</li>
+          <li><strong>معدل الأخطاء:</strong> هل حدثت هلوسة أو معلومات غير صحيحة؟</li>
+          <li><strong>مدى تقبل الموظفين:</strong> هل شعر الفريق بالارتياح وسهولة الاستخدام؟</li>
+          <li><strong>التكلفة مقابل القيمة:</strong> هل تكلفة الاشتراك أو التطوير تبرر النتائج؟</li>
+        </ol>
+        <p>إذا نجحت التجربة وأثبتت جدواها، يمكنك حينها توسيعها تدريجيًا بثقة.</p>
+
+        <h2>3. استخدم الذكاء الاصطناعي كمساعد، وليس كبديل</h2>
+        <p>
+          في كثير من الحالات، تكون أفضل بداية هي اعتماد مبدأ <strong>(Copilot / Human-in-the-loop)</strong>؛ أي استخدام الذكاء الاصطناعي كمساعد ذكي يرفع كفاءة الموظف، وليس كبديل كامل عنه.
+        </p>
+        <p>
+          الـ AI ممتاز في المسودة الأولى، واقتراح الخطوات، وتلخيص الأوراق الكبيرة، لكن <strong>المراجعة والقرار البشري النهائي</strong> يجب أن يظلا عنصرًا أساسيًا لا غنى عنه، خصوصًا عندما يتعلق الأمر بقرارات مالية أو علاقات مباشرة بالعملاء.
+        </p>
+
+        <h2>4. انتبه جيدًا إلى أمن البيانات والخصوصية</h2>
+        <p>
+          قبل اعتماد أي أداة تجارية أو بناء حل داخلي، يجب الانتباه بعناية إلى:
+        </p>
+        <ul>
+          <li>ما هي البيانات التي ستتعامل معها الأداة؟ هل هي بيانات عامة أم سرية؟</li>
+          <li>هل تضمن الشركة المزودة عدم استخدام بيانات شركتك لتدريب نماذجها العامة؟</li>
+          <li>من داخل شركتك يمتلك صلاحية الوصول لهذه المخرجات؟</li>
+          <li>وضع سياسة استخدام واضحة للفريق تمنع مشاركة أسرار العمل أو كلمات المرور أو بيانات العملاء البنكية والشخصية.</li>
+        </ul>
+
+        <h2>5. اجعل النجاح قابلًا للقياس دائمًا</h2>
+        <p>
+          لا يكفي أن تقول الشركة "نحن نستخدم الذكاء الاصطناعي" لمجرد التباهي التكنولوجي. يجب أن تسأل قيادة الشركة بوضوح:
+        </p>
+        <ul>
+          <li>هل انخفض وقت إغلاق التذاكر أو إنجاز المعاملات؟</li>
+          <li>هل تحسنت جودة العمل وخدمة العميل؟</li>
+          <li>هل تراجعت الأخطاء الحسابية أو الإملائية؟</li>
+          <li>هل ارتفعت إنتاجية الموظفين ورضاهم الوظيفي؟</li>
+        </ul>
+
+        <div class="article-quote" style="margin: 36px 0; padding: 24px; background: var(--bg-surface); border-radius: 12px; border: 1px solid var(--border); font-size: 18px; font-weight: 600; text-align: center; color: var(--text-heading);">
+          "ابدأ صغيرًا، تعلّم بسرعة، وتوسع عندما تثبت القيمة بالأرقام والنتائج الملموسة."
+        </div>
+
+        <h3>الخلاصة</h3>
+        <p>
+          لا تحتاج الشركات الصغيرة والمتوسطة إلى ميزانيات عملاقة للاستفادة من ثورة الذكاء الاصطناعي. البداية الذكية هي اختيار مشكلة واضحة، تجربة حل عملي خفيف، قياس النتيجة، وتطوير المنظومة خطوة بخطوة.
+        </p>
+      </div>
+
+      <!-- ENGLISH CONTENT -->
+      <div class="lang-en article-body">
+        <p class="lead-paragraph">
+          AI has become central to conversations about the future of business. But for small and mid-market companies, getting started can feel overwhelming: Which tool should they use? What problem should they solve first? Do they need a complex system?
+        </p>
+        <p>
+          The best and proven answer is to start with <strong>a clear need, a small experiment, and a measurable result</strong>.
+        </p>
+
+        <h2>1. Start with Repetitive Tasks (Quick Wins)</h2>
+        <p>The highest ROI starting points are operational tasks that exhibit specific characteristics:</p>
+        <ul>
+          <li>Repeat daily or weekly on a predictable cadence.</li>
+          <li>Consume significant team hours and mental bandwidth.</li>
+          <li>Rely on accessible, structured, or semi-structured data.</li>
+          <li>Do not require high-stakes human strategic discretion on every iteration.</li>
+        </ul>
+
+        <div style="background:var(--bg-surface); padding:24px; border-radius:12px; border:1px solid var(--border); margin:24px 0;">
+          <h4 style="margin-top:0; color:var(--purple); display:flex; align-items:center; gap:8px;">
+            <span>💡</span> Actionable Use Cases You Can Implement Immediately:
+          </h4>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-top:16px;">
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>📝 Meeting Summaries:</strong> Converting transcripts into bulleted action items and ownership assignments.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>📑 Document Classification:</strong> Routing incoming PDFs, quotes, and claims automatically to proper desks.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>✉️ Email Drafting:</strong> Generating personalized, context-aware responses to routine client inquiries.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>🔍 Internal Knowledge Search:</strong> Enabling natural language Q&A across company SOPs, manuals, and policies.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>📊 Basic Data Analysis:</strong> Identifying anomalies, customer churn signals, or sales spikes without SQL coding.
+            </div>
+            <div style="padding:12px 16px; background:var(--bg-elevated); border-radius:8px; border:1px solid var(--border);">
+              <strong>📋 Executive Reports:</strong> Consolidating department updates into clean weekly management briefings.
+            </div>
+          </div>
+        </div>
+
+        <h2>2. Do Not Try to Automate Everything at Once</h2>
+        <p>
+          The goal is not to adopt AI across every department overnight or discard systems that already work.
+        </p>
+        <p>
+          Pick <strong>one specific, high-friction use case</strong>. Run a 2- to 4-week trial, and evaluate with five concrete metrics:
+        </p>
+        <ol>
+          <li><strong>Time saved:</strong> How many human hours were freed for strategic or revenue-generating activity?</li>
+          <li><strong>Output quality:</strong> Does the AI output meet or exceed baseline standards?</li>
+          <li><strong>Error rates:</strong> How frequently did hallucinations or factual inaccuracies occur?</li>
+          <li><strong>Employee adoption:</strong> Did team members welcome the tool or actively bypass it?</li>
+          <li><strong>Cost versus value:</strong> Does the subscription or API cost justify the efficiency gain?</li>
+        </ol>
+        <p>If the experiment yields positive returns, scale it with confidence to adjacent workflows.</p>
+
+        <h2>3. Use AI as an Assistant, Not an Autonomous Replacement</h2>
+        <p>
+          The winning formula for mid-market businesses is almost always a <strong>Human-in-the-Loop (Copilot)</strong> framework. The AI acts as an accelerator, drafting initial content, finding references, or structuring records.
+        </p>
+        <p>
+          However, human discretion and governance remain indispensable. Critical client-facing decisions, contractual agreements, and financial authorizations should always involve a verified human review step.
+        </p>
+
+        <h2>4. Pay Strict Attention to Data Privacy and Governance</h2>
+        <p>
+          Before deploying public LLMs or proprietary models across your workflow, establish clear boundaries:
+        </p>
+        <ul>
+          <li>What data is being ingested? Is it public documentation or proprietary client records?</li>
+          <li>Does the vendor contract state that your company data will not be used to train public models?</li>
+          <li>Who within the company has access to the prompts, chat history, and generated files?</li>
+          <li>Provide clear guidelines for employees prohibiting the upload of passwords, customer PII, or trade secrets into unauthorized web tools.</li>
+        </ul>
+
+        <h2>5. Make Success Measurable</h2>
+        <p>
+          Adopting AI is not a vanity metric. Leadership should evaluate automation by asking decisive questions:
+        </p>
+        <ul>
+          <li>Has task completion time noticeably decreased?</li>
+          <li>Has work quality or customer response time improved?</li>
+          <li>Have manual re-work and data entry errors fallen?</li>
+          <li>Are staff members more productive and less burned out by repetitive tasks?</li>
+        </ul>
+
+        <div class="article-quote" style="margin: 36px 0; padding: 24px; background: var(--bg-surface); border-radius: 12px; border: 1px solid var(--border); font-size: 18px; font-weight: 600; text-align: center; color: var(--text-heading);">
+          "Start small, learn quickly, and scale when the value is proven through numbers and tangible outcomes."
+        </div>
+
+        <h3>Conclusion</h3>
+        <p>
+          Small and mid-sized businesses do not need massive R&D budgets to capitalize on AI. The winning path is straightforward: isolate a real bottleneck, test a lightweight solution, measure impact, and scale sustainably.
+        </p>
+      </div>
+
+      <!-- Call to Action Card -->
+      <section class="article-cta-box" style="margin-top: 48px; padding: 36px 32px; background: linear-gradient(135deg, var(--purple) 0%, #4338ca 100%); border-radius: 16px; color: #fff; text-align: center;">
+        <div class="lang-en">
+          <h2 style="color: #fff; margin-bottom: 12px;">Ready to Implement AI in Your Daily Business Workflows?</h2>
+          <p style="max-width: 600px; margin: 0 auto 24px; color: #ede9fe; font-size: 16px;">
+            ITQAN Solutions designs pragmatic automation, intelligent document processing, and AI integrations that deliver measurable ROI.
+          </p>
+          <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+            <a href="services.html#automation" class="btn btn-secondary" style="background:#fff; color:var(--purple); font-weight:700;">Explore Automation Solutions</a>
+            <a href="contact.html" class="btn btn-ghost" style="color:#fff; border-color:rgba(255,255,255,0.4);">Schedule an AI Discovery Call</a>
+          </div>
+        </div>
+        <div class="lang-ar">
+          <h2 style="color: #fff; margin-bottom: 12px;">هل أنت جاهز لتطبيق الذكاء الاصطناعي في عمليات شركتك اليومية؟</h2>
+          <p style="max-width: 600px; margin: 0 auto 24px; color: #ede9fe; font-size: 16px;">
+            نساعدك في إتقان على تصميم وتطبيق حلول أتمتة عملية، ومعالجة ذكية للمستندات، وتكاملات ذكاء اصطناعي تحقق نتائج وعوائد ملموسة.
+          </p>
+          <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+            <a href="services.html#automation" class="btn btn-secondary" style="background:#fff; color:var(--purple); font-weight:700;">استكشف خدمات الأتمتة</a>
+            <a href="contact.html" class="btn btn-ghost" style="color:#fff; border-color:rgba(255,255,255,0.4);">احجز جلسة استشارية للذكاء الاصطناعي</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Nav / Back to blog -->
+      <div class="article-footer-nav" style="margin-top:40px;">
+        <div>
+          <a href="blog.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">← Back to Insights</span>
+            <span class="lang-ar">→ العودة إلى المقالات</span>
+          </a>
+        </div>
+        <div>
+          <a href="services.html#automation" class="btn btn-ghost" data-link>
+            <span class="lang-en">Explore Business Automation →</span>
+            <span class="lang-ar">استكشف خدمات الأتمتة الذكية ←</span>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

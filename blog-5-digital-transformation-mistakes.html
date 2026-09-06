@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>5 Digital Transformation Mistakes That Are Costing Businesses Growth — ITQAN Solutions</title>
+  <meta name="description" content="Discover the 5 critical digital transformation mistakes that derail business growth—from ignoring change management to vendor misalignment.">
+  
+  <!-- OG / Twitter Card meta tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ITQAN Solutions">
+  <meta property="og:title" content="5 Digital Transformation Mistakes That Cost Businesses Growth | 5 أخطاء في التحول الرقمي">
+  <meta property="og:description" content="From underestimating change management to choosing the wrong vendor—avoid the pitfalls that derail transformation.">
+  <meta property="og:image" content="https://itqansolutions.org/favicon.png">
+  <meta property="og:url" content="https://itqansolutions.org/blog-5-digital-transformation-mistakes.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="5 Digital Transformation Mistakes | ITQAN Solutions">
+  <meta name="twitter:description" content="From underestimating change management to choosing the wrong vendor—avoid the pitfalls that derail transformation.">
+  <meta name="twitter:image" content="https://itqansolutions.org/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
+              </a>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- MAIN ARTICLE -->
+  <main class="blog-article-wrapper">
+    <!-- Breadcrumb -->
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <div class="lang-en">
+        <a href="index.html" data-link>Home</a> <span>/</span>
+        <a href="blog.html" data-link>Insights</a> <span>/</span>
+        <span>5 Digital Transformation Mistakes</span>
+      </div>
+      <div class="lang-ar">
+        <a href="index.html" data-link>الرئيسية</a> <span>/</span>
+        <a href="blog.html" data-link>المقالات</a> <span>/</span>
+        <span>5 أخطاء في التحول الرقمي</span>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="article-header">
+      <div class="article-meta-row">
+        <span class="badge badge-primary">
+          <span class="lang-en">Business Growth</span>
+          <span class="lang-ar">نمو الأعمال</span>
+        </span>
+        <span class="badge badge-outline">
+          <span class="lang-en">Transformation Pitfalls</span>
+          <span class="lang-ar">استراتيجية التحول</span>
+        </span>
+        <span style="font-size: 13.5px; color: var(--text-muted);">
+          <span class="lang-en">⏱️ 6 min read • Feb 2025</span>
+          <span class="lang-ar">⏱️ قراءة 6 دقائق • فبراير 2025</span>
+        </span>
+      </div>
+
+      <!-- English Title & Lead -->
+      <div class="lang-en">
+        <h1 class="article-title">5 Digital Transformation Mistakes That Are Costing Businesses Growth</h1>
+        <p class="article-lead">From underestimating change management to choosing the wrong technology partner. Discover the core pitfalls that derail transformation initiatives.</p>
+      </div>
+
+      <!-- Arabic Title & Lead -->
+      <div class="lang-ar">
+        <h1 class="article-title">5 أخطاء في التحول الرقمي تكلّف الشركات فرص النمو</h1>
+        <p class="article-lead">من التقليل من أهمية إدارة التغيير إلى اختيار الشريك الخطأ. التحول الرقمي ليس مجرد شراء برمجيات، بل إعادة هندسة لطريقة العمل وصناعة القرار.</p>
+      </div>
+    </header>
+
+    <!-- Hero Media -->
+    <div class="article-hero-media" style="background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #10b981 100%); display: flex; align-items: center; justify-content: center; min-height: 280px;">
+      <div style="text-align: center; color: white; padding: 40px 20px;">
+        <div style="font-size: 64px; margin-bottom: 12px;">💼</div>
+        <div style="font-family: var(--font-heading); font-size: 22px; font-weight: 700;">Digital Transformation Risk Prevention</div>
+      </div>
+    </div>
+
+    <!-- Article Body -->
+    <article class="article-body">
+      
+      <!-- ================= ENGLISH CONTENT ================= -->
+      <div class="lang-en">
+        <p>Digital transformation is not simply about purchasing new software or migrating paper archives to cloud drives. It fundamentally reshapes organizational workflows, information transparency, team responsibilities, and leadership decision-making.</p>
+
+        <p>When companies embark on digital transformation without a disciplined, human-centered roadmap, technology quickly metastasizes from a growth engine into an operational nightmare.</p>
+
+        <h2>Mistake 1: Obsessing over technology while ignoring business processes</h2>
+        <p>A company might license a globally recognized enterprise platform, yet completely fail to review the flawed operational steps it seeks to digitize.</p>
+        <p>The disastrous result is simply automating an inefficient process—producing errors, confusion, and waste faster than before.</p>
+        <div class="article-highlight-box">
+          <p><strong>💡 Better Approach:</strong> Diagnose the core operational bottleneck first, re-engineer the optimal workflow second, and select the technology layer last.</p>
+        </div>
+
+        <h2>Mistake 2: Underestimating change management and employee buy-in</h2>
+        <p>An ERP or software system can be flawless technically, yet fail completely in the field if staff members do not embrace it in their daily routines.</p>
+        <p>Sustainable digital transformation requires deliberate cultural investment:</p>
+        <ul>
+          <li>Hands-on, role-specific training sessions.</li>
+          <li>Transparent communication illustrating how the system eliminates daily headaches.</li>
+          <li>Dedicated transition champions across departments.</li>
+          <li>Active listening to address employee fears and workflow friction points.</li>
+        </ul>
+
+        <h2>Mistake 3: Choosing a vendor based exclusively on lowest upfront price</h2>
+        <p>Budget prudence is vital, but lowest bid is often the costliest decision in technology projects.</p>
+        <p>An inexperienced or transactional vendor creates catastrophic hidden expenses: project delivery delays, zero post-launch support, unscalable code architecture, and ultimately the forced replacement of the system within two years.</p>
+        <p>Evaluate your partner based on domain experience, consulting rigor, communication clarity, and long-term partnership commitment.</p>
+
+        <h2>Mistake 4: Attempting the "Big Bang" implementation</h2>
+        <p>Large digital initiatives demand phased strategic milestones. Attempting to roll out full ERP modules, custom mobile apps, inventory sync, and CRM overhauls simultaneously creates severe operational shock.</p>
+        <div class="article-highlight-box">
+          <p><strong>💡 Better Approach:</strong> Deploy in phased sprints. Start with a tightly scoped, high-impact module, validate quantitative success, celebrate wins, and scale steadily.</p>
+        </div>
+
+        <h2>Mistake 5: Neglecting data hygiene and KPI measurement</h2>
+        <p>You cannot improve what you fail to systematically measure. Transformation without data metrics is mere guesswork.</p>
+        <p>Establish clear executive benchmarks from day one:</p>
+        <ul>
+          <li>Cycle time reduction per transaction or customer order.</li>
+          <li>Error rates in invoicing and inventory reconciliation.</li>
+          <li>Reporting speed: real-time dashboard latency versus manual Excel consolidation.</li>
+          <li>Daily active system adoption across user roles.</li>
+          <li>Clear return on capital invested (ROI).</li>
+        </ul>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 Conclusion:</strong> Successful digital transformation requires far more than modern software. It requires process clarity, disciplined change management, the right technology partner, and continuous measurement.<br><br>
+          <strong>Technology opens the door, but how it is managed creates enduring growth.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= ARABIC CONTENT ================= -->
+      <div class="lang-ar">
+        <p>التحول الرقمي ليس مجرد شراء برنامج جديد أو نقل الملفات الورقية إلى نظام إلكتروني. إنه تغيير جوهري في طريقة العمل، وتدفق المعلومات بين الأقسام، ومسؤوليات الموظفين، وطريقة اتخاذ القرارات التنفيذية.</p>
+
+        <p>وعندما تبدأ الشركات مشروع التحول الرقمي دون خطة عملية واضحة، قد تتحول التقنية من فرصة للنمو إلى مصدر جديد للتعقيد والارتباك التشغيلي.</p>
+
+        <h2>الخطأ الأول: التركيز على التقنية وتجاهل إعادة هندسة العمليات</h2>
+        <p>قد تختار الشركة نظامًا برمجياً متطوراً، لكنها لا تعيد النظر في الإجراءات المعقدة التي تريد تحسينها في الأساس.</p>
+        <p>النتيجة في هذه الحالة تكون أتمتة عملية تشغيلية غير فعالة، مما يضاعف من سرعة حدوث الأخطاء بدلًا من حلها.</p>
+        <div class="article-highlight-box">
+          <p><strong>💡 المنهج الصحيح:</strong> ابدأ بتحديد المشكلة التشغيلية، ثم صمّم دورة العمل المثالية، وبعدها اختر التقنية التي تخدم هذه الدورة.</p>
+        </div>
+
+        <h2>الخطأ الثاني: التقليل من أهمية إدارة التغيير وتدريب الموظفين</h2>
+        <p>قد ينجح النظام بنسبة 100% تقنيًا، لكنه يفشل عمليًا إذا شعر الموظفون بأنه يشكل عبئاً إضافياً ولم يستخدموه بالطريقة الصحيحة.</p>
+        <p>التحول الرقمي الناجح يحتاج إلى رعاية بشرية تشمل:</p>
+        <ul>
+          <li>برامج تدريب عملية واضحة ومكثفة لكل دور وظيفي.</li>
+          <li>شرح فوائد النظام للموظف وكيف يوفر وقته ومجهوده الروتيني.</li>
+          <li>دعم فني مباشر ومتابعة حثيثة أثناء مرحلة الانتقال.</li>
+          <li>الاستماع الفعلي لملاحظات فريق العمل ومعالجة أي مخاوف أو مقاومة للتغيير.</li>
+        </ul>
+
+        <h2>الخطأ الثالث: اختيار شريك التنفيذ بناءً على السعر الأقل فقط</h2>
+        <p>السعر مهم بلا شك، لكنه ليس المعيار الوحيد لنجاح المشروع. فاختيار الشريك الأرخص غالباً ما يتحول إلى الخيار الأكثر كلفة على الإطلاق بسبب التأخير في التسليم، أو ضعف الدعم الفني، أو عدم القدرة على التوسع المستقبلي.</p>
+        <p>يجب تقييم الشريك بناءً على خبرته العملية السابقة، ومنهجيته في التحليل، وجودة تواصله، وقدرته على فهم بيئة أعمالك.</p>
+
+        <h2>الخطأ الرابع: محاولة تنفيذ كل شيء دفعة واحدة (Big Bang)</h2>
+        <p>المشروعات الكبيرة تحتاج إلى أولويات واضحة ومراحل مدروسة. فعندما تحاول الشركة تطبيق نظام ERP لجميع الأقسام وربط كل الفروع في لحظة واحدة، تتضاعف المخاطر ويصعب السيطرة على العمليات.</p>
+        <div class="article-highlight-box">
+          <p><strong>💡 المنهج الصحيح:</strong> ابدأ بنطاق محدد للمرحلة الأولى، وحقق نتائج ملموسة وقابلة للقياس، ثم توسع تدريجيًا بثقة واستقرار.</p>
+        </div>
+
+        <h2>الخطأ الخامس: إهمال جودة البيانات ومؤشرات القياس</h2>
+        <p>لا يمكن تحسين ما لا يمكن قياسه بالأرقام. يجب تحديد مؤشرات أداء دقيقة منذ بداية المشروع:</p>
+        <ul>
+          <li>زمن تنفيذ المعاملات والطلبات قبل وبعد النظام.</li>
+          <li>نسبة انخفاض الأخطاء اليدوية في المخزون والفواتير.</li>
+          <li>سرعة وصول الإدارة للتقارير التنفيذية اللحظية.</li>
+          <li>معدل استخدام واعتماد الموظفين اليومي على النظام.</li>
+          <li>العائد الفعلي على الاستثمار (ROI) مقارنة بالتكلفة.</li>
+        </ul>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 الخلاصة:</strong> التحول الرقمي الناجح يحتاج إلى أكثر من برنامج جيد. يحتاج إلى فهم العمليات، وإدارة التغيير، وشريك موثوق، وخطة تنفيذ واقعية، وقياس مستمر للنتائج.<br><br>
+          <strong>التقنية تفتح الباب، لكن طريقة إدارتها هي التي تصنع النمو الحقيقي.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= CONVERSION CTA BOX ================= -->
+      <section class="article-cta-box">
+        <!-- English CTA -->
+        <div class="lang-en">
+          <h3>Planning a digital transformation initiative?</h3>
+          <p>Partner with <strong>ITQAN Solutions</strong> to design a proven, risk-free transformation roadmap tailored to your organizational scale.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>Request a Transformation Roadmap</a>
+            <a href="https://wa.me/201142703439?text=Hello%20ITQAN%20Solutions!%20I'd%20like%20to%20discuss%20Digital%20Transformation." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Arabic CTA -->
+        <div class="lang-ar">
+          <h3>هل تستعد شركتك لبدء مشروع تحول رقمي جديد؟</h3>
+          <p>تواصل مع خبراء <strong>ITQAN Solutions</strong> لتصميم خارطة طريق واضحة ومدروسة تضمن نجاح التطبيق وتحقيق أعلى عائد تشغيلي.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>طلب استشارة تحول رقمي</a>
+            <a href="https://wa.me/201142703439?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20ITQAN%20Solutions!%20%D8%A3%D9%88%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%AE%D8%B7%D8%A9%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 تحدث معنا عبر واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Nav / Back to blog -->
+      <div class="article-footer-nav">
+        <div>
+          <a href="blog.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">← Back to Insights</span>
+            <span class="lang-ar">→ العودة إلى المقالات</span>
+          </a>
+        </div>
+        <div>
+          <a href="services.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">Explore Our Solutions →</span>
+            <span class="lang-ar">استكشف جميع الحلول ←</span>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

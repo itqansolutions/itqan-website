@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home — ITQAN Solutions</title>
   <meta name="description" content="Digital Transformation & Custom Software Company">
-  <!-- OG/Twitter meta tags -->
+  <!-- OG / Twitter Card meta tags -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="ITQAN Solutions">
+  <meta property="og:title"       content="Home — ITQAN Solutions">
+  <meta property="og:description" content="Digital Transformation & Custom Software Company. ERP, POS, Marketing & AI Automation for Egypt & GCC.">
+  <meta property="og:image"       content="https://itqansolutions.org/pos-mockup-EN.jpg">
+  <meta property="og:url"         content="https://itqansolutions.org/">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Home — ITQAN Solutions">
+  <meta name="twitter:description" content="Digital Transformation & Custom Software Company. ERP, POS, Marketing & AI Automation for Egypt & GCC.">
+  <meta name="twitter:image"       content="https://itqansolutions.org/pos-mockup-EN.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -125,61 +135,102 @@
         </div>
       </div>
       <div class="hero-visual">
-        <!-- Live HTML Floating Dashboard Widget -->
-        <div class="live-dashboard-card spotlight-card">
-          <div class="dash-topbar">
-            <div class="dash-dots">
-              <span class="dash-dot dot-red"></span>
-              <span class="dash-dot dot-yellow"></span>
-              <span class="dash-dot dot-green"></span>
-            </div>
-            <div class="live-badge">
-              <span class="live-badge-dot"></span>
-              <span>LIVE DASHBOARD</span>
-            </div>
+        <!-- Business Ecosystem Illustration -->
+        <div class="biz-ecosystem-wrap">
+
+          <!-- SVG: rings + lines + animated particles -->
+          <svg class="eco-lines-svg" viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer dashed ring -->
+            <circle cx="230" cy="230" r="160" fill="none" stroke="rgba(90,70,255,0.12)" stroke-width="1.2" stroke-dasharray="5 8"/>
+            <!-- Inner accent pulse ring -->
+            <circle cx="230" cy="230" r="95"  fill="none" stroke="rgba(90,70,255,0.14)" stroke-width="1"   stroke-dasharray="3 6"/>
+
+            <!-- Connection lines (center 230,230 → each node) -->
+            <path id="eco-l1" d="M230,230 L230,70"    class="eco-line"/>
+            <path id="eco-l2" d="M230,230 L355,130"   class="eco-line"/>
+            <path id="eco-l3" d="M230,230 L386,266"   class="eco-line"/>
+            <path id="eco-l4" d="M230,230 L300,374"   class="eco-line"/>
+            <path id="eco-l5" d="M230,230 L160,374"   class="eco-line"/>
+            <path id="eco-l6" d="M230,230 L74,266"    class="eco-line"/>
+            <path id="eco-l7" d="M230,230 L105,130"   class="eco-line"/>
+
+            <!-- Animated particles flowing outward -->
+            <circle r="3" fill="#5A46FF" opacity="0.85"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0s"><mpath href="#eco-l1"/></animateMotion></circle>
+            <circle r="3" fill="#6366f1" opacity="0.85"><animateMotion dur="2.7s" repeatCount="indefinite" begin="0.3s"><mpath href="#eco-l2"/></animateMotion></circle>
+            <circle r="3" fill="#0ea5e9" opacity="0.85"><animateMotion dur="3.0s" repeatCount="indefinite" begin="0.6s"><mpath href="#eco-l3"/></animateMotion></circle>
+            <circle r="3" fill="#10b981" opacity="0.85"><animateMotion dur="2.5s" repeatCount="indefinite" begin="0.2s"><mpath href="#eco-l4"/></animateMotion></circle>
+            <circle r="3" fill="#f43f5e" opacity="0.85"><animateMotion dur="2.8s" repeatCount="indefinite" begin="0.8s"><mpath href="#eco-l5"/></animateMotion></circle>
+            <circle r="3" fill="#f59e0b" opacity="0.85"><animateMotion dur="2.2s" repeatCount="indefinite" begin="0.5s"><mpath href="#eco-l6"/></animateMotion></circle>
+            <circle r="3" fill="#7c3aed" opacity="0.95"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0.1s"><mpath href="#eco-l7"/></animateMotion></circle>
+          </svg>
+
+          <!-- Central Core Node -->
+          <div class="eco-core">
+            <div class="eco-core-pulse"></div>
+            <img src="favicon.png" alt="ITQAN" class="eco-core-logo">
           </div>
-          <div class="dash-stats-grid">
-            <div class="stat-widget">
-              <span style="font-size:12px;color:var(--text-muted);font-weight:600">Revenue</span>
-              <div class="stat-val" id="dashLiveRev">+18.4%</div>
-              <span class="stat-change">▲ Growing</span>
+
+          <!-- Outer hexagon nodes — pill chips -->
+          <div class="hero-eco-node eco-n-erp">
+            <div class="eco-n-ico">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M7 8h4M7 12h2"/><rect x="13" y="8" width="5" height="4" rx="1"/></svg>
             </div>
-            <div class="stat-widget">
-              <span style="font-size:12px;color:var(--text-muted);font-weight:600">Live Orders</span>
-              <div class="stat-val" id="dashLiveOrd">241</div>
-              <span class="stat-change">● Synced</span>
-            </div>
-            <div class="stat-widget">
-              <span style="font-size:12px;color:var(--text-muted);font-weight:600">Stock Sync</span>
-              <div class="stat-val" id="dashLiveStock">99.8%</div>
-              <span class="stat-change">✓ Active</span>
-            </div>
-            <div class="stat-widget">
-              <span style="font-size:12px;color:var(--text-muted);font-weight:600">Active Staff</span>
-              <div class="stat-val">42</div>
-              <span class="stat-change">👥 Online</span>
-            </div>
+            <span>ERP</span>
           </div>
-          <!-- Live Chart Widget -->
-          <div class="dash-chart-area">
-            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);font-weight:600">
-              <span>Weekly Enterprise Performance</span>
-              <span style="color:var(--primary)">Real-Time Sync</span>
+
+          <div class="hero-eco-node eco-n-hrms">
+            <div class="eco-n-ico">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
             </div>
-            <div class="bar-chart-flex">
-              <div class="chart-bar-wrap"><div class="chart-bar" style="height:45%"></div></div>
-              <div class="chart-bar-wrap"><div class="chart-bar" style="height:65%"></div></div>
-              <div class="chart-bar-wrap"><div class="chart-bar" style="height:55%"></div></div>
-              <div class="chart-bar-wrap"><div class="chart-bar" style="height:85%"></div></div>
-              <div class="chart-bar-wrap"><div class="chart-bar" style="height:70%"></div></div>
-              <div class="chart-bar-wrap"><div class="chart-bar" style="height:95%"></div></div>
-              <div class="chart-bar-wrap"><div class="chart-bar" style="height:78%"></div></div>
+            <span>HRMS</span>
+          </div>
+
+          <div class="hero-eco-node eco-n-crm">
+            <div class="eco-n-ico">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.4 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/><path d="m16 2 2 2 4-4"/></svg>
             </div>
+            <span>CRM</span>
+          </div>
+
+          <div class="hero-eco-node eco-n-pos">
+            <div class="eco-n-ico">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/><path d="M7 15h.01M12 15h.01M17 15h.01"/></svg>
+            </div>
+            <span>POS</span>
+          </div>
+
+          <div class="hero-eco-node eco-n-clinics">
+            <div class="eco-n-ico">
+              <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <span>Clinics</span>
+          </div>
+
+          <div class="hero-eco-node eco-n-mkt">
+            <div class="eco-n-ico">
+              <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
+            <span>Marketing</span>
+          </div>
+
+          <!-- Inner orbit: AI & Automation (special gradient pill) -->
+          <div class="hero-eco-node eco-n-ai">
+            <div class="eco-n-ico">
+              <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5z"/><path d="M5 20a7 7 0 0 1 14 0"/><path d="M12 12v2M8 16h8"/></svg>
+            </div>
+            <span>AI &amp; Auto</span>
+          </div>
+
+          <!-- Status badge -->
+          <div class="eco-connected-badge">
+            <span class="eco-connected-dot"></span>
+            <span>One Connected Ecosystem</span>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Interactive Business Ecosystem Signature Section -->
   <section class="ecosystem-signature">
@@ -724,25 +775,48 @@
     </div>
     <div class="insights-grid stagger">
       <div class="insight-card reveal">
-        <img src="blog1.jpg" alt="Insight 1">
-        <div class="ic-meta"><span data-i18n="ins.p1.cat"></span> • <span>Jul 2025</span></div>
-        <h3 data-i18n="ins.p1.title"></h3>
-        <p data-i18n="ins.p1.desc"></p>
-        <a href="blog.html" class="insight-link" data-i18n="ins.readmore" data-link></a>
+        <a href="blog-custom-erp-2025.html" class="insight-card-img" data-link>
+          <img src="blog-1-erp.png" alt="Why Mid-Sized Companies Invest in Custom ERP in 2025" loading="lazy">
+        </a>
+        <div class="insight-card-body">
+          <div class="insight-meta">
+            <span class="insight-category" data-i18n="ins.p1.cat">Digital Transformation</span>
+            <span class="insight-date">2025</span>
+          </div>
+          <h3><a href="blog-custom-erp-2025.html" data-i18n="ins.p1.title" data-link></a></h3>
+          <p data-i18n="ins.p1.desc"></p>
+          <a href="blog-custom-erp-2025.html" class="insight-link" data-i18n="ins.readmore" data-link>Read Article →</a>
+        </div>
       </div>
+
       <div class="insight-card reveal">
-        <img src="blog2.jpg" alt="Insight 2">
-        <div class="ic-meta"><span data-i18n="ins.p2.cat"></span> • <span>Jun 2025</span></div>
-        <h3 data-i18n="ins.p2.title"></h3>
-        <p data-i18n="ins.p2.desc"></p>
-        <a href="blog.html" class="insight-link" data-i18n="ins.readmore" data-link></a>
+        <a href="blog-b2b-performance-marketing.html" class="insight-card-img" data-link>
+          <img src="blog-2-marketing.png" alt="The Performance Marketing Playbook for B2B Growth in the Middle East" loading="lazy">
+        </a>
+        <div class="insight-card-body">
+          <div class="insight-meta">
+            <span class="insight-category" data-i18n="ins.p2.cat">Marketing Strategy</span>
+            <span class="insight-date">2025</span>
+          </div>
+          <h3><a href="blog-b2b-performance-marketing.html" data-i18n="ins.p2.title" data-link></a></h3>
+          <p data-i18n="ins.p2.desc"></p>
+          <a href="blog-b2b-performance-marketing.html" class="insight-link" data-i18n="ins.readmore" data-link>Read Article →</a>
+        </div>
       </div>
+
       <div class="insight-card reveal">
-        <img src="blog3.jpg" alt="Insight 3">
-        <div class="ic-meta"><span data-i18n="ins.p3.cat"></span> • <span>May 2025</span></div>
-        <h3 data-i18n="ins.p3.title"></h3>
-        <p data-i18n="ins.p3.desc"></p>
-        <a href="blog.html" class="insight-link" data-i18n="ins.readmore" data-link></a>
+        <a href="blog-ai-business-operations.html" class="insight-card-img" data-link>
+          <img src="blog3.jpg" alt="How AI-Powered Automation Is Reshaping Business Operations" loading="lazy">
+        </a>
+        <div class="insight-card-body">
+          <div class="insight-meta">
+            <span class="insight-category" data-i18n="ins.p3.cat">AI & Automation</span>
+            <span class="insight-date">2025</span>
+          </div>
+          <h3><a href="blog-ai-business-operations.html" data-i18n="ins.p3.title" data-link></a></h3>
+          <p data-i18n="ins.p3.desc"></p>
+          <a href="blog-ai-business-operations.html" class="insight-link" data-i18n="ins.readmore" data-link>Read Article →</a>
+        </div>
       </div>
     </div>
   </section>

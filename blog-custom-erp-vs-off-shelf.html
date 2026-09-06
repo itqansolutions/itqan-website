@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Choose Between Custom ERP and Off-the-Shelf Software — ITQAN Solutions</title>
+  <meta name="description" content="A practical decision framework for businesses evaluating enterprise software for the first time. Compare customization, cost, scalability, and long-term ROI.">
+  
+  <!-- OG / Twitter Card meta tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ITQAN Solutions">
+  <meta property="og:title" content="Custom ERP vs Off-the-Shelf Software | كيف تختار بين ERP مخصص والبرمجيات الجاهزة">
+  <meta property="og:description" content="A practical decision framework for businesses evaluating enterprise software options for the first time.">
+  <meta property="og:image" content="https://itqansolutions.org/blog-1-erp.png">
+  <meta property="og:url" content="https://itqansolutions.org/blog-custom-erp-vs-off-shelf.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Custom ERP vs Off-the-Shelf Software | ITQAN Solutions">
+  <meta name="twitter:description" content="A practical decision framework for businesses evaluating enterprise software options for the first time.">
+  <meta name="twitter:image" content="https://itqansolutions.org/blog-1-erp.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
+              </a>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- MAIN ARTICLE -->
+  <main class="blog-article-wrapper">
+    <!-- Breadcrumb -->
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <div class="lang-en">
+        <a href="index.html" data-link>Home</a> <span>/</span>
+        <a href="blog.html" data-link>Insights</a> <span>/</span>
+        <span>Custom ERP vs Off-the-Shelf</span>
+      </div>
+      <div class="lang-ar">
+        <a href="index.html" data-link>الرئيسية</a> <span>/</span>
+        <a href="blog.html" data-link>المقالات</a> <span>/</span>
+        <span>ERP مخصص أم برمجيات جاهزة</span>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="article-header">
+      <div class="article-meta-row">
+        <span class="badge badge-primary">
+          <span class="lang-en">ERP & Systems</span>
+          <span class="lang-ar">ERP والأنظمة</span>
+        </span>
+        <span class="badge badge-outline">
+          <span class="lang-en">Decision Guide</span>
+          <span class="lang-ar">دليل القرار</span>
+        </span>
+        <span style="font-size: 13.5px; color: var(--text-muted);">
+          <span class="lang-en">⏱️ 6 min read • Apr 2025</span>
+          <span class="lang-ar">⏱️ قراءة 6 دقائق • أبريل 2025</span>
+        </span>
+      </div>
+
+      <!-- English Title & Lead -->
+      <div class="lang-en">
+        <h1 class="article-title">How to Choose Between Custom ERP and Off-the-Shelf Software</h1>
+        <p class="article-lead">A practical decision framework for businesses evaluating enterprise software for the first time. The right question is not which is better, but which fits your business complexity.</p>
+      </div>
+
+      <!-- Arabic Title & Lead -->
+      <div class="lang-ar">
+        <h1 class="article-title">كيف تختار بين نظام ERP مخصص والبرمجيات الجاهزة؟</h1>
+        <p class="article-lead">إطار عملي للشركات التي تبحث عن نظامها المؤسسي الأول. السؤال الصحيح ليس: أي النظامين أفضل؟ بل: أي نظام يناسب طبيعة شركتي ومرحلة نموها؟</p>
+      </div>
+    </header>
+
+    <!-- Hero Media -->
+    <div class="article-hero-media" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%); display: flex; align-items: center; justify-content: center; min-height: 280px;">
+      <div style="text-align: center; color: white; padding: 40px 20px;">
+        <div style="font-size: 64px; margin-bottom: 12px;">📊</div>
+        <div style="font-family: var(--font-heading); font-size: 22px; font-weight: 700; letter-spacing: -0.01em;">Enterprise Architecture Decision Matrix</div>
+      </div>
+    </div>
+
+    <!-- Article Body -->
+    <article class="article-body">
+      
+      <!-- ================= ENGLISH CONTENT ================= -->
+      <div class="lang-en">
+        <p>Choosing an ERP system is not only a technology decision. It directly impacts how a company coordinates operations, protects data integrity, and scales revenue. While off-the-shelf software offers a rapid deployment starting point, custom ERP provides unbounded flexibility when business workflows are specialized or complex.</p>
+
+        <p>The right question is not: <em>“Which option is universally superior?”</em> It is: <strong>“Which architecture fits our exact operational cycle and growth trajectory?”</strong></p>
+
+        <h2>1. When is off-the-shelf software a good fit?</h2>
+        <p>Off-the-shelf software may be a pragmatic, cost-effective choice when:</p>
+        <ul>
+          <li>Your workflows are standard, linear, and well-aligned with generic industry templates.</li>
+          <li>Your team can adapt its daily operations to match existing software constraints.</li>
+          <li>Your business requires immediate, out-of-the-box go-live within days.</li>
+          <li>Upfront capital expenditure is strictly limited.</li>
+          <li>You do not require deep custom integrations with legacy platforms or proprietary hardware.</li>
+        </ul>
+
+        <h2>2. When does custom ERP become more suitable?</h2>
+        <p>A custom ERP becomes an indispensable strategic choice when a business operates on specialized competitive mechanisms that off-the-shelf systems simply cannot model:</p>
+        <ul>
+          <li>Unique operational cycles that give you a distinct market edge.</li>
+          <li>Complex multi-branch or multi-warehouse inventory matrices.</li>
+          <li>Dynamic custom pricing formulas, tiered discount rules, or client contract models.</li>
+          <li>Executive reporting and business intelligence not provided by standard software.</li>
+          <li>High scalability requirements where per-user licensing penalties would become prohibitive.</li>
+          <li>A strategic vision to build a long-term operational asset owned entirely by the company.</li>
+        </ul>
+
+        <h2>3. Compare cost with value: Total Cost of Ownership</h2>
+        <p>Off-the-shelf software may appear cheaper initially, but a rigorous evaluation requires assessing the Total Cost of Ownership (TCO) across a 3–5 year timeline:</p>
+
+        <div class="article-body-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Evaluation Factor</th>
+                <th>Off-the-Shelf Software</th>
+                <th>Custom ERP Solution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Starting Point</strong></td>
+                <td>Usually faster initial deployment</td>
+                <td>Requires thorough business analysis & engineering</td>
+              </tr>
+              <tr>
+                <td><strong>Customization</strong></td>
+                <td>Confined within rigid vendor parameters</td>
+                <td>Complete operational freedom & tailored architecture</td>
+              </tr>
+              <tr>
+                <td><strong>Integrations</strong></td>
+                <td>Restricted to supported third-party marketplace apps</td>
+                <td>Engineered precisely around your hardware, APIs & databases</td>
+              </tr>
+              <tr>
+                <td><strong>Scalability</strong></td>
+                <td>Escalating costs per new user / module</td>
+                <td>Architected for limitless branch, user & data growth</td>
+              </tr>
+              <tr>
+                <td><strong>Cost Structure</strong></td>
+                <td>Low upfront, high recurring subscription drain</td>
+                <td>Higher upfront asset investment, zero recurring per-user penalties</td>
+              </tr>
+              <tr>
+                <td><strong>Operational Fit</strong></td>
+                <td>Forces your team to adapt to standard templates</td>
+                <td>Built specifically around the way your company actually operates</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>4. Understand processes before writing code</h2>
+        <p>One of the most critical determinants of ERP success is meticulously documenting existing workflows, diagnosing bottlenecks, and ranking strategic priorities before software design begins.</p>
+        <p>Your leadership team should establish clarity on:</p>
+        <ul>
+          <li>Which specific operational steps create customer delays?</li>
+          <li>What disparate data silos must be unified into a single source of truth?</li>
+          <li>What executive KPIs are required on a daily basis?</li>
+          <li>Which third-party integrations (payment gateways, POS, logistics) are mandatory?</li>
+          <li>Which secondary feature requests can be phased in later?</li>
+        </ul>
+
+        <h2>5. Choose the implementation partner carefully</h2>
+        <p>ERP success is never just about code; it hinges entirely on the domain expertise, engineering discipline, and consulting maturity of your technology partner.</p>
+        <p>Before selecting a partner, verify:</p>
+        <ul>
+          <li>Proven case studies in your specific industry vertical.</li>
+          <li>A clear discovery, development, testing, and rollout methodology.</li>
+          <li>Structured employee training, documentation, and user role onboarding.</li>
+          <li>Long-term SLA support, updates, and maintenance guarantees.</li>
+          <li>Enterprise-grade data security, backup redundancy, and disaster recovery.</li>
+        </ul>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 Conclusion:</strong> Off-the-shelf software is not a bad choice, and custom ERP is not required for every enterprise. The optimal decision thoughtfully balances business complexity, budget, execution speed, and long-term ambition.<br><br>
+          <strong>Choose the system that serves the way your business works—not one that forces unnecessary changes without reason.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= ARABIC CONTENT ================= -->
+      <div class="lang-ar">
+        <p>اختيار نظام ERP ليس قرارًا تقنيًا فقط، بل قرار يؤثر في طريقة إدارة الشركة لعملياتها وبياناتها ونموها. وبينما توفر البرمجيات الجاهزة بداية سريعة، تمنح الأنظمة المخصصة مرونة أكبر عندما تكون احتياجات العمل مختلفة أو معقدة.</p>
+
+        <p>السؤال الصحيح ليس: <em>"أي النظامين أفضل؟"</em> بل: <strong>"أي نظام يناسب طبيعة شركتي ومرحلة نموها الفعلية؟"</strong></p>
+
+        <h2>1. متى تكون البرمجيات الجاهزة مناسبة؟</h2>
+        <p>قد تكون البرمجيات الجاهزة خيارًا عمليًا واقتصاديًا عندما:</p>
+        <ul>
+          <li>تكون العمليات واضحة، نمطية، ومستقرة تمامًا.</li>
+          <li>تتوافق احتياجات الشركة تمامًا مع الوظائف القياسية المتاحة دون تعديل.</li>
+          <li>تحتاج الشركة إلى تنفيذ سريع جدًا خلال أيام معدودة.</li>
+          <li>تكون الميزانية المبدئية محدودة وتفضل الشركة الاشتراكات الشهرية.</li>
+          <li>لا توجد متطلبات تكامل معقدة مع أجهزة أو بوابات خاصة.</li>
+        </ul>
+
+        <h2>2. متى يصبح النظام المخصص أكثر ملاءمة؟</h2>
+        <p>يصبح ERP المخصص خيارًا حتميًا ومنطقيًا عندما تعتمد الشركة على ميزات تشغيلية خاصة يصعب تمثيلها داخل نظام عام:</p>
+        <ul>
+          <li>دورة عمل خاصة تمنح الشركة ميزة تنافسية على منافسيها.</li>
+          <li>تكاملات متعددة مع بوابات دفع، متاجر إلكترونية، أو أنظمة خارجية.</li>
+          <li>قواعد تسعير مخصصة، أو إدارة مخزون وفروع معقدة ومتشعبة.</li>
+          <li>احتياجات تقارير ولوحات مؤشرات غير مدعومة في البرامج التقليدية.</li>
+          <li>متطلبات تشغيلية تتغير وتتطور باستمرار مع وتيرة السوق.</li>
+          <li>رغبة الإدارة في امتلاك أصل برمجي متكامل يدعم التوسع المستقبلي دون قيود.</li>
+        </ul>
+
+        <h2>3. قارن بين التكلفة والقيمة: التكلفة الكلية للملكية (TCO)</h2>
+        <p>قد يبدو النظام الجاهز أقل تكلفة في البداية، لكن المقارنة الواقعية يجب أن تشمل التكلفة الكلية على مدار 3 إلى 5 سنوات:</p>
+
+        <div class="article-body-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>العنصر</th>
+                <th>البرمجيات الجاهزة</th>
+                <th>ERP مخصص من إتقان</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>البداية والتنفيذ</strong></td>
+                <td>أسرع غالبًا للعمليات البسيطة</td>
+                <td>تحتاج إلى مرحلة تحليل دقيق وتطوير هندسي متقن</td>
+              </tr>
+              <tr>
+                <td><strong>التخصيص والتحكم</strong></td>
+                <td>محصور تمامًا ضمن حدود القوالب الجاهزة</td>
+                <td>أعلى مرونة وحرية كاملة لتصميم كل شاشة ومسار</td>
+              </tr>
+              <tr>
+                <td><strong>التكامل والربط</strong></td>
+                <td>محدود بالتطبيقات التي يدعمها مزود النظام</td>
+                <td>يُصمم بدقة للربط مع أي نظام أو بوابة أو جهاز لديكم</td>
+              </tr>
+              <tr>
+                <td><strong>التوسع والنمو</strong></td>
+                <td>رسوم متصاعدة مع كل فرع ومستخدم جديد</td>
+                <td>مبني معمارياً ليدعم التوسع غير المحدود للفروع والمستخدمين</td>
+              </tr>
+              <tr>
+                <td><strong>هيكل التكلفة</strong></td>
+                <td>اشتراكات شهرية متكررة ترتفع باستمرار</td>
+                <td>استثمار مبدئي في أصل دائم بدون اشتراكات مستخدم باهظة</td>
+              </tr>
+              <tr>
+                <td><strong>الملاءمة التشغيلية</strong></td>
+                <td>تفرض على الشركة تغيير طريقة عملها لتناسب البرنامج</td>
+                <td>تُبنى البرمجيات بدقة لتطابق طريقة عملكم وتسهل دورتكم</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>4. لا تبدأ بالتطوير قبل فهم وتوثيق العمليات</h2>
+        <p>من أهم أسباب نجاح أي مشروع ERP توثيق دورة العمل الحالية، وتحديد المشكلات بدقة، وترتيب الأولويات قبل كتابة أي سطر برمجي.</p>
+        <p>يجب أن تتفق الإدارة على إجابات واضحة لـ:</p>
+        <ul>
+          <li>ما العمليات الحرجة التي تحتاج إلى تحسين عاجل؟</li>
+          <li>ما البيانات المجزأة التي يجب توحيدها في قاعدة بيانات واحدة؟</li>
+          <li>ما التقارير التنفيذية الأساسية لاتخاذ القرارات اليومية؟</li>
+          <li>ما التكاملات الحتمية (فواتير إلكترونية، نقاط بيع، بوابات دفع)؟</li>
+          <li>ما الوظائف التي يمكن تأجيلها للمرحلة الثانية من التوسع؟</li>
+        </ul>
+
+        <h2>5. اختر شريك التنفيذ بعناية فائقة</h2>
+        <p>نجاح الـ ERP لا يعتمد على التكنولوجيا وحدها، بل على خبرة فريق التنفيذ وفهمه العميق لواقع الأعمال وقوانين السوق المحلي.</p>
+        <p>قبل التعاقد، تأكد من:</p>
+        <ul>
+          <li>خبرة الشريك العملية في مشاريع مماثلة لقطاعكم.</li>
+          <li>وضوح منهجية التحليل، والتطوير، والفحص، والإطلاق.</li>
+          <li>جودة برامج التدريب والدعم الفني للمستخدمين بعد التسليم.</li>
+          <li>اتفاقيات مستوى الخدمة (SLA) والصيانة والتحديثات الدورية.</li>
+          <li>معايير أمن البيانات، التشفير، والنسخ الاحتياطي التلقائي.</li>
+        </ul>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 الخلاصة:</strong> البرمجيات الجاهزة ليست خيارًا سيئًا، والـ ERP المخصص ليس مناسبًا لكل شركة. القرار الأفضل هو الذي يوازن بذكاء بين احتياجات العمل، والميزانية، وسرعة التنفيذ، والمرونة، والنمو المستقبلي.<br><br>
+          <strong>اختر النظام الذي يخدم طريقة عملك، وليس النظام الذي يجبرك على تغييرها دون سبب.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= CONVERSION CTA BOX ================= -->
+      <section class="article-cta-box">
+        <!-- English CTA -->
+        <div class="lang-en">
+          <h3>Evaluating custom ERP for your organization?</h3>
+          <p>Schedule a discovery session with <strong>ITQAN Solutions</strong> to map your processes and determine the exact software architecture that fits your goals.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>Request an ERP Consultation</a>
+            <a href="https://wa.me/201142703439?text=Hello%20ITQAN%20Solutions!%20I'd%20like%20to%20consult%20on%20Custom%20ERP." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Arabic CTA -->
+        <div class="lang-ar">
+          <h3>هل تبحث عن نظام ERP يناسب طبيعة عمل شركتك بدقة؟</h3>
+          <p>تواصل مع مستشاري <strong>ITQAN Solutions</strong> لتحليل دورة عملك وتحديد المعمارية البرمجية الأنسب لتحقيق أعلى عائد استثماري.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>طلب استشارة ERP مجانية</a>
+            <a href="https://wa.me/201142703439?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20ITQAN%20Solutions!%20%D8%A3%D9%88%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D8%AE%D8%AA%D9%8A%D8%A7%D8%B1%20%D9%86%D8%B8%D8%A7%D9%85%20ERP." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 تحدث معنا عبر واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Nav / Back to blog -->
+      <div class="article-footer-nav">
+        <div>
+          <a href="blog.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">← Back to Insights</span>
+            <span class="lang-ar">→ العودة إلى المقالات</span>
+          </a>
+        </div>
+        <div>
+          <a href="services.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">Explore ERP Engineering →</span>
+            <span class="lang-ar">استكشف هندسة ERP ←</span>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

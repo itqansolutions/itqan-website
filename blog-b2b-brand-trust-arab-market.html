@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Building a B2B Brand That Earns Trust in the Arab Market — ITQAN Solutions</title>
+  <meta name="description" content="Explore how to build trust, craft high-impact Arabic B2B content, and navigate regional buying decisions across Egypt and GCC markets.">
+  
+  <!-- OG / Twitter Card meta tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ITQAN Solutions">
+  <meta property="og:title" content="Building a B2B Brand That Earns Trust in the Arab Market | بناء علامة تجارية B2B تكسب الثقة">
+  <meta property="og:description" content="Trust signals, Arabic content strategy, and the cultural nuances that determine whether B2B buyers choose you.">
+  <meta property="og:image" content="https://itqansolutions.org/favicon.png">
+  <meta property="og:url" content="https://itqansolutions.org/blog-b2b-brand-trust-arab-market.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Building B2B Brand Trust in the Arab Market | ITQAN Solutions">
+  <meta name="twitter:description" content="Trust signals, Arabic content strategy, and the cultural nuances that determine whether B2B buyers choose you.">
+  <meta name="twitter:image" content="https://itqansolutions.org/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
+              </a>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- MAIN ARTICLE -->
+  <main class="blog-article-wrapper">
+    <!-- Breadcrumb -->
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <div class="lang-en">
+        <a href="index.html" data-link>Home</a> <span>/</span>
+        <a href="blog.html" data-link>Insights</a> <span>/</span>
+        <span>B2B Brand Trust</span>
+      </div>
+      <div class="lang-ar">
+        <a href="index.html" data-link>الرئيسية</a> <span>/</span>
+        <a href="blog.html" data-link>المقالات</a> <span>/</span>
+        <span>بناء علامة تجارية B2B موثوقة</span>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="article-header">
+      <div class="article-meta-row">
+        <span class="badge badge-primary">
+          <span class="lang-en">Marketing & Brand</span>
+          <span class="lang-ar">التسويق والهوية</span>
+        </span>
+        <span class="badge badge-outline">
+          <span class="lang-en">Trust & Credibility</span>
+          <span class="lang-ar">الثقة والمصداقية</span>
+        </span>
+        <span style="font-size: 13.5px; color: var(--text-muted);">
+          <span class="lang-en">⏱️ 6 min read • Jan 2025</span>
+          <span class="lang-ar">⏱️ قراءة 6 دقائق • يناير 2025</span>
+        </span>
+      </div>
+
+      <!-- English Title & Lead -->
+      <div class="lang-en">
+        <h1 class="article-title">Building a B2B Brand That Earns Trust in the Arab Market</h1>
+        <p class="article-lead">Trust signals, original Arabic content, and cultural alignment. Why B2B buyers in the Middle East choose long-term strategic partners over superficial vendors.</p>
+      </div>
+
+      <!-- Arabic Title & Lead -->
+      <div class="lang-ar">
+        <h1 class="article-title">بناء علامة تجارية B2B تكسب الثقة في السوق العربي</h1>
+        <p class="article-lead">إشارات الثقة، والمحتوى العربي الأصيل، والفهم الثقافي. في أسواق B2B لا يشتري العميل منتجاً فقط، بل يختار شريكاً استراتيجياً يعتمد عليه لسنوات.</p>
+      </div>
+    </header>
+
+    <!-- Hero Media -->
+    <div class="article-hero-media" style="background: linear-gradient(135deg, #581c87 0%, #7e22ce 50%, #c084fc 100%); display: flex; align-items: center; justify-content: center; min-height: 280px;">
+      <div style="text-align: center; color: white; padding: 40px 20px;">
+        <div style="font-size: 64px; margin-bottom: 12px;">📣</div>
+        <div style="font-family: var(--font-heading); font-size: 22px; font-weight: 700;">B2B Brand Authority & Market Trust</div>
+      </div>
+    </div>
+
+    <!-- Article Body -->
+    <article class="article-body">
+      
+      <!-- ================= ENGLISH CONTENT ================= -->
+      <div class="lang-en">
+        <p>In B2B markets, business buyers are not simply making a quick consumer purchase. They are committing capital, time, and team workflows to a partnership that will impact their organization for years to come.</p>
+
+        <p>Building a trusted B2B brand in the Arab world therefore requires far more than polished logos and slick websites. It demands unequivocal message clarity, transparent case proof, and deep cultural alignment with how executive decisions are made in the region.</p>
+
+        <h2>1. Trust begins with radical clarity</h2>
+        <p>Enterprise prospects evaluate vendors with ruthless time constraints. A prospective client must immediately discern four foundational answers:</p>
+        <ul>
+          <li>What specific enterprise capability does your company engineer?</li>
+          <li>Which industry sectors and company tiers do you specialize in?</li>
+          <li>What quantifiable business bottleneck do you solve?</li>
+          <li>Why should they entrust this transformation to you rather than established incumbents?</li>
+        </ul>
+        <p>Clear, direct messaging dispels ambiguity and immediately elevates your brand above noise.</p>
+
+        <h2>2. Authentic Arabic content is vastly superior to translated text</h2>
+        <p>A frequent error foreign and local companies commit is taking English marketing copy and passing it through literal translation. The resulting Arabic sounds robotic, detached, and devoid of professional nuance.</p>
+        <p>High-converting Arabic B2B content demands:</p>
+        <ul>
+          <li>Accurate commercial and technical terminology tailored to local industry norms.</li>
+          <li>A dignified, professional tone (Fusha) that commands executive respect.</li>
+          <li>Direct framing around regional pain points: multi-branch GCC compliance, e-invoicing laws, and local payment realities.</li>
+        </ul>
+
+        <h2>3. Replace hollow promises with verifiable proof</h2>
+        <p>Empty platitudes like <em>“We are the premier technology leader”</em> create zero trust. B2B decision-makers require empirical evidence:</p>
+        <ul>
+          <li>Detailed case studies illustrating exact before-and-after operational metrics.</li>
+          <li>Real client testimonials with recognizable executive names and titles.</li>
+          <li>Clear explanations of your software architecture, security certifications, and QA methodology.</li>
+          <li>Transparent service offerings and realistic implementation roadmaps.</li>
+        </ul>
+
+        <h2>4. Ensure unbroken consistency across every touchpoint</h2>
+        <p>Brand trust is fragile. It is built or degraded at every interaction—from the technical performance of your website and the precision of your pitch decks, to the responsiveness of your WhatsApp inquiries and the punctuality of discovery meetings.</p>
+        <p>When engineering quality, visual design, and customer service align seamlessly, trust compounds exponentially.</p>
+
+        <h2>5. Understand that Arab B2B decisions are collective and relational</h2>
+        <p>In the Middle East, enterprise procurement rarely rests on a single individual. It is a collective consensus involving the CEO, COO, IT Director, and CFO. Furthermore, personal relationship, mutual respect, and responsiveness remain paramount.</p>
+        <p>Your content must provide ammunition for each stakeholder: ROI calculators for Finance, architectural blueprints for IT, and growth roadmaps for Executive Leadership.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 Conclusion:</strong> A powerful B2B brand in the Arab market is not built on extravagant slogans. It is constructed through clarity, technical credibility, authentic content, and unwavering execution.<br><br>
+          <strong>Trust is not just a marketing claim. It is the cumulative result of everything your company delivers.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= ARABIC CONTENT ================= -->
+      <div class="lang-ar">
+        <p>في أسواق B2B، لا يشتري العميل منتجًا استهلاكياً سريعاً؛ بل يختار شريكًا يعتمد عليه في قرار استراتيجي قد يؤثر في استقرار أعماله وتدفق أرباحه لسنوات قادمة.</p>
+
+        <p>ولهذا، فإن بناء علامة تجارية موثوقة في السوق العربي لا يعتمد على التصميم الجيد والمظهر الخارجي وحده، بل على وضوح الرسالة، وجودة التجربة، والأدلة الواقعية التي تجعل العميل يشعر فوراً أنه يتعامل مع فريق يفهم خصوصية وتحديات سوقه بدقة.</p>
+
+        <h2>1. الثقة تبدأ من الوضوح التام</h2>
+        <p>يجب أن يعرف متخذ القرار التنفيذي خلال ثوانٍ معدودة من تصفح موقعك إجابات حاسمة لأربعة أسئلة:</p>
+        <ul>
+          <li>ماذا تقدم الشركة بالضبط وبأعلى مستوى احترافي؟</li>
+          <li>لمن تقدم خدماتها وما القطاعات المستهدفة؟</li>
+          <li>ما المشكلة التشغيلية أو المالية المحددة التي تحلها؟</li>
+          <li>لماذا يختارك أنت بالتحديد دونًا عن باقي الشركات؟</li>
+        </ul>
+        <p>الرسالة الواضحة الخالية من الغموض تبني الثقة فوراً وتسهل على العميل إدراك القيمة الحقيقية لخدماتك.</p>
+
+        <h2>2. المحتوى العربي ليس مجرد ترجمة حرفية</h2>
+        <p>من الأخطاء الفادحة أخذ نصوص تسويقية إنجليزية وترجمتها حرفياً؛ فالنتيجة تكون محتوى جافاً يفتقد للحس التجاري المحلي ولا يلامس عقل القارئ العربي.</p>
+        <p>المحتوى التجاري العربي القوي يجب أن يراعي:</p>
+        <ul>
+          <li>المصطلحات المهنية الدقيقة المتبعة في قطاعات السوق الإقليمي.</li>
+          <li>أسلوب تواصل مهني رصين وواضح يخاطب أصحاب القرار باحترام.</li>
+          <li>التركيز على القضايا المحلية الواقعية: مثل الربط مع الفاتورة الإلكترونية، إدارة الفروع في مصر ودول الخليج، وتكاملات بوابات الدفع الإقليمية.</li>
+        </ul>
+
+        <h2>3. استخدم الأدلة الواقعية بدلًا من الوعود والادعاءات</h2>
+        <p>عبارات مثل <em>"نحن الشركة الأولى الرائدة"</em> لم تعد تقنع أي مدير تنفيذي واعٍ. بدلاً من ذلك، ابنِ مصداقيتك عبر:</p>
+        <ul>
+          <li>دراسات حالة تفصيلية توضح أرقام الإنجاز قبل وبعد التعامل معكم.</li>
+          <li>شهادات عملاء حقيقيين بشركاتهم ومسمياتهم الوظيفية.</li>
+          <li>شرح هندسي واضح لمنهجية التطوير ومعايير الجودة والأمان المتبعة.</li>
+          <li>وضوح تام في نطاق الخدمات والأسعار دون تكاليف خفية مفاجئة.</li>
+        </ul>
+
+        <h2>4. اجعل التجربة متسقة في كل نقطة اتصال</h2>
+        <p>الثقة تتشكل من كل تفصيلة: سرعة تحميل الموقع الإلكتروني، احترافية عروض الأسعار، أسلوب الرد السريع عبر الواتساب، والالتزام الصارم بمواعيد الاجتماعات والتسليم.</p>
+        <p>الاتساق بين ما تعد به في إعلاناتك وما يختبره العميل في الواقع هو الذي يحول العميل إلى شريك دائم ومصدر للتوصية بشركتك.</p>
+
+        <h2>5. افهم أن قرار الشراء في B2B قرار جماعي وعلاقة ثقة</h2>
+        <p>في المنطقة العربية، نادراً ما ينفرد شخص واحد بقرار التعاقد البرمجي أو التسويقي الكبير. غالباً ما يشارك المدير العام، ومدير العمليات، والمدير المالي، ومدير تكنولوجيا المعلومات. كما تلعب كيمياء التواصل الإنساني والاحترام المتبادل دوراً حاسماً.</p>
+        <p>لذلك احرص على أن يقدم محتواك براهين تناسب كل طرف: أرقام التكلفة والعائد المالي (ROI) للمدير المالي، واستقرار السيرفرات والأمان لمدير التقنية، وتسهيل الإجراءات للمدير التنفيذي.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 الخلاصة:</strong> العلامة التجارية القوية في السوق العربي لا تُبنى بالوعود الرنانة، بل بالوضوح، والمصداقية، والمحتوى الأصيل، والتجربة المتسقة في كل مرحلة.<br><br>
+          <strong>الثقة ليست مجرد شعار تسويقي؛ إنها الانطباع النهائي الناتج عن كل ما تفعله الشركة.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= CONVERSION CTA BOX ================= -->
+      <section class="article-cta-box">
+        <!-- English CTA -->
+        <div class="lang-en">
+          <h3>Ready to elevate your B2B brand and market presence?</h3>
+          <p>Partner with <strong>ITQAN Solutions</strong> to engineer a distinctive brand identity, compelling content strategy, and high-converting digital experience.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>Consult with Our Brand Strategists</a>
+            <a href="https://wa.me/201142703439?text=Hello%20ITQAN%20Solutions!%20I'd%20like%20to%20discuss%20B2B%20Brand%20Strategy." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Arabic CTA -->
+        <div class="lang-ar">
+          <h3>هل ترغب في بناء هوية تجارية قوية تكسب ثقة كبار العملاء؟</h3>
+          <p>تواصل مع خبراء التسويق وبناء الهوية في <strong>ITQAN Solutions</strong> لتطوير استراتيجية محتوى وهوية رقمية متكاملة تضع شركتك في صدارة السوق.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>طلب استشارة هوية وتسويق</a>
+            <a href="https://wa.me/201142703439?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20ITQAN%20Solutions!%20%D8%A3%D9%88%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A8%D9%86%D8%A7%D8%A1%20%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D9%85%D8%A9%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9%20B2B." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 تحدث معنا عبر واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Nav / Back to blog -->
+      <div class="article-footer-nav">
+        <div>
+          <a href="blog.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">← Back to Insights</span>
+            <span class="lang-ar">→ العودة إلى المقالات</span>
+          </a>
+        </div>
+        <div>
+          <a href="services.html#marketing" class="btn btn-ghost" data-link>
+            <span class="lang-en">Explore Marketing & Creative →</span>
+            <span class="lang-ar">استكشف خدمات التسويق والهوية ←</span>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

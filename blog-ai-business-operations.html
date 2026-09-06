@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How AI-Powered Automation Is Reshaping Business Operations — ITQAN Solutions</title>
+  <meta name="description" content="Discover how AI-powered automation transforms business operations from document processing to intelligent reporting for SMEs.">
+  
+  <!-- OG / Twitter Card meta tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ITQAN Solutions">
+  <meta property="og:title" content="How AI-Powered Automation Is Reshaping Business Operations | كيف تعيد الأتمتة بالذكاء الاصطناعي تشكيل العمليات">
+  <meta property="og:description" content="From document processing to intelligent reporting—explore how businesses are using automation to cut costs and accelerate decisions.">
+  <meta property="og:image" content="https://itqansolutions.org/blog3.jpg">
+  <meta property="og:url" content="https://itqansolutions.org/blog-ai-business-operations.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How AI-Powered Automation Is Reshaping Business Operations | ITQAN Solutions">
+  <meta name="twitter:description" content="From document processing to intelligent reporting—explore how businesses are using automation to cut costs and accelerate decisions.">
+  <meta name="twitter:image" content="https://itqansolutions.org/blog3.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
+              </a>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- MAIN ARTICLE -->
+  <main class="blog-article-wrapper">
+    <!-- Breadcrumb -->
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <div class="lang-en">
+        <a href="index.html" data-link>Home</a> <span>/</span>
+        <a href="blog.html" data-link>Insights</a> <span>/</span>
+        <span>AI-Powered Automation</span>
+      </div>
+      <div class="lang-ar">
+        <a href="index.html" data-link>الرئيسية</a> <span>/</span>
+        <a href="blog.html" data-link>المقالات</a> <span>/</span>
+        <span>الأتمتة المدعومة بالذكاء الاصطناعي</span>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="article-header">
+      <div class="article-meta-row">
+        <span class="badge badge-primary">
+          <span class="lang-en">AI & Automation</span>
+          <span class="lang-ar">الذكاء الاصطناعي والأتمتة</span>
+        </span>
+        <span class="badge badge-outline">
+          <span class="lang-en">Business Operations</span>
+          <span class="lang-ar">العمليات التجارية</span>
+        </span>
+        <span style="font-size: 13.5px; color: var(--text-muted);">
+          <span class="lang-en">⏱️ 5 min read • May 2025</span>
+          <span class="lang-ar">⏱️ قراءة 5 دقائق • مايو 2025</span>
+        </span>
+      </div>
+
+      <!-- English Title & Lead -->
+      <div class="lang-en">
+        <h1 class="article-title">How AI-Powered Automation Is Reshaping Business Operations</h1>
+        <p class="article-lead">From document processing to intelligent reporting. Moving beyond repetitive tasks to build smarter, data-driven workflows.</p>
+      </div>
+
+      <!-- Arabic Title & Lead -->
+      <div class="lang-ar">
+        <h1 class="article-title">كيف تعيد الأتمتة المدعومة بالذكاء الاصطناعي تشكيل العمليات التجارية</h1>
+        <p class="article-lead">من معالجة المستندات إلى التقارير الذكية. بناء عمليات أذكى تتعامل مع البيانات، وتفهم المستندات، وتدعم اتخاذ القرار.</p>
+      </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="article-hero-media">
+      <img src="blog3.jpg" alt="How AI-Powered Automation Is Reshaping Business Operations - ITQAN Solutions" loading="eager">
+    </div>
+
+    <!-- Article Body -->
+    <article class="article-body">
+      
+      <!-- ================= ENGLISH CONTENT ================= -->
+      <div class="lang-en">
+        <p>Automation is no longer just a way to reduce manual work. It has become an essential part of improving business operations. With the evolution of AI, companies can move beyond repetitive tasks and build smarter processes that handle data, understand documents, and support decision-making.</p>
+
+        <p>For small and mid-sized businesses, the real value does not begin with buying new technology. It begins with identifying the processes that consume time and affect work quality.</p>
+
+        <h2>1. Where should automation begin?</h2>
+        <p>There are many opportunities for automation across everyday business operations, including:</p>
+        <ul>
+          <li>Invoice and document data entry.</li>
+          <li>Purchase order processing and verification.</li>
+          <li>Customer records and CRM data updates.</li>
+          <li>Recurring operational and financial reports.</li>
+          <li>Automated notifications, alerts, and client follow-ups.</li>
+          <li>Integration between disparate business systems.</li>
+        </ul>
+        <p>However, not every task needs AI. Some tasks can be automated through fixed, reliable rules, while others require the ability to understand natural text or process unstructured data.</p>
+        
+        <div class="article-highlight-box">
+          <p><strong>🎯 The Best Rule:</strong> Always use the simplest technology that solves the business problem effectively.</p>
+        </div>
+
+        <h2>2. How does AI add genuine value?</h2>
+        <p>Traditional automation strictly follows predefined linear steps, while AI can process and interpret more complex, ambiguous information.</p>
+        <p>For example, an intelligent system can:</p>
+        <ul>
+          <li>Read an invoice in various layouts and accurately extract line items.</li>
+          <li>Automatically classify incoming documents and inquiries.</li>
+          <li>Detect missing data or compliance discrepancies before submission.</li>
+          <li>Summarize lengthy technical or operational reports.</li>
+          <li>Suggest intelligent next actions based on historical patterns.</li>
+          <li>Empower team members with instant internal semantic search.</li>
+        </ul>
+        <p>This does not mean AI replaces employees entirely. Instead, it eliminates hours spent on clerical drudgery, freeing people to focus on strategic tasks requiring empathy, creativity, and human judgment.</p>
+
+        <h2>3. Automation starts with the process—not the tool</h2>
+        <p>A common mistake is choosing a flashy software tool first and then trying to force the business workflows around it.</p>
+        <p>A better methodology begins with 5 foundational questions:</p>
+        <ul>
+          <li><strong>1.</strong> What exact process are we trying to improve?</li>
+          <li><strong>2.</strong> Where does the operational delay or bottleneck occur?</li>
+          <li><strong>3.</strong> What clean data is required for this step?</li>
+          <li><strong>4.</strong> Who is responsible and accountable for each handoff?</li>
+          <li><strong>5.</strong> What quantitative business metric do we want to measure?</li>
+        </ul>
+        <p>Only then should the company select the appropriate technology—whether a native system integration, an automated workflow, or a targeted AI model.</p>
+
+        <h2>4. From raw data to intelligent reporting</h2>
+        <p>Automation helps gather fragmented data from disparate touchpoints, but the greater business value emerges when that data transforms into actionable intelligence.</p>
+        <p>Intelligent reporting equips leadership with clear visibility into:</p>
+        <ul>
+          <li>Real-time sales velocity and operational productivity.</li>
+          <li>Delayed milestones or stalled customer tickets.</li>
+          <li>Recurring quality control errors.</li>
+          <li>Unusual cost surges or inventory deviations.</li>
+          <li>High-priority areas requiring immediate managerial intervention.</li>
+        </ul>
+        <p>A truly effective executive report does not simply display numbers—it answers the decisive question: <strong>What strategic decision should we execute next?</strong></p>
+
+        <h2>5. What should businesses consider?</h2>
+        <p>Automation success never depends on code alone. Sustainable execution requires unwavering attention to:</p>
+        <ul>
+          <li>Data hygiene and input consistency.</li>
+          <li>Role-based access controls and enterprise cybersecurity.</li>
+          <li>Comprehensive employee training and onboarding.</li>
+          <li>Continuous human-in-the-loop review for financial and mission-critical workflows.</li>
+        </ul>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 Conclusion:</strong> AI-powered automation is not just a cost-cutting tactic—it is an opportunity to redesign how your entire business scales. When companies start with a clear problem, choose the right technology, and measure outcomes, they build resilient, future-ready operations.<br><br>
+          <strong>The future belongs not to those who use AI the most, but to those who use it to solve the right problems.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= ARABIC CONTENT ================= -->
+      <div class="lang-ar">
+        <p>لم تعد الأتمتة مجرد وسيلة لتقليل الأعمال اليدوية، بل أصبحت جزءًا أساسيًا من تطوير العمليات التجارية. ومع تطور الذكاء الاصطناعي، أصبح بإمكان الشركات الانتقال من تنفيذ المهام المتكررة إلى بناء عمليات أكثر ذكاءً، تتعامل مع البيانات، وتفهم المستندات، وتدعم اتخاذ القرار.</p>
+
+        <p>بالنسبة للشركات الصغيرة والمتوسطة، لا تبدأ القيمة الحقيقية من شراء تقنية جديدة، بل من تحديد العمليات التي تستهلك الوقت وتؤثر في جودة العمل والإنتاجية.</p>
+
+        <h2>1. أين تبدأ الأتمتة؟</h2>
+        <p>توجد فرص كثيرة وواعدة للأتمتة داخل الشركات، مثل:</p>
+        <ul>
+          <li>إدخال بيانات الفواتير والمستندات الورقية والإلكترونية.</li>
+          <li>معالجة ومراجعة طلبات الشراء وأوامر التوريد.</li>
+          <li>تحديث سجلات وبيانات العملاء في الـ CRM تلقائيًا.</li>
+          <li>إعداد التقارير الدورية والمالية دون تدخل يدوي.</li>
+          <li>إرسال التنبيهات الذكية ومتابعات العملاء.</li>
+          <li>ربط البرمجيات والأنظمة المختلفة لمنع تكرار الإدخال.</li>
+        </ul>
+        <p>لكن ليس كل إجراء يحتاج إلى ذكاء اصطناعي. فبعض المهام يمكن أتمتتها بقواعد ثابتة، بينما تحتاج مهام أخرى إلى قدرة على فهم النصوص أو التعامل مع بيانات غير منظمة.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>🎯 القاعدة الذهبية:</strong> استخدم أبسط تقنية تحل المشكلة بأعلى كفاءة وأقل تعقيد.</p>
+        </div>
+
+        <h2>2. كيف يضيف الذكاء الاصطناعي قيمة حقيقية؟</h2>
+        <p>تتميز الأتمتة التقليدية بتنفيذ خطوات محددة مسبقًا، بينما يستطيع الذكاء الاصطناعي التعامل مع معلومات أكثر تعقيدًا وتغيرًا.</p>
+        <p>على سبيل المثال، يمكن لنظام ذكي متصل بعملياتك أن:</p>
+        <ul>
+          <li>يقرأ فاتورة بأي شكل وتصميم ويستخرج بيانات البنود بدقة.</li>
+          <li>يصنّف المستندات والمعاملات حسب نوعها وأولويتها.</li>
+          <li>يكتشف المعلومات الناقصة أو غير المتطابقة مبكرًا.</li>
+          <li>يلخص تقريرًا تشغيليًا أو ماليًا طويلًا في نقاط محددة.</li>
+          <li>يقترح الإجراءات والقرارات بناءً على البيانات السابقة.</li>
+          <li>يساعد الموظفين في البحث السريع داخل معرفة وسياسات الشركة.</li>
+        </ul>
+        <p>هذا لا يعني أن الذكاء الاصطناعي يستبدل الموظفين بالكامل، بل يقلل الوقت الضائع في الأعمال الروتينية، ويمنحهم مساحة أكبر للتركيز على المهام التي تحتاج إلى تفكير استراتيجي وحكم بشري.</p>
+
+        <h2>3. الأتمتة تبدأ من العملية، وليس من الأداة</h2>
+        <p>من الأخطاء الشائعة الانبهار بأداة معينة ومحاولة إجبار الشركة على استخدامها دون داعٍ.</p>
+        <p>الأفضل دائمًا هو البدء بأسئلة تشغيلية واضحة:</p>
+        <ul>
+          <li><strong>1.</strong> ما العملية المحددة التي نريد تحسينها؟</li>
+          <li><strong>2.</strong> أين يحدث التأخير أو الاختناق في مسار العمل؟</li>
+          <li><strong>3.</strong> ما البيانات المطلوبة لضمان نجاح الخطوة؟</li>
+          <li><strong>4.</strong> من المسؤول عن كل خطوة وتدقيق؟</li>
+          <li><strong>5.</strong> ما النتيجة التجارية التي نريد قياسها بدقة؟</li>
+        </ul>
+        <p>بعد ذلك يتم اختيار التقنية المناسبة، سواء كانت تكاملًا بين الأنظمة، أو سير عمل آليًا، أو أداة ذكاء اصطناعي مخصصة.</p>
+
+        <h2>4. من جمع البيانات إلى التقارير الذكية</h2>
+        <p>تساعد الأتمتة على جمع البيانات من مصادر مختلفة، لكن القيمة الكبرى تظهر عندما تتحول هذه البيانات إلى معلومات ورؤى قابلة للاستخدام الفوري.</p>
+        <p>يمكن للتقارير الذكية أن تساعد الإدارة على فهم دقيق لـ:</p>
+        <ul>
+          <li>حجم المبيعات الفعلي والأداء التشغيلي لحظة بلحظة.</li>
+          <li>العمليات المتأخرة وتحديد أسباب العطلة بدقة.</li>
+          <li>الأخطاء المتكررة لتفادي حدوثها مجددًا.</li>
+          <li>الاتجاهات غير المعتادة في المصروفات أو المخزون.</li>
+          <li>المجالات الحرجة التي تحتاج إلى تدخل فوري من الإدارة.</li>
+        </ul>
+        <p>والأهم أن التقرير الجيد لا يكتفي بعرض الأرقام، بل يساعد على الإجابة عن سؤال: <strong>ما القرار الصحيح الذي يجب اتخاذه الآن؟</strong></p>
+
+        <h2>5. ما الذي يجب الانتباه إليه لضمان النجاح؟</h2>
+        <p>نجاح الأتمتة لا يعتمد على البرمجيات وحدها. يجب الاهتمام البالغ بجودة البيانات، وصلاحيات الوصول، وأمن وسرية المعلومات، وتدريب الموظفين، ووضوح المسؤوليات.</p>
+        <p>كما يجب مراجعة النتائج باستمرار، خصوصًا عندما تتعامل الأنظمة مع مستندات أو قرارات قد تؤثر في العملاء أو في العمليات المالية.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 الخلاصة:</strong> الأتمتة المدعومة بالذكاء الاصطناعي ليست مجرد وسيلة لتقليل التكاليف، بل فرصة حقيقية لإعادة تصميم طريقة العمل. وعندما تبدأ الشركات من مشكلة واضحة، وتختار التقنية المناسبة، وتقيس النتائج، يمكنها بناء عمليات أسرع وأكثر دقة وقابلية للتوسع المستمر.<br><br>
+          <strong>المستقبل ليس لمن يستخدم الذكاء الاصطناعي أكثر، بل لمن يستخدمه لحل المشكلات الصحيحة.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= CONVERSION CTA BOX ================= -->
+      <section class="article-cta-box">
+        <!-- English CTA -->
+        <div class="lang-en">
+          <h3>Ready to automate your manual processes and integrate AI?</h3>
+          <p>Connect with <strong>ITQAN Solutions</strong> to identify high-impact automation opportunities and streamline your business workflows.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>Request an Automation Audit</a>
+            <a href="https://wa.me/201142703439?text=Hello%20ITQAN%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20AI%20Automation." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Arabic CTA -->
+        <div class="lang-ar">
+          <h3>هل ترغب في أتمتة عملياتك اليدوية ودمج حلول الذكاء الاصطناعي؟</h3>
+          <p>تواصل مع فريق <strong>ITQAN Solutions</strong> لتحديد أهم فرص الأتمتة المؤثرة وبناء مسارات عمل ذكية تدعم نمو شركتك.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>طلب استشارة أتمتة مجانية</a>
+            <a href="https://wa.me/201142703439?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20ITQAN%20Solutions!%20%D8%A3%D9%88%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D9%8A%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1%20%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 تحدث معنا عبر واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Nav / Back to blog -->
+      <div class="article-footer-nav">
+        <div>
+          <a href="blog.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">← Back to Insights</span>
+            <span class="lang-ar">→ العودة إلى المقالات</span>
+          </a>
+        </div>
+        <div>
+          <a href="services.html#automation" class="btn btn-ghost" data-link>
+            <span class="lang-en">Explore Business Automation →</span>
+            <span class="lang-ar">استكشف حلول الأتمتة ←</span>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

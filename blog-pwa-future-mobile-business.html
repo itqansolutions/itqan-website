@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Progressive Web Apps Are the Future of Mobile Business — ITQAN Solutions</title>
+  <meta name="description" content="Discover how PWAs combine web accessibility with native app speed and performance for modern businesses in the Middle East.">
+  
+  <!-- OG / Twitter Card meta tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ITQAN Solutions">
+  <meta property="og:title" content="Why Progressive Web Apps Are the Future of Mobile Business | تطبيقات الويب التقدمية PWA">
+  <meta property="og:description" content="PWAs combine the best of web and native apps—here is why they are gaining traction in the MENA market.">
+  <meta property="og:image" content="https://itqansolutions.org/favicon.png">
+  <meta property="og:url" content="https://itqansolutions.org/blog-pwa-future-mobile-business.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Progressive Web Apps Are the Future of Mobile Business | ITQAN Solutions">
+  <meta name="twitter:description" content="PWAs combine the best of web and native apps—here is why they are gaining traction in the MENA market.">
+  <meta name="twitter:image" content="https://itqansolutions.org/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
+              </a>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- MAIN ARTICLE -->
+  <main class="blog-article-wrapper">
+    <!-- Breadcrumb -->
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <div class="lang-en">
+        <a href="index.html" data-link>Home</a> <span>/</span>
+        <a href="blog.html" data-link>Insights</a> <span>/</span>
+        <span>PWAs & Mobile Business</span>
+      </div>
+      <div class="lang-ar">
+        <a href="index.html" data-link>الرئيسية</a> <span>/</span>
+        <a href="blog.html" data-link>المقالات</a> <span>/</span>
+        <span>تطبيقات الويب التقدمية PWA</span>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="article-header">
+      <div class="article-meta-row">
+        <span class="badge badge-primary">
+          <span class="lang-en">Web & Mobile</span>
+          <span class="lang-ar">ويب وموبايل</span>
+        </span>
+        <span class="badge badge-outline">
+          <span class="lang-en">Modern Architecture</span>
+          <span class="lang-ar">التقنيات الحديثة</span>
+        </span>
+        <span style="font-size: 13.5px; color: var(--text-muted);">
+          <span class="lang-en">⏱️ 5 min read • Mar 2025</span>
+          <span class="lang-ar">⏱️ قراءة 5 دقائق • مارس 2025</span>
+        </span>
+      </div>
+
+      <!-- English Title & Lead -->
+      <div class="lang-en">
+        <h1 class="article-title">Why Progressive Web Apps Are the Future of Mobile Business</h1>
+        <p class="article-lead">How PWAs combine the best of web accessibility and native app performance—reducing development costs while delivering lightning-fast mobile customer experiences.</p>
+      </div>
+
+      <!-- Arabic Title & Lead -->
+      <div class="lang-ar">
+        <h1 class="article-title">لماذا تُعد تطبيقات الويب التقدمية مستقبل الأعمال على الهاتف؟</h1>
+        <p class="article-lead">كيف تجمع PWAs بين سهولة الوصول عبر الويب والأداء العالي للتطبيقات الأصلية؟ حل عملي ومرن لتمكين الشركات في سوق الهاتف بالشرق الأوسط.</p>
+      </div>
+    </header>
+
+    <!-- Hero Media -->
+    <div class="article-hero-media" style="background: linear-gradient(135deg, #082f49 0%, #0369a1 50%, #0ea5e9 100%); display: flex; align-items: center; justify-content: center; min-height: 280px;">
+      <div style="text-align: center; color: white; padding: 40px 20px;">
+        <div style="font-size: 64px; margin-bottom: 12px;">🌐</div>
+        <div style="font-family: var(--font-heading); font-size: 22px; font-weight: 700;">Progressive Web App Architecture</div>
+      </div>
+    </div>
+
+    <!-- Article Body -->
+    <article class="article-body">
+      
+      <!-- ================= ENGLISH CONTENT ================= -->
+      <div class="lang-en">
+        <p>Mobile devices have become central to how modern businesses operate, coordinate field teams, and engage B2B clients. However, not every enterprise needs to commission separate, expensive native applications for iOS and Android.</p>
+
+        <p>Progressive Web Apps (PWAs) provide a powerful paradigm shift, blending the instant accessibility of the modern web with the speed, offline capabilities, and polish of native smartphone applications.</p>
+
+        <h2>What is a Progressive Web App (PWA)?</h2>
+        <p>A Progressive Web App is an advanced web application architected with modern service workers, caching protocols, and responsive design systems. It enables users to install the app directly from their mobile browser without visiting an app store, receive instant push notifications, and navigate smoothly even during intermittent network connectivity.</p>
+
+        <h2>1. Frictionless, instant accessibility</h2>
+        <p>Users access a PWA via a single secure web link. There is no searching through crowded app stores, zero waiting for multi-hundred-megabyte downloads, and zero app-store review delays when deploying updates.</p>
+        <p>For businesses operating in fast-moving Middle Eastern commerce markets, eliminating installation friction directly correlates to higher conversion rates and faster client onboarding.</p>
+
+        <h2>2. A genuine native-app feel</h2>
+        <p>Modern PWAs deliver an immersive, app-grade user experience:</p>
+        <ul>
+          <li>Smooth 60fps responsive touch interactions.</li>
+          <li>One-tap home screen installation with custom app icons and splash screens.</li>
+          <li>Near-instant loading speeds cached locally via background service workers.</li>
+          <li>Selected offline workflows for sales representatives and inventory auditors.</li>
+        </ul>
+
+        <h2>3. Unified codebase: drastic reduction in development & maintenance cost</h2>
+        <p>Instead of hiring separate Swift (iOS), Kotlin (Android), and web development teams—and managing 3 separate codebases with conflicting release cycles—a company engineers <strong>one unified web experience</strong> that runs seamlessly across desktops, tablets, iPhones, and Android smartphones.</p>
+        
+        <div class="article-highlight-box">
+          <p><strong>💡 Efficiency Win:</strong> Bug fixes, security patches, and feature updates go live instantly to all users worldwide without requiring app store approval cycles.</p>
+        </div>
+
+        <h2>4. Why do PWAs matter for businesses in the Middle East?</h2>
+        <p>In high-growth MENA markets where mobile penetration surpasses 90%, PWAs solve high-friction operational challenges across key sectors:</p>
+        <ul>
+          <li><strong>B2B Ordering Portals:</strong> Wholesale distributors ordering inventory directly from their smartphones on-site.</li>
+          <li><strong>Field Service & Inspection Apps:</strong> Technicians recording maintenance logs even in basement service centers with weak connectivity.</li>
+          <li><strong>Executive KPI Dashboards:</strong> C-suite leadership tracking sales and cash flow with one tap from their phone homescreen.</li>
+          <li><strong>Internal Employee Workflows:</strong> Streamlined HR attendance and task management without mandatory app store distribution.</li>
+        </ul>
+
+        <h2>5. When is a PWA not the right choice?</h2>
+        <p>While PWAs are revolutionary, they are not universal. Native apps remain necessary when your application demands heavy 3D rendering, direct access to advanced device sensors, or background Bluetooth beacons.</p>
+        <p>Strategic technology selection should always be driven by functional requirements, not developer hype.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 Conclusion:</strong> Progressive Web Apps empower businesses to deliver fast, beautiful, and accessible mobile experiences without enterprise overhead.<br><br>
+          <strong>The future is not about building more apps. It is about delivering better digital experiences.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= ARABIC CONTENT ================= -->
+      <div class="lang-ar">
+        <p>أصبح الهاتف جزءًا أساسيًا من طريقة إدارة الأعمال والتواصل مع العملاء. ومع ذلك، لا تحتاج كل شركة إلى تطوير تطبيقات أصلية منفصلة ومكلفة لكل نظام تشغيل (iOS و Android). هنا تظهر تطبيقات الويب التقدمية، أو <strong>PWAs</strong>، كخيار يجمع بين سهولة الوصول عبر الويب وتجربة استخدام تشبه التطبيقات الأصلية تماماً.</p>
+
+        <h2>ما هي تطبيقات PWA؟</h2>
+        <p>تطبيق الويب التقدمي هو موقع إلكتروني فائق التطور يمكنه تقديم تجربة مطابقة لتطبيقات الهاتف، مع إمكانية التثبيت المباشر على الشاشة الرئيسية للجهاز، والعمل بسلاسة في ظروف اتصال الإنترنت الضعيفة، وإرسال الإشعارات الفورية للعملاء والموظفين.</p>
+        <p>يظل التطبيق مبنيًا على تقنيات الويب الحديثة، لكنه يستفيد من معمارية Service Workers لتحقيق سرعة فائقة وتجربة استخدام ممتعة.</p>
+
+        <h2>1. سهولة الوصول وإزالة عوائق التثبيت</h2>
+        <p>يمكن للمستخدم أو العميل الوصول إلى التطبيق من خلال رابط مباشر، دون الحاجة إلى البحث في متجر التطبيقات (App Store أو Google Play) أو انتظار تنزيل ملفات ضخمة تستهلك ذاكرة الجهاز.</p>
+        <p>هذا يقلل الخطوات الفاصلة بين العميل والخدمة، ويزيد من معدلات التسجيل والشراء خصوصًا في الأسواق التي يعتمد فيها المستخدمون على الهاتف كمنصة أولى.</p>
+
+        <h2>2. تجربة استخدام سريعة ومطابقة للتطبيقات الأصلية</h2>
+        <p>توفر تطبيقات الويب التقدمية تجربة فائقة السلاسة تشمل:</p>
+        <ul>
+          <li>واجهات متجاوبة بالكامل مع كل أحجام الشاشات وتدعم اللمس بسلاسة.</li>
+          <li>إمكانية إضافة التطبيق للشاشة الرئيسية مع أيقونة وشاشة افتتاحية (Splash Screen).</li>
+          <li>تحميل لحظي بعد الزيارة الأولى بفضل التخزين المؤقت الذكي.</li>
+          <li>إمكانية متابعة بعض العمليات الأساسية وإدخال البيانات حتى عند انقطاع الإنترنت، ثم المزامنة تلقائياً.</li>
+        </ul>
+
+        <h2>3. تكلفة تطوير وصيانة أقل بكثير وبكود موحد</h2>
+        <p>بدلًا من بناء ثلاثة فرق برمجية لتطوير وصيانة تطبيقات منفصلة (تطبيق ويب، وتطبيق آيفون، وتطبيق أندرويد)، تبني الشركة <strong>نظام ويب واحد متكامل</strong> يعمل على جميع الأجهزة في الوقت نفسه.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 ميزة تشغيلية كبرى:</strong> أي تعديل أو إصلاح برمجي أو ميزة جديدة تظهر فوراً لجميع المستخدمين بضغطة زر واحدة دون انتظار أيام لموافقة وتحديثات متاجر التطبيقات.</p>
+        </div>
+
+        <h2>4. لماذا تهم تطبيقات PWA الشركات في الشرق الأوسط؟</h2>
+        <p>في أسواقنا المحلية، تبحث الشركات عن كفاءة التشغيل وسرعة التواصل. وتعد PWAs حلاً مثالياً في:</p>
+        <ul>
+          <li><strong>بوابات طلبات B2B:</strong> تمكين التجار والموزعين من طلب البضائع ومتابعة الحسابات من هواتفهم مباشرة.</li>
+          <li><strong>تطبيقات الفنيين ومندوبي المبيعات:</strong> تسجيل الزيارات والفواتير أثناء التنقل والمناطق ضعيفة التغطية.</li>
+          <li><strong>لوحات التحكم التنفيذية:</strong> متابعة الإدارة للمبيعات والعمليات بلمسة واحدة من شاشة الهاتف.</li>
+          <li><strong>منصات الحجز والخدمات الداخلية:</strong> تقديم خدمات سلسة للموظفين والعملاء دون تعقيدات تقنية.</li>
+        </ul>
+
+        <h2>5. متى لا تكون PWA الخيار الأفضل؟</h2>
+        <p>ليست كل تجربة مناسبة لتطبيق PWA. فالتطبيقات التي تحتاج إلى ألعاب ثلاثية الأبعاد مكثفة، أو ارتباط عميق بحساسات خاصة جدًا بالهاتف تظل بحاجة إلى تطبيقات Native متخصصة.</p>
+        <p>لذلك يتم اختيار التقنية المناسبة بناءً على دراسة متطلبات عملك الواقعية وليس لمجرد متابعة الصيحات.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 الخلاصة:</strong> تقدم تطبيقات الويب التقدمية فرصة استثنائية لبناء تجارب رقمية أسرع وأسهل وصولًا بتكلفة استثمارية ذكية.<br><br>
+          <strong>المستقبل ليس لتطبيقات أكثر، بل لتجارب رقمية أفضل.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= CONVERSION CTA BOX ================= -->
+      <section class="article-cta-box">
+        <!-- English CTA -->
+        <div class="lang-en">
+          <h3>Looking to build a high-performance web or mobile application?</h3>
+          <p>Partner with <strong>ITQAN Solutions</strong> to design responsive, scalable digital platforms that your customers and team love using.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>Discuss Your Digital Product</a>
+            <a href="https://wa.me/201142703439?text=Hello%20ITQAN%20Solutions!%20I'd%20like%20to%20discuss%20a%20Web%20or%20Mobile%20App." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Arabic CTA -->
+        <div class="lang-ar">
+          <h3>هل تخطط لبناء تطبيق ويب أو منصة هاتف متطورة لأعمالك؟</h3>
+          <p>تعاون مع فريق <strong>ITQAN Solutions</strong> لتصميم وتطوير تجارب رقمية سريعة وقابلة للتوسع تخدم أهداف شركتك بكفاءة.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>طلب استشارة تطوير رقمي</a>
+            <a href="https://wa.me/201142703439?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20ITQAN%20Solutions!%20%D8%A3%D9%88%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D9%88%D9%8A%D8%A8%20%D8%A3%D9%88%20%D9%85%D9%88%D8%A8%D8%A7%D9%8A%D9%84." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 تحدث معنا عبر واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Nav / Back to blog -->
+      <div class="article-footer-nav">
+        <div>
+          <a href="blog.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">← Back to Insights</span>
+            <span class="lang-ar">→ العودة إلى المقالات</span>
+          </a>
+        </div>
+        <div>
+          <a href="services.html#digital" class="btn btn-ghost" data-link>
+            <span class="lang-en">Explore Digital Solutions →</span>
+            <span class="lang-ar">استكشف الحلول الرقمية ←</span>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

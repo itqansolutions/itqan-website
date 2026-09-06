@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Mid-Sized Companies Invest in Custom ERP in 2025 — ITQAN Solutions</title>
+  <meta name="description" content="Discover how custom ERP helps mid-sized companies improve efficiency, integrate data, and turn complex operations into a competitive advantage.">
+  
+  <!-- OG / Twitter Card meta tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ITQAN Solutions">
+  <meta property="og:title" content="Why Mid-Sized Companies Invest in Custom ERP in 2025 | لماذا تستثمر الشركات المتوسطة في ERP مخصص">
+  <meta property="og:description" content="Off-the-shelf software no longer fits complex operational needs. Here is why bespoke ERP is becoming the competitive advantage.">
+  <meta property="og:image" content="https://itqansolutions.org/blog-1-erp.png">
+  <meta property="og:url" content="https://itqansolutions.org/blog-custom-erp-2025.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Mid-Sized Companies Invest in Custom ERP in 2025 | ITQAN Solutions">
+  <meta name="twitter:description" content="Off-the-shelf software no longer fits complex operational needs. Here is why bespoke ERP is becoming the competitive advantage.">
+  <meta name="twitter:image" content="https://itqansolutions.org/blog-1-erp.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
+              </a>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
+    <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
+    <div class="sidebar-divider"></div>
+    <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
+    <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
+    <div class="sidebar-divider"></div>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <a class="btn btn-primary w-full" href="contact.html" data-i18n="cta.demo" data-link style="justify-content:center">Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- MAIN ARTICLE -->
+  <main class="blog-article-wrapper">
+    <!-- Breadcrumb -->
+    <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <div class="lang-en">
+        <a href="index.html" data-link>Home</a> <span>/</span>
+        <a href="blog.html" data-link>Insights</a> <span>/</span>
+        <span>Custom ERP in 2025</span>
+      </div>
+      <div class="lang-ar">
+        <a href="index.html" data-link>الرئيسية</a> <span>/</span>
+        <a href="blog.html" data-link>المقالات</a> <span>/</span>
+        <span>ERP مخصص في 2025</span>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="article-header">
+      <div class="article-meta-row">
+        <span class="badge badge-primary">
+          <span class="lang-en">Digital Transformation</span>
+          <span class="lang-ar">التحول الرقمي</span>
+        </span>
+        <span class="badge badge-outline">
+          <span class="lang-en">ERP & Systems</span>
+          <span class="lang-ar">أنظمة ERP</span>
+        </span>
+        <span style="font-size: 13.5px; color: var(--text-muted);">
+          <span class="lang-en">⏱️ 6 min read • 2025</span>
+          <span class="lang-ar">⏱️ قراءة 6 دقائق • 2025</span>
+        </span>
+      </div>
+
+      <!-- English Title & Lead -->
+      <div class="lang-en">
+        <h1 class="article-title">Why Mid-Sized Companies Invest in Custom ERP in 2025</h1>
+        <p class="article-lead">When off-the-shelf software no longer fits complex operations. Discover why bespoke ERP is becoming a decisive competitive advantage.</p>
+      </div>
+
+      <!-- Arabic Title & Lead -->
+      <div class="lang-ar">
+        <h1 class="article-title">لماذا تستثمر الشركات المتوسطة في ERP مخصص في 2025؟</h1>
+        <p class="article-lead">البرمجيات الجاهزة لم تعد تلائم الاحتياجات التشغيلية المعقدة. إليك لماذا أصبح الـ ERP المخصص ميزة تنافسية استراتيجية.</p>
+      </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="article-hero-media">
+      <img src="blog-1-erp.png" alt="Why Mid-Sized Companies Invest in Custom ERP in 2025 - ITQAN Solutions" loading="eager">
+    </div>
+
+    <!-- Article Body -->
+    <article class="article-body">
+      
+      <!-- ================= ENGLISH CONTENT ================= -->
+      <div class="lang-en">
+        <p>In a rapidly changing business environment, mid-sized companies need more than sales growth to remain competitive. They need efficient operations, reliable data, and the ability to adapt to changing customer and business requirements.</p>
+
+        <p>As companies expand, off-the-shelf software often begins to reveal its limitations—especially when operations become more complex and require integrations or custom workflows that standard solutions cannot fully support.</p>
+
+        <p>This is why <strong>custom ERP</strong> has become a strategic investment for companies looking for more than a basic accounting or inventory system. It is an investment in an operational platform designed around the business itself.</p>
+
+        <h2>1. Because every business operates differently</h2>
+        <p>No two companies have exactly the same workflows. A distribution company may need advanced inventory, branch, and purchasing management, while a services company may need project, contract, and billing management. Clinics and healthcare organizations need appointment scheduling connected with medical files and billing.</p>
+        <p>Off-the-shelf ERP systems may offer these functions in a general form, but they do not always match the company’s actual way of working. A custom ERP, on the other hand, is designed around real business processes, reducing the need to change operations to fit the software.</p>
+
+        <h2>2. Because customization has become a competitive advantage</h2>
+        <p>When a system accurately reflects how a company operates, it becomes easier to process orders, reduce errors, accelerate workflows, and improve customer experience.</p>
+        <p>For example, a custom ERP can connect sales, inventory, purchasing, and accounting in one seamless workflow, allowing data to move automatically between departments instead of being re-entered manually.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>🎯 The Result:</strong> Less time spent on repetitive clerical tasks, and more time focused on strategic growth.</p>
+        </div>
+
+        <h2>3. Because data is now the foundation of decision-making</h2>
+        <p>Mid-sized companies often rely on data spread across Excel sheets, accounting systems, sales applications, and disparate tools. Over time, collecting and analyzing this fragmented data becomes a serious operational barrier.</p>
+        <p>A custom ERP centralizes business data into a single unified platform, providing reports and executive dashboards tailored to the exact KPIs management actually tracks.</p>
+        <p>Instead of merely asking, <em>“What happened?”</em>, management can ask higher-value strategic questions:</p>
+        <ul>
+          <li><strong>Inventory control:</strong> Where is dead stock accumulating across warehouses?</li>
+          <li><strong>Profitability:</strong> Which specific products or services generate the highest net margin?</li>
+          <li><strong>Branch performance:</strong> Which branches or departments require process optimization?</li>
+          <li><strong>Bottlenecks:</strong> Where are repetitive errors occurring or customer workflows getting delayed?</li>
+        </ul>
+
+        <h2>4. Because integration with other systems is now essential</h2>
+        <p>Modern businesses rarely operate through a single siloed system. They require seamless connections to payment gateways, e-commerce websites, mobile sales applications, HRMS, and marketing automation tools.</p>
+        <p>A custom ERP allows these integrations to be engineered around the company’s specific workflows, eliminating disconnected point solutions and manual data re-entry that drains productive hours.</p>
+
+        <h2>5. Because AI creates real value when embedded into operations</h2>
+        <p>AI is no longer just a tool for copywriting or chat. When embedded directly into an ERP workflow, it powers intelligent data analysis, pattern recognition, proactive inventory alerts, demand forecasting, and automated operational decisions.</p>
+        <p>However, the true value does not come from slapping the word <strong>AI</strong> onto a system—it comes from using targeted machine intelligence to solve a concrete operational problem.</p>
+
+        <h2>6. Because sustainable growth requires a scalable system</h2>
+        <p>An off-the-shelf package may seem sufficient at the beginning of a company’s journey. However, as the business opens new branches, hires more team members, and introduces new product lines, off-the-shelf software quickly becomes restrictive.</p>
+        <p>A custom ERP is architected to scale alongside your ambitions, enabling new modules, custom workflows, and third-party integrations to be introduced seamlessly without overhauling your entire core architecture.</p>
+
+        <h2>7. Because investment should be measured by ROI, not purchase price</h2>
+        <p>Off-the-shelf software might look cheaper on day one, but the hidden total cost of ownership (TCO) adds up rapidly:</p>
+        <ul>
+          <li>Recurring per-user license fees that escalate as your team expands.</li>
+          <li>Costly third-party connector plugins and customization workarounds.</li>
+          <li>Extensive manual labor to bridge system gaps.</li>
+          <li>The inevitable, disruptive cost of replacing the entire system after 2–3 years.</li>
+        </ul>
+        <p>That is why enterprise leaders evaluate custom ERP based on <strong>Return on Investment (ROI)</strong> and long-term operational freedom, rather than just initial licensing fees.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 Conclusion:</strong> In 2025, custom ERP is no longer just a technical choice for mid-sized enterprises—it is an engine for agility, operational control, and enduring market leadership.<br><br>
+          <strong>The real investment is not in buying software. It is in building a better way of working.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= ARABIC CONTENT ================= -->
+      <div class="lang-ar">
+        <p>في بيئة أعمال تتغير بسرعة، لم يعد نجاح الشركات المتوسطة يعتمد فقط على زيادة المبيعات، بل على قدرتها على إدارة العمليات بكفاءة، وتحويل البيانات إلى قرارات، والتكيف مع احتياجات العملاء. ومع توسع الشركات، تبدأ الأنظمة الجاهزة في إظهار حدودها، خصوصًا عندما تصبح العمليات أكثر تعقيدًا وتحتاج إلى تكاملات وتخصيصات لا توفرها الحلول التقليدية.</p>
+
+        <p>لهذا السبب، أصبح <strong>الـ ERP المخصص</strong> خيارًا استراتيجيًا للشركات التي تبحث عن أكثر من مجرد برنامج لإدارة الحسابات والمخزون. فهو يمثل استثمارًا في بنية تشغيلية مصممة حول طبيعة العمل، وليس مجرد شراء نظام جاهز.</p>
+
+        <h2>1. لأن طبيعة كل شركة مختلفة</h2>
+        <p>لا تعمل جميع الشركات بالطريقة نفسها. فشركة التوزيع تحتاج إلى إدارة مخزون وفروع وطلبات شراء، بينما تحتاج شركة الخدمات إلى إدارة مشاريع وعقود وفوترة، وتحتاج العيادات إلى ربط المواعيد والملفات الطبية والمدفوعات.</p>
+        <p>قد توفر الأنظمة الجاهزة هذه الوظائف بشكل عام، لكنها لا تضمن دائمًا توافقها مع دورة العمل الفعلية. أما النظام المخصص، فيُبنى وفق العمليات الحقيقية للشركة، مما يقلل الحاجة إلى تغيير طريقة العمل لتناسب البرنامج.</p>
+
+        <h2>2. لأن التخصيص أصبح ميزة تنافسية</h2>
+        <p>عندما تمتلك الشركة نظامًا يعكس عملياتها بدقة، يصبح من الأسهل تنفيذ الطلبات، وتقليل الأخطاء، وتسريع الإجراءات، وتحسين تجربة العملاء.</p>
+        <p>على سبيل المثال، يمكن لنظام مخصص أن يربط بين المبيعات والمخزون والمشتريات والحسابات في دورة واحدة، بحيث تنتقل البيانات تلقائيًا بين الأقسام بدلًا من إعادة إدخالها يدويًا.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>🎯 النتيجة:</strong> وقت أقل في الأعمال الروتينية، ووقت أكبر للتركيز على النمو.</p>
+        </div>
+
+        <h2>3. لأن البيانات أصبحت أساس القرار</h2>
+        <p>تعتمد الشركات المتوسطة على بيانات كثيرة موزعة بين ملفات Excel، وأنظمة محاسبية، وبرامج مبيعات، وأدوات أخرى. ومع الوقت، يصبح جمع هذه البيانات وتحليلها تحديًا حقيقيًا يعطل الإدارة.</p>
+        <p>يساعد الـ ERP المخصص على توحيد البيانات داخل منصة واحدة، مع تقارير ولوحات معلومات مصممة وفق مؤشرات الأداء التي تحتاجها الإدارة فعلًا.</p>
+        <p>بدلًا من السؤال: <em>"ماذا حدث؟"</em>، يمكن للإدارة الانتقال إلى أسئلة أكثر أهمية وعمقًا:</p>
+        <ul>
+          <li><strong>إدارة المخزون:</strong> أين تتراكم المخزونات غير المتحركة عبر المستودعات؟</li>
+          <li><strong>الربحية:</strong> ما المنتجات أو الخدمات الأكثر ربحية حقيقية؟</li>
+          <li><strong>كفاءة الفروع:</strong> ما الفروع أو الأقسام التي تحتاج إلى تحسين تشغيلي؟</li>
+          <li><strong>إزالة العقبات:</strong> أين تتكرر الأخطاء أو تتأخر العمليات في دورة العميل؟</li>
+        </ul>
+
+        <h2>4. لأن التكامل مع الأنظمة الأخرى أصبح ضرورة</h2>
+        <p>الشركات الحديثة لا تعمل من خلال نظام واحد فقط. فهي تحتاج إلى التكامل السلس مع بوابات الدفع الإلكتروني، والمواقع والمتاجر، وتطبيقات المبيعات، وأنظمة الموارد البشرية، وأدوات التسويق، وغيرها.</p>
+        <p>الـ ERP المخصص يتيح تصميم هذه التكاملات وفق احتياجات الشركة بدقة، بدلًا من الاعتماد على حلول منفصلة أو عمليات يدوية تستنزف الوقت والجهد.</p>
+
+        <h2>5. لأن الذكاء الاصطناعي يضيف قيمة حقيقية عند دمجه في العمليات</h2>
+        <p>لم يعد الذكاء الاصطناعي مجرد أداة للكتابة أو المحادثة. عند دمجه داخل نظام ERP، يمكن أن يساعد في تحليل البيانات، واكتشاف الأنماط، وتقديم تنبيهات استباقية، ودعم التنبؤ بالطلب، وتحسين بعض القرارات التشغيلية اليومية.</p>
+        <p>لكن القيمة الحقيقية لا تأتي من إضافة كلمة <strong>AI</strong> إلى النظام، بل من استخدامه لحل مشكلة فعلية تواجه الشركة.</p>
+
+        <h2>6. لأن النمو يحتاج إلى نظام قابل للتوسع</h2>
+        <p>قد يكون النظام الجاهز مناسبًا في بداية رحلة الشركة، لكنه قد يصبح عائقًا مع زيادة الفروع، والموظفين، والمنتجات، والعملاء، وتعقيد العمليات.</p>
+        <p>النظام المخصص يمكن تصميمه ليواكب هذا النمو، مع إمكانية إضافة وحدات جديدة وتطوير الوظائف دون الحاجة إلى تغيير المنظومة بالكامل أو تعطيل العمل.</p>
+
+        <h2>7. لأن الاستثمار يجب أن يُقاس بالعائد، وليس بسعر الشراء فقط</h2>
+        <p>قد يبدو النظام الجاهز أقل تكلفة عند الشراء، لكن التكلفة الحقيقية تشمل أيضًا:</p>
+        <ul>
+          <li>اشتراكات متكررة لكل مستخدم تتضاعف مع نمو الفريق.</li>
+          <li>تكلفة التخصيصات والإضافات والبرمجيات الوسيطة.</li>
+          <li>الوقت الضائع في الأعمال اليدوية ومعالجة أخطاء عدم التوافق.</li>
+          <li>تكلفة تغيير النظام بالكامل بعد سنتين أو ثلاث عند وصوله لطاقته القصوى.</li>
+        </ul>
+        <p>لذلك، يجب تقييم الـ ERP المخصص من خلال <strong>العائد على الاستثمار (ROI)</strong> والحرية التشغيلية التي يوفرها، وليس فقط من خلال سعر الترخيص الأولي.</p>
+
+        <div class="article-highlight-box">
+          <p><strong>💡 الخلاصة:</strong> في 2025، لم يعد الـ ERP المخصص مجرد خيار تقني للشركات المتوسطة، بل أصبح أداة لدعم الكفاءة، والمرونة، والنمو. فالشركة التي تستثمر في نظام يفهم عملياتها، ويربط بياناتها، ويدعم قراراتها، تكون أكثر قدرة على المنافسة والتوسع.<br><br>
+          <strong>الاستثمار الحقيقي ليس في شراء برنامج، بل في بناء طريقة عمل أفضل.</strong></p>
+        </div>
+      </div>
+
+      <!-- ================= CONVERSION CTA BOX ================= -->
+      <section class="article-cta-box">
+        <!-- English CTA -->
+        <div class="lang-en">
+          <h3>Is it time for an ERP system designed around your business?</h3>
+          <p>Connect with <strong>ITQAN Solutions</strong> to explore custom software solutions that support your operations and help your business grow.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>Request a Consultation</a>
+            <a href="https://wa.me/201142703439?text=Hello%20ITQAN%20Solutions!%20I'd%20like%20to%20discuss%20a%20Custom%20ERP%20system." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Arabic CTA -->
+        <div class="lang-ar">
+          <h3>هل حان الوقت لنظام ERP مصمم حول احتياجات شركتك؟</h3>
+          <p>تواصل مع فريق <strong>ITQAN Solutions</strong> لاستكشاف حلول برمجية مخصصة تدعم عملياتك وتساعدك على النمو.</p>
+          <div class="article-cta-actions">
+            <a href="contact.html" class="btn btn-primary" data-link>طلب استشارة مجانية</a>
+            <a href="https://wa.me/201142703439?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20ITQAN%20Solutions!%20%D8%A3%D9%88%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%AD%D9%88%D9%84%20%D9%86%D8%B8%D8%A7%D9%85%20ERP%20%D9%85%D8%AE%D8%B5%D8%B5." target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: #25D366; color: #25D366;">
+              💬 تحدث معنا عبر واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Nav / Back to blog -->
+      <div class="article-footer-nav">
+        <div>
+          <a href="blog.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">← Back to Insights</span>
+            <span class="lang-ar">→ العودة إلى المقالات</span>
+          </a>
+        </div>
+        <div>
+          <a href="services.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">Explore Software Solutions →</span>
+            <span class="lang-ar">استكشف حلول البرمجيات ←</span>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

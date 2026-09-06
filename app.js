@@ -235,11 +235,11 @@ const i18n = {
     'ins.desc':             'Expert perspectives on digital transformation, software engineering, and business growth strategies.',
     'ins.readmore':         'Read Article →',
     'ins.p1.cat':           'Digital Transformation',
-    'ins.p1.title':         'Why Mid-Market Companies Are Investing in Custom ERP in 2025',
-    'ins.p1.desc':          'Off-the-shelf software no longer fits complex operational needs. Here is why bespoke ERP is becoming the competitive advantage.',
+    'ins.p1.title':         'Why Mid-Sized Companies Invest in Custom ERP in 2025',
+    'ins.p1.desc':          'When off-the-shelf software no longer fits complex operations. Discover why bespoke ERP is becoming a decisive competitive advantage.',
     'ins.p2.cat':           'Marketing Strategy',
-    'ins.p2.title':         'The Performance Marketing Playbook for B2B Growth in the MENA Region',
-    'ins.p2.desc':          'A data-driven framework for running Meta Ads, Google Ads, and LinkedIn campaigns that generate qualified enterprise leads.',
+    'ins.p2.title':         'The Performance Marketing Playbook for B2B Growth in the Middle East',
+    'ins.p2.desc':          'A data-driven framework for generating qualified leads and turning marketing spend into measurable opportunities.',
     'ins.p3.cat':           'Business Automation',
     'ins.p3.title':         'How AI-Powered Automation Is Reshaping Business Operations',
     'ins.p3.desc':          'From document processing to intelligent reporting—explore how businesses are using automation to cut costs and accelerate decisions.',
@@ -935,11 +935,11 @@ const i18n = {
     'ins.desc':             'رؤى متخصصة في التحول الرقمي وهندسة البرمجيات واستراتيجيات نمو الأعمال.',
     'ins.readmore':         'اقرأ المقال ←',
     'ins.p1.cat':           'التحول الرقمي',
-    'ins.p1.title':         'لماذا تستثمر الشركات المتوسطة في ERP مخصص في 2025',
+    'ins.p1.title':         'لماذا تستثمر الشركات المتوسطة في ERP مخصص في 2025؟',
     'ins.p1.desc':          'البرمجيات الجاهزة لم تعد تلائم الاحتياجات التشغيلية المعقدة. إليك لماذا أصبح الـ ERP المخصص ميزة تنافسية.',
     'ins.p2.cat':           'استراتيجية التسويق',
     'ins.p2.title':         'دليل التسويق الأدائي لنمو B2B في منطقة الشرق الأوسط',
-    'ins.p2.desc':          'إطار عمل قائم على البيانات لتشغيل حملات Meta Ads وGoogle Ads وLinkedIn تولّد عملاء محتملين مؤهلين.',
+    'ins.p2.desc':          'إطار عمل قائم على البيانات لتوليد عملاء محتملين مؤهلين وتحويل الميزانية إلى فرص تجارية قابلة للقياس.',
     'ins.p3.cat':           'أتمتة الأعمال',
     'ins.p3.title':         'كيف تعيد الأتمتة المدعومة بالذكاء الاصطناعي تشكيل العمليات التجارية',
     'ins.p3.desc':          'من معالجة المستندات إلى التقارير الذكية—اكتشف كيف تستخدم الشركات الأتمتة لخفض التكاليف وتسريع القرارات.',
@@ -1471,3 +1471,128 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 2000);
 });
 
+/* =========================
+   WhatsApp Floating Button  (bilingual EN / AR)
+   ========================= */
+(function () {
+  const WA_NUMBER = '201142703439'; // +20 11 42703439
+
+  const WA_COPY = {
+    en: {
+      label:   'Chat with us',
+      message: "Hello ITQAN Solutions! I'd like to learn more about your services.",
+      aria:    'Chat with us on WhatsApp'
+    },
+    ar: {
+      label:   'تواصل معنا',
+      message: 'مرحباً ITQAN Solutions! أود معرفة المزيد عن خدماتكم.',
+      aria:    'تواصل معنا عبر واتساب'
+    }
+  };
+
+  const WA_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
+
+  // Build the button
+  const btn = document.createElement('a');
+  btn.id        = 'waFloatBtn';
+  btn.className = 'whatsapp-float';
+  btn.target    = '_blank';
+  btn.rel       = 'noopener noreferrer';
+  btn.innerHTML = WA_SVG + '<span class="whatsapp-float-label">Chat with us</span>';
+  document.body.appendChild(btn);
+
+  // Helper: update text, link & aria for the given lang
+  function updateWALang(lang) {
+    const copy = WA_COPY[lang] || WA_COPY.en;
+    const url  = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(copy.message);
+    btn.href   = url;
+    btn.setAttribute('aria-label', copy.aria);
+    const label = btn.querySelector('.whatsapp-float-label');
+    if (label) label.textContent = copy.label;
+    // Position handled automatically via CSS [dir="rtl"]
+    btn.style.left = '';
+    btn.style.right = '';
+  }
+
+  // Apply current saved language on load
+  document.addEventListener('DOMContentLoaded', function () {
+    const saved = localStorage.getItem('lang') || 'en';
+    updateWALang(saved);
+  });
+
+  // Patch applyLang so the button syncs whenever language is toggled
+  const _origApplyLang = typeof applyLang === 'function' ? applyLang : null;
+  if (_origApplyLang) {
+    // Override the global applyLang to also update the WA button
+    window._waUpdateLang = updateWALang;
+  }
+
+  // Listen for the lang toggle button click (most reliable hook)
+  document.addEventListener('click', function (e) {
+    const lb = e.target.closest('#langToggle');
+    if (!lb) return;
+    // The new lang is the opposite of the current html[lang]
+    const newLang = document.documentElement.lang === 'en' ? 'ar' : 'en';
+    // applyLang runs first (synchronous), so we update after a microtask
+    Promise.resolve().then(function () { updateWALang(newLang); });
+  });
+})();
+
+/* =========================
+   Contact Form — Formspree
+   ========================= */
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+
+  // ⚠️  SETUP REQUIRED:
+  // 1. Go to https://formspree.io and create a free account.
+  // 2. Click "New Form", set your email, and copy the form ID from the endpoint.
+  // 3. Replace YOUR_FORM_ID below with that ID (e.g. "xpwzkoab").
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var note      = form.querySelector('.form-note');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    var originalText = submitBtn.textContent;
+    submitBtn.disabled   = true;
+    submitBtn.textContent = 'Sending…';
+    if (note) { note.style.color = 'var(--text-muted)'; note.textContent = ''; }
+
+    try {
+      var data = new FormData(form);
+      var res  = await fetch(FORMSPREE_ENDPOINT, {
+        method:  'POST',
+        body:    data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        if (note) {
+          note.style.color = '#22c55e';
+          note.textContent  = '✓ Message sent! We\'ll get back to you within 24 hours.';
+        }
+        submitBtn.textContent = '✓ Sent';
+        setTimeout(function () {
+          submitBtn.disabled    = false;
+          submitBtn.textContent = originalText;
+        }, 4000);
+      } else {
+        var json = await res.json().catch(function () { return {}; });
+        throw new Error(json.error || 'Submission failed');
+      }
+    } catch (err) {
+      console.error('Form error:', err);
+      if (note) {
+        note.style.color = '#ef4444';
+        note.textContent  = '⚠️ Something went wrong. Please email us at info@itqansolutions.org';
+      }
+      submitBtn.disabled    = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+});

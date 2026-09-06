@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>POS vs ERP: What Does Your Growing Business Actually Need? — ITQAN Solutions</title>
+  <meta name="description" content="Discover when a point-of-sale (POS) system is enough and when your growing company needs a fully integrated enterprise ERP platform.">
+  
+  <!-- OG / Twitter Card meta tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ITQAN Solutions">
+  <meta property="og:title" content="POS vs ERP: What Does Your Growing Business Actually Need? | نقاط البيع POS مقابل ERP">
+  <meta property="og:description" content="When is POS enough, and when do you need a full ERP platform? A clear operational guide for growing businesses.">
+  <meta property="og:image" content="https://itqansolutions.org/favicon.png">
+  <meta property="og:url" content="https://itqansolutions.org/blog-pos-vs-erp.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="POS vs ERP: What Does Your Growing Business Actually Need? | ITQAN Solutions">
+  <meta name="twitter:description" content="When is POS enough, and when do you need a full ERP platform? A clear operational guide for growing businesses.">
+  <meta name="twitter:image" content="https://itqansolutions.org/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="row">
+      <a class="brand" href="index.html" data-link>
+        <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+        <span class="brand-text">ITQAN Solutions</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-overlay" id="navOverlay"></div>
+      <nav class="nav-links" role="menubar">
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu wide">
+            <div class="dropdown-group">
+              <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
+              <a href="services.html" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">⚙️</span>
+                <span data-i18n="nav.sw">Software Engineering</span>
+              </a>
+              <a href="services.html#digital" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🌐</span>
+                <span data-i18n="nav.digital">Digital Solutions</span>
+              </a>
+              <a href="services.html#marketing" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">📣</span>
+                <span data-i18n="nav.marketing">Marketing & Creative</span>
+              </a>
+              <a href="services.html#automation" class="dropdown-item" data-link>
+                <span class="dropdown-item-icon">🤖</span>
+                <span data-i18n="nav.automation">Business Automation</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="nav.products">Products
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            </a>
+            <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🍽️</span>
+              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+            </a>
+            <a href="tashgheel-services.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🔧</span>
+              <span data-i18n="nav.srv">Tashgheel Services</span>
+            </a>
+          </div>
+        </div>
+        <a href="portfolio.html" data-i18n="nav.cases" data-link>Case Studies</a>
+        <a href="about.html" data-i18n="nav.about" data-link>About</a>
+        <a href="blog.html" data-i18n="nav.insights" data-link>Insights</a>
+        <a href="contact.html" data-i18n="nav.contact" data-link>Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="lang-btn" id="langToggle">AR</button>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.demo" data-link>Request a Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar -->
+  <aside class="nav-sidebar" id="navSidebar" role="navigation" aria-label="Mobile menu">
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+    <a href="index.html" class="sidebar-link" data-i18n="nav.home" data-link>Home</a>
+    <a href="services.html" class="sidebar-link" data-i18n="nav.solutions" data-link>Solutions</a>
+    <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.products" data-link>Products</a>
+    <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
+    <a href="about.html" class="sidebar-link" data-i18n="nav.about" data-link>About</a>
+    <a href="blog.html" class="sidebar-link" data-i18n="nav.insights" data-link>Insights</a>
+    <a href="contact.html" class="sidebar-link" data-i18n="nav.contact" data-link>Contact</a>
+    <div class="sidebar-cta">
+      <button class="lang-btn" id="langToggleMobile" style="width:100%; justify-content:center;">AR</button>
+      <a class="btn btn-primary" href="contact.html" style="width:100%; justify-content:center;" data-i18n="cta.demo" data-link>Request a Demo</a>
+    </div>
+  </aside>
+
+  <!-- MAIN ARTICLE -->
+  <main class="article-container">
+    <!-- Breadcrumbs -->
+    <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html" data-link>Home</a> &gt; 
+      <a href="blog.html" data-link>Insights</a> &gt; 
+      <span class="lang-en">POS vs ERP</span>
+      <span class="lang-ar">نقاط البيع POS مقابل ERP</span>
+    </nav>
+
+    <article class="article-content">
+      <!-- Article Header -->
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="insight-category" style="background:rgba(217, 119, 6, 0.1); color:var(--amber);">ERP & Systems</span>
+          <span class="article-date">Dec 2024</span>
+          <span class="article-read-time"><span class="lang-en">5 min read</span><span class="lang-ar">5 دقائق قراءة</span></span>
+        </div>
+
+        <!-- English Title -->
+        <div class="lang-en">
+          <h1 class="article-title">POS vs ERP: What Does Your Growing Business Actually Need?</h1>
+          <p class="article-subtitle">When is a point-of-sale system enough, and when do you need a full ERP platform?</p>
+        </div>
+
+        <!-- Arabic Title -->
+        <div class="lang-ar">
+          <h1 class="article-title">نقاط البيع POS مقابل ERP: ماذا يحتاج عملك المتنامي فعلًا؟</h1>
+          <p class="article-subtitle">متى يكون نظام نقاط البيع كافيًا، ومتى تحتاج إلى منصة ERP متكاملة؟</p>
+        </div>
+      </header>
+
+      <!-- Hero Visual Graphic Banner -->
+      <div class="article-hero-graphic" style="background: linear-gradient(135deg, #78350f 0%, #1e293b 100%); padding: 48px 32px; border-radius: 16px; margin-bottom: 40px; text-align: center; border: 1px solid rgba(255,255,255,0.1); box-shadow: var(--shadow-md);">
+        <div style="display:flex; justify-content:center; align-items:center; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+          <div style="background:rgba(255,255,255,0.1); padding:16px 24px; border-radius:12px; backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.15); min-width:140px;">
+            <div style="font-size:36px; margin-bottom:6px;">💳</div>
+            <div style="font-weight:700; color:#fff;">POS</div>
+            <div style="font-size:12px; color:#cbd5e1;"><span class="lang-en">Sales & Checkout</span><span class="lang-ar">البيع والدفع السريع</span></div>
+          </div>
+          <div style="font-size:28px; font-weight:800; color:var(--amber);">VS</div>
+          <div style="background:rgba(255,255,255,0.1); padding:16px 24px; border-radius:12px; backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.15); min-width:140px;">
+            <div style="font-size:36px; margin-bottom:6px;">🏢</div>
+            <div style="font-weight:700; color:#fff;">ERP</div>
+            <div style="font-size:12px; color:#cbd5e1;"><span class="lang-en">Whole Business Engine</span><span class="lang-ar">إدارة الشركة المتكاملة</span></div>
+          </div>
+        </div>
+        <p style="color:#e2e8f0; font-size:15px; margin:0; max-width:600px; margin:0 auto;">
+          <span class="lang-en">Deciding between a specialized Point of Sale and an Enterprise Resource Planning platform comes down to operational complexity, not headcount.</span>
+          <span class="lang-ar">الاختيار بين نظام نقاط البيع ونظام تخطيط موارد المؤسسة يعتمد على طبيعة وتعقيد العمليات، وليس حجم الشركة وحده.</span>
+        </p>
+      </div>
+
+      <!-- ARABIC CONTENT -->
+      <div class="lang-ar article-body">
+        <p class="lead-paragraph">
+          مع نمو الشركات، قد تبدأ الحاجة إلى نظام لإدارة المبيعات والفواتير والمخزون. لكن مع زيادة الفروع، والموظفين، والمشتريات، والتقارير، قد يصبح من الضروري التفكير في منظومة أوسع.
+        </p>
+        <p>
+          الاختيار بين POS وERP يعتمد على <strong>طبيعة العمليات</strong>، وليس على حجم الشركة وحده.
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin:32px 0;">
+          <div style="background:var(--bg-surface); padding:24px; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow-sm);">
+            <h3 style="color:var(--primary); margin-top:0; display:flex; align-items:center; gap:8px;">
+              <span>💳</span> ما هو نظام POS؟
+            </h3>
+            <p>نظام نقاط البيع (Point of Sale) يركز على تنفيذ عمليات البيع المباشرة واليومية، ويشمل:</p>
+            <ul style="padding-right:20px; line-height:1.8;">
+              <li>تسجيل المبيعات في نقاط الدفع.</li>
+              <li>إصدار الفواتير الورقية والإلكترونية السريعة.</li>
+              <li>إدارة المدفوعات النقدية والبنكية.</li>
+              <li>متابعة المخزون اللحظي المرتبط بالبيع.</li>
+              <li>إدارة بعض بيانات العملاء ونقاط الولاء.</li>
+              <li>تقارير المبيعات اليومية والشفتات.</li>
+            </ul>
+            <p style="margin-bottom:0;"><strong>الهدف:</strong> مناسب عندما تكون الأولوية القصوى هي إدارة عملية البيع وخدمة العميل بسرعة وكفاءة.</p>
+          </div>
+
+          <div style="background:var(--bg-surface); padding:24px; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow-sm);">
+            <h3 style="color:var(--amber); margin-top:0; display:flex; align-items:center; gap:8px;">
+              <span>🏢</span> ما هو نظام ERP؟
+            </h3>
+            <p>ERP (تخطيط موارد المؤسسات) هو نظام متكامل يربط عدة أقسام وعمليات حيوية داخل الشركة:</p>
+            <ul style="padding-right:20px; line-height:1.8;">
+              <li>المبيعات ونقاط التوزيع.</li>
+              <li>المشتريات وإدارة الموردين وعروض الأسعار.</li>
+              <li>المخزون المتعدد والمستودعات والتحويلات الداخلية.</li>
+              <li>الحسابات العامة، الدفاتر المحاسبية، والضرائب.</li>
+              <li>الموارد البشرية وكشوف الرواتب والحضور.</li>
+              <li>إدارة ومتابعة الفروع عن بُعد.</li>
+              <li>التقارير المالية والتشغيلية للإدارة العليا.</li>
+            </ul>
+            <p style="margin-bottom:0;"><strong>الهدف:</strong> توحيد البيانات وربط جميع العمليات بدلًا من تشغيل كل قسم كجزيرة منعزلة.</p>
+          </div>
+        </div>
+
+        <h2>1. متى يكون نظام POS كافيًا؟</h2>
+        <p>قد يكون نظام نقاط البيع المستقل هو الخيار الأكثر كفاءة واقتصادية عندما:</p>
+        <ul>
+          <li><strong>يتركز العمل على البيع المباشر:</strong> في المتاجر الفردية، الكافيهات، أو محلات التجزئة ذات المعاملات النقدية السريعة.</li>
+          <li><strong>تكون العمليات الإدارية بسيطة:</strong> لا توجد تصنيع أو سلاسل توريد معقدة.</li>
+          <li><strong>لا توجد احتياجات محاسبية أو تشغيلية معقدة:</strong> يمكن لإدارة الحسابات التعامل مع القيود بشكل دوري ومستقل.</li>
+          <li><strong>لا تحتاج الشركة إلى تكاملات واسعة:</strong> ولا توجد دورة مشتريات واستيراد متعددة المراحل.</li>
+          <li><strong>يكون عدد الفروع محدودًا:</strong> ويتم التحكم فيه مباشرة دون الحاجة لمركزية معقدة.</li>
+        </ul>
+
+        <h2>2. متى تحتاج شركتك إلى نظام ERP متكامل؟</h2>
+        <p>تظهر الحاجة الماسة لنظام ERP عندما يبدأ النمو في فرض تحديات تنظيمية، خصوصًا عند حدوث الآتي:</p>
+        <ul>
+          <li><strong>تعدد الفروع أو المخازن المركزية:</strong> وصعوبة معرفة الأرصدة الحقيقية والتالف والحركة بين المستودعات.</li>
+          <li><strong>تعقد المشتريات والمخزون:</strong> والحاجة لأوامر شراء، فواتير موردين، وتتبع دورة الدفع.</li>
+          <li><strong>احتياج الإدارة إلى تقارير مالية وتشغيلية موحدة:</strong> لحظية وبدون انتظار أيام لتجميع جداول إكسل.</li>
+          <li><strong>وجود عمليات مالية وتشغيلية مترابطة:</strong> مثل ربط أذونات الصرف والإضافة بالقيود المحاسبية الآلية.</li>
+          <li><strong>الحاجة لإدارة الموارد البشرية والرواتب:</strong> وربط الأداء بالحوافز وساعات العمل.</li>
+          <li><strong>عندما يصبح الاعتماد على برامج متفرقة عبئًا:</strong> يضيع وقت الفريق في نقل البيانات يدويًا وتصحيح الأخطاء.</li>
+        </ul>
+
+        <div class="article-callout" style="border-right: 4px solid var(--primary); background: rgba(37,99,235,0.05); padding: 20px 24px; border-radius: 8px; margin: 32px 0;">
+          <h3 style="margin-top:0; color:var(--primary);">3. هل يمكن أن يعمل POS داخل منظومة ERP؟</h3>
+          <p>
+            <strong>نعم وبكل تأكيد!</strong> في الواقع، هذا هو النموذج الأمثل لمعظم الشركات الناجحة في التجزئة والخدمات: أن يكون الـ POS هو واجهة الكاشير المباشرة في الفرع، لكنه متصل في الخلفية بقاعدة بيانات الـ ERP الموحدة.
+          </p>
+          <p style="margin-bottom:0;">
+            تنتقل بيانات المبيعات لحظيًا إلى المخزون، الحسابات العامة، وسجل العميل، مما يلغي تكرار إدخال البيانات ويمنح الإدارة رؤية كاملة 360 درجة.
+          </p>
+        </div>
+
+        <div class="article-quote" style="margin: 36px 0; padding: 24px; background: var(--bg-surface); border-radius: 12px; border: 1px solid var(--border); font-size: 18px; font-weight: 600; text-align: center; color: var(--text-heading);">
+          "اختر النظام الذي يناسب تعقيد عملك اليوم، ويترك مساحة كافية لنموك غدًا دون أن تضطر لإعادة البناء من الصفر."
+        </div>
+
+        <h3>الخلاصة</h3>
+        <p>
+          إذا كان هدفك الحالي هو إدارة الكاشير ونقاط البيع اليومية فقط، فقد يكون POS كافيًا. أما إذا كنت تتوسع وتحتاج إلى ربط المبيعات بالمخازن والمشتريات والمالية وإدارة الفروع المتعددة، فإن ERP هو الاستثمار الذي سيحمي أرباحك ويدعم توسعك.
+        </p>
+      </div>
+
+      <!-- ENGLISH CONTENT -->
+      <div class="lang-en article-body">
+        <p class="lead-paragraph">
+          As businesses grow, they often begin by needing a system to manage sales, invoices, and inventory. But as branches, employees, purchasing, and reporting requirements increase, a broader business platform may become necessary.
+        </p>
+        <p>
+          The choice between POS and ERP depends on <strong>operational complexity</strong>—not company size alone.
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin:32px 0;">
+          <div style="background:var(--bg-surface); padding:24px; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow-sm);">
+            <h3 style="color:var(--primary); margin-top:0; display:flex; align-items:center; gap:8px;">
+              <span>💳</span> What is a POS System?
+            </h3>
+            <p>A Point of Sale (POS) system focuses on completing sales transactions and customer checkout smoothly:</p>
+            <ul style="padding-left:20px; line-height:1.8;">
+              <li>Recording in-store or counter sales.</li>
+              <li>Issuing print and electronic receipts and tax invoices.</li>
+              <li>Managing cash, card, and digital payments.</li>
+              <li>Tracking sales-related local inventory levels.</li>
+              <li>Managing customer data and loyalty points.</li>
+              <li>Shift management and daily sales reporting.</li>
+            </ul>
+            <p style="margin-bottom:0;"><strong>Ideal when:</strong> Your top priority is running fast checkout and efficient retail floor transactions.</p>
+          </div>
+
+          <div style="background:var(--bg-surface); padding:24px; border-radius:12px; border:1px solid var(--border); box-shadow:var(--shadow-sm);">
+            <h3 style="color:var(--amber); margin-top:0; display:flex; align-items:center; gap:8px;">
+              <span>🏢</span> What is an ERP System?
+            </h3>
+            <p>Enterprise Resource Planning (ERP) is an integrated engine connecting multiple business departments:</p>
+            <ul style="padding-left:20px; line-height:1.8;">
+              <li>Point of sale and omnichannel distribution.</li>
+              <li>Procurement, purchase orders, and vendor management.</li>
+              <li>Multi-warehouse inventory, batch tracking, and internal transfers.</li>
+              <li>General ledger, journal entries, payables, receivables, and taxes.</li>
+              <li>Human resources, payroll, and attendance.</li>
+              <li>Multi-branch central governance.</li>
+              <li>Consolidated executive dashboards and financial audits.</li>
+            </ul>
+            <p style="margin-bottom:0;"><strong>Goal:</strong> Centralize data and connect operations instead of running each department as an isolated silo.</p>
+          </div>
+        </div>
+
+        <h2>1. When is POS Enough?</h2>
+        <p>A standalone POS may be the most cost-effective and agile choice when:</p>
+        <ul>
+          <li><strong>The business is focused on direct sales:</strong> Single-outlet shops, cafes, or boutiques with straightforward retail cash flows.</li>
+          <li><strong>Operations are simple:</strong> No complex assembly, manufacturing, or layered supply logistics.</li>
+          <li><strong>Complex accounting needs are limited:</strong> External periodic bookkeeping handles company financials without deep daily ERP journal integration.</li>
+          <li><strong>Extensive integrations are not required:</strong> Minimal interconnectivity is needed across third-party fulfillment or wholesale partners.</li>
+          <li><strong>The number of branches is small:</strong> Direct management supervision is feasible on the floor.</li>
+        </ul>
+
+        <h2>2. When Do You Need an ERP System?</h2>
+        <p>ERP becomes indispensable when business growth generates friction across departments:</p>
+        <ul>
+          <li><strong>Multiple branches or warehouses:</strong> When inventory discrepancies, transfer delays, or stockouts frequently impact sales.</li>
+          <li><strong>Purchasing and inventory become complex:</strong> Managing lead times, vendor price comparisons, and automated reorder triggers.</li>
+          <li><strong>Management needs unified reporting:</strong> Having one single source of truth rather than waiting days for staff to consolidate Excel spreadsheets.</li>
+          <li><strong>Financial and operational processes are interconnected:</strong> Stock movements must immediately trigger corresponding accounting entries without human data entry.</li>
+          <li><strong>The company needs HR and workflow governance:</strong> Tracking employee commissions, permissions, approval hierarchies, and payroll.</li>
+          <li><strong>Disconnected systems become a liability:</strong> When employees spend hours re-keying data between sales apps, inventory sheets, and accounting books.</li>
+        </ul>
+
+        <div class="article-callout" style="border-left: 4px solid var(--primary); background: rgba(37,99,235,0.05); padding: 20px 24px; border-radius: 8px; margin: 32px 0;">
+          <h3 style="margin-top:0; color:var(--primary);">3. Can POS Work as Part of an ERP?</h3>
+          <p>
+            <strong>Yes—and for scaling businesses, this is the gold standard.</strong> Modern architectures allow your front-line cashier staff to use an intuitive POS interface that synchronizes seamlessly with the central ERP backbone.
+          </p>
+          <p style="margin-bottom:0;">
+            Sales data immediately updates central inventory, writes accounting ledger entries, and updates customer purchase history in real time—eliminating duplicate data entry and giving executives an accurate 360-degree overview.
+          </p>
+        </div>
+
+        <div class="article-quote" style="margin: 36px 0; padding: 24px; background: var(--bg-surface); border-radius: 12px; border: 1px solid var(--border); font-size: 18px; font-weight: 600; text-align: center; color: var(--text-heading);">
+          "Choose the system that fits your business complexity today—and leaves room for tomorrow’s growth without forcing costly rebuilds."
+        </div>
+
+        <h3>Conclusion</h3>
+        <p>
+          If your main goal is managing point-of-sale checkout, POS may be enough. If you need to connect sales with inventory, purchasing, accounting, and multi-branch operations, an ERP is the investment that protects margins and unlocks scalable growth.
+        </p>
+      </div>
+
+      <!-- Call to Action Card -->
+      <section class="article-cta-box" style="margin-top: 48px; padding: 36px 32px; background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%); border-radius: 16px; color: #fff; text-align: center;">
+        <div class="lang-en">
+          <h2 style="color: #fff; margin-bottom: 12px;">Looking to Upgrade Your Retail or ERP Infrastructure?</h2>
+          <p style="max-width: 600px; margin: 0 auto 24px; color: #e0e7ff; font-size: 16px;">
+            Explore ITQAN's <strong>Tashgheel</strong> retail systems and custom ERP architectures tailored to Middle Eastern businesses.
+          </p>
+          <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+            <a href="tashgheel-retail.html" class="btn btn-secondary" style="background:#fff; color:var(--primary); font-weight:700;">Explore Tashgheel Retail</a>
+            <a href="contact.html" class="btn btn-ghost" style="color:#fff; border-color:rgba(255,255,255,0.4);">Book a Consultation</a>
+          </div>
+        </div>
+        <div class="lang-ar">
+          <h2 style="color: #fff; margin-bottom: 12px;">هل تبحث عن ترقية نظام الكاشير أو بناء منظومة ERP لشركتك؟</h2>
+          <p style="max-width: 600px; margin: 0 auto 24px; color: #e0e7ff; font-size: 16px;">
+            اكتشف أنظمة <strong>تشغيل Tashgheel</strong> للتجزئة وحلول الـ ERP المخصصة التي نبنيها خصيصًا لتناسب متطلبات السوق العربي وتنمو معك.
+          </p>
+          <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+            <a href="tashgheel-retail.html" class="btn btn-secondary" style="background:#fff; color:var(--primary); font-weight:700;">استكشف نظام تشغيل للتجزئة</a>
+            <a href="contact.html" class="btn btn-ghost" style="color:#fff; border-color:rgba(255,255,255,0.4);">احجز استشارة مجانية</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Nav / Back to blog -->
+      <div class="article-footer-nav" style="margin-top:40px;">
+        <div>
+          <a href="blog.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">← Back to Insights</span>
+            <span class="lang-ar">→ العودة إلى المقالات</span>
+          </a>
+        </div>
+        <div>
+          <a href="tashgheel-retail.html" class="btn btn-ghost" data-link>
+            <span class="lang-en">Explore Tashgheel Solutions →</span>
+            <span class="lang-ar">استكشف حلول تشغيل ←</span>
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-link style="margin-bottom:12px">
+          <img class="brand-logo" src="favicon.png" alt="ITQAN Solutions">
+          <span class="brand-text">ITQAN Solutions</span>
+        </a>
+        <p class="brand-tagline" data-i18n="footer.tagline">Technology that powers your business. Marketing that grows it.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@itqansolutions.org" data-i18n="contact.email">info@itqansolutions.org</a>
+          <a href="tel:+201126522373" data-i18n="contact.phone1">+20 112 652 2373</a>
+          <a href="tel:+201155253886" data-i18n="contact.phone2">+20 115 525 3886</a>
+          <a href="tel:+201142703439" data-i18n="contact.phone3">+20 114 270 3439</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <img src="icon-facebook.png" alt="Facebook" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://instagram.com/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <img src="icon-instagram.png" alt="Instagram" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+          <a href="https://linkedin.com/company/itqansolutions" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <img src="icon-linkedin.png" alt="LinkedIn" style="width:18px;height:18px;filter:invert(1)">
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.solutions">Solutions</h4>
+        <div class="footer-links">
+          <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
+          <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
+        <div class="footer-links">
+          <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
+          <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
+          <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title" data-i18n="footer.col.company">Company</h4>
+        <div class="footer-links">
+          <a href="about.html" data-i18n="footer.about" data-link>About Us</a>
+          <a href="portfolio.html" data-i18n="footer.cases" data-link>Case Studies</a>
+          <a href="blog.html" data-i18n="footer.insights" data-link>Insights</a>
+          <a href="contact.html" data-i18n="footer.contact" data-link>Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
