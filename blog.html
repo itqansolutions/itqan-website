@@ -40,9 +40,7 @@
       <div class="nav-overlay" id="navOverlay"></div>
       <nav class="nav-links" role="menubar">
         <div class="dropdown">
-          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
+          <button class="dropdown-toggle" data-i18n="nav.solutions">Solutions</button>
           <div class="dropdown-menu wide">
             <div class="dropdown-group">
               <span class="dropdown-group-title" data-i18n="nav.solutions">Solutions</span>
@@ -56,7 +54,7 @@
               </a>
               <a href="services.html#marketing" class="dropdown-item" data-link>
                 <span class="dropdown-item-icon">📣</span>
-                <span data-i18n="nav.marketing">Marketing & Creative</span>
+                <span data-i18n="nav.marketing">Marketing &amp; Creative</span>
               </a>
               <a href="services.html#automation" class="dropdown-item" data-link>
                 <span class="dropdown-item-icon">🤖</span>
@@ -66,17 +64,27 @@
           </div>
         </div>
         <div class="dropdown">
-          <button class="dropdown-toggle" data-i18n="nav.products">Products
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
+          <button class="dropdown-toggle" data-i18n="nav.products">Products</button>
           <div class="dropdown-menu">
-            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
-              <span class="dropdown-item-icon">🛍️</span>
-              <span data-i18n="nav.ret">Tashgheel Retail</span>
+            <a href="tashgheel-crm.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🏢</span>
+              <span data-i18n="nav.crm">Tashgheel Real Estate CRM</span>
+            </a>
+            <a href="tashgheel-general-crm.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">📊</span>
+              <span data-i18n="nav.gcrm">Tashgheel General CRM</span>
             </a>
             <a href="tashgheel-restaurants.html" class="dropdown-item" data-link>
               <span class="dropdown-item-icon">🍽️</span>
-              <span data-i18n="nav.rest">Tashgheel Restaurants</span>
+              <span data-i18n="nav.rest">Tashgheel F&amp;B</span>
+            </a>
+            <a href="tashgheel-clinics.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🩺</span>
+              <span data-i18n="nav.cln">Tashgheel Clinics</span>
+            </a>
+            <a href="tashgheel-retail.html" class="dropdown-item" data-link>
+              <span class="dropdown-item-icon">🛍️</span>
+              <span data-i18n="nav.ret">Tashgheel Retail</span>
             </a>
             <a href="tashgheel-services.html" class="dropdown-item" data-link>
               <span class="dropdown-item-icon">🔧</span>
@@ -103,12 +111,15 @@
     <span class="sidebar-section" data-i18n="nav.solutions">Solutions</span>
     <a href="services.html" class="sidebar-link" data-i18n="nav.sw" data-link>Software Engineering</a>
     <a href="services.html#digital" class="sidebar-link" data-i18n="nav.digital" data-link>Digital Solutions</a>
-    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing & Creative</a>
+    <a href="services.html#marketing" class="sidebar-link" data-i18n="nav.marketing" data-link>Marketing &amp; Creative</a>
     <a href="services.html#automation" class="sidebar-link" data-i18n="nav.automation" data-link>Business Automation</a>
     <div class="sidebar-divider"></div>
     <span class="sidebar-section" data-i18n="nav.products">Products</span>
+    <a href="tashgheel-crm.html" class="sidebar-link" data-i18n="nav.crm" data-link>Tashgheel Real Estate CRM</a>
+    <a href="tashgheel-general-crm.html" class="sidebar-link" data-i18n="nav.gcrm" data-link>Tashgheel General CRM</a>
+    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel F&amp;B</a>
+    <a href="tashgheel-clinics.html" class="sidebar-link" data-i18n="nav.cln" data-link>Tashgheel Clinics</a>
     <a href="tashgheel-retail.html" class="sidebar-link" data-i18n="nav.ret" data-link>Tashgheel Retail</a>
-    <a href="tashgheel-restaurants.html" class="sidebar-link" data-i18n="nav.rest" data-link>Tashgheel Restaurants</a>
     <a href="tashgheel-services.html" class="sidebar-link" data-i18n="nav.srv" data-link>Tashgheel Services</a>
     <div class="sidebar-divider"></div>
     <a href="portfolio.html" class="sidebar-link" data-i18n="nav.cases" data-link>Case Studies</a>
@@ -124,7 +135,7 @@
   <main>
     <section class="page-hero blog-hero">
       <div class="page-hero-inner">
-        <span class="badge badge-primary reveal mb-3" data-i18n="blog.label">Insights</span>
+        <span class="badge badge-primary reveal mb-3" data-i18n="blog.label">ITQAN Insights</span>
         <h1 class="reveal" data-i18n="blog.title">Knowledge Drives Growth</h1>
         <p class="reveal" data-i18n="blog.subtitle">Expert perspectives on digital transformation, ERP, marketing, automation, and business growth from the ITQAN team.</p>
       </div>
@@ -135,10 +146,10 @@
         <div class="blog-filter-tabs reveal" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:40px;">
           <button data-cat="all" class="active btn btn-ghost" data-i18n="blog.all">All Topics</button>
           <button data-cat="dt" class="btn btn-ghost" data-i18n="blog.cat.dt">Digital Transformation</button>
-          <button data-cat="erp" class="btn btn-ghost" data-i18n="blog.cat.erp">ERP & Systems</button>
+          <button data-cat="erp" class="btn btn-ghost" data-i18n="blog.cat.erp">ERP &amp; Systems</button>
           <button data-cat="mkt" class="btn btn-ghost" data-i18n="blog.cat.mkt">Marketing</button>
-          <button data-cat="ai" class="btn btn-ghost" data-i18n="blog.cat.ai">AI & Automation</button>
-          <button data-cat="web" class="btn btn-ghost" data-i18n="blog.cat.web">Web & Mobile</button>
+          <button data-cat="ai" class="btn btn-ghost" data-i18n="blog.cat.ai">AI &amp; Automation</button>
+          <button data-cat="web" class="btn btn-ghost" data-i18n="blog.cat.web">Web &amp; Mobile</button>
           <button data-cat="biz" class="btn btn-ghost" data-i18n="blog.cat.biz">Business Growth</button>
         </div>
 
@@ -460,15 +471,18 @@
         <div class="footer-links">
           <a href="services.html" data-i18n="footer.sw" data-link>Software Engineering</a>
           <a href="services.html#digital" data-i18n="footer.dig" data-link>Digital Solutions</a>
-          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing & Creative</a>
+          <a href="services.html#marketing" data-i18n="footer.mkt" data-link>Marketing &amp; Creative</a>
           <a href="services.html#automation" data-i18n="footer.aut" data-link>Business Automation</a>
         </div>
       </div>
       <div class="footer-col">
         <h4 class="footer-col-title" data-i18n="footer.col.products">Products</h4>
         <div class="footer-links">
+          <a href="tashgheel-crm.html" data-i18n="footer.crm" data-link>Tashgheel Real Estate CRM</a>
+          <a href="tashgheel-general-crm.html" data-i18n="footer.gcrm" data-link>Tashgheel General CRM</a>
+          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel F&amp;B</a>
+          <a href="tashgheel-clinics.html" data-i18n="footer.cln" data-link>Tashgheel Clinics</a>
           <a href="tashgheel-retail.html" data-i18n="footer.ret" data-link>Tashgheel Retail</a>
-          <a href="tashgheel-restaurants.html" data-i18n="footer.rest" data-link>Tashgheel Restaurants</a>
           <a href="tashgheel-services.html" data-i18n="footer.srv" data-link>Tashgheel Services</a>
           <a href="contact.html" data-i18n="footer.erp" data-link>Custom ERP</a>
         </div>
@@ -484,8 +498,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p data-i18n="footer.copy">© <span id="year"></span> ITQAN Solutions. All rights reserved.</p>
-      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact Us</a></p>
+      <p data-i18n="footer.copy">© 2026 ITQAN Solutions. All rights reserved.</p>
+      <p><a href="contact.html" data-link data-i18n="footer.contact">Contact</a></p>
     </div>
   </footer>
 
