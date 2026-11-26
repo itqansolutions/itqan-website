@@ -4035,3 +4035,10 @@ html[lang="ar"] .whatsapp-float {
   .shot-frame, .btn, .card { transition: none; }
   .reveal, .reveal-left, .reveal-right, .reveal-up { opacity: 1; transform: none; transition: none; }
 }
+
+/* Mobile hero: let the grid column shrink so the headline/subtitle do not run past the right edge */
+.hero > * { min-width: 0; }
+@media (max-width: 768px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-content { max-width: 100%; }
+}

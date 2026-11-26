@@ -786,7 +786,7 @@ const i18n = {
     'rst.faq.q6': 'Is there an Arabic interface?',
     'rst.faq.a6': 'Yes. The system supports Arabic and English.',
     'rst.faq.q7': 'Can I try it before buying?',
-    'rst.faq.a7': 'Yes. You can register on the F&B app and start a free trial, or request a demo and our team will walk you through it.',
+    'rst.faq.a7': 'Yes. You can register on the F&B app and start a free 3-day trial, or request a demo and our team will walk you through it.',
     'rst.faq.q8': 'How much does it cost?',
     'rst.faq.a8': 'We quote by number of branches and modules, and we do not publish a price list. Request a demo or a quote and we will reply with a clear offer.',
 
@@ -1373,6 +1373,36 @@ const i18n = {
     'rst.ov.b2': '🪑 إدارة الطاولات',
     'rst.ov.b3': '📋 حساب تكلفة الوصفات',
     'rst.ov.b4': '📱 قنوات بيع متعددة',
+    'about.time.title': 'رحلتنا',
+    'contact.service.1': 'هندسة البرمجيات',
+    'contact.service.2': 'الحلول الرقمية',
+    'contact.service.3': 'التسويق والإبداع',
+    'contact.service.4': 'أتمتة الأعمال',
+    'contact.service.5': 'أخرى',
+    'faq.q1': 'هل تبنون برمجيات مخصصة بالكامل من الصفر؟',
+    'faq.a1': 'نعم. كل حل برمجي نسلمه مبني خصيصًا لعمليات شركتك وسير عملها ومتطلبات مجالك. لا نستخدم قوالب جاهزة.',
+    'faq.q2': 'هل تعمل أنظمتكم بدون اتصال بالإنترنت؟',
+    'faq.a2': 'نعم. حلول نقاط البيع وERP المكتبية مصممة لتعمل بدون إنترنت وتتزامن تلقائيًا عند عودة الاتصال.',
+    'faq.q3': 'هل يمكنكم الربط مع أنظمتنا الحالية؟',
+    'faq.a3': 'نعم. بنيتنا المعتمدة على واجهات API تتيح الربط مع أنظمة ERP وبرامج المحاسبة وبوابات الدفع وأنظمة CRM والمتاجر الإلكترونية وأغلب الأنظمة الأخرى.',
+    'faq.q4': 'هل تدعمون تعدد الفروع؟',
+    'faq.a4': 'نعم. كل حلولنا للشركات تدعم عددًا غير محدود من الفروع مع مزامنة البيانات لحظيًا وتقارير مركزية وصلاحيات على مستوى الفرع.',
+    'faq.q5': 'هل تقدمون تدريبًا بعد التسليم؟',
+    'faq.a5': 'كل مشروع يتضمن برنامج تدريب لجميع الأدوار، من المديرين إلى المشغلين اليوميين. كما نوفر أدلة استخدام وفيديوهات تعليمية.',
+    'faq.q6': 'ما نوع الدعم المستمر الذي تقدمونه؟',
+    'faq.a6': 'نقدم باقات دعم متدرجة تشمل إصلاح الأخطاء وتحديث المزايا ومتابعة الأداء، ومدير حساب مخصص لعملاء الشركات.',
+    'faq.q7': 'هل تقدمون خدمات تسويق إلى جانب البرمجيات؟',
+    'faq.a7': 'نعم. قسم التسويق والإبداع لدينا يقدم خدمات متكاملة: الهوية البصرية وإنتاج المحتوى وإدارة السوشيال ميديا وإعلانات ميتا وجوجل وتحسين محركات البحث والتحليلات.',
+    'srv.why.1.title': 'تنفيذ متكامل',
+    'srv.why.1.desc': 'من الاستراتيجية الأولى وتطوير البرمجيات إلى تنفيذ حملات التسويق كاملة.',
+    'srv.why.2.title': 'خبرة في المجال',
+    'srv.why.2.desc': 'سجل مثبت في التجزئة والمطاعم والرعاية الصحية والخدمات المهنية.',
+    'srv.why.3.title': 'حلول قابلة للتوسع',
+    'srv.why.3.desc': 'تقنية مصممة لتنمو مع شركتك دون قيود.',
+    'rst.online.t': 'استضافة سحابية',
+    'rst.online.d': 'تحكم مركزي في جميع فروعك.',
+    'rst.offline.t': 'تشغيل محلي (سطح المكتب)',
+    'rst.offline.d': 'إعداد مستقل ومستقر على شبكتك المحلية.',
     'crm.who.title': 'مصمم لفرق المبيعات العقارية',
     'crm.who.desc': 'تشغيل CRM للشركات التي تبيع العقارات وتحتاج إلى رؤية الرحلة كاملة من أول استفسار حتى التسليم.',
     'crm.who.l1': 'المطورون العقاريون الذين يبيعون وحدات على الخريطة وجاهزة',
@@ -1483,7 +1513,7 @@ const i18n = {
     'rst.faq.q6': 'هل توجد واجهة عربية؟',
     'rst.faq.a6': 'نعم. يدعم النظام العربية والإنجليزية.',
     'rst.faq.q7': 'هل أستطيع تجربته قبل الشراء؟',
-    'rst.faq.a7': 'نعم. سجّل حسابًا على تطبيق F&B وابدأ تجربة مجانية، أو اطلب عرضًا تجريبيًا وسيشرحه لك فريقنا.',
+    'rst.faq.a7': 'نعم. سجّل حسابًا على تطبيق F&B وابدأ تجربة مجانية لمدة 3 أيام، أو اطلب عرضًا تجريبيًا وسيشرحه لك فريقنا.',
     'rst.faq.q8': 'كم تكلفة النظام؟',
     'rst.faq.a8': 'نحدد السعر حسب عدد الفروع والموديولات ولا ننشر قائمة أسعار. اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك بعرض واضح.',
 
@@ -1525,15 +1555,24 @@ function applyLang(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('lang') || 'en';
+  const saved = (location.pathname.indexOf('/ar/') === 0) ? 'ar' : 'en';
   applyLang(saved);
 });
 
 if (langBtn) {
   langBtn.addEventListener('click', () => {
-    const next = document.documentElement.lang === 'en' ? 'ar' : 'en';
-    applyLang(next);
-    localStorage.setItem('lang', next);
+    /* Language switch = go to the same page in the other language (/ar/ mirror). */
+    const p = location.pathname;
+    let target;
+    if (p.indexOf('/ar/') === 0) {
+      target = p.slice(3);
+      if (target === '/index.html') target = '/';
+      localStorage.setItem('lang', 'en');
+    } else {
+      target = (p === '/' || p === '/index.html') ? '/ar/' : '/ar' + (p.charAt(0) === '/' ? p : '/' + p);
+      localStorage.setItem('lang', 'ar');
+    }
+    location.href = target + location.search + location.hash;
   });
 }
 
@@ -1758,7 +1797,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a[data-link], .nav-sidebar a[data-link]').forEach(a => {
-    const href = a.getAttribute('href');
+    const href = (a.getAttribute('href') || '').split('#')[0].split('/').pop() || 'index.html';
     if (href === path || (path === '' && href === 'index.html')) {
       a.classList.add('active');
     }
@@ -1964,7 +2003,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Apply current saved language on load
   document.addEventListener('DOMContentLoaded', function () {
-    const saved = localStorage.getItem('lang') || 'en';
+    const saved = (location.pathname.indexOf('/ar/') === 0) ? 'ar' : 'en';
     updateWALang(saved);
   });
 
@@ -1980,9 +2019,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lb = e.target.closest('#langToggle');
     if (!lb) return;
     // The new lang is the opposite of the current html[lang]
-    const newLang = document.documentElement.lang === 'en' ? 'ar' : 'en';
-    // applyLang runs first (synchronous), so we update after a microtask
-    Promise.resolve().then(function () { updateWALang(newLang); });
+    /* navigation handled by the lang toggle itself */
   });
 })();
 

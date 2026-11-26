@@ -16,6 +16,21 @@
 - [Insights (blog)](https://itqansolutions.org/blog.html): articles on ERP, POS, AI for SMEs, digital transformation and B2B marketing in the Middle East
 - [Contact](https://itqansolutions.org/contact.html): request a demo or a quote
 
+
+## Arabic site (full Arabic versions of the main pages)
+- [Home (Arabic)](https://itqansolutions.org/ar/)
+- [Services (Arabic)](https://itqansolutions.org/ar/services.html)
+- [About (Arabic)](https://itqansolutions.org/ar/about.html)
+- [Contact (Arabic)](https://itqansolutions.org/ar/contact.html)
+- [Case Studies (Arabic)](https://itqansolutions.org/ar/portfolio.html)
+- [Insights (blog index) (Arabic)](https://itqansolutions.org/ar/blog.html)
+- [Tashgheel Retail (Arabic)](https://itqansolutions.org/ar/tashgheel-retail.html)
+- [Tashgheel Services (Arabic)](https://itqansolutions.org/ar/tashgheel-services.html)
+- [Tashgheel F&B (Arabic)](https://itqansolutions.org/ar/tashgheel-restaurants.html)
+- [Tashgheel General CRM (Arabic)](https://itqansolutions.org/ar/tashgheel-general-crm.html)
+- [Tashgheel Real Estate CRM (Arabic)](https://itqansolutions.org/ar/tashgheel-crm.html)
+- [Tashgheel Clinics (Arabic)](https://itqansolutions.org/ar/tashgheel-clinics.html)
+
 ## Contact
 - Email: info@itqansolutions.org
 - Phone / WhatsApp: +20 112 652 2373, +20 115 525 3886, +20 114 270 3439
