@@ -50,7 +50,7 @@ const i18n = {
     'eco.label':            'One Ecosystem. Unlimited Growth.',
     'eco.title':            'Everything Your Business Needs, Connected.',
     'eco.desc':             'From marketing to software, from branding to automation—every part of your operation works together as one intelligent system.',
-    'eco.message':          '🔗 One partner. One ecosystem. Unlimited growth.',
+    'eco.message':          'One partner. One ecosystem. Unlimited growth.',
 
     /* --- Solutions --- */
     'sol.label':            'Our Solutions',
@@ -672,10 +672,10 @@ const i18n = {
     'prod.rest.btn': 'Explore Restaurants →',
     'prod.srv.btn': 'Explore Services →',
     'prod.erp.btn': 'Explore Custom ERP →',
-    'rst.ov.b1': '🍳 Kitchen Display',
-    'rst.ov.b2': '🪑 Table Management',
-    'rst.ov.b3': '📋 Recipe Costing',
-    'rst.ov.b4': '📱 Multi-Channel',
+    'rst.ov.b1': 'Kitchen Display',
+    'rst.ov.b2': 'Table Management',
+    'rst.ov.b3': 'Recipe Costing',
+    'rst.ov.b4': 'Multi-Channel',
     'shot.fb.cap': 'The Tashgheel F&B point of sale (Arabic interface, demo data): menu by category, dine-in, takeaway and delivery order types, and shift controls.',
     'crm.who.title': 'Built for real estate sales teams',
     'crm.who.desc': 'Tashgheel CRM is for companies that sell property and need to see the whole journey from first inquiry to handover.',
@@ -827,7 +827,7 @@ const i18n = {
     'eco.label':            'منظومة متكاملة. نمو لا محدود.',
     'eco.title':            'كل ما تحتاجه، متصل في منظومة واحدة.',
     'eco.desc':             'من التسويق إلى البرمجيات، ومن الهوية البصرية إلى الأتمتة—كل جانب من عملك يعمل بتناسق كامل كمنظومة ذكية واحدة.',
-    'eco.message':          '🔗 شريك واحد. منظومة واحدة. نمو لا محدود.',
+    'eco.message':          'شريك واحد. منظومة واحدة. نمو لا محدود.',
 
     /* --- Solutions --- */
     'sol.label':            'حلولنا',
@@ -1370,10 +1370,10 @@ const i18n = {
     'prod.rest.btn': 'اكتشف تشغيل المطاعم →',
     'prod.srv.btn': 'اكتشف تشغيل الخدمات →',
     'prod.erp.btn': 'اكتشف نظام ERP المخصص →',
-    'rst.ov.b1': '🍳 شاشة المطبخ',
-    'rst.ov.b2': '🪑 إدارة الطاولات',
-    'rst.ov.b3': '📋 حساب تكلفة الوصفات',
-    'rst.ov.b4': '📱 قنوات بيع متعددة',
+    'rst.ov.b1': 'شاشة المطبخ',
+    'rst.ov.b2': 'إدارة الطاولات',
+    'rst.ov.b3': 'حساب تكلفة الوصفات',
+    'rst.ov.b4': 'قنوات بيع متعددة',
     'about.time.title': 'رحلتنا',
     'contact.service.1': 'هندسة البرمجيات',
     'contact.service.2': 'الحلول الرقمية',
@@ -2032,7 +2032,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('contactForm');
   if (!form) return;
 
-  // ⚠️  SETUP REQUIRED:
+  // SETUP REQUIRED:
   // 1. Go to https://formspree.io and create a free account.
   // 2. Click "New Form", set your email, and copy the form ID from the endpoint.
   // 3. Replace YOUR_FORM_ID below with that ID (e.g. "xpwzkoab").
@@ -2076,10 +2076,189 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error('Form error:', err);
       if (note) {
         note.style.color = '#ef4444';
-        note.textContent  = '⚠️ Something went wrong. Please email us at info@itqansolutions.org';
+        note.textContent  = 'Something went wrong. Please email us at info@itqansolutions.org';
       }
       submitBtn.disabled    = false;
       submitBtn.textContent = originalText;
     }
   });
 });
+
+/* =========================
+   Round 4: WhatsApp float auto-hide, reveal stagger, cinematic intro
+   ========================= */
+(function () {
+  // WhatsApp float: slide away while scrolling down on phones so it never covers content
+  var lastY = window.scrollY, timer;
+  window.addEventListener('scroll', function () {
+    var wa = document.querySelector('.whatsapp-float');
+    if (!wa || window.innerWidth > 768) return;
+    var y = window.scrollY;
+    if (y > lastY + 4 && y > 200) wa.classList.add('wa-away');
+    else if (y < lastY - 4) wa.classList.remove('wa-away');
+    lastY = y;
+    clearTimeout(timer);
+    timer = setTimeout(function () { wa.classList.remove('wa-away'); }, 900);
+  }, { passive: true });
+
+  // Staggered reveal: delay siblings so cards cascade
+  document.addEventListener('DOMContentLoaded', function () {
+    var seen = new Map();
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-up').forEach(function (el) {
+      var p = el.parentElement; if (!p) return;
+      var i = seen.get(p) || 0; seen.set(p, i + 1);
+      if (!el.style.transitionDelay && i > 0) el.style.transitionDelay = Math.min(i, 6) * 70 + 'ms';
+    });
+  });
+  // Safety: anything already above the fold when scrolling stops gets revealed
+  window.addEventListener('scroll', function () {
+    document.querySelectorAll('.reveal:not(.is-visible), .reveal-left:not(.is-visible), .reveal-right:not(.is-visible), .reveal-up:not(.is-visible)').forEach(function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.96) el.classList.add('is-visible');
+    });
+  }, { passive: true });
+})();
+
+(function () {
+  var root = document.documentElement;
+  if (!root.classList.contains('intro-on')) return;
+  var isAr = root.lang === 'ar' || root.dir === 'rtl';
+  var L1 = isAr ? 'تكنولوجيا تُشغّل أعمالك.' : 'Technology that powers your business.';
+  var L2 = isAr ? 'تسويق يُنمّيها.' : 'Marketing that grows it.';
+  var DUR = 2600;
+
+  function start() {
+    var ov = document.createElement('div');
+    ov.id = 'itqIntro'; ov.setAttribute('aria-hidden', 'true');
+    ov.innerHTML = '<canvas></canvas><div class="itq-intro-slogan"><span class="l1"></span><br><span class="l2"></span><i class="caret"></i></div>';
+    document.body.appendChild(ov);
+    var cv = ov.querySelector('canvas'), ctx = cv.getContext('2d');
+    var sl = ov.querySelector('.itq-intro-slogan'), s1 = sl.querySelector('.l1'), s2 = sl.querySelector('.l2');
+    var W, H, dpr, cx, cy, ls, base, bld = [], seed = 7;
+    function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+    var P = [new Path2D('M15 29 L42 43 L33 12'), new Path2D('M85 29 L58 43 L67 12'), new Path2D('M15 71 L42 57 L33 88'), new Path2D('M85 71 L58 57 L67 88')];
+    function layout() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+      W = window.innerWidth; H = window.innerHeight;
+      cv.width = W * dpr; cv.height = H * dpr;
+      cx = W / 2; ls = Math.min(Math.max(W * 0.3, 96), 150); cy = H * 0.36;
+      base = H * 0.9; bld = []; seed = 7;
+      var x = -10;
+      while (x < W + 10) {
+        var w = (W < 600 ? 22 : 34) + rnd() * (W < 600 ? 26 : 40);
+        var dc = Math.abs(x + w / 2 - cx) / (W / 2);
+        var h = H * (0.12 + rnd() * 0.18) + H * 0.16 * (1 - dc) * rnd();
+        bld.push({ x: x, w: w, h: h, top: base - h, t: 0.45 + dc * 0.85 + rnd() * 0.12, cols: Math.max(2, Math.floor(w / 9)), rows: Math.floor(h / 12), seed: rnd() });
+        x += w + 2 + rnd() * 4;
+      }
+      sl.style.top = (cy + ls * 0.62 + 22) + 'px';
+    }
+    layout();
+    var busY = function () { return cy + ls * 0.75 + H * 0.2; };
+    function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
+    function ease(t) { return 1 - Math.pow(1 - t, 3); }
+    function pathPt(b, p) { // logo -> down -> bus -> across -> up to building top
+      var by = Math.min(busY(), b.top - 14), bx = b.x + b.w / 2;
+      var segs = [[cx, cy + ls * 0.5, cx, by], [cx, by, bx, by], [bx, by, bx, b.top]];
+      var tot = 0, ln = segs.map(function (s) { var l = Math.abs(s[2] - s[0]) + Math.abs(s[3] - s[1]); tot += l; return l; });
+      var d = p * tot, i = 0;
+      while (i < 2 && d > ln[i]) { d -= ln[i]; i++; }
+      var s = segs[i], f = ln[i] ? d / ln[i] : 0;
+      return [s[0] + (s[2] - s[0]) * f, s[1] + (s[3] - s[1]) * f];
+    }
+    function drawPulse(b, T) {
+      var p = clamp((T - 0.35) / (b.t - 0.35 + 0.001), 0, 1);
+      if (T < 0.35) return;
+      var by = Math.min(busY(), b.top - 14), bx = b.x + b.w / 2;
+      ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(94,224,255,' + (0.10 * clamp((T - 0.35) / 0.3, 0, 1)) + ')';
+      ctx.beginPath(); ctx.moveTo(cx, cy + ls * 0.5); ctx.lineTo(cx, by); ctx.lineTo(bx, by); ctx.lineTo(bx, b.top); ctx.stroke();
+      if (p >= 1) return;
+      var tr = 0.14, pts = [], k;
+      for (k = 0; k <= 8; k++) pts.push(pathPt(b, clamp(p - tr * (k / 8), 0, 1)));
+      for (k = 0; k < 8; k++) {
+        ctx.strokeStyle = 'rgba(' + (k < 2 ? '255,255,255' : '94,224,255') + ',' + (1 - k / 8) * 0.9 + ')';
+        ctx.lineWidth = 2.2 * (1 - k / 10);
+        ctx.beginPath(); ctx.moveTo(pts[k][0], pts[k][1]); ctx.lineTo(pts[k + 1][0], pts[k + 1][1]); ctx.stroke();
+      }
+      ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(pts[0][0], pts[0][1], 2.2, 0, 7); ctx.fill();
+    }
+    function frame(T) {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var g = ctx.createLinearGradient(0, 0, 0, H);
+      g.addColorStop(0, '#05080f'); g.addColorStop(0.62, '#0c1230'); g.addColorStop(1, '#1b1450');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      // horizon glow rises with the energy
+      var hg = ctx.createRadialGradient(cx, base, 0, cx, base, W * 0.8);
+      var ha = clamp((T - 0.5) / 1.2, 0, 1) * 0.5;
+      hg.addColorStop(0, 'rgba(90,70,255,' + ha + ')'); hg.addColorStop(1, 'rgba(90,70,255,0)');
+      ctx.fillStyle = hg; ctx.fillRect(0, 0, W, H);
+      // buildings
+      bld.forEach(function (b) {
+        var lit = clamp((T - b.t) / 0.45, 0, 1);
+        ctx.fillStyle = '#0a0f24'; ctx.fillRect(b.x, b.top, b.w, b.h + 2);
+        if (lit > 0) {
+          ctx.fillStyle = 'rgba(94,224,255,' + 0.55 * lit + ')'; ctx.fillRect(b.x, b.top, b.w, 1.5);
+          for (var r = 0; r < b.rows; r++) for (var c = 0; c < b.cols; c++) {
+            var on = ((r * 7 + c * 13 + Math.floor(b.seed * 100)) % 5) < 3;
+            if (!on) continue;
+            var flick = 0.5 + 0.5 * Math.sin(T * 6 + r + c * 2 + b.seed * 9);
+            ctx.fillStyle = (c + r) % 4 === 0 ? 'rgba(167,139,250,' + (0.5 + 0.3 * flick) * lit + ')' : 'rgba(94,224,255,' + (0.35 + 0.35 * flick) * lit + ')';
+            ctx.fillRect(b.x + 3 + c * ((b.w - 4) / b.cols), b.top + 6 + r * 12, 3, 4);
+          }
+        }
+      });
+      ctx.fillStyle = '#05080f'; ctx.fillRect(0, base, W, H - base);
+      bld.forEach(function (b) { drawPulse(b, T); });
+      // logo glow + shockwave rings
+      var a = ease(clamp(T / 0.5, 0, 1));
+      var glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, ls * (1.4 + 0.25 * Math.sin(T * 5)));
+      glow.addColorStop(0, 'rgba(120,100,255,' + 0.55 * a + ')'); glow.addColorStop(1, 'rgba(90,70,255,0)');
+      ctx.fillStyle = glow; ctx.fillRect(cx - ls * 2, cy - ls * 2, ls * 4, ls * 4);
+      for (var i = 0; i < 2; i++) {
+        var rp = clamp((T - 0.35 - i * 0.25) / 0.9, 0, 1);
+        if (rp > 0 && rp < 1) { ctx.strokeStyle = 'rgba(94,224,255,' + (1 - rp) * 0.5 + ')'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(cx, cy, ls * 0.4 + rp * Math.max(W, H) * 0.7, 0, 7); ctx.stroke(); }
+      }
+      // logo
+      ctx.save();
+      ctx.translate(cx - ls / 2, cy - ls / 2); ctx.scale(ls / 100, ls / 100);
+      ctx.globalAlpha = a; ctx.lineWidth = 13; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.shadowColor = 'rgba(94,224,255,.9)'; ctx.shadowBlur = 18 * a * dpr;
+      var lg = ctx.createLinearGradient(0, 0, 100, 100); lg.addColorStop(0, '#ffffff'); lg.addColorStop(1, '#9fe9ff');
+      ctx.strokeStyle = lg;
+      var pr = ease(clamp(T / 0.6, 0, 1));
+      ctx.setLineDash([120, 120]); 
+      P.forEach(function (p, k) { var q = ease(clamp((T - k * 0.05) / 0.55, 0, 1)); ctx.lineDashOffset = 120 * (1 - q); ctx.stroke(p); });
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#5EE0FF'; ctx.translate(50, 50); ctx.rotate(Math.PI / 4 + T * 2); var ds = 3 + 3 * (0.5 + 0.5 * Math.sin(T * 9)) * pr; ctx.fillRect(-ds, -ds, ds * 2, ds * 2);
+      ctx.restore();
+      // slogan typing
+      var ts = clamp((T - 1.3) / 0.8, 0, 1), n = Math.floor(ts * (L1.length + L2.length));
+      if (isAr) { var words = (L1 + ' ' + L2).split(' '), wn = Math.floor(ts * words.length + 0.001), w1 = L1.split(' ').length; s1.textContent = words.slice(0, Math.min(wn, w1)).join(' '); s2.textContent = wn > w1 ? words.slice(w1, wn).join(' ') : ''; }
+      else { s1.textContent = L1.slice(0, n); s2.textContent = n > L1.length ? L2.slice(0, n - L1.length) : ''; }
+      sl.style.opacity = T > 1.25 ? 1 : 0;
+      sl.querySelector('.caret').style.display = ts >= 1 && T > 2.15 ? 'none' : 'inline-block';
+    }
+    var t0 = null, done = false, raf;
+    function finish() {
+      if (done) return; done = true;
+      cancelAnimationFrame(raf);
+      ov.classList.add('out');
+      root.classList.remove('intro-on');
+      ['pointerdown', 'wheel', 'touchmove', 'keydown'].forEach(function (e) { window.removeEventListener(e, finish); });
+      setTimeout(function () { if (ov.parentNode) ov.parentNode.removeChild(ov); }, 700);
+    }
+    ['pointerdown', 'wheel', 'touchmove', 'keydown'].forEach(function (e) { window.addEventListener(e, finish, { passive: true }); });
+    window.addEventListener('resize', layout);
+    function loop(ts) {
+      if (done) return;
+      if (t0 === null) t0 = ts;
+      var el = ts - t0;
+      frame(el / 1000);
+      if (el >= DUR) { finish(); return; }
+      raf = requestAnimationFrame(loop);
+    }
+    raf = requestAnimationFrame(loop);
+    setTimeout(finish, DUR + 1500); // hard stop
+    window.__itqIntroDebug = function (T) { done = true; cancelAnimationFrame(raf); frame(T); };
+  }
+  try { start(); } catch (e) { root.classList.remove('intro-on'); }
+})();
