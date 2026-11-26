@@ -578,7 +578,10 @@ const i18n = {
     'pp.demo': 'Request a Demo',
     'pp.quote': 'Request a Quote',
     'pp.features': 'View Features',
-    'pp.note': 'No public price list. We quote by team size and modules, so request a demo or a quote and we will reply.',
+    'tut.title': 'Video tutorials',
+    'tut.desc': 'Step-by-step walkthroughs on our YouTube channel',
+    'tut.btn': 'Watch the playlist →',
+    'pp.note': 'Pricing tailored to your needs. Request a demo or a quote and we will reply.',
     'nav.gcrm': 'Tashgheel General CRM',
     'footer.gcrm': 'Tashgheel General CRM',
     'gcrm.label': 'Tashgheel CRM',
@@ -630,7 +633,7 @@ const i18n = {
     'gcrm.q7': 'Do I need to install anything?',
     'gcrm.a7': 'No. It is a web application. Your team signs in from any browser.',
     'gcrm.q8': 'How much does it cost?',
-    'gcrm.a8': 'We quote by team size and modules, and we do not publish a price list. Request a demo or a quote and we will reply with a clear offer.',
+    'gcrm.a8': 'Pricing is tailored to team size and modules. Request a demo or a quote and we will reply with a clear offer.',
     'crm.label': 'Tashgheel CRM',
     'crm.title': 'Real Estate CRM for Egyptian Developers and Brokers',
     'crm.subtitle': 'Tashgheel CRM tracks every lead, unit, reservation, installment and commission in one Arabic and English system, built in Cairo by Itqan Solutions.',
@@ -722,7 +725,7 @@ const i18n = {
     'crm.q7': 'Can brokers and managers have different permissions?',
     'crm.a7': 'Yes. Users get roles, so a broker sees their own leads while a manager sees teams, targets and reports. Changes are recorded in an audit log.',
     'crm.q8': 'How much does it cost?',
-    'crm.a8': 'We quote by team size and modules, and we do not publish a price list. Request a demo or a quote and we will reply with a clear offer.',
+    'crm.a8': 'Pricing is tailored to team size and modules. Request a demo or a quote and we will reply with a clear offer.',
     'cln.label': 'Tashgheel Clinics',
     'cln.title': 'Clinic and Aesthetic Center Management Software for Egypt',
     'cln.subtitle': 'Tashgheel Clinics runs patients, appointments, doctor schedules, sessions, stock and payments in one system, with an Arabic and English interface.',
@@ -766,7 +769,7 @@ const i18n = {
     'cln.q7': 'Is patient data protected?',
     'cln.a7': 'Each clinic has its own separate account space, and staff only see what their role allows. Changes are recorded in an audit log.',
     'cln.q8': 'How much does it cost?',
-    'cln.a8': 'We quote by clinic size and modules, and we do not publish a price list. Request a demo or a quote and we will reply with a clear offer.',
+    'cln.a8': 'Pricing is tailored to clinic size and modules. Request a demo or a quote and we will reply with a clear offer.',
     'rst.app': 'Open Tashgheel F&B',
     'rst.who.title': 'Built for food and beverage businesses',
     'rst.who.desc': 'Tashgheel F&B runs the floor, the kitchen and the stockroom from one system.',
@@ -789,7 +792,7 @@ const i18n = {
     'rst.faq.q7': 'Can I try it before buying?',
     'rst.faq.a7': 'Yes. You can register on the F&B app and start a free 3-day trial, or request a demo and our team will walk you through it.',
     'rst.faq.q8': 'How much does it cost?',
-    'rst.faq.a8': 'We quote by number of branches and modules, and we do not publish a price list. Request a demo or a quote and we will reply with a clear offer.',
+    'rst.faq.a8': 'Pricing is tailored to number of branches and modules. Request a demo or a quote and we will reply with a clear offer.',
 
   },
 
@@ -1317,7 +1320,7 @@ const i18n = {
     'gcrm.q7': 'هل أحتاج إلى تثبيت أي برنامج؟',
     'gcrm.a7': 'لا. هو تطبيق ويب، يدخل عليه فريقك من أي متصفح.',
     'gcrm.q8': 'كم تكلفة النظام؟',
-    'gcrm.a8': 'نحدد السعر حسب حجم الفريق والموديولات ولا ننشر قائمة أسعار. اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك بعرض واضح.',
+    'gcrm.a8': 'الأسعار حسب حجم الفريق والموديولات. اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك بعرض واضح.',
     'nav.crm': 'تشغيل CRM العقاري',
     'nav.cln': 'تشغيل كلينكس',
     'footer.crm': 'تشغيل CRM العقاري',
@@ -1328,7 +1331,10 @@ const i18n = {
     'pp.demo': 'اطلب عرضًا تجريبيًا',
     'pp.quote': 'اطلب عرض سعر',
     'pp.features': 'استعرض الميزات',
-    'pp.note': 'لا توجد قائمة أسعار معلنة. نحدد العرض حسب حجم الفريق والموديولات، فاطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك.',
+    'tut.title': 'شروحات فيديو',
+    'tut.desc': 'شرح خطوة بخطوة على قناتنا على يوتيوب',
+    'tut.btn': 'شاهد قائمة الشروحات →',
+    'pp.note': 'الأسعار حسب احتياجك، اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك.',
     'crm.label': 'تشغيل CRM',
     'crm.title': 'نظام CRM عقاري للمطورين والسماسرة في مصر',
     'crm.subtitle': 'تشغيل CRM يتابع كل عميل محتمل ووحدة وحجز وقسط وعمولة في نظام واحد بالعربية والإنجليزية، من تطوير إتقان سوليوشنز في القاهرة.',
@@ -1450,7 +1456,7 @@ const i18n = {
     'crm.q7': 'هل يمكن أن تختلف صلاحيات السماسرة والمديرين؟',
     'crm.a7': 'نعم. لكل مستخدم دور، فيرى السمسار عملاءه فقط بينما يرى المدير الفرق والأهداف والتقارير. وتُسجل التغييرات في سجل مراجعة.',
     'crm.q8': 'كم تكلفة النظام؟',
-    'crm.a8': 'نحدد السعر حسب حجم الفريق والموديولات ولا ننشر قائمة أسعار. اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك بعرض واضح.',
+    'crm.a8': 'الأسعار حسب حجم الفريق والموديولات. اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك بعرض واضح.',
     'cln.label': 'تشغيل كلينكس',
     'cln.title': 'نظام إدارة العيادات ومراكز التجميل في مصر',
     'cln.subtitle': 'تشغيل كلينكس يدير المرضى والمواعيد وجداول الأطباء والجلسات والمخزون والمدفوعات في نظام واحد بواجهة عربية وإنجليزية.',
@@ -1494,7 +1500,7 @@ const i18n = {
     'cln.q7': 'هل بيانات المرضى محمية؟',
     'cln.a7': 'لكل عيادة مساحة حساب منفصلة، ولا يرى الموظفون إلا ما يسمح به دورهم. وتُسجل التغييرات في سجل مراجعة.',
     'cln.q8': 'كم تكلفة النظام؟',
-    'cln.a8': 'نحدد السعر حسب حجم العيادة والموديولات ولا ننشر قائمة أسعار. اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك بعرض واضح.',
+    'cln.a8': 'الأسعار حسب حجم العيادة والموديولات. اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك بعرض واضح.',
     'rst.app': 'افتح تشغيل F&B',
     'rst.who.title': 'مصمم لأعمال الأغذية والمشروبات',
     'rst.who.desc': 'تشغيل F&B يدير الصالة والمطبخ والمخزن من نظام واحد.',
@@ -1517,7 +1523,7 @@ const i18n = {
     'rst.faq.q7': 'هل أستطيع تجربته قبل الشراء؟',
     'rst.faq.a7': 'نعم. سجّل حسابًا على تطبيق F&B وابدأ تجربة مجانية لمدة 3 أيام، أو اطلب عرضًا تجريبيًا وسيشرحه لك فريقنا.',
     'rst.faq.q8': 'كم تكلفة النظام؟',
-    'rst.faq.a8': 'نحدد السعر حسب عدد الفروع والموديولات ولا ننشر قائمة أسعار. اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك بعرض واضح.',
+    'rst.faq.a8': 'الأسعار حسب عدد الفروع والموديولات. اطلب عرضًا تجريبيًا أو عرض سعر وسنرد عليك بعرض واضح.',
 
   }
 };
@@ -2135,7 +2141,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var sl = ov.querySelector('.itq-intro-slogan'), s1 = sl.querySelector('.l1'), s2 = sl.querySelector('.l2');
     var W, H, dpr, cx, cy, ls, base, bld = [], seed = 7;
     function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
-    var P = [new Path2D('M15 29 L42 43 L33 12'), new Path2D('M85 29 L58 43 L67 12'), new Path2D('M15 71 L42 57 L33 88'), new Path2D('M85 71 L58 57 L67 88')];
+    var P = [new Path2D('M16 30 L43 44 L34 14'), new Path2D('M84 30 L57 44 L66 14'), new Path2D('M16 70 L43 56 L34 86'), new Path2D('M84 70 L57 56 L66 86')];
     function layout() {
       dpr = Math.min(window.devicePixelRatio || 1, 2.5);
       W = window.innerWidth; H = window.innerHeight;
@@ -2220,7 +2226,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // logo
       ctx.save();
       ctx.translate(cx - ls / 2, cy - ls / 2); ctx.scale(ls / 100, ls / 100);
-      ctx.globalAlpha = a; ctx.lineWidth = 13; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.globalAlpha = a; ctx.lineWidth = 15; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
       ctx.shadowColor = 'rgba(94,224,255,.9)'; ctx.shadowBlur = 18 * a * dpr;
       var lg = ctx.createLinearGradient(0, 0, 100, 100); lg.addColorStop(0, '#ffffff'); lg.addColorStop(1, '#9fe9ff');
       ctx.strokeStyle = lg;
