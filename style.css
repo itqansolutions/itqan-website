@@ -4182,3 +4182,6 @@ html.intro-on::after { content: ""; position: fixed; inset: 0; background: #070b
 @keyframes itqPulse { 0%,100% { transform: scale(.94); } 50% { transform: scale(1.04); } }
 
 #itqIntro { animation: itqSafe .01s 6s forwards; }
+
+/* LTR phone numbers inside RTL pages */
+html[dir=rtl] a[href^="tel:"]{direction:ltr;unicode-bidi:isolate;text-align:right;display:block}
