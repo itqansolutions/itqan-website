@@ -2275,7 +2275,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (done) return;
       if (t0 === null) t0 = ts;
       var el = ts - t0;
-      frame(el / 1000);
+      try { frame(el / 1000); } catch (e) { finish(); return; }
       if (el >= DUR) { finish(); return; }
       raf = requestAnimationFrame(loop);
     }
