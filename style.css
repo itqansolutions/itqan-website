@@ -2411,7 +2411,7 @@ p { color: var(--text-muted); line-height: 1.7; }
 }
 
 .mv-mission h2, .mv-mission p { color: #fff; }
-.mv-mission p { color: rgba(255,255,255,.85); }
+.mv-mission p { color: rgba(255,255,255,.88) !important; }
 
 .mv-vision {
   background: var(--text);
@@ -2419,7 +2419,7 @@ p { color: var(--text-muted); line-height: 1.7; }
 }
 
 .mv-vision h2, .mv-vision p { color: #fff; }
-.mv-vision p { color: #94A3B8; }
+.mv-vision p { color: #CBD5E1 !important; }
 
 /* Timeline */
 .timeline {
