@@ -338,6 +338,9 @@ p { color: var(--text-muted); line-height: 1.7; }
 
 .dropdown:hover > .dropdown-menu,
 .dropdown.open > .dropdown-menu { display: flex; }
+/* hover bridge: keeps the menu open while the pointer crosses the gap under the toggle */
+.dropdown-menu::before { content: ''; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+@media (min-width: 960px) { .dropdown:hover > .dropdown-menu, .dropdown:focus-within > .dropdown-menu { display: flex; } }
 
 @keyframes dropIn {
   from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
