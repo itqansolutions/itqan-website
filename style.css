@@ -4181,3 +4181,4 @@ html.intro-on::after { content: ""; position: fixed; inset: 0; background: #070b
 @keyframes itqSweep { from { background-position: 100% 0; } to { background-position: 0 0; } }
 @keyframes itqPulse { 0%,100% { transform: scale(.94); } 50% { transform: scale(1.04); } }
 
+#itqIntro { animation: itqSafe .01s 6s forwards; }

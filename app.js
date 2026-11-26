@@ -2259,15 +2259,17 @@ document.addEventListener('DOMContentLoaded', function () {
       sl.querySelector('.caret').style.display = ts >= 1 && T > 2.15 ? 'none' : 'inline-block';
     }
     var t0 = null, done = false, raf;
+    var born = Date.now();
+    function skip() { if (Date.now() - born > 500) finish(); }
     function finish() {
       if (done) return; done = true;
       cancelAnimationFrame(raf);
       ov.classList.add('out');
       root.classList.remove('intro-on');
-      ['pointerdown', 'wheel', 'touchmove', 'keydown'].forEach(function (e) { window.removeEventListener(e, finish); });
+      ['pointerdown', 'wheel', 'touchmove', 'keydown'].forEach(function (e) { window.removeEventListener(e, skip); });
       setTimeout(function () { if (ov.parentNode) ov.parentNode.removeChild(ov); }, 700);
     }
-    ['pointerdown', 'wheel', 'touchmove', 'keydown'].forEach(function (e) { window.addEventListener(e, finish, { passive: true }); });
+    ['pointerdown', 'wheel', 'touchmove', 'keydown'].forEach(function (e) { window.addEventListener(e, skip, { passive: true }); });
     window.addEventListener('resize', layout);
     function loop(ts) {
       if (done) return;
@@ -2281,5 +2283,5 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(finish, DUR + 1500); // hard stop
     window.__itqIntroDebug = function (T) { done = true; cancelAnimationFrame(raf); frame(T); };
   }
-  try { start(); } catch (e) { root.classList.remove('intro-on'); }
+  try { start(); } catch (e) { root.classList.remove('intro-on'); var o = document.getElementById('itqIntro'); if (o && o.parentNode) o.parentNode.removeChild(o); }
 })();
