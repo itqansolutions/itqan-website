@@ -5,8 +5,11 @@
 ## Main pages
 - [Home](https://itqansolutions.org/): company overview
 - [Services](https://itqansolutions.org/services.html): software engineering, digital solutions, marketing and creative, business automation
-- [Tashgheel Restaurants](https://itqansolutions.org/tashgheel-restaurants.html): restaurant POS and management system
-- [Tashgheel Retail](https://itqansolutions.org/tashgheel-retail.html): retail POS and management system
+- [Tashgheel Real Estate CRM](https://itqansolutions.org/tashgheel-crm.html): real estate CRM for developers and brokers in Egypt: leads, units, reservations, installments, commissions (app: https://crm.itqansolutions.org)
+- [Tashgheel General CRM](https://itqansolutions.org/tashgheel-general-crm.html): CRM and sales management for companies in Egypt: customers, leads, deals, quotations, invoices, inventory, targets (app: https://crm.itqansolutions.org)
+- [Tashgheel F&B](https://itqansolutions.org/tashgheel-restaurants.html): restaurant POS and management system: tables, kitchen display, QR ordering, delivery, recipe costing, stock (app: https://fb.itqansolutions.org)
+- [Tashgheel Clinics](https://itqansolutions.org/tashgheel-clinics.html): clinic and aesthetic center management: patients, appointments, doctor schedules, sessions, stock, payments (app: https://tashgheelclinics.itqansolutions.org)
+- [Tashgheel Retail](https://itqansolutions.org/tashgheel-retail.html): retail POS and inventory management system
 - [Tashgheel Services](https://itqansolutions.org/tashgheel-services.html): management system for service businesses
 - [Case Studies](https://itqansolutions.org/portfolio.html): selected client work
 - [About](https://itqansolutions.org/about.html): who we are
