@@ -4168,3 +4168,4 @@ html.intro-on::after { content: ""; position: fixed; inset: 0; background: #070b
 .tut-cta { color: var(--primary); font-weight: 600; font-size: 14px; white-space: nowrap; }
 [dir="rtl"] .tut-cta { direction: rtl; }
 @media (max-width: 560px) { .tut-card { flex-wrap: wrap; } .tut-cta { width: 100%; padding-inline-start: 64px; } }
+@media (max-width: 768px) { .whatsapp-float { min-width: 46px; max-width: 46px; box-sizing: border-box; border-radius: 50%; } }
