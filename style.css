@@ -3277,23 +3277,32 @@ html[dir="ltr"] .lang-ar { display: none !important; }
 /* =========================
    Scroll Reveal Animations
    ========================= */
+/* Visible by default. Only hidden once JS confirms the observer works (html.reveal-ready). */
 .reveal,
 .reveal-left,
 .reveal-right,
 .reveal-up {
-  opacity: 0;
   transition: opacity .7s var(--ease), transform .7s var(--ease);
 }
 
-.reveal         { transform: translateY(30px); }
-.reveal-left    { transform: translateX(-40px); }
-.reveal-right   { transform: translateX(40px); }
-.reveal-up      { transform: translateY(-30px); }
+html.reveal-ready .reveal,
+html.reveal-ready .reveal-left,
+html.reveal-ready .reveal-right,
+html.reveal-ready .reveal-up { opacity: 0; }
+
+html.reveal-ready .reveal         { transform: translateY(30px); }
+html.reveal-ready .reveal-left    { transform: translateX(-40px); }
+html.reveal-ready .reveal-right   { transform: translateX(40px); }
+html.reveal-ready .reveal-up      { transform: translateY(-30px); }
 
 .reveal.is-visible,
 .reveal-left.is-visible,
 .reveal-right.is-visible,
-.reveal-up.is-visible {
+.reveal-up.is-visible,
+html.reveal-ready .reveal.is-visible,
+html.reveal-ready .reveal-left.is-visible,
+html.reveal-ready .reveal-right.is-visible,
+html.reveal-ready .reveal-up.is-visible {
   opacity: 1;
   transform: none;
 }

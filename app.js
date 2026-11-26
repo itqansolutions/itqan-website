@@ -1652,21 +1652,46 @@ document.querySelectorAll('.dropdown-toggle').forEach(btn => {
 /* =========================
    Scroll Reveal (IntersectionObserver)
    ========================= */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
-
-function initReveal() {
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-up')
-    .forEach(el => revealObserver.observe(el));
+var REVEAL_SEL = '.reveal, .reveal-left, .reveal-right, .reveal-up';
+function revealAllNow() {
+  document.querySelectorAll(REVEAL_SEL).forEach(function (el) { el.classList.add('is-visible'); });
 }
-
-document.addEventListener('DOMContentLoaded', initReveal);
+function revealInView() {
+  var vh = window.innerHeight || document.documentElement.clientHeight;
+  document.querySelectorAll(REVEAL_SEL + '').forEach(function (el) {
+    if (el.classList.contains('is-visible')) return;
+    var r = el.getBoundingClientRect();
+    if (r.top < vh * 0.98) el.classList.add('is-visible');
+  });
+}
+function initReveal() {
+  var els = document.querySelectorAll(REVEAL_SEL);
+  var ok = false;
+  try {
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+        });
+      }, { rootMargin: '0px 0px -4% 0px', threshold: 0.01 });
+      // show what is already on screen first, so nothing flashes
+      revealInView();
+      els.forEach(function (el) { if (!el.classList.contains('is-visible')) obs.observe(el); });
+      ok = true;
+    }
+  } catch (e) { ok = false; }
+  if (!ok) { revealAllNow(); return; }
+  document.documentElement.classList.add('reveal-ready');
+  // Independent fallbacks: scroll position check and a hard timeout. Content can never stay hidden.
+  var tick = false;
+  function onScroll() { if (tick) return; tick = true; requestAnimationFrame(function () { tick = false; revealInView(); }); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('touchmove', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  setInterval(revealInView, 700);
+  setTimeout(revealAllNow, 20000);
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initReveal); else initReveal();
 
 /* =========================
    Animated Number Counters
