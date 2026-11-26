@@ -4019,3 +4019,19 @@ html[lang="ar"] .whatsapp-float {
   }
   .whatsapp-float-label { display: none; }
 }
+/* =========================
+   Phase 2 polish: screenshots + subtle motion
+   ========================= */
+.shot-frame { margin: 0 auto; max-width: 1100px; border-radius: 16px; overflow: hidden; background: var(--surface, #fff); border: 1px solid var(--border, #e5e7eb); box-shadow: var(--shadow-md, 0 12px 32px rgba(20,20,60,.12)); transition: transform .5s var(--ease, ease), box-shadow .5s var(--ease, ease); }
+.shot-frame img { display: block; width: 100%; height: auto; }
+.shot-frame figcaption { padding: 14px 20px; font-size: .9rem; color: var(--text-muted, #6b7280); border-top: 1px solid var(--border, #e5e7eb); }
+.shot-frame:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(90,70,255,.18); }
+.btn { transition: transform .25s var(--ease, ease), box-shadow .25s var(--ease, ease), background .25s; }
+.btn-secondary:hover, .btn-outline:hover { transform: translateY(-2px); }
+.product-hero-visual { animation: itqFloat 7s ease-in-out infinite; }
+@keyframes itqFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) {
+  .product-hero-visual { animation: none; }
+  .shot-frame, .btn, .card { transition: none; }
+  .reveal, .reveal-left, .reveal-right, .reveal-up { opacity: 1; transform: none; transition: none; }
+}
