@@ -1805,13 +1805,17 @@ document.addEventListener('submit', async (e) => {
 
   try {
     const data = Object.fromEntries(new FormData(form));
-    const res = await fetch('https://formspree.io/f/mkndjpzj', {
+    data._subject = 'New website inquiry - itqansolutions.org';
+    data._template = 'table';
+    data._captcha = 'false';
+    const res = await fetch('https://formsubmit.co/ajax/info@itqansolutions.org', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(data)
     });
-
-    if (res.ok) {
+    let out = {};
+    try { out = await res.json(); } catch (e) {}
+    if (res.ok && String(out.success) !== 'false') {
       form.reset();
       if (note) { note.textContent = dict['contact.success']; note.style.color = 'var(--success)'; }
     } else {
