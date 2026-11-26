@@ -4173,3 +4173,11 @@ html.intro-on::after { content: ""; position: fixed; inset: 0; background: #070b
   [style*="grid-template-columns:1fr 1fr"], [style*="grid-template-columns: 1fr 1fr"], [style*="minmax(350px"] { grid-template-columns: minmax(0, 1fr) !important; }
 }
 @media (max-width: 640px) { [style*="minmax(300px"], [style*="minmax(280px"] { grid-template-columns: minmax(0, 1fr) !important; } }
+/* Loader v2: exact brand mark with an energy sweep (mask), crisp at any DPR */
+.itq-loader { display: block; width: 88px; height: 88px; filter: none; overflow: visible;
+  background: linear-gradient(110deg, #0F172A 0%, #0F172A 38%, #5A46FF 50%, #00C2FF 56%, #0F172A 68%, #0F172A 100%); background-size: 300% 100%;
+  -webkit-mask: url('/logo-mark.png') center / contain no-repeat; mask: url('/logo-mark.png') center / contain no-repeat;
+  animation: itqSweep 1.3s linear infinite, itqPulse 1.3s ease-in-out infinite; }
+@keyframes itqSweep { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@keyframes itqPulse { 0%,100% { transform: scale(.94); } 50% { transform: scale(1.04); } }
+

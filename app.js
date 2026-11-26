@@ -2158,6 +2158,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       sl.style.top = (cy + ls * 0.62 + 22) + 'px';
     }
+    var tint = null, limg = new Image();
+    limg.onload = function () { try { var c = document.createElement('canvas'); c.width = c.height = 512; var x = c.getContext('2d'); x.drawImage(limg, 0, 0, 512, 512); x.globalCompositeOperation = 'source-in'; var gg = x.createLinearGradient(0, 0, 512, 512); gg.addColorStop(0, '#ffffff'); gg.addColorStop(1, '#a5ecff'); x.fillStyle = gg; x.fillRect(0, 0, 512, 512); tint = c; } catch (e) {} };
+    limg.src = '/logo-mark.png';
     layout();
     var busY = function () { return cy + ls * 0.75 + H * 0.2; };
     function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
@@ -2223,6 +2226,17 @@ document.addEventListener('DOMContentLoaded', function () {
         var rp = clamp((T - 0.35 - i * 0.25) / 0.9, 0, 1);
         if (rp > 0 && rp < 1) { ctx.strokeStyle = 'rgba(94,224,255,' + (1 - rp) * 0.5 + ')'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(cx, cy, ls * 0.4 + rp * Math.max(W, H) * 0.7, 0, 7); ctx.stroke(); }
       }
+      // logo (exact brand mark, tinted + glow); vector fallback if the image is not ready
+      if (tint) {
+        var sc = 0.86 + 0.14 * ease(clamp(T / 0.6, 0, 1)), sz = ls * sc;
+        ctx.save(); ctx.globalAlpha = a; ctx.shadowColor = 'rgba(94,224,255,.9)'; ctx.shadowBlur = 20 * a * dpr;
+        ctx.drawImage(tint, cx - sz / 2, cy - sz / 2, sz, sz);
+        ctx.restore();
+        // energy sweep across the mark
+        var sw = clamp((T - 0.3) / 0.7, 0, 1);
+        if (sw > 0 && sw < 1) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = 0.5 * Math.sin(sw * Math.PI); ctx.drawImage(tint, cx - sz / 2, cy - sz / 2, sz, sz); ctx.restore(); }
+        ctx.save(); ctx.translate(cx, cy); ctx.rotate(Math.PI / 4); var d2 = ls * 0.03 + ls * 0.02 * (0.5 + 0.5 * Math.sin(T * 9)); ctx.fillStyle = '#5EE0FF'; ctx.fillRect(-d2, -d2, d2 * 2, d2 * 2); ctx.restore();
+      } else {
       // logo
       ctx.save();
       ctx.translate(cx - ls / 2, cy - ls / 2); ctx.scale(ls / 100, ls / 100);
@@ -2236,6 +2250,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ctx.setLineDash([]);
       ctx.fillStyle = '#5EE0FF'; ctx.translate(50, 50); ctx.rotate(Math.PI / 4 + T * 2); var ds = 3 + 3 * (0.5 + 0.5 * Math.sin(T * 9)) * pr; ctx.fillRect(-ds, -ds, ds * 2, ds * 2);
       ctx.restore();
+      }
       // slogan typing
       var ts = clamp((T - 1.3) / 0.8, 0, 1), n = Math.floor(ts * (L1.length + L2.length));
       if (isAr) { var words = (L1 + ' ' + L2).split(' '), wn = Math.floor(ts * words.length + 0.001), w1 = L1.split(' ').length; s1.textContent = words.slice(0, Math.min(wn, w1)).join(' '); s2.textContent = wn > w1 ? words.slice(w1, wn).join(' ') : ''; }
