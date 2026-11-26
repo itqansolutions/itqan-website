@@ -367,7 +367,7 @@ const i18n = {
     'contact.send':         'Send Message',
     'contact.sending':      'Sending…',
     'contact.success':      '✓ Message sent! We\'ll be in touch within 24 hours.',
-    'contact.error':        'Something went wrong. Please email us directly.',
+    'contact.error':        'We could not send your message right now. Please email info@itqansolutions.org or',
 
     /* --- Services Page Pillars & Features --- */
     'srv.label':            'Our Solutions',
@@ -1243,7 +1243,7 @@ const i18n = {
     'contact.send':         'إرسال الرسالة',
     'contact.sending':      'جارٍ الإرسال…',
     'contact.success':      '✓ تم الإرسال! سنتواصل معك خلال 24 ساعة.',
-    'contact.error':        'حدث خطأ. يرجى مراسلتنا مباشرة على البريد الإلكتروني.',
+    'contact.error':        'تعذر إرسال رسالتك الآن. راسلنا على info@itqansolutions.org أو',
 
     /* --- Blog --- */
     'blog.label':           'مقالات إتقان',
@@ -1818,7 +1818,20 @@ document.addEventListener('submit', async (e) => {
       throw new Error('Server error');
     }
   } catch {
-    if (note) { note.textContent = dict['contact.error']; note.style.color = '#ef4444'; }
+    if (note) {
+      note.style.color = '#ef4444';
+      note.textContent = dict['contact.error'] + ' ';
+      try {
+        var f = Object.fromEntries(new FormData(form));
+        var txt = (lang === 'ar' ? 'مرحبًا، أنا ' : 'Hello, I am ') + (f.name || '') + (f.company ? ' (' + f.company + ')' : '') + '. ' + (f.message || '') + (f.phone ? ' | ' + f.phone : '') + (f.email ? ' | ' + f.email : '');
+        var a = document.createElement('a');
+        a.href = 'https://wa.me/201126522373?text=' + encodeURIComponent(txt);
+        a.target = '_blank'; a.rel = 'noopener';
+        a.textContent = lang === 'ar' ? 'راسلنا على واتساب' : 'Message us on WhatsApp';
+        a.style.cssText = 'color:#16a34a;font-weight:700;text-decoration:underline';
+        note.appendChild(a);
+      } catch (e2) {}
+    }
   } finally {
     if (btn) { btn.disabled = false; btn.textContent = dict['contact.send']; }
   }
@@ -2067,61 +2080,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* =========================
    Contact Form — Formspree
    ========================= */
-document.addEventListener('DOMContentLoaded', function () {
-  var form = document.getElementById('contactForm');
-  if (!form) return;
-
-  // SETUP REQUIRED:
-  // 1. Go to https://formspree.io and create a free account.
-  // 2. Click "New Form", set your email, and copy the form ID from the endpoint.
-  // 3. Replace YOUR_FORM_ID below with that ID (e.g. "xpwzkoab").
-  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
-
-  var submitBtn = form.querySelector('button[type="submit"]');
-  var note      = form.querySelector('.form-note');
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    var originalText = submitBtn.textContent;
-    submitBtn.disabled   = true;
-    submitBtn.textContent = 'Sending…';
-    if (note) { note.style.color = 'var(--text-muted)'; note.textContent = ''; }
-
-    try {
-      var data = new FormData(form);
-      var res  = await fetch(FORMSPREE_ENDPOINT, {
-        method:  'POST',
-        body:    data,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (res.ok) {
-        form.reset();
-        if (note) {
-          note.style.color = '#22c55e';
-          note.textContent  = '✓ Message sent! We\'ll get back to you within 24 hours.';
-        }
-        submitBtn.textContent = '✓ Sent';
-        setTimeout(function () {
-          submitBtn.disabled    = false;
-          submitBtn.textContent = originalText;
-        }, 4000);
-      } else {
-        var json = await res.json().catch(function () { return {}; });
-        throw new Error(json.error || 'Submission failed');
-      }
-    } catch (err) {
-      console.error('Form error:', err);
-      if (note) {
-        note.style.color = '#ef4444';
-        note.textContent  = 'Something went wrong. Please email us at info@itqansolutions.org';
-      }
-      submitBtn.disabled    = false;
-      submitBtn.textContent = originalText;
-    }
-  });
-});
+/* Legacy duplicate Formspree handler removed: the single handler above owns form submission. */
 
 /* =========================
    Round 4: WhatsApp float auto-hide, reveal stagger, cinematic intro
