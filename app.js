@@ -1808,7 +1808,7 @@ document.addEventListener('submit', async (e) => {
     data._subject = 'New website inquiry - itqansolutions.org';
     data._template = 'table';
     data._captcha = 'false';
-    const res = await fetch('https://formsubmit.co/ajax/info@itqansolutions.org', {
+    const res = await fetch('https://formsubmit.co/ajax/60649bcb1f01e3041a74f4a58f1fe9ec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(data)
