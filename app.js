@@ -367,7 +367,7 @@ const i18n = {
     'contact.send':         'Send Message',
     'contact.sending':      'Sending…',
     'contact.success':      '✓ Message sent! We\'ll be in touch within 24 hours.',
-    'contact.error':        'We could not send your message right now. Please email info@itqansolutions.org or',
+    'contact.error':        'We could not send your message right now. Please email us at info@itqansolutions.org.',
 
     /* --- Services Page Pillars & Features --- */
     'srv.label':            'Our Solutions',
@@ -1243,7 +1243,7 @@ const i18n = {
     'contact.send':         'إرسال الرسالة',
     'contact.sending':      'جارٍ الإرسال…',
     'contact.success':      '✓ تم الإرسال! سنتواصل معك خلال 24 ساعة.',
-    'contact.error':        'تعذر إرسال رسالتك الآن. راسلنا على info@itqansolutions.org أو',
+    'contact.error':        'تعذر إرسال رسالتك الآن. راسلنا على info@itqansolutions.org.',
 
     /* --- Blog --- */
     'blog.label':           'مقالات إتقان',
@@ -1824,17 +1824,7 @@ document.addEventListener('submit', async (e) => {
   } catch {
     if (note) {
       note.style.color = '#ef4444';
-      note.textContent = dict['contact.error'] + ' ';
-      try {
-        var f = Object.fromEntries(new FormData(form));
-        var txt = (lang === 'ar' ? 'مرحبًا، أنا ' : 'Hello, I am ') + (f.name || '') + (f.company ? ' (' + f.company + ')' : '') + '. ' + (f.message || '') + (f.phone ? ' | ' + f.phone : '') + (f.email ? ' | ' + f.email : '');
-        var a = document.createElement('a');
-        a.href = 'https://wa.me/201126522373?text=' + encodeURIComponent(txt);
-        a.target = '_blank'; a.rel = 'noopener';
-        a.textContent = lang === 'ar' ? 'راسلنا على واتساب' : 'Message us on WhatsApp';
-        a.style.cssText = 'color:#16a34a;font-weight:700;text-decoration:underline';
-        note.appendChild(a);
-      } catch (e2) {}
+      note.textContent = dict['contact.error'];
     }
   } finally {
     if (btn) { btn.disabled = false; btn.textContent = dict['contact.send']; }
